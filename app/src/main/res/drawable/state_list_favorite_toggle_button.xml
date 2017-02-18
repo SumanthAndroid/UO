@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Toggle state on -->
+    <item android:drawable="@drawable/ic_toggle_favorite_on" android:state_checked="true"/>
+
+    <!-- Toggle state off -->
+    <item android:drawable="@drawable/ic_toggle_favorite_off" android:state_checked="false"/>
+
+</selector>

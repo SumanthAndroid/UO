@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/action_search_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="horizontal"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp" >
+
+    <ImageView
+        android:id="@+id/action_search_magnifying_image"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_alignBottom="@+id/action_search_edit_text"
+        android:layout_alignLeft="@+id/action_search_edit_text"
+        android:layout_margin="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_edit_search" />
+
+    <com.universalstudios.orlandoresort.view.fonts.EditText
+        android:id="@+id/action_search_edit_text"
+        style="@style/TextViewStyle.GothamBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/state_list_action_search_edit_text"
+        android:focusableInTouchMode="true"
+        android:hint="@string/action_search_view_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textNoSuggestions|textCapWords"
+        android:lines="1"
+        android:maxLines="1"
+        android:paddingBottom="10dp"
+        android:paddingLeft="37dp"
+        android:paddingRight="34dp"
+        android:textColor="@color/text_white"
+        android:textColorHint="@color/text_primary_light"
+        android:textIsSelectable="false"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/action_search_clear_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/action_search_edit_text"
+        android:layout_alignRight="@+id/action_search_edit_text"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/state_list_actionbar_selector_with_fade"
+        android:contentDescription="@string/action_search_clear_image_content_description"
+        android:clickable="true"
+        android:padding="9dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_edit_clear" />
+
+</RelativeLayout>

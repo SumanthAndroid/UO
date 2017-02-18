@@ -1,0 +1,22 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        style="@style/TextViewStyle.GothamMedium"
+        android:id="@+id/step_progress_view_step_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:gravity="center_horizontal"
+        android:maxLines="1"
+        android:ellipsize="none"
+        android:textSize="11sp"
+        android:textColor="@color/text_gray_darkest"
+        tools:text="Tickets">
+    </com.universalstudios.orlandoresort.view.fonts.TextView>
+</FrameLayout>

@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_drawer_section_header_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/drawer_section_header_background_gray"
+    android:gravity="center_vertical|left"
+    android:paddingBottom="8dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="8dp" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/list_drawer_section_header_title_text"
+        style="@style/TextViewStyle.GothamBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer_header_explore_all_activities"
+        android:textColor="@color/nav_drawer_header_text"
+        android:textSize="12sp" />
+
+</LinearLayout>

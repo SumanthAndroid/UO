@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/text_white"
+    android:id="@+id/ticket_appointment_time_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        style="@style/TextViewStyle.GothamMedium"
+        tools:text="October 15, 2016"
+        android:layout_marginTop="6dp"
+        android:id="@+id/ticket_appointment_ticket_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ticket_appointment_blue_color"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="6dp">
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBold"
+            tools:text="2:30 - 3:30"
+            android:textSize="32sp"
+            android:textColor="@color/ticket_appointment_blue_color"
+            android:id="@+id/ticket_appointment_ticket_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            />
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBold"
+            tools:text="PM"
+            android:textSize="16sp"
+            android:textColor="@color/ticket_appointment_blue_color"
+            android:id="@+id/ticket_appointment_subtitle_time_am_pm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            />
+    </LinearLayout>
+</LinearLayout>

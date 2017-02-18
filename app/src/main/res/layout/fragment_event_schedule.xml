@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.universalstudios.orlandoresort.view.stickylistheaders.StickyListHeadersListView
+        android:id="@+id/fragment_event_schedule_stickylistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:choiceMode="singleChoice"
+        android:divider="@color/detail_divider_gray"
+        android:dividerHeight="1dp"
+        android:listSelector="@android:color/transparent"
+        android:overScrollFooter="@color/explore_list_background_gray"
+        android:overScrollHeader="@color/explore_list_background_gray"
+        android:overScrollMode="ifContentScrolls" />
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingBottom="25dp"
+    android:background="@color/search_list_background_white">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/view_explore_list_footer_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="@color/text_gray_light"/>
+
+</LinearLayout>

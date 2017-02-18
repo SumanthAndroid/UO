@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detail_no_image_background_gray" >
+
+    <ImageView
+        android:id="@+id/fragment_path_image_no_image_logo"
+        android:layout_width="222dp"
+        android:layout_height="133dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_no_image_logo_detail"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/fragment_path_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/wayfinding_instructions_background_transparent_white"
+        android:orientation="horizontal"
+        android:paddingBottom="14dp"
+        android:paddingLeft="22dp"
+        android:paddingRight="18dp"
+        android:paddingTop="18dp" >
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="13dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_wayfinding_man"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_path_step_text"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="STEP X OF X"
+                android:textColor="@color/text_primary"
+                android:textSize="15sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:overScrollMode="never" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_path_instructions_text"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="4dp"
+                        android:maxLines="4"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="14.5sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_path_comment_text"
+                        style="@style/TextViewStyle.GothamBookItalic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="3"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state - touch press or D-pad / physical keyboard click -->
+    <item android:drawable="@drawable/map_poi_window_background_pressed" android:state_pressed="true"/>
+
+    <!-- Normal state -->
+    <item android:drawable="@drawable/map_poi_window_background"/>
+
+</selector>

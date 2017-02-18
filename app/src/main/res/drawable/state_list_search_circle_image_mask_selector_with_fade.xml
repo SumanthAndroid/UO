@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" android:exitFadeDuration="@android:integer/config_mediumAnimTime">
+
+    <!-- Pressed state - touch press or D-pad / physical keyboard click -->
+    <item android:drawable="@drawable/list_item_poi_search_circle_image_mask_pressed" android:state_pressed="true"/>
+
+    <!-- Normal state -->
+    <item android:drawable="@android:color/transparent"/>
+
+</selector>

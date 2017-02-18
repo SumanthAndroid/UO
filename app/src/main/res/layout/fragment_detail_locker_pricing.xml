@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_detail_locker_pricing_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fragment_detail_list_pricing_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/fragment_detail_locker_pricing_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/detail_divider_gray" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.DividerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_marginRight="9dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/detail_header_rental_price"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/detail_divider_gray" />
+    </LinearLayout>
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/fragment_detail_locker_pricing_text"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="12dp"
+        android:lineSpacingExtra="6dp"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="15sp"
+        android:visibility="gone" >
+    </com.universalstudios.orlandoresort.view.fonts.TextView>
+</LinearLayout>
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/fragment_detail_locker_pricing_text_visit_location"
+        style="@style/TextViewStyle.GothamBookItalic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/detail_lockers_visit_for_pricing"
+        android:textColor="@color/text_gray"
+        android:textSize="15sp"
+        android:visibility="visible" >
+    </com.universalstudios.orlandoresort.view.fonts.TextView>
+
+    <LinearLayout
+        android:id="@+id/rental_terms_conditions_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/detail_divider_gray"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_detail_term_condition_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginTop="24dp"
+            android:lineSpacingExtra="6dp"
+            android:text="@string/detail_rental_terms_condition"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="14sp"
+            android:visibility="visible">
+        </com.universalstudios.orlandoresort.view.fonts.TextView>
+    </LinearLayout>
+
+
+</LinearLayout>

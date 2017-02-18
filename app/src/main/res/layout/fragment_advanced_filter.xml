@@ -1,0 +1,1815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/advanced_filter_background_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Section Sort By (static) -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_sort_by"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_sort_root_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.segmentedcontrol.SegmentedGroup
+                    android:id="@+id/advand_filter_sort_segmented_control"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                        android:id="@+id/advanced_filter_sort_type"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/advanced_filter_sort_type"
+                        android:visibility="gone" />
+
+                    <!-- Default Option: A to Z -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                        android:id="@+id/advanced_filter_sort_alphabetical"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/advanced_filter_sort_alphabetical" />
+
+                    <!-- Default option: Distance -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                        android:id="@+id/advanced_filter_sort_distance"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/advanced_filter_sort_distance" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                        android:id="@+id/advanced_filter_sort_wait_times"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/advanced_filter_sort_wait_time"
+                        android:visibility="gone" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                        android:id="@+id/advanced_filter_sort_show_times"
+                        style="@style/RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/advanced_filter_sort_show_time"
+                        android:visibility="gone" />
+                </com.universalstudios.orlandoresort.view.segmentedcontrol.SegmentedGroup>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/advanced_filter_sort_description"
+                    style="@style/TextViewStyle.GothamBookItalic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/advanced_filter_sort_description"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section Accessibility / Express / Kid-Friendly (dynamic) -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_other_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_other_filter"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+            </LinearLayout>
+
+            <!-- Upper Lot Item -->
+
+            <RelativeLayout
+                android:id="@+id/advanced_filter_upper_lot_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_advanced_filter_item_background_static"
+                android:minHeight="@dimen/advanced_filter_item_min_height"
+                android:padding="@dimen/advanced_filter_section_padding" >
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_upper_lot_switch"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/advanced_filter_upper_lot_switch"
+                    android:layout_toStartOf="@+id/advanced_filter_upper_lot_switch"
+                    android:text="@string/advanced_filter_other_upper_lot"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+            </RelativeLayout>
+
+            <!-- Lower Lot Item -->
+
+            <RelativeLayout
+                android:id="@+id/advanced_filter_lower_lot_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_advanced_filter_item_background_static"
+                android:minHeight="@dimen/advanced_filter_item_min_height"
+                android:padding="@dimen/advanced_filter_section_padding" >
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_lower_lot_switch"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/advanced_filter_lower_lot_switch"
+                    android:layout_toStartOf="@+id/advanced_filter_lower_lot_switch"
+                    android:text="@string/advanced_filter_other_lower_lot"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+            </RelativeLayout>
+
+            <!-- Accessibility Item -->
+
+            <RelativeLayout
+                android:id="@+id/advanced_filter_accessibility_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_advanced_filter_item_background"
+                android:clickable="true"
+                android:minHeight="@dimen/advanced_filter_item_min_height"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/advanced_filter_accessibility_selected_textview"
+                    android:layout_toStartOf="@+id/advanced_filter_accessibility_selected_textview"
+                    android:text="@string/advanced_filter_other_accessibility"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                <!-- Accessibilty selected label -->
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/advanced_filter_accessibility_selected_textview"
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/advanced_filter_option_off"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+            </RelativeLayout>
+
+            <!-- Express Pass Line Item -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_advanced_filter_item_background_static"
+                android:minHeight="@dimen/advanced_filter_item_min_height"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_express_line_switch"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/advanced_filter_express_line_switch"
+                    android:layout_toStartOf="@+id/advanced_filter_express_line_switch"
+                    android:text="@string/advanced_filter_other_express_pass_line"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+            </RelativeLayout>
+
+            <!-- Kid-Friendly Item -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/advanced_filter_item_min_height"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/advanced_filter_kid_friendly_switch"
+                    android:layout_toStartOf="@+id/advanced_filter_kid_friendly_switch"
+                    android:text="@string/advanced_filter_other_kid_friendly"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_kid_friendly_switch"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Section Ride Filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_rides_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_rides"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_ride_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_ride_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- venues item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_ride_venues_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_venues_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_venues_selected_textview"
+                        android:text="@string/advanced_filter_venues"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- venues selected label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_ride_venues_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Ride type item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_ride_type_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_type_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_type_selected_textview"
+                        android:text="@string/advanced_filter_ride_type"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Ride type seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_ride_type_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Maximum wait time item -->
+
+                <LinearLayout
+                    android:id="@+id/advanced_filter_max_wait_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:orientation="vertical"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true">
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/advanced_filter_rides_max_wait_textview"
+                            android:layout_toStartOf="@+id/advanced_filter_rides_max_wait_textview"
+                            android:text="@string/advanced_filter_ride_max_wait"
+                            android:textColor="@color/text_gray_dark"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/advanced_filter_rides_max_wait_textview"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/advanced_filter_option_off"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/advanced_filter_ride_max_wait_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="@integer/advanced_filter_ride_max_wait" />
+                </LinearLayout>
+
+                <!-- Rider height item -->
+
+                <LinearLayout
+                    android:id="@+id/advanced_filter_rider_height_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:orientation="vertical"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true">
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/advanced_filter_rides_rider_height_textview"
+                            android:layout_toStartOf="@+id/advanced_filter_rides_rider_height_textview"
+                            android:text="@string/advanced_filter_ride_rider_height"
+                            android:textColor="@color/text_gray_dark"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/advanced_filter_rides_rider_height_textview"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/advanced_filter_option_off"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/advanced_filter_ride_rider_height_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="@integer/advanced_filter_ride_rider_height_max" />
+                </LinearLayout>
+
+                <!-- Single rider line item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_single_rider_line_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_single_rider_line_switch"
+                        android:text="@string/advanced_filter_ride_single_rider_line"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_ride_single_rider_line_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Child swap item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_child_swap_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_child_swap_switch"
+                        android:text="@string/advanced_filter_ride_child_swap"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_ride_child_swap_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Parental supervision item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_parental_supervision_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_parental_supervision_switch"
+                        android:text="@string/advanced_filter_ride_parental_supervision"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_ride_parental_supervision_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Life jacket required item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_ride_life_jacket_required_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_ride_life_jacket_required_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_ride_life_jacket_required_switch"
+                        android:text="@string/advanced_filter_ride_life_jacket_required"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_ride_life_jacket_required_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section entertainment filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_entertainment_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_entertainment"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_entertainment_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_entertainment_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Entertainment type item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_entertainment_type_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_entertainment_type_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_entertainment_type_selected_textview"
+                        android:text="@string/advanced_filter_entertainment_type"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Entertainment type seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_entertainment_type_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Starting price item -->
+
+                <LinearLayout
+                    android:id="@+id/advanced_filter_entertainment_starting_price_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:orientation="vertical"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true">
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/advanced_filter_entertainment_starting_price_selected_textview"
+                            android:layout_toStartOf="@+id/advanced_filter_entertainment_starting_price_selected_textview"
+                            android:text="@string/advanced_filter_entertainment_starting_price"
+                            android:textColor="@color/text_gray_dark"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/advanced_filter_entertainment_starting_price_selected_textview"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/advanced_filter_option_off"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/advanced_filter_entertainment_starting_price_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="@integer/advanced_filter_entertainment_starting_price_max" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section show filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_shows_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_shows"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_show_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_show_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- venues item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_show_venues_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_show_venues_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_show_venues_selected_textview"
+                        android:text="@string/advanced_filter_venues"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- venues selected label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_show_venues_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Show type item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_show_type_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_show_type_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_show_type_selected_textview"
+                        android:text="@string/advanced_filter_show_type"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Show type seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_show_type_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Next show time item -->
+
+                <LinearLayout
+                    android:id="@+id/advanced_filter_show_next_show_time_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:orientation="vertical"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true">
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/advanced_filter_show_next_show_time_textview"
+                            android:layout_toStartOf="@+id/advanced_filter_show_next_show_time_textview"
+                            android:text="@string/advanced_filter_show_next_show_time"
+                            android:textColor="@color/text_gray_dark"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/advanced_filter_show_next_show_time_textview"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/advanced_filter_option_off"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/advanced_filter_show_next_show_time_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="@integer/advanced_filter_show_next_show_time_max" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section dining filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_dining_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_dining"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_dining_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_dining_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- venues item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_dining_venues_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_venues_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_venues_selected_textview"
+                        android:text="@string/advanced_filter_venues"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- venues selected label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_dining_venues_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Dining type item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_dining_type_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_type_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_type_selected_textview"
+                        android:text="@string/advanced_filter_dining_type"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Dining type seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_dining_type_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Starting price item -->
+
+                <LinearLayout
+                    android:id="@+id/advanced_filter_dining_starting_price_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:orientation="vertical"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true">
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/advanced_filter_dining_starting_price_selected_textview"
+                            android:layout_toStartOf="@+id/advanced_filter_dining_starting_price_selected_textview"
+                            android:text="@string/advanced_filter_dining_starting_price"
+                            android:textColor="@color/text_gray_dark"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/advanced_filter_dining_starting_price_selected_textview"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/advanced_filter_option_off"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/advanced_filter_label_text_size" />
+                    </RelativeLayout>
+
+                    <SeekBar
+                        android:id="@+id/advanced_filter_dining_starting_price_seekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:max="@integer/advanced_filter_dining_starting_price_max" />
+                </LinearLayout>
+
+                <!-- Dining plan item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_dining_plan_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_plan_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_plan_selected_textview"
+                        android:text="@string/advanced_filter_dining_universal_dining_plan"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Dining plan seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_dining_plan_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Character dining item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background_static"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_character_dining_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_character_dining_switch"
+                        android:text="@string/advanced_filter_dining_character_dining"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_dining_character_dining_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Vegetarian/healty options item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_vegetarian_healthy_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_vegetarian_healthy_switch"
+                        android:text="@string/advanced_filter_dining_vegetarian_healty_options"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_dining_vegetarian_healthy_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Amex food and bevarge item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_dining_amex_viewgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_dining_amex_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_dining_amex_switch"
+                        android:text="@string/advanced_filter_dining_amex_food_and_beverage_savings"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_dining_amex_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+
+                <!-- Coca Cola Freestyle item -->
+
+                <RelativeLayout
+                    android:id="@+id/cocaColaContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_coca_cola_freestyle_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_coca_cola_freestyle_switch"
+                        android:text="@string/detail_feature_coke_freestyle"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_coca_cola_freestyle_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section shopping filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_shopping_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_shopping"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_shopping_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_shopping_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- venues item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_shopping_venues_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_shopping_venues_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_shopping_venues_selected_textview"
+                        android:text="@string/advanced_filter_venues"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- venues selected label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_shopping_venues_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Shopping type item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_shopping_type_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_shopping_type_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_shopping_type_selected_textview"
+                        android:text="@string/advanced_filter_shopping_type"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- Shopping type seleccted label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_shopping_type_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Sells express pass item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_shopping_express_pass_viewgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_shopping_express_pass_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_shopping_express_pass_switch"
+                        android:text="@string/advanced_filter_shopping_sells_express_pass"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_shopping_express_pass_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Amex merchandise item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_shopping_amex_viewgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_shopping_amex_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_shopping_amex_switch"
+                        android:text="@string/advanced_filter_shopping_amex_merchandise_savings"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_shopping_amex_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Package pickup item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_shopping_package_pickup_viewgroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_shopping_package_pickup_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_shopping_package_pickup_switch"
+                        android:text="@string/advanced_filter_shopping_package_pickup_available"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_shopping_package_pickup_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Section Rental Services filters -->
+
+        <LinearLayout
+            android:id="@+id/advanced_filter_rental_services_root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/drawer_section_header_background_gray"
+                android:padding="@dimen/advanced_filter_section_padding">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/advanced_filter_filter_rental_services"
+                    android:textColor="@color/text_gray_dark"
+                    android:textSize="@dimen/advanced_filter_section_label_text_size" />
+
+                <com.universalstudios.orlandoresort.view.fonts.Switch
+                    android:id="@+id/advanced_filter_rental_services_filter_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:checked="true"
+                    android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                    android:track="@drawable/state_list_blue_switch_track_holo_light" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/advanced_filter_rental_services_filter_contents_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- venues item -->
+
+                <RelativeLayout
+                    android:id="@+id/advanced_filter_rental_services_venues_relative_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:clickable="true"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_rental_services_venues_selected_textview"
+                        android:layout_toStartOf="@+id/advanced_filter_rental_services_venues_selected_textview"
+                        android:text="@string/advanced_filter_venues"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <!-- venues selected label -->
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/advanced_filter_rental_services_venues_selected_textview"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/advanced_filter_option_off"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+                </RelativeLayout>
+
+                <!-- Rental Type Stroller item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_rental_type_stroller_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_rental_type_stroller_switch"
+                        android:text="@string/advanced_filter_rental_type_stroller"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_rental_type_stroller_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- Rental Type WheelChair item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_rental_type_wheel_chair_pickup_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_rental_type_wheel_chair_pickup_switch"
+                        android:text="@string/advanced_filter_rental_type_wheel_chair"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_rental_type_wheel_chair_pickup_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+                <!-- ECV Rental Type item -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_advanced_filter_item_background"
+                    android:minHeight="@dimen/advanced_filter_item_min_height"
+                    android:padding="@dimen/advanced_filter_section_padding">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/advanced_filter_rental_type_testing_switch"
+                        android:layout_toStartOf="@+id/advanced_filter_rental_type_testing_switch"
+                        android:text="@string/detail_feature_rental_type_evc_available"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/advanced_filter_label_text_size" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.Switch
+                        android:id="@+id/advanced_filter_rental_type_testing_switch"
+                        style="@style/TextViewStyle.GothamThin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+                        android:track="@drawable/state_list_blue_switch_track_holo_light" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/drawer_section_header_background_gray"-->
+        <!--android:padding="@dimen/advanced_filter_section_padding"-->
+        <!--android:visibility="visible"-->
+        <!--android:id="@+id/cocaColaContainer">-->
+
+        <!--<com.universalstudios.orlandoresort.view.fonts.TextView-->
+        <!--style="@style/TextViewStyle.GothamBook"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:ellipsize="end"-->
+        <!--android:gravity="center"-->
+        <!--android:maxLines="1"-->
+        <!--android:text="@string/advanced_filter_coca_cola"-->
+        <!--android:textColor="@color/text_gray_dark"-->
+        <!--android:textSize="@dimen/advanced_filter_section_label_text_size"-->
+        <!--android:id="@+id/view2"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_toEndOf="@+id/imageView"-->
+        <!--android:layout_marginLeft="16dp" />-->
+
+        <!--<com.universalstudios.orlandoresort.view.fonts.Switch-->
+        <!--android:id="@+id/advanced_filter_coca_cola_filter_switch"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:checked="true"-->
+        <!--android:thumb="@drawable/state_list_blue_switch_inner_holo_light"-->
+        <!--android:track="@drawable/state_list_blue_switch_track_holo_light" />-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:src="@drawable/ic_detail_feature_coke" />-->
+        <!--</RelativeLayout>-->
+
+    </LinearLayout>
+</ScrollView>

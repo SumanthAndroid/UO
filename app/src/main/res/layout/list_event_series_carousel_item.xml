@@ -1,0 +1,211 @@
+<!-- KEEP THIS FRAME LAYOUT, LISTVIEW ROWS REMOVE MARGINS SET BY THE ROOT LAYOUT -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_event_series_carousel_item_root_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/events_carousel_item_horizontal_padding"
+    android:paddingRight="@dimen/events_carousel_item_horizontal_padding"
+    android:paddingTop="18dp" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp" >
+
+        <RelativeLayout
+            android:id="@+id/list_event_series_carousel_item_root_content_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_list_explore_list_poi_background_with_fade" >
+
+            <FrameLayout
+                android:id="@+id/list_event_series_carousel_item_hero_image_root_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/explore_list_no_image_background_gray" >
+
+                <com.universalstudios.orlandoresort.view.imageview.SquareImageView
+                    android:id="@+id/list_event_series_carousel_item_no_image_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="16dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_no_image_logo_list" />
+
+                <com.universalstudios.orlandoresort.view.imageview.SquareImageView
+                    android:id="@+id/list_event_series_carousel_item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible" />
+
+                <com.universalstudios.orlandoresort.view.SquareView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/list_event_series_carousel_item_card_root_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/list_event_series_carousel_item_hero_image_root_frame_layout"
+                android:baselineAligned="false"
+                android:minHeight="98dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_event_series_carousel_item_venue_name_textview"
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="XNIVERSAL STUDIOS FLORIDA"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="12sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_event_series_carousel_item_display_name_textview"
+                        style="@style/TextViewStyle.GothamUltra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="Xhe Amazing Adventures of Spider Man"
+                        android:textColor="@color/text_primary"
+                        android:textSize="17sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_event_series_carousel_item_event_date_textview"
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Thursday, Jan 29"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray"
+                        android:textSize="10sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_event_series_carousel_item_description_textview"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="16dp"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:lineSpacingExtra="1dp"
+                        android:scrollHorizontally="true"
+                        android:text="Explore terrifying haunted houses, make your way through multiple scare zones, enjoy outrageous live shows Explore terrifying haunted houses, make your way through multiple scare zones, enjoy outrageous live shows, plus experience many of the park’s most exciting rides and attractions."
+                        android:textColor="@color/text_gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!--
+                <FrameLayout
+                    android:id="@+id/list_event_series_carousel_item_guide_me_button_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/poi_item_divider_gray"
+                    android:visibility="gone" >
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/list_event_series_carousel_item_guide_me_button_layout"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/state_list_default_list_selector_with_fade"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="26dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_guide_me" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/poi_list_item_guide_me"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="10sp" />
+                </LinearLayout>
+                -->
+            </LinearLayout>
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/list_event_series_carousel_item_card_root_linear_layout"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="-48dp"
+                layout="@layout/poi_item_circle_badge" />
+        </RelativeLayout>
+
+        <!--
+             <ToggleButton
+            android:id="@+id/list_event_series_carousel_item_favorite_toggle_button"
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/state_list_favorite_toggle_button_with_fade"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:padding="10dp"
+            android:saveEnabled="false"
+            android:textOff=""
+            android:textOn="" />
+        -->
+
+        <View
+            android:id="@+id/list_event_series_carousel_item_diabled_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/event_carousel_disabled_event_background_transparent_gray"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</FrameLayout>

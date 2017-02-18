@@ -1,0 +1,109 @@
+<!-- KEEP THIS FRAME LAYOUT, LISTVIEW ROWS REMOVE MARGINS SET BY THE ROOT LAYOUT -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_news_item_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:paddingBottom="17dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:paddingTop="17dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:orientation="vertical" >
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_news_item_date_text_unread"
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="X:35 PM"
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="14sp"
+                        android:visibility="visible" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_news_item_date_text_read"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="X:35 PM"
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_news_item_heading_text_unread"
+                        style="@style/TextViewStyle.GothamBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:text="Xome Message About Something Really Cool Going On Here That Is Really Really Long"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_news_item_heading_text_read"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="3dp"
+                        android:maxLines="2"
+                        android:text="Xome Message About Something Really Cool Going On Here That Is Really Really Long"
+                        android:textColor="@color/text_primary"
+                        android:textSize="19.5sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/list_news_item_body_text"
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="3dp"
+                    android:maxLines="3"
+                    android:text="Xue to the popularity of The Wizarding World of Harry Potter, we strongly encourage blah blah a lot more information about other stuffthat goes on and on and really doesn&apos;t stop"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+
+            <stroke
+                android:width="1dp"
+                android:color="#e0e0e0"/>
+
+            <solid android:color="@color/ticket_calendar_unavailable_background"/>
+        </shape>
+    </item>
+    <item android:state_selected="true">
+        <layer-list>
+            <item>
+                <shape>
+                    <stroke
+                        android:width="1dp"
+                        android:color="#e0e0e0"/>
+
+                    <solid android:color="@android:color/white"/>
+                </shape>
+            </item>
+            <item>
+                <shape
+                    android:innerRadiusRatio="3"
+                    android:shape="ring"
+                    android:thicknessRatio="21"
+                    android:useLevel="false">
+                    <solid android:color="@color/custom_calendar_selected_circle"/>
+                    <size
+                        android:width="18dp"
+                        android:height="18dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+
+            <stroke
+                android:width="1dp"
+                android:color="#e0e0e0"/>
+
+            <solid android:color="#e0e0e0"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+
+            <stroke
+                android:width="1dp"
+                android:color="#e0e0e0"/>
+
+            <solid android:color="@android:color/white"/>
+        </shape>
+    </item>
+</selector>

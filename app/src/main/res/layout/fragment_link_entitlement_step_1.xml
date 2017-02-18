@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+        <variable
+            name="viewModel"
+            type="com.universalstudios.orlandoresort.controller.userinterface.linkentitlement.data.LinkEntitlementStep1ViewModel"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.linkentitlement.LinkEntitlementStep1Fragment.ActionCallback"
+            />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin">
+                <TextView
+                    android:id="@+id/link_purchase_header_text"
+                    style="@style/TextViewStyle.Header.Black"
+                    bind:font="@{@string/font_gotham_black}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{tridion.pageHeaderWLPTitle}"
+                    tools:text="Link Purchase"
+                    />
+
+                <ImageView
+                    android:id="@+id/order_number_info_popup"
+                    android:layout_width="@dimen/info_icon_size"
+                    android:layout_height="@dimen/info_icon_size"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/info_grey"
+                    android:layout_below="@id/link_purchase_header_text"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{() -> callback.onTicketNumberInfoClicked()}"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Heading.Black"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/order_number_info_popup"
+                    android:layout_toStartOf="@id/order_number_info_popup"
+                    android:text="@{tridion.walletLinkPurchaseOrderOrTicketNumberLabel}"
+                    tools:text="Order or Ticket Number"
+                    />
+
+                <ImageView
+                    android:id="@+id/image_scan_order_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/ic_scan_camera"
+                    android:layout_below="@id/order_number_info_popup"
+                    android:layout_alignParentEnd="true"
+                    android:onClick="@{() -> callback.onScanTicketClicked()}"
+                    />
+
+                <EditText
+                    android:id="@+id/edit_order_number"
+                    style="@style/EditTextStyle"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="24dp"
+                    android:layout_below="@id/order_number_info_popup"
+                    android:layout_toStartOf="@id/image_scan_order_number"
+                    android:text="@={viewModel.linkEntitlementModel.orderOrTicketNumber}"
+                    />
+
+                <Button
+                    android:id="@+id/btn_next"
+                    style="@style/ButtonStyle.Colored.Blue"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    android:layout_below="@id/edit_order_number"
+                    android:text="@{tridion.nextLabel}"
+                    tools:text="Next"
+                    android:enabled="@{viewModel.allRequiredFieldsComplete}"
+                    android:onClick="@{() -> callback.onNextClicked()}"
+                    />
+
+                <Button
+                    style="@style/ButtonStyle.Colored.Gray"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:layout_below="@id/btn_next"
+                    android:text="@{tridion.cancelLabel}"
+                    tools:text="Cancel"
+                    android:onClick="@{() -> callback.onCancelClicked()}"
+                    />
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_50_translucent"
+            android:gravity="center"
+            android:visibility="@{viewModel.showLoading}"
+            tools:visibility="gone">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

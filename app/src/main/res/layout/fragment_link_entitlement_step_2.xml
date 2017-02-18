@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.universalstudios.orlandoresort.controller.userinterface.linkentitlement.data.LinkEntitlementModel"/>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+        <variable
+            name="viewModel"
+            type="com.universalstudios.orlandoresort.controller.userinterface.linkentitlement.data.LinkEntitlementStep2ViewModel"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.linkentitlement.LinkEntitlementStep2Fragment.ActionCallback"
+            />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin">
+                <TextView
+                    android:id="@+id/link_purchase_header_text"
+                    style="@style/TextViewStyle.Header.Black"
+                    bind:font="@{@string/font_gotham_black}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{tridion.pageHeaderWLPTitle}"
+                    tools:text="Link Purchase"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.linkEntitlementModel.entitleLinkType == LinkEntitlementModel.LINK_TYPE_NAME}"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/TextViewStyle.Normal.Black"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@{tridion.walletLinkPurchaseLocatedHeader}"
+                        tools:text="Your purchase has been located. To complete linking, please enter either the name of person who placed the order, or the person to whom the purchase is assigned."
+                        />
+
+                    <TextView
+                        style="@style/TextViewStyle.Heading.Black"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@{tridion.walletLinkPurchaseFirstNameLabel}"
+                        tools:text="Purchaser First Name"
+                        />
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:text="@={viewModel.linkEntitlementModel.firstName}"
+                        />
+
+                    <TextView
+                        style="@style/TextViewStyle.Heading.Black"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@{tridion.walletLinkPurchaseLastNameLabel}"
+                        tools:text="Purchaser Last Name"
+                        />
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:text="@={viewModel.linkEntitlementModel.lastName}"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.linkEntitlementModel.entitleLinkType == LinkEntitlementModel.LINK_TYPE_SALES_PROGRAM}"
+                    tools:visibility="visible">
+
+                    <TextView
+                        style="@style/TextViewStyle.Normal.Black"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@{tridion.walletLinkPurchaseSelectLocationHeader}"
+                        tools:text="Your purchase has been located. To complete linking, please select where the purchase is made."
+                        />
+
+                    <TextView
+                        style="@style/TextViewStyle.Heading.Black"
+                        bind:font="@{@string/font_gotham_medium}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="@{tridion.walletLinkSelectChannelLabel}"
+                        tools:text="Select Channel"
+                        />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/select_channel_recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"
+                        tools:listitem="@layout/item_select_channel_radio"
+                        android:nestedScrollingEnabled="false"
+                        />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    style="@style/ButtonStyle.Colored.Blue"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="32dp"
+                    android:text="@{tridion.submitButtonText}"
+                    tools:text="Submit"
+                    android:enabled="@{viewModel.allRequiredFieldsComplete}"
+                    android:onClick="@{() -> callback.onSubmitClicked()}"
+                    />
+
+                <Button
+                    style="@style/ButtonStyle.Colored.Gray"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:text="@{tridion.cancelLabel}"
+                    tools:text="Cancel"
+                    android:onClick="@{() -> callback.onCancelClicked()}"
+                    />
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/loading_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_50_translucent"
+            android:gravity="center"
+            android:visibility="@{viewModel.showLoading}"
+            tools:visibility="gone">
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>

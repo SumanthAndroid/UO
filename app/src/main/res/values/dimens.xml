@@ -1,0 +1,157 @@
+<resources>
+
+    <!-- Special values for layout dimensions (due to negative rounding error they are shifted) -->
+    <dimen name="match_parent">-2px</dimen>
+    <dimen name="wrap_content">-3px</dimen>
+
+    <!-- Drawer width, expand to screen on smaller width screens -->
+    <dimen name="drawer_width">280dp</dimen>
+
+    <!-- Explore list/map POIs view, expand to screen on smaller width screens -->
+    <dimen name="explore_list_poi_card_width">@dimen/match_parent</dimen>
+    <dimen name="explore_map_poi_pin_window_width">@dimen/match_parent</dimen>
+
+    <!-- Map zoom padding -->
+    <dimen name="map_zoom_padding">10dp</dimen>
+
+    <!-- Detail accessibility icon size -->
+    <dimen name="detail_accessibility_icon_size">57dp</dimen>
+
+    <!-- Detail feature icon -->
+    <dimen name="detail_feature_normal_icon_size">39dp</dimen>
+    <dimen name="detail_feature_small_icon_size">35dp</dimen>
+    <dimen name="detail_feature_icon_margin_right">18dp</dimen>
+
+    <!-- Detail hotel perk -->
+    <dimen name="detail_hotel_perk_width">132dp</dimen>
+
+    <!-- Circle badge -->
+    <dimen name="circle_badge_item_size">64dp</dimen>
+    <dimen name="circle_badge_item_stroke_size">2.5dp</dimen>
+    <dimen name="circle_badge_detail_size">83dp</dimen>
+    <dimen name="circle_badge_detail_stroke_size">3dp</dimen>
+    <dimen name="circle_badge_alert_stroke_size">10dp</dimen>
+    <dimen name="circle_badge_faq_size">39dp</dimen>
+
+    <!-- You have arrived view, expand to screen on smaller width screens -->
+    <dimen name="welcome_view_text_width">@dimen/match_parent</dimen>
+
+    <!-- Show time button -->
+    <dimen name="show_time_button_corner_radius">6dp</dimen>
+
+    <!-- Wait time alert -->
+    <dimen name="wait_time_alert_badge_shadow_padding">3dp</dimen>
+    <dimen name="set_alert_text_size">98sp</dimen>
+    <item name="set_alert_arrow_alpha" format="float" type="dimen">0.40</item>
+    <dimen name="set_show_time_text_size">72sp</dimen>
+    <dimen name="set_show_time_am_pm_text_size">34sp</dimen>
+    <dimen name="set_alert_open">56sp</dimen>
+
+    <!-- Calendar -->
+    <dimen name="calendar_day_headers_padding_bottom">4dp</dimen>
+    <dimen name="calendar_month_title_margin_top">10dp</dimen>
+    <dimen name="calendar_month_title_margin_bottom">6dp</dimen>
+    <dimen name="calendar_text_medium">18sp</dimen>
+    <dimen name="calendar_text_small">14sp</dimen>
+
+    <!-- Park hours calendar icons -->
+    <dimen name="hours_calendar_icon_size">78dp</dimen>
+    <dimen name="hours_calendar_text_size">14sp</dimen>
+
+    <!-- Park tickets calendar fonts -->
+    <dimen name="tickets_calendar_header_text_size">18sp</dimen>
+    <dimen name="tickets_calendar_detail_text_size">12sp</dimen>
+
+    <!-- Segmented Control -->
+    <dimen name="radio_button_corner_radius">0dp</dimen>
+
+    <!-- Advanced Filter -->
+    <dimen name="advanced_filter_label_text_size">16sp</dimen>
+    <dimen name="advanced_filter_section_margin">12dp</dimen>
+    <dimen name="advanced_filter_section_label_text_size">16sp</dimen>
+    <dimen name="advanced_filter_section_padding">18dp</dimen>
+    <dimen name="advanced_filter_item_min_height">67dp</dimen>
+    <dimen name="advanced_filter_multi_choice_item_font_size">14sp</dimen>
+    <dimen name="advanced_filter_multi_choice_title_font_size">16sp</dimen>
+    <dimen name="advanced_filter_item_left_right_padding">18dp</dimen>
+    <dimen name="advanced_filter_item_top_bottom_padding">18dp</dimen>
+
+    <!-- Events -->
+    <dimen name="events_carousel_item_horizontal_padding">30dp</dimen>
+
+    <!-- Explore List -->
+    <dimen name="list_poi_section_header_root_container_height">32dp</dimen>
+
+    <!-- Explore Search Results -->
+    <dimen name="explore_search_results_count_text_size">20dp</dimen>
+    <dimen name="explore_search_results_desc_text_size">11dp</dimen>
+    <dimen name="explore_search_results_count_text_size_large">50dp</dimen>
+    <dimen name="explore_search_results_desc_text_size_large">20dp</dimen>
+
+    <!--Interactive audio -->
+    <dimen name="interactive_audio_image_padding">20dp</dimen>
+
+    <!--Guest feedback-->
+    <dimen name="feedback_item_padding_start">3dp</dimen>
+    <dimen name="feedback_item_margin_top">16dp</dimen>
+    <dimen name="feedback_label_text_size">14sp</dimen>
+    <dimen name="feedback_error_text_margin_top">6dp</dimen>
+    <dimen name="feedback_error_text_size">12sp</dimen>
+
+    <!--Newsletter sign up-->
+    <dimen name="newsletter_item_padding_start">3dp</dimen>
+    <dimen name="newsletter_item_margin_top">16dp</dimen>
+    <dimen name="newsletter_label_text_size">14sp</dimen>
+    <dimen name="newsletter_error_text_margin_top">6dp</dimen>
+    <dimen name="newsletter_error_text_size">12sp</dimen>
+
+    <!-- Explore list horizontal card view, width must be set -->
+    <dimen name="explore_list_horizontal_card_width">300dp</dimen>
+    <dimen name="explore_list_horizontal_space">10dp</dimen>
+
+    <!-- Splash Page -->
+    <item name="splash_logo_height_weight" format="float" type="dimen">1.00</item>
+    <item name="splash_logo_bottom_spacing_weight" format="float" type="dimen">0.00</item>
+
+    <!-- Payment Info Security -->
+    <dimen name="rectangle_security_item_size">40dp</dimen>
+    <dimen name="rectangle_security_item_width_size">80dp</dimen>
+    <dimen name="rectangle_security_item_stroke_size">2dp</dimen>
+
+    <!-- Action Bar -->
+    <dimen name="actionbar_elevation">2dp</dimen>
+
+    <!-- Standard padding and margins -->
+    <dimen name="fragment_margin_left">12dp</dimen>
+    <dimen name="fragment_margin_right">12dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="label_value_padding">4dp</dimen>
+
+    <!--BARCODE-->
+    <dimen name="wallet_detail_barcode_width">150dp</dimen>
+    <dimen name="wallet_detail_barcode_height">150dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="text_size_button">16sp</dimen>
+
+    <!--Assign names-->
+    <dimen name="fragment_assign_name_label_text_size">21sp</dimen>
+
+    <!--Extras-->
+    <dimen name="extras_quantity_control_padding_top">8dp</dimen>
+    <dimen name="extras_quantity_control_padding_bottom">8dp</dimen>
+    <dimen name="extras_quantity_control_label_padding_top">8dp</dimen>
+    <dimen name="extras_quantity_control_label_text">16sp</dimen>
+    <dimen name="extras_quantity_control_starting_text">12sp</dimen>
+    <dimen name="extras_quantity_control_price_text">21sp</dimen>
+    <dimen name="extras_quantity_control_unit_text">12sp</dimen>
+    <dimen name="extras_select_time_grid_spacing">16dp</dimen>
+    <dimen name="extras_select_sku_grid_spacing">16dp</dimen>
+
+    <!--Info icon size-->
+    <dimen name="info_icon_size">30dp</dimen>
+
+</resources>

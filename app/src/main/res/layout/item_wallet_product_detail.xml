@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/item_wallet_product_detail_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/state_list_default_list_selector_with_fade"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingEnd="8dp"
+    android:paddingStart="8dp"
+    android:paddingTop="16dp">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/item_wallet_product_detail_title"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/item_wallet_detail_caret"
+        android:ellipsize="end"
+        android:lines="1"
+        android:paddingBottom="8dp"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        tools:text="Jane Smith Has a very long name and it is long"/>
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/item_wallet_detail_status"
+        style="@style/TextViewStyle.GothamBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/item_wallet_product_detail_title"
+        android:layout_toLeftOf="@+id/item_wallet_detail_caret"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        tools:text="Available"/>
+
+    <!--this is a separate TextView so we can keep a consistent height on this view when the detail view is hidden-->
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/item_wallet_detail_title_centered"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/item_wallet_detail_caret"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:text="Jane Smith"/>
+
+
+    <ImageView
+        android:id="@+id/item_wallet_detail_caret"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_arrow_right_blue"/>
+
+</RelativeLayout>

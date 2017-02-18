@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/item_wallet_person_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/item_wallet_person_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            tools:src="@drawable/ic_menu_tickets"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/item_wallet_person_title"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp"
+                tools:text="2 Day - 2 Park Ticket (3)"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/item_wallet_person_detail"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                android:textSize="14sp"
+                tools:text="Universal Studios Florida + Universal’s Islands of Adventure,  Florida Resident."/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

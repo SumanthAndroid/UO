@@ -1,0 +1,64 @@
+<com.universalstudios.orlandoresort.view.scrollview.ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_event_series_detail_root_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detail_background_white"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/container_detail_images_and_title" />
+
+        <com.universalstudios.orlandoresort.view.segmentedcontrol.SegmentedGroup
+            android:id="@+id/fragment_event_series_detail_segmented_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:text_color="@color/state_list_tab_button_text" >
+
+            <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                android:id="@+id/fragment_event_series_detail_about"
+                style="@style/TabRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/event_series_detail_tab_about"
+                android:textAllCaps="true" />
+
+            <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                android:id="@+id/fragment_event_series_detail_activities"
+                style="@style/TabRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/event_series_detail_tab_activities"
+                android:textAllCaps="true" />
+
+            <com.universalstudios.orlandoresort.view.fonts.RadioButton
+                android:id="@+id/fragment_event_series_detail_attractions"
+                style="@style/TabRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/event_series_detail_tab_attractions"
+                android:checked="true"
+                android:textAllCaps="true" />
+        </com.universalstudios.orlandoresort.view.segmentedcontrol.SegmentedGroup>
+
+        <FrameLayout
+            android:id="@+id/activity_event_series_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</com.universalstudios.orlandoresort.view.scrollview.ScrollView>

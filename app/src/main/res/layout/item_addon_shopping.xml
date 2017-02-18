@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.addons.items.AddOnsShoppingProductItem"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingAdapter.AddOnsShoppingActionCallback"
+            />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_extras_card"
+        android:layout_marginTop="32dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            bind:imageUrl="@{data.labelSpecTcmId1.tileImage}"
+            android:minHeight="200dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/image_extras_product_image" />
+
+        <TextView style="@style/TextViewStyle.Heading.Black"
+            bind:font="@{`fonts/Gotham-Ultra.otf`}"
+            android:id="@+id/text_extras_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@{data.labelSpecTcmId1.title}"
+            tools:text="Extras Product Name"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/image_extras_product_image" />
+
+        <TextView style="@style/TextViewStyle.Small.Black"
+            bind:font="@{`fonts/Gotham-Light.otf`}"
+            android:id="@+id/text_extras_teaser"
+            bind:htmlText="@{data.labelSpecTcmId1.teaser}"
+            tools:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_extras_title" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/cart_list_divider"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_extras_teaser"
+            android:id="@+id/view5" />
+
+        <TextView style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:text="@{data.labelSpecTcmId1.priceTextAbove}"
+            tools:text="Starting from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_extras_price_leader"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <TextView style="@style/TextViewStyle.Heading.Black"
+            bind:font="@{`fonts/Gotham-Bold.otf`}"
+            android:text="@{data.textPrice}"
+            tools:text="$72.99"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_extras_price"
+            app:layout_constraintTop_toTopOf="@+id/text_extras_price_leader"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView style="@style/TextViewStyle.Small.Black"
+            bind:font="@{@string/font_gotham_medium}"
+            android:text="@{data.labelSpecTcmId1.priceTextBelowPrimary}"
+            tools:text="Per Person"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_extras_below_price_primary"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_extras_price"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView style="@style/TextViewStyle.Small.Gray"
+            bind:font="@{@string/font_gotham_medium}"
+            android:text="@{data.textFormattedPriceBelowSecondary}"
+            tools:text="($14 per child)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_extras_below_price_secondary"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_extras_below_price_primary"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button style="@style/ButtonStyle.Colored.Blue"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:text="@{tridion.selectLabel}"
+            tools:text="Select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_extras_select"
+            android:onClick="@{() -> callback.onSelectClicked(data)}"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_extras_below_price_secondary"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <Button style="@style/ButtonStyle.Borderless.Blue"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            tools:text="See Details"
+            android:text="@{tridion.seeDetailsLabel}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_extras_details"
+            android:onClick="@{() -> callback.onSeeDetailsClicked(data)}"
+            android:drawableRight="@drawable/ic_arrow_right_blue"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_extras_select"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

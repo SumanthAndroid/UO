@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Activated (contextual action bar "checked") state -->
+    <item android:drawable="@color/default_activated_transparent_blue" android:state_activated="true"/>
+
+    <!-- Normal state -->
+    <item android:drawable="@android:color/transparent"/>
+
+</selector>

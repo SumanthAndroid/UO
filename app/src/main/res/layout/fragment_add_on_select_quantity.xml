@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/fragment_add_on_select_quantity_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_quantity_title"
+                style="@style/TextViewStyle.GothamUltra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="21sp"
+                tools:text="Blue Man Group Show"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_quantity_description"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="12sp"
+                tools:text="Blue Man Group is comedy, theater, rock concert and dance party all rolled into one. This wildly popular phenomenon delivers an unforgettable, multi-sensory experience. It’s an outrageous evening of entertainment. See the show that has captivated 35 million people worldwide."/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_quantity_see_details"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_list_default_list_selector"
+                android:drawableEnd="@drawable/ic_arrow_right_blue"
+                android:drawablePadding="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:textAllCaps="true"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                tools:text="See Details"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_quantity_select_sku"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="20sp"
+                android:visibility="gone"
+                tools:text="Select Item Sku" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_add_on_select_quantity_sku_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:visibility="gone"
+                tools:listitem="@layout/item_add_on_select_sku" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/gray"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_quantity_select_quantity"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="20sp"
+                tools:text="Select Ticket Quantity"/>
+
+            <com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.views.AddOnQuantityControl
+                android:id="@+id/fragment_add_on_select_quantity_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"/>
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/fragment_add_on_select_quantity_loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+</RelativeLayout>

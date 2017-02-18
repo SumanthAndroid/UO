@@ -1,0 +1,164 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/poi_detail_circle_badge_root_container"
+    android:layout_width="@dimen/circle_badge_detail_size"
+    android:layout_height="@dimen/circle_badge_detail_size"
+    android:adjustViewBounds="true"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/poi_detail_circle_badge_wait_time_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_circle_badge_detail_blue"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/poi_detail_circle_badge_wait_time_num_text"
+            style="@style/TextViewStyle.GothamBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="180"
+            android:textColor="@color/text_white"
+            android:textSize="28sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:text="@string/poi_circle_badge_min_wait"
+            android:contentDescription="@string/poi_circle_badge_min_wait_content_description"
+            android:textColor="@color/min_wait_text"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/poi_detail_circle_badge_closed_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_circle_badge_detail_gray"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        tools:visibility="gone">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/poi_detail_circle_badge_closed_text"
+            style="@style/TextViewStyle.GothamBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/poi_circle_badge_closed"
+            android:textColor="@color/text_white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/poi_detail_circle_badge_weather_text"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/poi_circle_badge_weather"
+            android:textColor="@color/text_white"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/poi_detail_circle_badge_temporary_text"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/poi_circle_badge_temp"
+            android:textColor="@color/text_white"
+            android:textSize="9.5sp"
+            android:visibility="gone" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/poi_detail_circle_badge_closed_capacity_text"
+            style="@style/TextViewStyle.GothamBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lineSpacingExtra="1.5dp"
+            android:text="@string/poi_circle_badge_at_capacity"
+            android:textColor="@color/text_white"
+            android:textSize="12.5sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/poi_detail_circle_badge_show_time_layout"
+        android:layout_width="@dimen/circle_badge_detail_size"
+        android:layout_height="@dimen/circle_badge_detail_size"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <View
+            android:id="@+id/poi_detail_circle_badge_show_time_background_gray"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_circle_badge_detail_gray"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/poi_detail_circle_badge_show_time_background_blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/shape_circle_badge_detail_blue"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/poi_detail_circle_badge_show_time_starts_text"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/poi_circle_badge_starts"
+                android:textColor="@color/show_time_badge_start"
+                android:textSize="11.5sp"
+                android:visibility="visible" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/poi_detail_circle_badge_show_time_opens_text"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="@string/poi_circle_badge_opens"
+                android:textColor="@color/text_white"
+                android:textSize="11.5sp"
+                android:visibility="gone" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/poi_detail_circle_badge_show_time_starts_time_text"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1X:45"
+                android:textColor="@color/text_white"
+                android:textSize="23sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/poi_detail_circle_badge_show_time_am_pm_text"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XM"
+                android:textColor="@color/show_time_badge_am_pm"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

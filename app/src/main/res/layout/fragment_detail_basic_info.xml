@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/fragment_detail_basic_info_desc_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal|bottom"
+                android:paddingBottom="10dp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_detail_basic_info_title_text"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="17dp"
+                android:text="@string/detail_basic_info_single_rider_title"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_detail_basic_info_desc_text"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoLink="web"
+                android:lineSpacingExtra="6dp"
+                android:text="@string/detail_basic_info_single_rider_description"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="15sp"
+                android:paddingTop="16dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

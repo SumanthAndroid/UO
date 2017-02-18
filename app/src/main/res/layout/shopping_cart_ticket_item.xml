@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+        <import type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.ShoppingCartAdapter"/>
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.items.CartTicketItem"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.ShoppingCartAdapter.ShoppingCartActionCallback"
+            />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView style="@style/TextViewStyle.Normal.Bold.Black"
+            bind:font="@{`fonts/Gotham-Black.otf`}"
+            android:id="@+id/shoppingCartCellTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:text="@{data.alternativeHeaderLine1}"
+            tools:text="2 Day - 2 Park (Park-to-Park)"
+            />
+
+        <TextView style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:id="@+id/shoppingCartParkName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:text="@{data.alternativeHeaderLine2}"
+            tools:text="Universal Studio Florida +\n Universal\'s Islands of Adventure"
+            />
+
+        <TextView style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Light.otf`}"
+            android:id="@+id/shopping_cart_cell_alternative_header_line_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:text="@{data.alternativeHeaderLine3}"
+            tools:text="#WCSKEYPOO#"
+            android:visibility="@{!TextUtils.isEmpty(data.alternativeHeaderLine3)}"
+            tools:visibility="visible"
+            />
+
+        <TextView style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:id="@+id/shopping_cart_cell_ticket_sub_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView style="@style/TextViewStyle.Normal"
+                bind:font="@{`fonts/Gotham-Medium.otf`}"
+                android:id="@+id/shopping_cart_cell_modify"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:text="@{tridion.editLabel}"
+                tools:text="Edit"
+                android:visibility="gone"
+                android:textColor="@color/ticket_text_color"
+                />
+
+            <TextView style="@style/TextViewStyle.Normal"
+                bind:font="@{`fonts/Gotham-Medium.otf`}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:text="@string/pipe"
+                android:visibility="gone"
+                android:textColor="@color/ticket_text_color"
+                />
+
+            <TextView style="@style/TextViewStyle.Normal"
+                bind:font="@{`fonts/Gotham-Medium.otf`}"
+                android:id="@+id/shopping_cart_cell_remove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:text="@{tridion.removeLabel}"
+                tools:text="Remove"
+                android:textColor="@color/ticket_text_color"
+                android:onClick="@{() -> callback.onRemoveClicked(data.adultTicket, data.childTicket, data.orderId)}"
+                />
+
+        </LinearLayout>
+
+        <TextView style="@style/TextViewStyle.Normal.Red"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:id="@+id/shopping_cart_inventory_error_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{tridion.er53}"
+            tools:text="Sorry, the following item is no longer available. Please make another choice, or remove this item from your cart."
+            android:visibility="@{data.inventoryError? View.VISIBLE : View.GONE}"
+            tools:visibility="visible"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.universalstudios.orlandoresort.view.TicketCounterView
+                android:id="@+id/shopping_cart_cell_adult_counter_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:showButtons="@{data.showQuantityControls}"
+                bind:value="@{data.adultTicketQty}"
+                bind:min="@{data.adultMinQty}"
+                bind:max="@{data.adultMaxQty}"
+                bind:onIncremented="@{() -> callback.onAddSameItem(data.parkTicketGroups, ShoppingCartAdapter.TICKET_AGE_ADULT)}"
+                bind:onDecremented="@{() -> callback.onRemoveSameItem(data.adultTicket, data.orderId)}"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                tools:ignore="RtlHardcoded">
+                <TextView style="@style/TextViewStyle.Small.Black"
+                    bind:font="@{`fonts/Gotham-Medium.otf`}"
+                    android:id="@+id/shopping_cart_adult_title_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    tools:text="Adults"
+                    android:text="@{tridion.adultsLabel}"
+                    />
+
+                <TextView style="@style/TextViewStyle.Small.Black"
+                    bind:font="@{`fonts/Gotham-Medium.otf`}"
+                    android:id="@+id/shopping_cart_cell_adult_per_ticket_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:text="@{data.pricePerTicketAdult}"
+                    tools:text="($150 per ticket)"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView style="@style/TextViewStyle.Normal.Bold.Black"
+            bind:font="@{`fonts/Gotham-Bold.otf`}"
+            android:id="@+id/shopping_cart_cell_adult_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:text="@{data.adultTotal}"
+            tools:text="$300"
+            android:textSize="17sp"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+            <com.universalstudios.orlandoresort.view.TicketCounterView
+                android:id="@+id/shopping_cart_cell_child_counter_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:showButtons="@{data.showQuantityControls}"
+                bind:value="@{data.childTicketQty}"
+                bind:min="@{data.childMinQty}"
+                bind:max="@{data.childMaxQty}"
+                bind:onIncremented="@{() -> callback.onAddSameItem(data.parkTicketGroups, ShoppingCartAdapter.TICKET_AGE_CHILD)}"
+                bind:onDecremented="@{() -> callback.onRemoveSameItem(data.childTicket, data.orderId)}"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_height="wrap_content"
+                tools:ignore="RtlHardcoded">
+                <TextView style="@style/TextViewStyle.Small.Black"
+                    bind:font="@{`fonts/Gotham-Medium.otf`}"
+                    android:id="@+id/shopping_cart_child_title_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    tools:text="Adults"
+                    android:text="@{tridion.childLabel}"
+                    />
+
+                <TextView style="@style/TextViewStyle.Small.Black"
+                    bind:font="@{`fonts/Gotham-Medium.otf`}"
+                    android:id="@+id/shopping_cart_cell_child_per_ticket_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:text="@{data.pricePerTicketChild}"
+                    tools:text="($150 per ticket)"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView style="@style/TextViewStyle.Normal.Bold.Black"
+            bind:font="@{`fonts/Gotham-Bold.otf`}"
+            android:id="@+id/shopping_cart_cell_child_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            tools:text="$300"
+            android:text="@{data.childTotal}"
+            android:textSize="17sp"
+            tools:ignore="RtlHardcoded" />
+
+        <LinearLayout
+            android:id="@+id/shopping_cart_ticket_down_payment_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/lighter_gray"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="@{!TextUtils.isEmpty(data.downPaymentText)}"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/shopping_cart_ticket_down_payment_text"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.downPaymentText}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Down payment amount $222.50 + 1.15 taxes" />
+
+            <TextView
+                android:id="@+id/shopping_cart_ticket_down_payment_finance_text"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@{data.financeText}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="You financed $222.50 in 11 payments of $20.23" />
+
+        </LinearLayout>
+
+       <TextView
+            style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Black.otf`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:text="@{data.ticketSavingsMessage}"
+            android:visibility="@{(data.ticketSavingsMessage == null || data.ticketSavingsMessage.isEmpty() ||  !data.ticketSavingsMessageShown) ? View.GONE : View.VISIBLE}"
+           tools:text="you saved $40 off the gate prices."
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_poi_section_header_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_poi_section_header_root_container_height"
+    android:background="@color/poi_list_section_header_background_gray"
+    android:gravity="center" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_poi_section_header_title_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:text="XIDES"
+            android:textAllCaps="true"
+            android:textColor="@color/text_gray_dim"
+            android:textSize="14sp" />
+
+</LinearLayout>

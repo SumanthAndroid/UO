@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+     >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{tridion.createAccountNewLabel}"
+                tools:text="New?"
+                style="@style/TextViewStyle.GothamBold"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{tridion.createAccountLinkLabel}"
+                tools:text="Create an account."
+                android:textColor="@color/blue_color"
+                style="@style/TextViewStyle.GothamBold"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:id="@+id/tvCreateAccount" />
+
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="18dp"
+            style="@style/TextViewStyle.GothamBold"
+            android:text="@{tridion.emailAddressLabel}"
+            tools:text="Email"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="21sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/etEmail"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_register_text_background"
+            android:padding="5dp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{tridion.er6}"
+            tools:text="Please use a valid email address in the following format: Name@Domain.com."
+            android:textColor="#ff0000"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/tvErrorEmail"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@{tridion.passwordLabel}"
+            tools:text="Password"
+            android:textStyle="bold"
+            style="@style/TextViewStyle.GothamBold"
+            android:textColor="@android:color/black"
+            android:textSize="21sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/etPassword"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:imeActionLabel="@{tridion.doneLabel}"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_register_text_background"
+            android:padding="5dp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Please make sure your password has at least 8 characters, and is not identical to your email address."
+            android:textColor="#ff0000"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/tvErrorPassword"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="18dp"
+            android:text="@{tridion.forgotPasswordLabel}"
+            tools:text="Forgot Password"
+            style="@style/TextViewStyle.GothamBold"
+            android:textStyle="bold"
+            android:textColor="@color/blue_color"
+            android:textSize="21sp"
+            android:ellipsize="none"
+            android:singleLine="true" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="18sp"
+            android:text="@{tridion.rememberMeLabel}"
+            tools:text="Remember Me"
+            android:layout_marginStart="16dp"
+            android:checked="false"
+            android:id="@+id/cbRememberMe" />
+
+        <com.universalstudios.orlandoresort.view.fonts.Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="@{tridion.signInLabel}"
+            tools:text="Sign In"
+            android:background="@drawable/shape_tooltip_background"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/btnSignIn"
+            android:layout_marginBottom="25dp" />
+
+    </LinearLayout>
+</ScrollView>
+    <FrameLayout android:id="@+id/loading_view"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="@color/black_50_translucent"
+                 android:visibility="gone"
+                 tools:visibility="visible"
+                 tools:showIn="@layout/fragment_account_update_password">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+</FrameLayout>
+</layout>

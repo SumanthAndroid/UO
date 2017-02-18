@@ -1,0 +1,32 @@
+<!-- KEEP THIS FRAME LAYOUT, LISTVIEW ROWS REMOVE MARGINS SET BY THE ROOT LAYOUT -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_alert_item_footer_root_container"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp" 
+            android:background="@drawable/search_divider"
+            android:visibility="visible" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBookItalic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="18dp"
+            android:text="@string/alerts_list_alert_reset_message"
+            android:textColor="@color/text_gray"
+            android:textSize="13.5sp" />
+    </LinearLayout>
+
+</FrameLayout>

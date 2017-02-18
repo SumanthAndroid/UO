@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_guide_me"
+        android:icon="@drawable/ic_action_guide_me"
+        android:orderInCategory="99"
+        android:showAsAction="always|withText"
+        android:title="@string/action_guide_me"/>
+
+</menu>

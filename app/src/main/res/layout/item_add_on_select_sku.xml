@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_add_on_select_sku_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/state_list_background_select_sku"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/item_add_on_select_sku_title"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/state_list_select_sku_selector_text"
+        android:duplicateParentState="true"
+        android:textSize="12sp"
+        android:gravity="center"
+        tools:text="Title of Sku item"/>
+
+</RelativeLayout>

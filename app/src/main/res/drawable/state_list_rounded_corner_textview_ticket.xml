@@ -1,0 +1,55 @@
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android"  >
+    <item android:state_enabled="false">
+        <!-- This applies when the item is not checked. -->
+        <shape android:shape="rectangle"  >
+            <stroke
+                android:width="1dp"
+                android:color="@color/background_ticket_app_time" />
+
+            <solid android:color="@color/background_ticket_app_time" />
+
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+    <item android:state_activated="true" android:state_enabled="true">
+        <!-- This applies when the item is checked. -->
+        <shape android:shape="rectangle"  >
+            <stroke
+                android:width="1dp"
+                android:color="@color/blue_color" />
+
+            <solid android:color="@color/blue_color" />
+
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item>
+    <!-- This applies when the item is not checked. -->
+    <shape android:shape="rectangle"  >
+            <stroke
+                android:width="1dp"
+                android:color="@color/background_ticket_app_time" />
+
+            <solid android:color="@color/background_ticket_app_time" />
+
+            <padding
+                android:left="1dp"
+                android:right="1dp"
+                android:top="1dp" />
+
+            <corners android:radius="5dp" />
+    </shape>
+    </item>
+</selector>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioAlertItemViewModel"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.WalletFolioPaymentAdapter.WalletFolioPaymentActionCallback"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/set_alerts"
+                style="@style/TextViewStyle.Small.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:drawableEnd="@drawable/ic_arrow_down_blue"
+                android:drawablePadding="6dp"
+                android:onClick="@{() -> data.setExpanded(!data.expanded)}"
+                android:text="@{tridion.setAlertsLabel}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Set Alerts"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@id/set_alerts"
+                android:text="@{tridion.alertsHeaderLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Alerts"/>
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/TextViewStyle.Tiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/title"
+                android:layout_marginTop="8dp"
+                android:text="@{tridion.alertsHeaderCopy}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Receive an alert when a party member's spending limit is low"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/wallet_folio_button_selected_color"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:visibility="@{data.expanded}">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="-17dp"
+                android:src="@drawable/home_map_callout_caret"
+                android:tint="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/alert_title"
+                style="@style/TextViewStyle.Normal.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@{tridion.dailySpendingLimitSelectionLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="How would you like to receive alerts?"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:onClick="@{() -> data.setExpanded(false)}"
+                android:src="@drawable/ic_tab_filter_clear"
+                android:tint="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/update_profile"
+                style="@style/TextViewStyle.Small.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/alert_title"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_chevron_right"
+                android:drawablePadding="6dp"
+                android:drawableTint="@android:color/white"
+                android:gravity="center"
+                android:onClick="@{() -> callback.onUpdateProfileClicked()}"
+                android:paddingTop="@dimen/show_time_button_corner_radius"
+                android:text="@{tridion.alertsOptionHeaderLinkLabel}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Update Contact Info"/>
+
+            <CheckBox
+                android:id="@+id/email_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/update_profile"
+                android:layout_marginTop="8dp"
+                android:checked="@={data.emailChecked}"
+                android:theme="@style/CheckboxTheme.Dark"
+                bind:font="@{@string/font_gotham_book}"/>
+
+            <TextView
+                android:id="@+id/email_label"
+                style="@style/TextViewStyle.Small.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/email_checkbox"
+                android:layout_toEndOf="@id/email_checkbox"
+                android:text="@{tridion.alertsOptionEmailLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Email"/>
+
+            <TextView
+                android:id="@+id/email_description"
+                style="@style/TextViewStyle.Tiny.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/email_label"
+                android:layout_below="@id/email_label"
+                android:text="@{data.email}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="test.email@example.com"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/email_description">
+
+                <CheckBox
+                    android:id="@+id/phone_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="16dp"
+                    android:checked="@={data.phoneChecked}"
+                    android:theme="@style/CheckboxTheme.Dark"
+                    android:visibility="@{!TextUtils.isEmpty(data.phone)}"
+                    bind:font="@{@string/font_gotham_book}"/>
+
+                <TextView
+                    android:id="@+id/phone_label"
+                    style="@style/TextViewStyle.Small.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/phone_checkbox"
+                    android:layout_toEndOf="@id/phone_checkbox"
+                    android:text="@{tridion.alertsOptionTextLabel}"
+                    android:visibility="@{!TextUtils.isEmpty(data.phone)}"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Text"/>
+
+                <TextView
+                    android:id="@+id/phone_description"
+                    style="@style/TextViewStyle.Tiny.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/phone_label"
+                    android:layout_below="@id/phone_label"
+                    android:text="@{data.phone}"
+                    android:visibility="@{!TextUtils.isEmpty(data.phone)}"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:text="555-555-5555"/>
+
+                <Button
+                    android:id="@+id/save_button"
+                    style="@style/ButtonStyle.Colored.White"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/phone_description"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:onClick="@{() -> callback.onSaveClicked(data)}"
+                    android:text="@{tridion.saveLabel}"
+                    android:textColor="@color/wallet_folio_button_selected_color"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Save"/>
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    style="@style/ButtonStyle.Bordered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/save_button"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:onClick="@{() -> data.setExpanded(false)}"
+                    android:text="@{tridion.cancelLabel}"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Cancel"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

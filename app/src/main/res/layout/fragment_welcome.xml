@@ -1,0 +1,245 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/welcome_background_white"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="@dimen/welcome_view_text_width"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="18dp"
+                android:paddingTop="28dp" >
+
+                <!--
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/universal_orlando_logo"
+                    android:visibility="gone" />
+                -->
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamUltra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/welcome_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="38sp" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/welcome_message"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="13.5sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginTop="18dp"
+                    android:baselineAligned="false"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_welcome_rides" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_horizontal"
+                            android:text="@string/welcome_wait_times"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_welcome_shows" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_horizontal"
+                            android:text="@string/welcome_show_times"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="74dp"
+                            android:layout_height="74dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_welcome_wayfinding" />
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_horizontal"
+                            android:text="@string/welcome_directions"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/detail_divider_gray" />
+
+            <LinearLayout
+                android:id="@+id/fragment_welcome_view_express_pass_locations_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_list_default_list_selector_with_fade"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="32dp" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="14dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_welcome_express_pass"
+                    android:visibility="visible" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/welcome_express_pass_message"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="13.5sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_right_arrow"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@drawable/ab_bottom_solid_blue" >
+
+                <FrameLayout
+                    android:id="@+id/fragment_welcome_remind_later_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/state_list_actionbar_selector_with_fade"
+                    android:clickable="true" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_welcome_remind_later_text"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@string/welcome_button_remind_later"
+                        android:textColor="@color/text_white"
+                        android:textSize="18sp" />
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fragment_welcome_close_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/state_list_default_list_selector_with_fade"
+            android:padding="12dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_welcome_close" />
+    </RelativeLayout>
+
+</ScrollView>

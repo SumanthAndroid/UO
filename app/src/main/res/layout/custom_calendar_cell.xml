@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_calendar_cell_background_normal"
+    android:layout_margin="4dp"
+    android:padding="10dp">
+
+    <!-- The usage of dp below for the text size (rather than sp) is meant
+     so the text fits in each calendar cell and doesn't wrap to multiple lines. -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="1"
+        android:id="@+id/day"
+        android:textSize="9dp"
+        android:layout_gravity="center"
+        android:gravity="center" />
+</LinearLayout>

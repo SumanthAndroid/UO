@@ -1,0 +1,158 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/parking_reminder_background_white"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fragment_parking_reminder_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/fragment_parking_reminder_image_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/parking_picture_background"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_camera"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/fragment_parking_reminder_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/parking_picture_background"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_camera"
+                android:visibility="gone"/>
+        </FrameLayout>
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/parking_reminder_header_section"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_parking_reminder_section_text_container"
+            style="@style/SpinnerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_parking_reminder_section_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingBottom="8dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="8dp"
+                android:text="Xorth Garage"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="17sp"
+                app:font="fonts/Gotham-Medium.otf"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parking_reminder_header_level"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp"/>
+
+                <Spinner
+                    android:id="@+id/fragment_parking_reminder_level_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:saveEnabled="false"
+                    android:spinnerMode="dropdown"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parking_reminder_header_row"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp"/>
+
+                <Spinner
+                    android:id="@+id/fragment_parking_reminder_row_spinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:saveEnabled="false"
+                    android:spinnerMode="dropdown"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/parking_reminder_header_notes"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.EditText
+            android:id="@+id/fragment_parking_reminder_notes_edit_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top|left"
+            android:imeOptions="actionDone"
+            android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+            android:lineSpacingExtra="5dp"
+            android:maxLength="320"
+            android:maxLines="10"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"/>
+    </LinearLayout>
+</ScrollView>

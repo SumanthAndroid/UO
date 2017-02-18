@@ -1,0 +1,428 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.universalstudios.orlandoresort.controller.userinterface.wallet.ViewCardFragment"
+    >
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+
+        <import type="android.text.method.LinkMovementMethod"/>
+
+        <import type="com.universalstudios.orlandoresort.view.textview.InputFilters"/>
+
+        <variable
+            name="viewCard"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.CardViewModel"
+            />
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+
+        <variable
+            name="countryStateArrays"
+            type="com.universalstudios.orlandoresort.controller.userinterface.checkout.CountryStateArrays"
+            />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/payment_info_background_white"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:layout_marginTop="8dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle.Small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:text="@{tridion.cardsAcceptedLabel}"
+                    bind:font="@{@string/font_gotham_light}"
+                    tools:text="Cards Accepted"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:src="@drawable/cc_amex"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:src="@drawable/cc_mastercard"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:src="@drawable/cc_visa"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:padding="4dp"
+                    android:src="@drawable/cc_discover"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/fragment_view_card_primary"
+                    style="@style/TextViewStyle.Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> viewCard.onPrimaryClicked(viewCard.newCard, viewCard.creditCardInfo.primary)}"
+                    android:checked="@={viewCard.creditCardInfo.primary}"/>
+
+                <TextView
+                    style="@style/TextViewStyle.Heading.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tridion.primaryLabel}"
+                    bind:font="@{@string/font_gotham_bold}"
+                    tools:text="Primary"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextViewStyle.Heading.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:layout_marginTop="12dp"
+                android:text="@{tridion.creditCardNumberLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Credit Card Number"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <EditText
+                    android:id="@+id/fragment_view_card_card_number"
+                    style="@style/TextViewStyle.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="@dimen/fragment_margin_left"
+                    android:layout_marginRight="@dimen/fragment_margin_right"
+                    android:layout_marginStart="12dp"
+                    android:layout_toStartOf="@+id/fragment_view_card_add_delete_container"
+                    android:background="@drawable/shape_edit_text_background"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:lineSpacingExtra="5dp"
+                    android:maxLines="1"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="@={viewCard.creditCardInfo.creditCardNumber}"
+                    app:inputFilters="@{InputFilters.arr(InputFilters.allowedChars(`1234567890•`), InputFilters.length(20))}"
+                    bind:font="@{@string/font_gotham_medium}"/>
+
+                <FrameLayout
+                    android:id="@+id/fragment_view_card_add_delete_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/fragment_margin_right">
+
+                    <ImageView
+                        android:id="@+id/fragment_view_card_add_camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_scan_camera"
+                        android:visibility="visible"/>
+
+                    <ImageView
+                        android:id="@+id/fragment_view_card_delete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_action_delete"
+                        android:tint="@color/button_gray"
+                        android:visibility="gone"/>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.Heading.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:layout_marginTop="20dp"
+                android:text="@{tridion.expirationDateLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Expiration Date"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1">
+
+                    <com.universalstudios.orlandoresort.view.spinner.NoDefaultSpinner
+                        android:id="@+id/fragment_view_card_month_expire"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/shape_edit_text_background"
+                        android:entries="@{viewCard.creditCardInfo.EXPIRATION_MONTHS}"
+                        android:prompt="@{tridion.monthLabel}"
+                        android:selectedItemPosition="@={viewCard.creditCardInfo.expirationMonth}"
+                        tools:prompt="Month"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/ic_arrow_down_blue"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.universalstudios.orlandoresort.view.spinner.NoDefaultSpinner
+                        android:id="@+id/fragment_view_card_year_expire"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/shape_edit_text_background"
+                        android:entries="@{viewCard.creditCardInfo.EXPIRATION_YEARS}"
+                        android:prompt="@{tridion.yearLabel}"
+                        android:selectedItemPosition="@={viewCard.creditCardInfo.expirationYear}"
+                        tools:prompt="Year"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/ic_arrow_down_blue"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    style="@style/TextViewStyle.Heading.Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="4"
+                    android:text="@{tridion.securityCodeLabel}"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Security Code"/>
+
+                <ImageView
+                    android:id="@+id/fragment_view_card_security_code_info_popup"
+                    android:layout_width="@dimen/info_icon_size"
+                    android:layout_height="@dimen/info_icon_size"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_weight="1"
+                    android:src="@drawable/info_grey"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/fragment_view_card_security_code"
+                style="@style/TextViewStyle.Large"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="@dimen/fragment_margin_left"
+                android:layout_marginRight="@dimen/fragment_margin_right"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_edit_text_background"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:lineSpacingExtra="5dp"
+                android:maxLines="1"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="@={viewCard.creditCardInfo.securityCode}"
+                app:inputFilters="@{InputFilters.arr(InputFilters.allowedChars(`1234567890•`), InputFilters.length(4))}"
+                bind:font="@{@string/font_gotham_medium}"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/payment_info_light_gray_background"
+                android:paddingBottom="12dp"
+                android:paddingLeft="@dimen/fragment_margin_left"
+                android:paddingRight="@dimen/fragment_margin_right"
+                android:paddingTop="12dp"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/fragment_view_card_saved_billing_info_title"
+                    style="@style/TextViewStyle.Heading.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tridion.billingLabel}"
+                    bind:font="@{@string/font_gotham_bold}"
+                    tools:text="Billing"/>
+
+                <TextView
+                    android:id="@+id/fragment_add_card_saved_billing_info_spinner_title"
+                    style="@style/TextViewStyle.Heading.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_view_card_saved_billing_info_title"
+                    android:layout_marginTop="20dp"
+                    android:text="@{tridion.selectAddressLabel}"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Select Address"/>
+
+                <com.universalstudios.orlandoresort.view.spinner.NDSpinner
+                    android:id="@+id/fragment_view_card_saved_billing_info_spinner"
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_below="@+id/fragment_add_card_saved_billing_info_spinner_title"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/shape_edit_text_background"/>
+
+                <ImageView
+                    android:id="@+id/fragment_view_card_saved_billing_info_spinner_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/fragment_view_card_saved_billing_info_spinner"
+                    android:layout_alignTop="@+id/fragment_view_card_saved_billing_info_spinner"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_arrow_down_blue"/>
+
+                <TextView
+                    android:id="@+id/fragment_view_card_saved_billing_info_primary_label"
+                    style="@style/TextViewStyle.Normal.Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_view_card_saved_billing_info_spinner"
+                    android:layout_marginTop="4dp"
+                    android:text="@{tridion.primaryLabel}"
+                    android:visibility="gone"
+                    bind:font="@{@string/font_gotham_bold}"
+                    tools:text="Primary"
+                    tools:visibility="visible"/>
+
+                <TextView
+                    android:id="@+id/fragment_view_card_saved_billing_info_primary_address_text"
+                    style="@style/TextViewStyle.Normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fragment_view_card_saved_billing_info_primary_label"
+                    android:layout_marginTop="4dp"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="123 Main St\nSpringfield, NE 12345\nUnited States"/>
+
+                <TextView
+                    android:id="@+id/fragment_view_card_saved_billing_info_primary_address_edit"
+                    style="@style/TextViewStyle.Normal.Blue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/fragment_view_card_saved_billing_info_spinner"
+                    android:layout_marginTop="4dp"
+                    android:drawablePadding="8dp"
+                    android:drawableRight="@drawable/ic_arrow_right_blue"
+                    android:text="@{tridion.editLabel}"
+                    android:textAllCaps="true"
+                    android:visibility="gone"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="EDIT"/>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/fragment_view_card_add"
+                style="@style/ButtonStyle.Colored.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@{viewCard.enableAddButton? @drawable/shape_button_green_background : @drawable/shape_button_green_disable_background}"
+                android:enabled="@{viewCard.enableAddButton}"
+                android:text="@{tridion.addCardLabel}"
+                android:visibility="@{viewCard.newCard}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Add Card"/>
+
+            <Button
+                android:id="@+id/fragment_view_card_update"
+                style="@style/ButtonStyle.Colored.Green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@{viewCard.enableUpdateButton? @drawable/shape_button_green_background : @drawable/shape_button_green_disable_background}"
+                android:enabled="@{viewCard.enableUpdateButton}"
+                android:text="@{tridion.updateLabel}"
+                android:visibility="@{!viewCard.newCard}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="UPDATE"/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

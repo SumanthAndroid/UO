@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/list_event_schedule_item_primary_text"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="3dp"
+        android:text="Sat, Sep 26"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="14sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/list_event_schedule_item_primary_sub_text"
+        style="@style/TextViewStyle.GothamBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:lineSpacingExtra="4dp"
+        android:text="Open 10:30 AM - 12:00 PM"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp" />
+
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp" >
+
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="12dp"
+        android:background="@color/explore_list_no_image_background_gray" >
+
+        <ImageView
+            android:id="@+id/list_event_activity_item_no_image_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_no_image_logo_list"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/list_event_activity_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:visibility="visible" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_event_activity_item_title_textview"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_event_activity_item_description_textview"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

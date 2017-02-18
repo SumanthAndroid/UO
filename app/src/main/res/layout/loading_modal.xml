@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loading_modal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#77000000"
+    android:clickable="true"
+    android:visibility="gone"
+    tools:visibility="gone"
+    tools:showIn="@layout/fragment_newsletter">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#ffffffff"
+        android:padding="12dp">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:padding="0dp"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sending"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</FrameLayout>

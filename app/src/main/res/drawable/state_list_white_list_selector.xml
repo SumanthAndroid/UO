@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- Pressed state - touch press or D-pad / physical keyboard click -->
+    <item android:drawable="@drawable/default_list_pressed" android:state_pressed="true"/>
+
+    <!-- Selected/Focused state - D-pad / physical keyboard -->
+    <item android:drawable="@drawable/default_list_focused" android:state_selected="true"/>
+    <item android:drawable="@drawable/default_list_focused" android:state_focused="true"/>
+
+    <!-- Normal state -->
+    <item android:drawable="@android:color/white"/>
+
+</selector>

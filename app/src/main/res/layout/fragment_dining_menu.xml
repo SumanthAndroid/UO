@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/dining_menu_detail_background_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="20dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamUltra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/dining_menu_detail_dining_menu"
+                android:textColor="@color/text_white"
+                android:textSize="26sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_dining_menu_page_textview"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="1 of 2 items"
+                android:textColor="@color/text_gray"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:gravity="center_vertical|right"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/fragment_dining_menu_close_imageview"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_menu_close_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+        android:id="@+id/fragment_dining_menu_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/fragment_dining_menu_instructions_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:background="#848484" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/ic_spread_to_zoom" />
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:background="#848484" />
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingBottom="10dp"
+            android:text="@string/dining_menu_detail_spread_to_zoom"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

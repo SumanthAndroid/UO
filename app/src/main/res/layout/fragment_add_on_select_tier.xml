@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.userinterface.addons.AddOnSelectTierFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_add_on_select_tier_title"
+            style="@style/TextViewStyle.GothamUltra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@color/text_gray_darkest"
+            android:textSize="21sp"
+            tools:text="Blue Man Group Show"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_add_on_select_tier_summary"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@color/text_gray_darkest"
+            android:textSize="12sp"
+            tools:text="Choose the time you'd like to spend with us."/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_add_on_select_tier_description"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@color/text_gray_darkest"
+            android:textSize="21sp"
+            tools:text="Select Tier"/>
+
+        <ProgressBar
+            android:id="@+id/fragment_add_on_select_tier_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/fragment_add_on_select_tier_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_add_on_select_tier_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_add_on_select_tier"/>
+
+
+            <android.support.percent.PercentRelativeLayout
+                android:id="@+id/fragment_add_on_select_tier_selected_item_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_widthPercent="50%">
+
+                    <ImageView
+                        android:id="@+id/fragment_add_on_select_tier_selected_item_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="vertical"
+                    android:padding="4dp"
+                    app:layout_widthPercent="50%">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_add_on_select_tier_selected_item_title"
+                        style="@style/TextViewStyle.GothamUltra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_gray_darkest"
+                        tools:text="Tier 1 Section"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_add_on_select_tier_selected_item_availability"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:textColor="@color/text_gray_darkest"
+                        android:visibility="gone"
+                        tools:text="50 Seats available"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_add_on_select_tier_selected_item_description"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp"
+                        android:textColor="@color/text_gray_darkest"
+                        tools:text="Majority of the house seats. No obstructions or blocked sightlines."/>
+
+                </LinearLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

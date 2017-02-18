@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.items.CartPromoAppliedItem" />
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.ShoppingCartAdapter.ShoppingCartActionCallback" />
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lighter_gray"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/promo_applied_label"
+            style="@style/TextViewStyle.Normal.Black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{tridion.enterPromoOrUPCCodeLabel}"
+            android:textColor="@color/gray_darkest"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            tools:text="Enter PROMO or UPC Code" />
+
+        <EditText
+            android:id="@+id/promo_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/promo_applied_label"
+            android:layout_marginTop="8dp"
+            android:addTextChangedListener="@{data.textWatcher}"
+            android:background="@{data.validCode == null ? @drawable/shape_rectangle_with_border_line : data.validCode ? @drawable/shape_rectangle_with_border_line : @drawable/shape_rectangle_with_border_line_red}"
+            android:inputType="text"
+            android:padding="16dp"
+            android:text="@{data.promoCode}"
+            tools:text="50F131" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/promo_edittext"
+            android:layout_marginTop="16dp">
+
+            <com.universalstudios.orlandoresort.view.imageview.SquareImageView
+                android:id="@+id/promo_valid_imageview"
+                android:layout_width="19dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/promo_valid_textView"
+                android:src="@drawable/ic_check"
+                android:tint="@color/green"
+                android:visibility="@{data.validCode == null ? View.GONE : data.validCode ? View.VISIBLE : View.GONE}" />
+
+            <TextView
+                android:id="@+id/promo_valid_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/promo_valid_imageview"
+                android:height="19dp"
+                android:text="@{tridion.validCodeText}"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="@{data.validCode == null ? View.GONE : data.validCode ? View.VISIBLE : View.GONE}"
+                bind:font="@{`fonts/Gotham-Book.otf`}"
+                tools:text="Valid Code" />
+
+            <com.universalstudios.orlandoresort.view.imageview.SquareImageView
+                android:id="@+id/promo_invalid_imageview"
+                android:layout_width="19dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/promo_invalid_textView"
+                android:src="@drawable/ic_tab_filter_clear"
+                android:tint="@color/red"
+                android:visibility="@{data.validCode == null ? View.GONE : data.validCode ? View.GONE : View.VISIBLE}"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/promo_invalid_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/promo_invalid_imageview"
+                android:height="19dp"
+                android:text="@{tridion.er62}"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="@{data.validCode == null ? View.GONE : data.validCode ? View.GONE : View.VISIBLE}"
+                bind:font="@{`fonts/Gotham-Book.otf`}"
+                tools:text="This code is not valid"
+                tools:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_alignParentEnd="true"
+                android:onClick="@{() -> callback.onAddPromoCodeToCart(data.promoCode)}"
+                android:text="@{tridion.applyLabel}"
+                android:textAllCaps="true"
+                android:textColor="@color/button_primary_default"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                bind:font="@{`fonts/Gotham-Medium.otf`}"
+                tools:text="Apply" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

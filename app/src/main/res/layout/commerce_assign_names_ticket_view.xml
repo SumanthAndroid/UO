@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignableTicketItem"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignNamesAssignmentAdapter.AssignNamesAssignmentActionCallback"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:animateLayoutChanges="true"
+            android:background="@{data.selected ? @drawable/ticket_product_blue_background : @drawable/shape_commerce_assign_names_ticket_background}"
+            android:onClick="@{() -> callback.onTicketSelected(data)}"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            tools:background="@drawable/shape_commerce_assign_names_ticket_background">
+
+            <CheckBox
+                android:id="@+id/cbAssignTicketTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:checked="@{data.selected}"
+                android:onCheckedChanged="@{(view, checked) -> callback.onTicketChecked(data, checked)}"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/tvAssignTicketsTitle"
+                style="@style/TextViewStyle.Normal.Bold.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cbAssignTicketTicket"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cbAssignTicketTicket"
+                android:text="@{data.assignNamesAlternativeHeaderLine1}"
+                android:textColor="@{data.selected ? @color/text_white : @color/text_black}"
+                bind:font="@{@string/font_gotham_bold}"
+                tools:text="2-DAY 3 PARK TICKET PARK-TO-PARK"
+                tools:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tvAssignTicketsDesc"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tvAssignTicketsTitle"
+                android:layout_below="@+id/tvAssignTicketsTitle"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.assignNamesAlternativeHeaderLine2}"
+                android:textColor="@{data.selected ? @color/text_white : @color/text_black}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Universal Studios Florida + Universal Studios island of adventure"/>
+
+            <TextView
+                android:id="@+id/tvAdultChildText"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/tvAssignTicketsDesc"
+                android:layout_below="@+id/tvAssignTicketsDesc"
+                android:layout_marginBottom="16dp"
+                android:text="@{data.assignNamesAlternativeHeaderLine3}"
+                android:textColor="@{data.selected ? @color/text_white : @color/text_black}"
+                android:visibility="@{!TextUtils.isEmpty(data.assignNamesAlternativeHeaderLine3)}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Adult"/>
+
+            <RelativeLayout
+                android:id="@+id/dob_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvAdultChildText"
+                android:padding="16dp"
+                android:visibility="@{(data.isAnnualPass() &amp;&amp; data.selected)}"
+                tools:background="@color/ticket_product_blue_background">
+
+                <TextView
+                    android:id="@+id/dob_label_text"
+                    style="@style/TextViewStyle.Normal.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@{tridion.dOBLabel}"
+                    android:textColor="@color/text_white"
+                    bind:font="@{@string/font_gotham_bold}"
+                    tools:text="Date of Birth"/>
+
+                <ImageView
+                    android:id="@+id/dob_info_image"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:onClick="@{() ->callback.onBirthDateInfoIconClicked()}"
+                    android:src="@drawable/info_blue_bigger"
+                    android:tint="@color/text_white"/>
+
+                <EditText
+                    android:id="@+id/dob_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dob_info_image"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/text_white"
+                    android:focusable="false"
+                    android:hint="@{tridion.DOBFormat}"
+                    android:inputType="date"
+                    android:onClick="@{() -> callback.onDatePickerClicked(data)}"
+                    android:padding="16dp"
+                    android:text="@{data.dobText}"
+                    tools:hint="mm/dd/yyyy"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

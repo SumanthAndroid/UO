@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/fragment_wallet_folio_radio_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/container_detail_images_and_title" />
+
+        <RadioGroup
+            android:id="@+id/fragment_wallet_folio_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/fragment_wallet_folio_purchases"
+                style="@style/TabRadioButton.WalletFolio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/wallet_folio_purchases_tab"
+                android:textAllCaps="true" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/text_white" />
+            <!-- TODO: Remove visibility flag -->
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/fragment_wallet_folio_media"
+                style="@style/TabRadioButton.WalletFolio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/wallet_folio_media_tab"
+                android:textAllCaps="true" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/text_white" />
+            <RadioButton
+                android:id="@+id/fragment_wallet_folio_payment"
+                style="@style/TabRadioButton.WalletFolio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/wallet_folio_payment_tab"
+                android:textAllCaps="true" />
+        </RadioGroup>
+    </LinearLayout>
+
+
+
+    <FrameLayout
+        android:id="@+id/wallet_folio_fragment_container"
+        android:layout_below="@+id/fragment_wallet_folio_radio_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/wallet_folio_background_color">
+        <ProgressBar
+            android:id="@+id/wallet_folio_detail_progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            tools:visibility="visible"/>
+    </FrameLayout>
+</RelativeLayout>

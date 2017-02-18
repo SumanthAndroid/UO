@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_white_rounded_background"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="20dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/popup_info_image_view"
+        android:layout_gravity="center_horizontal"
+         android:src="@drawable/info_blue_bigger" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/popup_info_text_view"
+        style="@style/TextViewStyle.GothamBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ascsjacb"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/text_shadow_black"
+        android:textSize="16sp" />
+
+
+    <com.universalstudios.orlandoresort.frommergeneedsrefactor.uo_network_library.view.fonts.Button
+        android:layout_width="match_parent"
+        android:id="@+id/button_1"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textColor="@color/text_white"
+        android:visibility="gone"
+        android:background="@drawable/state_list_button_background"/>
+    
+</LinearLayout>

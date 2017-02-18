@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.universalstudios.orlandoresort.view.fonts.CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+    android:ellipsize="marquee"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:paddingEnd="7dp"
+    android:paddingRight="7dp"
+    android:paddingStart="12dp"
+    android:paddingLeft="12dp"
+    android:textSize="@dimen/advanced_filter_multi_choice_item_font_size"
+    android:textColor="@color/text_gray_dark"
+    android:background="@drawable/state_list_default_list_selector_with_fade"
+    style="@style/TextViewStyle.GothamMedium" >
+
+</com.universalstudios.orlandoresort.view.fonts.CheckedTextView>

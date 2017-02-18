@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Global -->
+    <string name="app_name">Universal CA</string>
+    <string name="app_stat_sub_text">Universal Studios Hollywood</string>
+
+    <!-- Custom Font Locations -->
+    <string name="font_gotham_black">fonts/Oswald-Regular.ttf</string>
+    <string name="font_gotham_black_italic">fonts/Oswald-RegularItalic.ttf</string>
+    <string name="font_gotham_bold">fonts/Lato-Bold.ttf</string>
+    <string name="font_gotham_bold_italic">fonts/Lato-BoldItalic.ttf</string>
+    <string name="font_gotham_book">fonts/Lato-Regular.ttf</string>
+    <string name="font_gotham_book_italic">fonts/Lato-Italic.ttf</string>
+    <string name="font_gotham_extra_light">fonts/Gotham-Extra Light.otf</string>
+    <string name="font_gotham_extra_light_italic">fonts/Gotham-Extra Light Italic.otf</string>
+    <string name="font_gotham_light">fonts/Gotham-Light.otf</string>
+    <string name="font_gotham_light_italic">fonts/Gotham-Light Italic.otf</string>
+    <string name="font_gotham_medium">fonts/Lato-Bold.ttf</string>
+    <string name="font_gotham_medium_italic">fonts/Lato-BoldItalic.ttf</string>
+    <string name="font_gotham_thin">fonts/Gotham-Thin.otf</string>
+    <string name="font_gotham_thin_italic">fonts/Gotham-Thin Italic.otf</string>
+    <string name="font_gotham_ultra">fonts/Oswald-Medium.ttf</string>
+    <string name="font_gotham_ultra_italic">fonts/Oswald-MediumItalic.ttf</string>
+    <string name="font_oswald_bold">fonts/Oswald-Bold.ttf</string>
+    <string name="font_oswald_demibold">fonts/Oswald-DemiBold.ttf</string>
+
+    <!-- Custom Font items -->
+    <string name="font_actionbar_title">@string/font_gotham_ultra</string>
+    <string name="font_drawer_item_title">@string/font_gotham_ultra</string>
+    <string name="font_divider_title">@string/font_gotham_bold</string>
+    <string name="font_tutorial_button">@string/font_gotham_black</string>
+
+    <!-- Action Bar -->
+    <string name="action_title_drawer">Universal Hollywood</string>
+    <string name="action_title_express_pass">Front of Line Ticket</string>
+
+    <!-- Menu Drawer -->
+    <string name="drawer_item_favorites">Itineraries</string>
+    <string name="drawer_item_park_news">Park Updates</string>
+    <string name="drawer_item_events">Special Events</string>
+    <string name="drawer_item_buy_tickets">Park Tickets</string>
+    <string name="drawer_item_rental_services">Strollers &amp; Wheelchairs</string>
+
+    <!-- Custom Calendar -->
+    <string name="day_name_format">EEEEE</string>
+
+    <!-- List Page -->
+    <string name="list_no_favorites_title">You don\'t have any items in your itinerary yet!</string>
+    <string name="list_no_favorites_message_part_1">Tap the</string>
+    <string name="list_no_favorites_message_part_2">to add to your itinerary</string>
+
+    <!-- POI List Item -->
+    <string name="poi_list_item_shop_sells_express_pass_info">Front of Line Ticket sold here</string>
+
+    <!-- POI List Section Headers -->
+    <string name="poi_list_header_entertainment">PLAY</string>
+    <string name="poi_list_header_sort_wait_times_unknown">NO WAIT TIME AVAILABLE</string>
+
+    <!-- Detail Page -->
+    <string name="detail_feature_express_pass_line">Front of Line Ticket Accepted</string>
+    <string name="detail_feature_express_pass_participating_attractions">Participating Attractions</string>
+    <string name="detail_feature_express_pass_sold_here">Front of Line Ticket Sold Here</string>
+    <string name="detail_feature_express_pass_line_get_pass">Get Ticket</string>
+    <string name="detail_basic_info_express_pass_line_description"><![CDATA[&#8226; Get one-time priority access to all rides, shows and attractions* including Despicable Me Minion Mayhem, Transformers: The Ride – 3D and Harry Potter and the Forbidden Journey™.<br/>&#8226; Reserved seating at each show<br/>&#8226; Includes 1-day Park admission<br/><br/>&#8727; Excludes children’s play areas.]]></string>
+    <string name="detail_basic_info_express_pass_line_buy_in_park">Buy In Park</string>
+    <string name="detail_basic_info_express_pass_line_buy_online">Buy Online</string>
+
+    <!-- Parking Reminder Options -->
+    <string name="parking_reminder_header_row">AISLE</string>
+
+    <!-- Splash Page -->
+    <string name="splash_loading_content_description">Loading Universal Hollywood</string>
+
+    <!-- Help Page -->
+    <string name="help_option_uo_express_pass">Front of Line Ticket</string>
+
+    <!-- Hours and Directions Page -->
+    <string name="hours_and_directions_resort_hours">Park Hours</string>
+    <string name="hours_and_directions_resort_hours_message">Park hours vary throughout the year and are subject to change. For most up-to-date Park hours, see the Park Hours Calendar below.\n\nEARLY PARK ADMISSION: Buy your ticket online to receive Early Park Admission to The Wizarding World of Harry Potter™. Early Park Admission begins one hour before the Theme Park opens and is subject to availability, cancellation and change.</string>
+
+    <!-- News Pages -->
+    <string name="news_view_universal_express">View Front of Line Ticket</string>
+    <string name="news_view_favorites">View Itineraries</string>
+    <string name="news_view_entertainment">View Play</string>
+    <string name="news_view_rides">View Attractions</string>
+    <string name="news_view_shows">View Attractions</string>
+
+    <!-- Advanced Filter Page -->
+    <!-- Advanced Filter: Accessibilty / Express / Kid Friendly -->
+    <string name="advanced_filter_other_express_pass_line">Front of Line Ticket Accepted</string>
+
+    <!-- Advanced Filter: Rides -->
+    <string name="advanced_filter_ride_child_swap">Child Switch</string>
+
+    <!-- Advanced Filter: Shopping -->
+    <string name="advanced_filter_shopping_sells_express_pass">Sells Front of Line Ticket</string>
+    <string name="action_title_child_swap">Child Switch</string>
+    <!-- Order and contents matches FilterOptions.SHOPPING_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_shopping_sub_types">
+        <item>@string/explore_filter_tab_apparel_accessories</item>
+        <item>@string/explore_filter_tab_collectibles</item>
+        <item>@string/explore_filter_tab_games_novelties</item>
+        <item>@string/explore_filter_tab_food_specialties</item>
+        <item>@string/explore_filter_tab_health_beauty</item>
+    </string-array>
+
+    <!-- Advanced Filter: Entertainment -->
+    <string name="advanced_filter_filter_entertainment">Filter Play</string>
+    <string name="advanced_filter_entertainment_type">Play Type</string>
+    <!-- Order and contents matches FilterOptions.ENTERTAINMENT_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_entertainment_sub_types">
+        <item>@string/explore_filter_tab_night_spots</item>
+        <item>@string/explore_filter_tab_experiences</item>
+    </string-array>
+
+    <!-- Advanced Filter: Dining -->
+    <!-- Order and contents matches FilterOptions.DINING_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_dining_sub_types">
+        <item>@string/explore_filter_tab_casual</item>
+        <item>@string/explore_filter_tab_quick_service</item>
+        <item>@string/explore_filter_tab_snack</item>
+    </string-array>
+
+
+    <!-- Detail Page -->
+    <string name="detail_feature_child_swap">Child Switch</string>
+    <string name="detail_feature_entertainment">Play</string>
+    <string name="detail_basic_info_child_swap_title">What is Child Switch?</string>
+    <string name="detail_header_entertainment_detail">PLAY DETAILS</string>
+
+    <!-- Help Page -->
+    <string name="help_option_child_swap">Child Switch</string>
+
+    <!-- About WiFi Page -->
+    <string name="about_wifi_message">Enjoy complimentary wireless Internet throughout Universal Studios Hollywood and City walk powered by XFINITY WiFi</string>
+    <string name="about_wifi_message_content_description">Enjoy complimentary wireless Internet throughout Universal Studios Hollywood and City walk powered by XFINITY WiFi. It\'s easy to get connected and can help save cellular data.</string>
+    <string name="about_wifi_item_1">Enable WiFi on your device</string>
+    <string name="about_wifi_item_2">Select \"%1$s\"</string>
+    <string name="about_wifi_item_4">Follow the on-screen prompts to start session</string>
+    <string name="about_wifi_xfinity_logo_content_description">xfinity WiFi</string>
+
+    <!-- Child Swap Page -->
+    <string name="child_swap_page_title">What Is Child Switch?</string>
+
+    <!-- Tutorial Pages -->
+    <string name="tutorial_navigating_message">As you explore Universal Studios Hollywood, you can use the side drawer to explore the theme parks and properties.</string>
+    <string name="tutorial_map_message">Whenever you need it, you can view a map of Universal Hollywood and be guided to any point of interest.</string>
+    <string name="tutorial_detail_message">As you explore, each attraction has a section where you can find helpful information like a description, height and accessibility details.</string>
+    <string name="tutorial_wait_times_message">View ride wait times and show times for all your favorite attractions!</string>
+    <string name="tutorial_alerts_message">You can use the wait time reminder to alert you when your favorite attractions have shorter wait times.</string>
+
+    <!--Alerts-->
+    <string name="alerts_list_alert_reset_message">Alerts are removed each night after the park closes. Please set new alerts each day you visit Universal Studios Hollywood.</string>
+
+
+    <!-- Explore Filter Tabs -->
+    <string name="explore_filter_tab_entertainment">PLAY</string>
+
+    <!-- Express Pass Notifications -->
+    <string name="ex_pass_stat_reminder_title">Front of the Line Ticket</string>
+    <string name="ex_pass_stat_reminder_content">Skip the regular lines – purchase a Front of the Line Ticket!</string>
+    <string name="ex_pass_stat_reminder_ticker">Skip the regular lines – purchase a Front of the Line Ticket!</string>
+
+    <!-- Contact Guest Services Page -->
+    <string name="contact_guest_services_title">Contact Us</string>
+    <string name="contact_guest_services_message">Thank you for visiting Universal Studios Hollywood. If you need assistance, you can contact us using the options below.</string>
+
+</resources>

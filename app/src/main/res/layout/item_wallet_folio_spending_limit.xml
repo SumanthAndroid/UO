@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioSpendingLimitItemViewModel"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.WalletFolioPaymentAdapter.WalletFolioPaymentActionCallback"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/wallet_folio_item_spending_name"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="@{data.name}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text='Mary Worthington'/>
+
+            <TextView
+                android:id="@+id/wallet_folio_item_spending_limit"
+                style="@style/TextViewStyle.Small.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="@{data.limitMessage}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="$150.00 / $200"/>
+
+            <ProgressBar
+                android:id="@+id/wallet_folio_item_spending_limit_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_below="@+id/wallet_folio_item_spending_name"
+                android:layout_marginTop="8dp"
+                android:indeterminate="false"
+                android:progress="@{data.progress}"
+                bind:progressColor="@{data.nearLimit ? @color/red : @color/green}"
+                tools:progress="30"/>
+
+            <TextView
+                android:id="@+id/wallet_folio_item_spending_limit_edit"
+                style="@style/TextViewStyle.Small.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/wallet_folio_item_spending_limit_progress_bar"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/ic_arrow_down_blue"
+                android:drawablePadding="6dp"
+                android:onClick="@{() -> data.setExpanded(!data.expanded)}"
+                android:text="@{tridion.editLabel}"
+                android:textAllCaps="true"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Edit"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/wallet_folio_button_selected_color"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            android:visibility="@{data.expanded}">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="-17dp"
+                android:src="@drawable/home_map_callout_caret"
+                android:tint="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/wallet_folio_item_spending_limit_label"
+                style="@style/TextViewStyle.Normal.White"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="@{tridion.dailySpendingLimitSelectionLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text='Daily Spending Limit'/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:onClick="@{() -> data.setExpanded(false)}"
+                android:src="@drawable/ic_tab_filter_clear"
+                android:tint="@android:color/white"/>
+
+            <RadioGroup
+                android:id="@+id/wallet_folio_item_spending_limit_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_folio_item_spending_limit_label"
+                android:layout_marginTop="16dp"
+                android:checkedButton="@={data.limitType}"
+                android:orientation="vertical"
+                android:theme="@style/RadioGroupTheme.Dark">
+
+                <RadioButton
+                    android:id="@+id/wallet_folio_item_spending_limit_limit_1"
+                    style="@style/RadioButtonStyle.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tridion.dailySpendingLimitOption1Label}"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:text="No charging privileges"/>
+
+                <RadioButton
+                    android:id="@+id/wallet_folio_item_spending_limit_limit_2"
+                    style="@style/RadioButtonStyle.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{tridion.dailySpendingLimitOption2Label}"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:text="No limit per day"/>
+
+
+                <RadioButton
+                    android:id="@+id/wallet_folio_item_spending_limit_limit_3"
+                    style="@style/RadioButtonStyle.White"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@{tridion.dailySpendingLimitOption3Label}"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:checked="true"
+                    tools:text="Limit per day"/>
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/item_spending_limit_edit_text"
+                style="@style/EditTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_alignBottom="@id/wallet_folio_item_spending_limit_radio_group"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@id/wallet_folio_item_spending_limit_radio_group"
+                android:enabled="@{data.limitType == data.LIMIT_TYPE_LIMIT_PER_DAY}"
+                android:inputType="number"
+                android:maxLength="14"
+                android:onTextChanged="@{data.onTextChanged}"
+                android:paddingLeft="12dp"
+                android:text="@={data.limitAmount}"
+                tools:text="100"/>
+
+            <TextView
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignStart="@id/item_spending_limit_edit_text"
+                android:layout_alignTop="@id/item_spending_limit_edit_text"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
+                android:text="@{tridion.priceDenomination}"
+                tools:text="$"/>
+
+            <Button
+                android:id="@+id/wallet_folio_item_spending_limit_confirm_button"
+                style="@style/ButtonStyle.Colored.White"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_folio_item_spending_limit_radio_group"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:onClick="@{() -> callback.onConfirmClicked(data)}"
+                android:text="@{tridion.confirmLabel}"
+                android:textColor="@color/wallet_folio_button_selected_color"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Confirm"/>
+
+            <Button
+                android:id="@+id/wallet_folio_item_spending_limit_cancel_button"
+                style="@style/ButtonStyle.Bordered"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wallet_folio_item_spending_limit_confirm_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:onClick="@{() -> data.setExpanded(false)}"
+                android:text="@{tridion.cancelLabel}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Cancel"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

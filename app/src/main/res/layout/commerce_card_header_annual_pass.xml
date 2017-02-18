@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.model.state.content.TridionLabelSpec"
+            />
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.tickets.models.CommerceCardItem"
+            />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/commerce_card_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            bind:imageUrl="@{tridion.getTypeHeaderLogo}"
+            bind:layout_constraintBottom_toBottomOf="parent"
+            bind:layout_constraintLeft_toLeftOf="parent"
+            bind:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/commerce_card_title"
+            style="@style/TextViewStyle.GothamUltra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:maxLines="1"
+            android:text="@{tridion.getTypeHeaderLine1(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            bind:font="@{@string/font_gotham_ultra}"
+            bind:layout_constraintLeft_toRightOf="@+id/commerce_card_image"
+            bind:layout_constraintTop_toTopOf="@+id/commerce_card_image"
+            tools:text="3 DAY - 3 PARK TICKET Park-to-Park"/>
+
+        <TextView
+            android:id="@+id/commerce_card_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@{tridion.getTypeHeaderLine2(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            bind:font="@{@string/font_gotham_medium}"
+            bind:layout_constraintLeft_toRightOf="@+id/commerce_card_image"
+            bind:layout_constraintTop_toBottomOf="@+id/commerce_card_title"
+            tools:text="Universal Studio Florida +\n Universal\'s Islands of Adventure +\n Universal\'s Volcano Bay"
+            android:layout_marginTop="0dp"/>
+
+        <TextView
+            android:id="@+id/commerce_card_second_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:text="@{tridion.getTypeHeaderLine3(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="15sp"
+            android:visibility="@{!TextUtils.isEmpty(tridion.getTypeHeaderLine3(data))}"
+            bind:font="@{@string/font_gotham_light}"
+            bind:layout_constraintLeft_toRightOf="@+id/commerce_card_image"
+            bind:layout_constraintTop_toBottomOf="@+id/commerce_card_description"
+            tools:text="Valid until 02/30"
+            tools:visibility="visible"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

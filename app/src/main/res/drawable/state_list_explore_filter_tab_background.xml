@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Pressed state - touch press or D-pad / physical keyboard click -->
+    <item android:drawable="@drawable/default_list_pressed" android:state_pressed="true"/>
+
+    <!-- Toggle state on -->
+    <item android:drawable="@color/explore_filter_tab_button_on" app:state_checked="true"/>
+
+    <!-- Toggle state off -->
+    <item android:drawable="@color/explore_filter_tab_button_off" app:state_checked="false"/>
+
+</selector>

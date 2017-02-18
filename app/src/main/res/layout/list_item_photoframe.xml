@@ -1,0 +1,84 @@
+
+<!-- KEEP THIS FRAME LAYOUT, LISTVIEW ROWS REMOVE MARGINS SET BY THE ROOT LAYOUT -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_poi_item_root_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/explore_list_poi_card_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp" >
+
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_list_explore_list_poi_background_with_fade"
+            android:orientation="vertical"
+            android:padding="16dp"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <ImageView
+                    android:id="@+id/list_poi_item_no_image_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="16dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_no_image_logo_list"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/ivFrameImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:scaleType="fitXY"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+            </FrameLayout>
+
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/tvFrameSelectionItemDetail"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="XNIVERSAL STUDIOS FLORIDA"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="13sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/tvFrameSelectionItem"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="XNIVERSAL STUDIOS FLORIDA"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
+
+

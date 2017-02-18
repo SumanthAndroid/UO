@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/ic_menu_wallet"
+    android:id ="@+id/layer_list_toggle_icon"
+    android:tint="@color/floating_action_button_white"/>

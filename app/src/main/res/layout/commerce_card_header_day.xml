@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.text.TextUtils"/>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.model.state.content.TridionLabelSpec"
+            />
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.tickets.models.CommerceCardItem"
+            />
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/commerce_card_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{tridion.getTypeHeaderLine1(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            bind:font="@{@string/font_gotham_ultra}"
+            tools:text="3 DAY - 3 PARK TICKET Park-to-Park"/>
+
+        <TextView
+            android:id="@+id/commerce_card_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{tridion.getTypeHeaderLine2(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="16sp"
+            bind:font="@{@string/font_gotham_medium}"
+            tools:text="Universal Studio Florida +\n Universal\'s Islands of Adventure +\n Universal\'s Volcano Bay"/>
+
+        <TextView
+            android:id="@+id/commerce_card_second_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center_horizontal"
+            android:text="@{tridion.getTypeHeaderLine3(data)}"
+            android:textColor="@color/text_white"
+            android:textSize="15sp"
+            android:visibility="@{!TextUtils.isEmpty(tridion.getTypeHeaderLine3(data))}"
+            bind:font="@{@string/font_gotham_light}"
+            tools:text="Valid until 02/30"
+            tools:visibility="visible"/>
+    </LinearLayout>
+
+</layout>

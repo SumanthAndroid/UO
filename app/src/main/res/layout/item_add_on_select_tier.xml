@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_add_on_select_tier_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/state_list_default_list_selector"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <com.universalstudios.orlandoresort.view.fonts.RadioButton
+        android:id="@+id/item_add_on_select_tier_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:clickable="false"
+        android:focusable="false"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/item_add_on_select_tier_title"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:textColor="@color/text_gray_darkest"
+            tools:text="Tier 2"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/item_add_on_select_tier_adult"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:textColor="@color/text_gray_darkest"
+            tools:text="Adult: $75.00"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/item_add_on_select_tier_child"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_gray_darkest"
+            tools:text="Child: $65.00"/>
+    </LinearLayout>
+
+</LinearLayout>

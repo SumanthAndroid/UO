@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.universalstudios.orlandoresort.view.custom_calendar.CustomCalendarView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_custom_calendar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/event_calendar_previous_month"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_chevron_left_white_24dp"
+            android:tint="@android:color/darker_gray"/>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/event_calendar_month_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:text="October 2016"
+            android:textColor="@color/custom_calendar_blue"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/event_calendar_next_month"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_chevron_right_white_24dp"
+            android:tint="@android:color/darker_gray"/>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/event_calendar_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/event_calendar_description_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/event_calendar_legend_container"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/event_calendar_legend_available_text"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="12sp"
+                tools:text="Available times"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/event_calendar_description_text"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingEnd="4dp"
+                android:paddingStart="0dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="12sp"
+                tools:text="8:00 AM, 8:00AM, 8:00AM, 8:00AM, 8:00AM"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/event_calendar_legend_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@color/ticket_calendar_unavailable_background"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/event_calendar_legend_unavailable_text"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp"
+                tools:text="Unavailable"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_darkest"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</com.universalstudios.orlandoresort.view.custom_calendar.CustomCalendarView>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App Compat Colors -->
+    <color name="primary">#FF0574F0</color>
+    <color name="primary_dark">#FF0356B3</color>
+    <color name="accent">#FF152B76</color>
+
+    <!-- USH Color Palette -->
+    <color name="purple_lighter">#FFCF82C8</color>
+    <color name="purple_light">#FF9B1D93</color>
+    <color name="purple">#FF77006D</color>
+    <color name="purple_dark">#FF662058</color>
+    <color name="purple_darker">#FF4C083C</color>
+    <color name="yellow">#FFF6D02D</color>
+    <color name="gray_lightest">#fff9f9f9</color>
+    <color name="gray_lighter">#fff1f1f1</color>
+    <color name="gray_light">#ffc1b8c3</color>
+    <color name="gray">#ffc1c1c1</color>
+    <color name="gray_dark">#ff6e6e6e</color>
+    <color name="gray_darker">#ff736d74</color>
+    <color name="gray_darkest">#ff4a4a4a</color>
+    <color name="black_50_translucent">#88000000</color>
+
+    <!--color palette-->
+    <color name="dark_gray">#333333</color>
+    <color name="light_gray">#dbdbdb</color>
+    <color name="lighter_gray">#eeeeee</color>
+    <color name="green">#52a41d</color>
+    <color name="green_light">#60c023</color>
+    <color name="green_dark">#488a1d</color>
+    <color name="red">#ff0000</color>
+
+    <!-- Text -->
+    <color name="text_primary_light">#FF92BFF2</color>
+    <color name="text_primary">#FF0574F0</color>
+    <color name="text_primary_dark">#FF0356B3</color>
+    <color name="text_gray_light">#FFAAAAAA</color>
+    <color name="text_gray">#FF919191</color>
+    <color name="text_gray_dim">#FF727272</color>
+    <color name="text_gray_dark">#FF515151</color>
+    <color name="text_gray_darker">#FF4A4A4A</color>
+    <color name="text_gray_darkest">#FF333333</color>
+    <color name="text_black">#FF000000</color>
+    <color name="text_white">#FFFFFFFF</color>
+    <color name="text_shadow_black">#AA000000</color>
+    <color name="text_shadow_gray">#797a7d</color>
+    <color name="text_shadow_white">#FFFFFFFF</color>
+    <color name="text_highlight">#990574F0</color>``
+    <color name="text_red">#FFed1b24</color>
+    <color name="text_error_red">@color/red</color>
+    <color name="text_gray_ticket">#ffd0d0d0</color>
+    <color name="ticket_text_color">#FF2a63d8</color>
+    <color name="park_name_color">#FF333333</color>
+    <color name="sign_in_link_color">#0c4fd3</color>
+    <color name="fl_id_handy_text_color">#79717b</color>
+    <color name="unselected_Item_text_color">#a7a7a7</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_ticket_title_gray">#A8A8A8</color>
+    <color name="text_ticket_app_time_white">#FBFBFB</color>
+
+    <!-- Icons -->
+    <color name="menu_item_icon">#FFFFFFFF</color>
+
+    <!-- Buttons -->
+    <color name="button_primary_default">@color/blue_color</color>
+    <color name="button_primary_pressed">@color/text_primary_dark</color>
+    <color name="dialog_button_red">#FF3B30</color>
+
+    <!--Navigation Drawer-->
+    <color name="nav_drawer_header_text">@color/text_primary_dark</color>
+    <color name="nav_drawer_item_text">@color/text_primary</color>
+    <color name="nav_drawer_sub_item_text">@color/text_primary</color>
+    <color name="nav_drawer_badge">@color/text_primary</color>
+    <color name="nav_drawer_icon">@color/text_primary</color>
+    <color name="nav_drawer_expand_collapse">@color/text_primary</color>
+
+    <!-- Backgrounds -->
+    <color name="splash_background">#FF0356B3</color>
+    <color name="drawer_item_background_white">#FFFFFFFF</color>
+    <color name="explore_list_background_gray">#FFF1F1F1</color>
+    <color name="explore_list_no_image_background_gray">#FFE0E0E0</color>
+    <color name="explore_map_no_image_background_gray">#FFE0E0E0</color>
+    <color name="search_list_background_white">#FFFFFFFF</color>
+    <color name="search_list_no_image_background_gray">#FFF3F3F3</color>
+    <color name="detail_background_white">#FFFFFFFF</color>
+    <color name="detail_no_image_background_gray">#FFF3F3F3</color>
+    <color name="home_background_white">#FFFFFFFF</color>
+    <color name="home_background_gray">#F1F1F1</color>
+    <color name="home_map_callout_background_gray">#FFECECEC</color>
+    <color name="circle_badge_background">#FF0574F0</color>
+    <color name="circle_badge_background_gray">#FF8D8D8D</color>
+    <color name="circle_badge_stroke_white">#FFFFFFFF</color>
+    <color name="circle_badge_stroke_gray">#FFE4E4E4</color>
+    <color name="circle_background_stroke_transparent_gray">#33606060</color>
+    <color name="wayfinding_no_image_background_gray">#FFF3F3F3</color>
+    <color name="wayfinding_instructions_background_transparent_white">#AAFFFFFF</color>
+    <color name="hours_and_directions_background_white">#FFFFFFFF</color>
+    <color name="contact_guest_services_background_white">#FFFFFFFF</color>
+    <color name="ticket_assistance_background_white">#FFFFFFFF</color>
+    <color name="parking_reminder_background_white">#FFFFFFFF</color>
+    <color name="settings_background_white">#FFFFFFFF</color>
+    <color name="help_background_white">#FFFFFFFF</color>
+    <color name="privacy_background_white">#FFFFFFFF</color>
+    <color name="vacation_planner_faq_background_white">#FFFFFFFF</color>
+    <color name="tutorial_background_white">#FFFFFFFF</color>
+    <color name="welcome_background_white">#FFFFFFFF</color>
+    <color name="set_alert_background_gray">#FFF1F1F1</color>
+    <color name="alerts_list_background_white">#FFFFFFFF</color>
+    <color name="set_alert_time_text">@color/text_white</color>
+    <color name="news_list_background_white">#FFFFFFFF</color>
+    <color name="news_list_background_gray">#FFEDEDED</color>
+    <color name="news_detail_background_white">#FFFFFFFF</color>
+    <color name="about_wifi_background_white">#FFFFFFFF</color>
+    <color name="hours_calendar_background_white">#FFFFFFFF</color>
+    <color name="advanced_filter_background_white">#FFFFFFFF</color>
+    <color name="event_schedule_background_white">#FFFFFFFF</color>
+    <color name="dining_menu_detail_background_color">#FF2F2F2F</color>
+    <color name="terms_and_conditions_background_white">#FFFFFFFF</color>
+    <color name="offer_coupon_code_bacground_color">#FFEDEDED</color>
+    <color name="parking_garage_header_background">#e2e2e2</color>
+    <color name="closed_captioning_semi_transparant_background">#80000000</color>
+    <color name="shopping_cart_text_background_color">#121b5f</color>
+    <color name="parking_picture_background">#d5d5d5</color>
+    <color name="dark_blue_background">#ff072d6d</color>
+    <color name="ticket_product_header_blue_background">#FF036CE2</color>
+    <color name="ticket_product_blue_background">#FF232D9C</color>
+    <color name="light_green_background">#FF52A41C</color>
+    <color name="light_green_disabled_background">#A8D18D</color>
+    <color name="payment_info_light_gray_background">#eeeeee</color>
+    <color name="payment_info_background_white">#FFFFFFFF</color>
+    <color name="add_edit_address_background_white">#FFFFFFFF</color>
+    <color name="background_ticket_app_time">#4A4A4A</color>
+    <color name="background_ticket_app_detail_gray">#EEEEEE</color>
+    <color name="shopping_filter_fragment_white_background">#FFFFFFFF</color>
+    <color name="custom_toast_transparent_background">#80000000</color>
+
+    <!-- Dividers / Section Headers -->
+    <color name="drawer_section_header_background_gray">#FFF3F3F3</color>
+    <color name="poi_list_section_header_background_gray">#F8F1F1F1</color>
+    <color name="settings_section_header_background_gray">#FFEDEDED</color>
+    <color name="poi_item_divider_gray">#FFC1C1C1</color>
+    <color name="explore_filter_tab_bar_divider">#FFD4D4D4</color>
+    <color name="explore_filter_tab_bar_bottom_divider">#FFA0A0A0</color>
+    <color name="detail_map_divider_gray">#FF888888</color>
+    <color name="detail_divider_gray">#FFC1C1C1</color>
+    <color name="welcome_divider_gray">#FFC1C1C1</color>
+    <color name="home_divider_gray">#FFC1C1C1</color>
+    <color name="action_bar_divider_white">#44FFFFFF</color>
+    <color name="cart_item_header">#ffeeeeee</color>
+    <color name="promo_edit_corner_color">#dbdbdb</color>
+    <color name="edit_text_normal_corner_color">#ffdbdbdb</color>
+    <color name="cart_list_divider">#ffd8d8d8</color>
+
+    <!-- Selection States -->
+    <color name="detail_map_selector_pressed">#33333333</color>
+    <color name="home_image_selector_pressed">#44222222</color>
+    <color name="default_activated_transparent_blue">#6692BFF2</color>
+
+    <!-- Buttons -->
+    <color name="button_blue">#FF0574F0</color>
+    <color name="button_blue_pressed">#FF0356B3</color>
+    <color name="button_blue_disabled">#FFAAAAAA</color>
+    <color name="button_gray">#919191</color>
+    <color name="button_gray_disabled">#FF727272</color>
+
+    <color name="button_white">#FFFFFFFF</color>
+    <color name="button_white_pressed">#FFDDDDDD</color>
+    <color name="button_white_disabled">#99FFFFFF</color>
+
+
+    <!-- Hours Calendar -->
+    <color name="calendar_active_month_background">#FFFFFFFF</color>
+    <color name="calendar_today_background">#FFFFFFFF</color>
+    <color name="calendar_inactive_month_background">#FFD8D8D8</color>
+    <color name="calendar_background">#FFD8D8D8</color>
+    <color name="calendar_divider">#FFC1C1C1</color>
+    <color name="calendar_selected_day_background">#FF0574F0</color>
+    <color name="calendar_highlighted_day_background">#FF92BFF2</color>
+    <color name="calendar_selected_range_background">#ff96caff</color>
+    <color name="calendar_text_inactive">#AA919191</color>
+    <color name="calendar_text_active">@color/text_gray_darker</color>
+    <color name="calendar_text_selected">@color/text_white</color>
+    <color name="calendar_text_unselectable">#AA919191</color>
+    <color name="calendar_text_month_title">@color/text_gray_darker</color>
+    <color name="calendar_text_day_header">@color/text_gray_darker</color>
+    <color name="calendar_text_today">@color/text_primary</color>
+
+    <!-- Segmented Control -->
+    <color name="radio_button_selected">#FF0574F0</color>
+    <color name="radio_button_unselected">#FFEDEDED</color>
+    <color name="radio_button_stroke">#FFF3F3F3</color>
+
+    <!-- SeekBar -->
+    <color name="blue_color">#0e51d3</color>
+
+    <!-- Events -->
+    <color name="event_carousel_disabled_event_background_transparent_gray">#7FFFFFFF</color>
+
+    <!-- Explore Filter Tabs -->
+    <color name="explore_filter_tab_button_on">#FFFFFFFF</color>
+    <color name="explore_filter_tab_button_off">#FFF1F1F1</color>
+    <color name="explore_filter_tab_button_icon">@color/text_gray_dim</color>
+    <color name="explore_filter_tab_button_text_on">@color/text_gray_dim</color>
+    <color name="explore_filter_tab_button_text_off">@color/text_gray_dim</color>
+
+    <!-- POI Detail/List/Map/Card -->
+    <color name="pager_dot">#E60574f0</color>
+    <color name="show_time_button">#FF0574F0</color>
+    <color name="show_time_button_pressed">#FF2594FF</color>
+    <color name="show_time_badge_start">@color/text_white</color>
+    <color name="show_time_badge_am_pm">@color/text_white</color>
+    <color name="show_time_icon">@color/text_white</color>
+    <color name="feature_icon">@color/text_gray</color>
+    <color name="feature_icon_colored">#FF0965F0</color>
+    <color name="min_wait_text">@color/text_white</color>
+    <color name="badge_closed_am_pm">@color/text_white</color>
+
+    <!--Set alert-->
+    <color name="set_show_time_am_pm_text">@color/text_white</color>
+
+    <!--My Alerts-->
+    <color name="my_alerts_time_starts">@color/text_white</color>
+    <color name="my_alerts_time_am_pm_text">@color/text_white</color>
+
+    <!--Feedback-->
+    <color name="feedback_spinner_pressed">#ff96caff</color>
+    <color name="feedback_spinner_hint_pressed">#ffc1c1c1</color>
+
+    <!--Newsletter sign up-->
+    <color name="newsletter_form_link_text">#FF0356B3</color>
+
+    <color name="badge_count">@color/text_white</color>
+    <color name="checkout_text_black">#333333</color>
+
+    <color name="ticket_calendar_unavailable_background">#FFEDEEEF</color>
+
+    <color name="calendar_season_description_background">#FF026BE2</color>
+
+    <color name="custom_calendar_blue">#151e60</color>
+    <color name="custom_calendar_border">#d9d9d9</color>
+    <color name="custom_calendar_disabled">#e0e0e0</color>
+    <color name="custom_calendar_date_text_color_default">#a1a1a1</color>
+    <color name="custom_calendar_selected_circle">#333333</color>
+
+    <color name="text_light_blue">#bed3ec</color>
+    <color name="register_button_background">#6b9fe4</color>
+    <color name="icon_gray">#939494</color>
+    <color name="view_profile_section_background">#e0e0e0</color>
+    <color name="view_profile_icon_tint">#55565a</color>
+    <color name="view_profile_text_color">#6d6d6e</color>
+    <color name="view_profile_header_text_color">#2c2c2c</color>
+    <color name="assign_tickets_subtitle_text_color">#494949</color>
+
+    <!-- Step Progress View -->
+    <color name="step_progress_incomplete">#A6A7A8</color>
+    <color name="step_progress_complete">#54A22A</color>
+    <color name="step_progress_path_incomplete">#DADBDC</color>
+    <color name="step_progress_path_complete">#136FE0</color>
+    <color name="step_progress_outline">#FFFFFF</color>
+
+    <!-- Addons -->
+    <color name="text_addons_tab_selected">#152b76</color>
+    <color name="text_addons_tab_default">#797a7d</color>
+    <color name="addons_tab_indicator">#152b76</color>
+    <color name="text_addons_sku_item_default">#A7A7A7</color>
+    <color name="text_addons_sku_item_selected">#FFFFFF</color>
+    <color name="background_addons_sku_item_selected">#162B75</color>
+    <color name="background_addons_time_item_selected">#162B75</color>
+
+    <!-- dpvq ticket -->
+    <color name="ticket_appointment_blue_color">#1962e4</color>
+    <color name="ticket_appointment_blue_entrance_message_color">#bb1962e4</color>
+    <color name="ticket_appointment_blue_gradient_bottom">#1962e3</color>
+    <color name="ticket_appointment_blue_gradient_top">#22478c</color>
+    <color name="ticket_appointment_center_gradient_gray">#000000</color>
+    <color name="ticket_appointment_start_gradient">#88000000</color>
+
+    <!-- Password Strength View -->
+    <color name="password_strength_meter_unfilled">#DDDDDD</color>
+
+    <!-- Addons -->
+    <color name="text_wallet_tab_selected">#FFFFFF</color>
+    <color name="text_wallet_tab_default">#000000</color>
+    <color name="tab_background_wallet_selected">#162B75</color>
+    <color name="tab_background_wallet_default">#dbdbdb</color>
+    <color name="wallet_folio_button_normal_color">#dbdbdb</color>
+    <color name="wallet_folio_button_selected_color">#172a76</color>
+    <color name="wallet_folio_button_normal_text_color">#333333</color>
+    <color name="wallet_folio_button_selected_text_color">#ffffff</color>
+    <color name="wallet_folio_background_color">#eeeeee</color>
+    <color name="wallet_folio_button_add_card_color">#52a41c</color>
+
+    <!-- Floating Action Buttons -->
+    <color name="floating_action_button_white">#FFFFFFFF</color>
+
+</resources>

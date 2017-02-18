@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#e4e4e4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:text="Adult 1"
+        android:id="@+id/tvTitle"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:textColor="@android:color/black"
+        android:gravity="center_vertical" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageView2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_chevron_right_white_24dp"
+        android:tint="@color/blue_color" />
+
+    <LinearLayout
+        android:id="@+id/assignedContainer"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:text="Medium Text"
+            android:id="@+id/tvName"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:gravity="bottom"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:text="Medium Text"
+            android:id="@+id/tvNumberOfAssignments"
+            android:layout_weight="1"
+            android:gravity="center_vertical|top"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

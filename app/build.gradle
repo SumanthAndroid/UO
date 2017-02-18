@@ -1,0 +1,618 @@
+// Flavor dimensions
+final String FLAVOR_DIMEN_LOCATION = 'DIMENSION_LOCATION'
+final String FLAVOR_DIMEN_SERVICE_ENVIRONMENT = 'DIMENSION_SERVICE_ENVIRONMENT'
+
+// Flavor locations
+final String FLAVOR_LOCATION_ORLANDO = 'orlando'
+final String FLAVOR_LOCATION_HOLLYWOOD = 'hollywood'
+
+// Flavor service environments
+final String FLAVOR_SERVICE_ENV_DEV = 'devEnv'
+final String FLAVOR_SERVICE_ENV_QA = 'qaEnv'
+final String FLAVOR_SERVICE_ENV_STG = 'stgEnv'
+final String FLAVOR_SERVICE_ENV_UAT = 'uatEnv'
+final String FLAVOR_SERVICE_ENV_PROD = 'prodEnv'
+
+// Build types
+final String BUILD_TYPE_DEBUG = 'debug';
+final String BUILD_TYPE_ALPHA = 'alpha';
+final String BUILD_TYPE_RELEASE = 'release';
+
+// Build config types set by the variants
+final String CONFIG_TYPE_BOOLEAN = 'boolean'
+final String CONFIG_TYPE_INT = 'int'
+final String CONFIG_TYPE_LONG = 'long'
+final String CONFIG_TYPE_STRING = 'String'
+
+// Build config fields set by the variants
+final String CONFIG_CONTENT_PROVIDER_AUTHORITY = 'CONTENT_PROVIDER_AUTHORITY'
+final String CONFIG_CONTENT_PROVIDER_MIME_TYPE_DATA = 'CONTENT_PROVIDER_MIME_TYPE_DATA'
+final String CONFIG_PARK_SERVICES_BASE_URL = 'PARK_SERVICES_BASE_URL'
+final String CONFIG_PARK_SERVICES_API_KEY = 'PARK_SERVICES_API_KEY'
+final String CONFIG_PARK_SERVICES_API_SECRET_ENCODED = 'PARK_SERVICES_API_SECRET_ENCODED'
+final String CONFIG_COMMERCE_SERVICES_BASE_URL = 'COMMERCE_SERVICES_BASE_URL'
+final String CONFIG_COMMERCE_SERVICES_SHOP_JUNCTION = 'COMMERCE_SERVICES_SHOP_JUNCTION'
+final String CONFIG_COMMERCE_STORE_ID = 'COMMERCE_STORE_ID'
+final String CONFIG_COMMERCE_SALES_CATALOG_ID = 'COMMERCE_SALES_CATALOG_ID'
+final String CONFIG_SSL_CERT_VERIFICATION_ENABLED = 'SSL_CERT_VERIFICATION_ENABLED'
+final String CONFIG_CRASH_ANALYTICS_ENABLED = 'CRASH_ANALYTICS_ENABLED'
+final String CONFIG_CRASH_ANALYTICS_APP_ID = 'CRASH_ANALYTICS_APP_ID'
+final String CONFIG_PUSH_SENDER_ID = 'PUSH_SENDER_ID'
+final String CONFIG_NETWORK_TRACING_ENABLED = 'NETWORK_TRACING_ENABLED'
+final String CONFIG_LOGGING_ENABLED = 'LOGGING_ENABLED'
+final String CONFIG_DEBUG_DRAWER_ENABLED = 'DEBUG_DRAWER_ENABLED'
+final String CONFIG_MOCK_LOCATIONS_ENABLED = 'MOCK_LOCATIONS_ENABLED'
+final String CONFIG_SCREEN_ROTATION_ENABLED = 'SCREEN_ROTATION_ENABLED'
+final String CONFIG_SHOW_MISSING_REMOTE_TEXT = 'SHOW_MISSING_REMOTE_TEXT'
+final String CONFIG_VENUE_ID_VOLCANO_BAY = 'VENUE_ID_VOLCANO_BAY'
+final String CONFIG_VENUE_ID_UNIVERSAL_STUDIOS_HOLLYWOOD = 'VENUE_ID_UNIVERSAL_STUDIOS_HOLLYWOOD'
+final String CONFIG_VENUE_ID_CITY_WALK_HOLLYWOOD = 'VENUE_ID_CITY_WALK_HOLLYWOOD'
+final String CONFIG_LAND_ID_HOLLYWOOD_UPPER_LOT = 'LAND_ID_HOLLYWOOD_UPPER_LOT'
+final String CONFIG_LAND_ID_HOLLYWOOD_LOWER_LOT = 'LAND_ID_HOLLYWOOD_LOWER_LOT'
+
+// Resource config types set by the variants
+final String RES_CONFIG_TYPE_STRING = 'string';
+
+// Resource config fields set by the variants
+final String RES_CONFIG_GOOGLE_MAPS_KEY = 'google_maps_key'
+
+// Signing config fields
+final String SIGNING_STORE_FILE = 'STORE_FILE'
+final String SIGNING_STORE_PASSWORD = 'STORE_PASSWORD'
+final String SIGNING_KEY_ALIAS = 'KEY_ALIAS'
+final String SIGNING_KEY_PASSWORD = 'KEY_PASSWORD'
+
+// Signing config files
+final String SIGNING_PROPS_DEBUG = 'signing-debug.properties'
+final String SIGNING_PROPS_RELEASE = 'signing-release.properties'
+
+// Prefix used in the apk file name
+final String APK_NAME_PREFIX = 'universal'
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    /**
+     * Default Flavor
+     */
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 25
+
+        // Set the prefix for the apk file name
+        archivesBaseName = APK_NAME_PREFIX
+
+        // Configurable behavior (all flavors)
+        multiDexEnabled true
+        buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_SHOP_JUNCTION, '"shop"'
+    }
+
+    // Set the dimension order to create flavor variants from
+    flavorDimensions FLAVOR_DIMEN_LOCATION, FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+    /**
+     * Flavors
+     */
+    productFlavors {
+        /**
+         * Location Flavors
+         */
+        orlando {
+            dimension FLAVOR_DIMEN_LOCATION
+
+            // Version name for Orlando
+            versionName "1.8.0"
+            versionCode 308
+
+            // Application ID
+            applicationId "com.universalstudios.orlandoresort"
+
+            // Set the content provider authorities to be unique per application ID
+            String contentProviderAuthority = generateContentProviderAuthority(applicationId)
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_CONTENT_PROVIDER_AUTHORITY, wrapInDoubleQuotes(contentProviderAuthority)
+
+            // Set the content provider mime type data to be unique per application ID
+            String contentProviderMimeTypeData = generateContentProviderMimeTypeData(applicationId)
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_CONTENT_PROVIDER_MIME_TYPE_DATA, wrapInDoubleQuotes(contentProviderMimeTypeData)
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_API_KEY, '"AndroidMobileApp"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_API_SECRET_ENCODED, '"UVc1a2NtOXBaRTF2WW1sc1pVRndjRk5sWTNKbGRFdGxlVEU0TWpBeE5BPT0"'
+
+            manifestPlaceholders = [
+                    // Custom URI scheme for deep links
+                    customUriScheme:"universal-orlando",
+                    contentProviderAuthority:"${contentProviderAuthority}"
+            ]
+        }
+        hollywood {
+            dimension FLAVOR_DIMEN_LOCATION
+
+            // Version name for Hollywood
+            versionName "1.1"
+            versionCode 2
+
+            // Application ID
+            applicationId "com.universalstudios.hollywoodresort"
+
+            // Set the content provider authorities to be unique per application ID
+            String contentProviderAuthority = generateContentProviderAuthority(applicationId)
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_CONTENT_PROVIDER_AUTHORITY,  wrapInDoubleQuotes(contentProviderAuthority)
+
+            // Set the content provider mime type data to be unique per application ID
+            String contentProviderMimeTypeData = generateContentProviderMimeTypeData(applicationId)
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_CONTENT_PROVIDER_MIME_TYPE_DATA, wrapInDoubleQuotes(contentProviderMimeTypeData)
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_API_KEY, '"USHAndroidMobileApp"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_API_SECRET_ENCODED, '"U1VGdFZHaGxRVzVrY205cFpGVlRTRTF2WW1sc1pVRndjQT09"'
+
+            manifestPlaceholders = [
+                    // Custom URI scheme for deep links
+                    customUriScheme:"universal-hollywood",
+                    contentProviderAuthority:"${contentProviderAuthority}"
+            ]
+        }
+
+        /**
+         * Service Environment Flavors
+         */
+        devEnv {
+            dimension FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SSL_CERT_VERIFICATION_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_BASE_URL, '"http://servicesdev.universalorlando.com"' //'"http://devuni01.captechlab.com"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_BASE_URL, '"https://services-dev.ucdp.net"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_STORE_ID, '"10101"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SALES_CATALOG_ID, '"11551"' //TODO Mobile = 11051, Web = 11551
+
+            manifestPlaceholders = [ commerceServicesHost:"services-dev.ucdp.net" ]
+        }
+        qaEnv {
+            dimension FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SSL_CERT_VERIFICATION_ENABLED, false.toString()
+            // "qa" doesn't exist for park services
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_BASE_URL, '"http://servicesdev.universalorlando.com"' //'"http://devuni01.captechlab.com"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_BASE_URL, '"https://services-qa.ucdp.net"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_STORE_ID, '"10101"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SALES_CATALOG_ID, '"10551"' //TODO Mobile = 10051, Web = 10551
+
+            manifestPlaceholders = [ commerceServicesHost:"services-qa.ucdp.net" ]
+        }
+        stgEnv {
+            dimension FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SSL_CERT_VERIFICATION_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_BASE_URL, '"https://servicesstg.universalorlando.com"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_BASE_URL, '"https://services-stg.ucdp.net"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_STORE_ID, '"10101"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SALES_CATALOG_ID, '"10053"'
+
+            manifestPlaceholders = [ commerceServicesHost:"services-stg.ucdp.net" ]
+        }
+        uatEnv {
+            dimension FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SSL_CERT_VERIFICATION_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_BASE_URL, '"https://servicesuat.universalorlando.com"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_BASE_URL, '"https://services-uat.ucdp.net"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_STORE_ID, '"10851"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SALES_CATALOG_ID, '"10151"'
+
+            manifestPlaceholders = [ commerceServicesHost:"services-uat.ucdp.net" ]
+        }
+        prodEnv {
+            dimension FLAVOR_DIMEN_SERVICE_ENVIRONMENT
+
+            // Configurable behavior
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SSL_CERT_VERIFICATION_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_PARK_SERVICES_BASE_URL, '"https://services.universalorlando.com"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SERVICES_BASE_URL, '"https://services-prod.ucdp.net"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_STORE_ID, '"10101"'
+            buildConfigField CONFIG_TYPE_STRING, CONFIG_COMMERCE_SALES_CATALOG_ID, '"10051"'
+
+            manifestPlaceholders = [ commerceServicesHost:"services-prod.ucdp.net" ]
+        }
+    }
+
+    /**
+     * Signing Key Configs
+     */
+    signingConfigs {
+        debug {
+            // Get the debug signing config
+            Properties props = getSigningConfigProps(SIGNING_PROPS_DEBUG, true);
+
+            // Load the keystore file and ensure it exists
+            String keystoreFilePath = props[SIGNING_STORE_FILE]
+            File keystoreFile = loadFile(keystoreFilePath, true)
+
+            storeFile = keystoreFile
+            storePassword = props[SIGNING_STORE_PASSWORD]
+            keyAlias = props[SIGNING_KEY_ALIAS]
+            keyPassword = props[SIGNING_KEY_PASSWORD]
+        }
+        release {
+            // Get the release signing config (only the build machine should have this)
+            Properties props = getSigningConfigProps(SIGNING_PROPS_RELEASE, false);
+
+            // If the release config is not there, use the debug signing config
+            if (props == null) {
+                props = getSigningConfigProps(SIGNING_PROPS_DEBUG, true);
+            }
+
+            // Load the keystore file and ensure it exists
+            String keystoreFilePath = props[SIGNING_STORE_FILE]
+            File keystoreFile = loadFile(keystoreFilePath, true)
+
+            storeFile = keystoreFile
+            storePassword = props[SIGNING_STORE_PASSWORD]
+            keyAlias = props[SIGNING_KEY_ALIAS]
+            keyPassword = props[SIGNING_KEY_PASSWORD]
+        }
+    }
+
+    /**
+     * Build Types
+     */
+    buildTypes {
+        debug {
+            // Signing key
+            signingConfig signingConfigs.debug
+
+            // Google maps API key (depends on signing config + application ID)
+            resValue RES_CONFIG_TYPE_STRING, RES_CONFIG_GOOGLE_MAPS_KEY, '"AIzaSyDDWbD7zApUfPSwVL3MuJ1bnPb6CjhRgO8"'
+
+            // Proguard
+            minifyEnabled false
+            zipAlignEnabled true
+
+            // Configurable behavior
+            debuggable true
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_CRASH_ANALYTICS_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_NETWORK_TRACING_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_LOGGING_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_DEBUG_DRAWER_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_MOCK_LOCATIONS_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SCREEN_ROTATION_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SHOW_MISSING_REMOTE_TEXT, true.toString()
+        }
+        alpha {
+            // Signing key
+            signingConfig signingConfigs.debug
+
+            // Google maps API key (depends on signing config + application ID)
+            resValue RES_CONFIG_TYPE_STRING, RES_CONFIG_GOOGLE_MAPS_KEY, '"AIzaSyDDWbD7zApUfPSwVL3MuJ1bnPb6CjhRgO8"'
+
+            // Proguard
+            minifyEnabled false
+            zipAlignEnabled true
+
+            // Configurable behavior
+            debuggable false
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_CRASH_ANALYTICS_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_NETWORK_TRACING_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_LOGGING_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_DEBUG_DRAWER_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_MOCK_LOCATIONS_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SCREEN_ROTATION_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SHOW_MISSING_REMOTE_TEXT, true.toString()
+        }
+        release {
+            // Signing key
+            signingConfig signingConfigs.release
+
+            // Google maps API key (depends on signing config + application ID)
+            resValue RES_CONFIG_TYPE_STRING, RES_CONFIG_GOOGLE_MAPS_KEY, '"AIzaSyAOLNka7J_XK5mwSLypLPC9jydARqS8n2Y"'
+
+            // Proguard
+            minifyEnabled false
+            zipAlignEnabled true
+
+            // Configurable behavior
+            debuggable false
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_CRASH_ANALYTICS_ENABLED, true.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_NETWORK_TRACING_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_LOGGING_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_DEBUG_DRAWER_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_MOCK_LOCATIONS_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SCREEN_ROTATION_ENABLED, false.toString()
+            buildConfigField CONFIG_TYPE_BOOLEAN, CONFIG_SHOW_MISSING_REMOTE_TEXT, false.toString()
+        }
+    }
+
+    /**
+     * Variant filters to remove flavor+build type combinations that do not make sense
+     */
+    variantFilter { variant ->
+        String locationFlavor = variant.flavors.get(0).name
+        String serviceEnvFlavor = variant.flavors.get(1).name
+        String buildType = variant.buildType.name
+
+        // Release builds should only point to prod
+        if (buildType.equals(BUILD_TYPE_RELEASE) && !serviceEnvFlavor.equals(FLAVOR_SERVICE_ENV_PROD)) {
+            variant.setIgnore true
+        }
+    }
+
+
+    /**
+     * All other configurations that rely on a combination of flavors and/or build type
+     */
+    android.applicationVariants.all { variant ->
+        String locationFlavor = variant.productFlavors.get(0).name
+        String serviceEnvFlavor = variant.productFlavors.get(1).name
+        String buildType = variant.buildType.name
+
+        // Add version name suffix for test builds
+        if (buildType.equals(BUILD_TYPE_DEBUG) || buildType.equals(BUILD_TYPE_ALPHA)) {
+            variant.mergedFlavor.versionName += generateVersionNameSuffix(
+                    locationFlavor,
+                    serviceEnvFlavor,
+                    buildType)
+        }
+
+
+        // Change APK name for release builds
+        if (buildType.equals(BUILD_TYPE_RELEASE)) {
+            variant.outputs.each { output ->
+                String dirName = output.outputFile.parent
+                String fileName = output.outputFile.name.replace(APK_NAME_PREFIX,
+                        APK_NAME_PREFIX + '-' + variant.versionName + '-' + variant.versionCode)
+                output.outputFile = new File(dirName, fileName)
+            }
+        }
+
+
+        // Crash analytics app ID (where to send crash analytics)
+        String crashAnalyticsAppId = null
+        // Orlando
+        if (locationFlavor.equals(FLAVOR_LOCATION_ORLANDO)) {
+            // Release builds
+            if (buildType.equals(BUILD_TYPE_RELEASE)) {
+                crashAnalyticsAppId = "53966d431acb71021700000a";
+            }
+            // Testing builds
+            else {
+                crashAnalyticsAppId = "53966c1b1acb717e18000007";
+            }
+        }
+        // Hollywood
+        else if (locationFlavor.equals(FLAVOR_LOCATION_HOLLYWOOD)) {
+            // Release builds
+            if (buildType.equals(BUILD_TYPE_RELEASE)) {
+                crashAnalyticsAppId = "640bb8f3efdb4dc78e8f257b1a35e6bf00555300";
+            }
+            // Testing builds
+            else {
+                crashAnalyticsAppId = "156d52c447da48bd9c7c36d4430da4cb00555300";
+            }
+        }
+        variant.buildConfigField CONFIG_TYPE_STRING, CONFIG_CRASH_ANALYTICS_APP_ID, wrapInDoubleQuotes(crashAnalyticsAppId)
+
+
+        // Google Cloud Messaging ID (links push notifications to services)
+        String pushSenderId = null
+        // Orlando
+        if (locationFlavor.equals(FLAVOR_LOCATION_ORLANDO)) {
+            // Production service environment
+            if (serviceEnvFlavor.equals(FLAVOR_SERVICE_ENV_PROD)) {
+                pushSenderId = "959978919949";
+            }
+            // Test service environments
+            else {
+                pushSenderId = "829983984248";
+            }
+
+        }
+        // Hollywood
+        else if (locationFlavor.equals(FLAVOR_LOCATION_HOLLYWOOD)) {
+            // Production service environment
+            if (serviceEnvFlavor.equals(FLAVOR_SERVICE_ENV_PROD)) {
+                pushSenderId = "75817900697";
+            }
+            // Test service environments
+            else {
+                pushSenderId = "44886929765";
+            }
+        }
+        variant.buildConfigField CONFIG_TYPE_STRING, CONFIG_PUSH_SENDER_ID, wrapInDoubleQuotes(pushSenderId)
+
+
+        // Venue and land IDs that differ per environment
+        Long venueIdVolcanoBay, venueIdUsh, venueIdCwh, landIdUshUpperLot, landIdUshLowerLot = null
+        // Prod
+        if (serviceEnvFlavor.equals(FLAVOR_SERVICE_ENV_PROD)) {
+            venueIdVolcanoBay = 13801;
+            venueIdUsh = 13825;
+            venueIdCwh = 13824;
+            landIdUshUpperLot = 13828;
+            landIdUshLowerLot = 13826;
+        }
+        // Staging
+        else if (serviceEnvFlavor.equals(FLAVOR_SERVICE_ENV_STG)) {
+            venueIdVolcanoBay = 13801;
+            venueIdUsh = 13821;
+            venueIdCwh = 13820;
+            landIdUshUpperLot = 13824;
+            landIdUshLowerLot = 13822;
+        }
+        // All other environments
+        else {
+            venueIdVolcanoBay = 15104;
+            venueIdUsh = 32771;
+            venueIdCwh = 33390;
+            landIdUshUpperLot = 32779;
+            landIdUshLowerLot = 32773;
+        }
+        variant.buildConfigField CONFIG_TYPE_LONG, CONFIG_VENUE_ID_VOLCANO_BAY, venueIdVolcanoBay.toString()
+        variant.buildConfigField CONFIG_TYPE_LONG, CONFIG_VENUE_ID_UNIVERSAL_STUDIOS_HOLLYWOOD, venueIdUsh.toString()
+        variant.buildConfigField CONFIG_TYPE_LONG, CONFIG_VENUE_ID_CITY_WALK_HOLLYWOOD, venueIdCwh.toString()
+        variant.buildConfigField CONFIG_TYPE_LONG, CONFIG_LAND_ID_HOLLYWOOD_UPPER_LOT, landIdUshUpperLot.toString()
+        variant.buildConfigField CONFIG_TYPE_LONG, CONFIG_LAND_ID_HOLLYWOOD_LOWER_LOT, landIdUshLowerLot.toString()
+
+    }
+
+    dexOptions {
+        dexInProcess true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+}
+
+
+dependencies {
+    // Local Libraries
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    // Testing Libraries
+    testCompile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.9.5"
+    testCompile "org.robolectric:robolectric:3.0"
+
+    // Support Libraries
+    def supportLibVersion = '25.1.1'
+    compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    compile "com.android.support:cardview-v7:${supportLibVersion}"
+    compile "com.android.support:support-v13:${supportLibVersion}"
+    compile "com.android.support:percent:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
+
+    // Google Play Services
+    def playServicesVersion = '8.4.0'
+    compile "com.google.android.gms:play-services-gcm:${playServicesVersion}"
+    compile "com.google.android.gms:play-services-maps:${playServicesVersion}"
+    compile "com.google.android.gms:play-services-location:${playServicesVersion}"
+
+    // Networking
+    compile 'com.squareup.okhttp:okhttp:2.7.5'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.5'
+    compile 'com.squareup.okio:okio:1.9.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+
+    // JSON Parsing
+    compile 'com.google.code.gson:gson:2.4'
+
+    // Image Loading
+    compile 'com.squareup.picasso:picasso:2.3.4'
+
+    // Animation Support
+    compile 'com.nineoldandroids:library:2.4.0'
+
+    // Crash Reporting
+    compile 'com.crittercism:crittercism-android-agent:5.6.4'
+
+    // Debugging
+    compile 'com.facebook.stetho:stetho:1.3.1'
+    compile 'com.facebook.stetho:stetho-okhttp:1.3.1'
+
+    // Barcode Support
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'com.journeyapps:zxing-android-embedded:3.4.0'
+
+    // Parcel Annotation Support (Data Passing)
+    compile 'org.parceler:parceler-api:1.1.5'
+    annotationProcessor 'org.parceler:parceler:1.1.5'
+
+    // Security
+    compile 'com.facebook.conceal:conceal:1.1.3@aar'
+
+    // Apache utils
+    compile 'org.apache.commons:commons-lang3:3.5'
+
+    // credit card scanning
+    compile 'io.card:android-sdk:5.4.2'
+}
+
+// Run for all variants
+android.applicationVariants.all { variant ->
+
+    // Log the specifics of the build type after assembling
+    variant.assemble.doLast {
+        printf("\n---------- VERSION ----------"
+                + "\n  NAME: " + variant.mergedFlavor.versionName
+                + "\n  CODE: " + variant.mergedFlavor.versionCode
+                + "\n  FLAVOR 1: " + variant.productFlavors.get(0).name
+                + "\n  FLAVOR 2: " + variant.productFlavors.get(1).name
+                + "\n  BUILD TYPE: " + variant.buildType.name
+                + "\n-----------------------------\n")
+    }
+}
+
+Properties getSigningConfigProps(String signingPropFilePath, boolean stopBuildOnFailure) {
+    // Get the signing properties file
+    File debugSigningPropsFile = loadFile(signingPropFilePath, stopBuildOnFailure)
+
+    // Load in the properties
+    if (debugSigningPropsFile != null) {
+        Properties props = new Properties()
+        props.load(new FileInputStream(debugSigningPropsFile))
+        return props
+    } else {
+        return null
+    }
+}
+
+File loadFile(String filePath, boolean stopBuildOnFailure) {
+    File file = project.file(filePath)
+    if (file.exists() && file.canRead()) {
+        return file
+    } else if (stopBuildOnFailure) {
+        throw new GradleException("${filePath} could not be found")
+    } else {
+        return null
+    }
+}
+
+String generateContentProviderAuthority(String applicationId) {
+    return "${applicationId}.provider.data"
+}
+
+String generateContentProviderMimeTypeData(String applicationId) {
+    return "vnd.${applicationId}.data"
+}
+
+String generateVersionNameSuffix(String locationFlavor, String envFlavor, String buildType) {
+    return '_' + locationFlavor + '_' + envFlavor + '_' + buildType + '_' + getLatestCommitDateFormatted()
+}
+
+String getLatestCommitDateFormatted() {
+    Date latestCommitDate
+    try {
+        String latestCommitHash = "git rev-parse --verify HEAD".execute().text.trim()
+        long latestCommitDateSec = "git show -s --format=%at ${latestCommitHash}".execute().text.trim().toLong()
+        latestCommitDate = new Date(latestCommitDateSec * 1000)
+    } catch (Exception e) {
+        // If git is not connected to the project, just use the current date
+        latestCommitDate = new Date();
+    }
+    return formatDate(latestCommitDate)
+}
+
+String formatDate(Date date) {
+    String formattedDate = date.format('yyyy.MM.dd_HH:mm:ss', TimeZone.getTimeZone("US/Eastern"))
+    return formattedDate
+}
+
+String wrapInDoubleQuotes(String stringToWrap) {
+    return '"' + stringToWrap + '"'
+}

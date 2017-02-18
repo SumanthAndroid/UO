@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_color"
+    android:padding="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
+        android:src="@android:drawable/ic_dialog_alert"/>
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/alert_dialog_title_appointment_text"
+        style="@style/TextViewStyle.GothamBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/appointment_alert_dialog_title"
+        android:textColor="@color/text_white"
+        android:textSize="16sp" />
+
+
+    </LinearLayout>

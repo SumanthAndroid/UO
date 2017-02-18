@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_park_hours_item_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/list_park_hours_item_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/detail_divider_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="67dp"
+        android:orientation="vertical"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_park_hours_item_primary_text"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="XSLANDS OF ADVENTURE"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="16sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_park_hours_item_secondary_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Xpen today 9am - 2am"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

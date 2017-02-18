@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.CommerceAssignmentViewModel"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/fragment_assign_name_recyclerview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_assign_name_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{!data.showLoading}"/>
+
+        <ProgressBar
+            android:id="@+id/fragment_assign_name_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="@{data.showLoading}"/>
+
+    </FrameLayout>
+</layout>

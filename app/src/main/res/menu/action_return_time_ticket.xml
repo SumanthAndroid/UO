@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/action_return_time_ticket_get"
+        android:orderInCategory="100"
+        android:showAsAction="always|withText"
+        android:title="@string/action_return_time_ticket_get_title"/>
+</menu>

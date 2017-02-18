@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval" >
+
+    <size
+        android:height="@dimen/circle_badge_faq_size"
+        android:width="@dimen/circle_badge_faq_size" />
+
+    <solid android:color="@color/circle_badge_background" />
+
+</shape>

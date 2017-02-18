@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:id="@+id/ticket_appointment_background"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/ticket_appointment_default_background_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+            <ImageView
+                android:layout_weight="0.75"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/ticket_appointment_default_background"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/shape_ticket_appointment_default_background"/>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/ticket_appointment_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="@string/return_time_ticket_done_universal_studios_florida"
+            android:textColor="@color/text_white"
+            android:layout_above="@+id/ticket_appointment_ticket_name"
+            android:layout_alignLeft="@+id/ticket_appointment_ticket_name"
+            />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/ticket_appointment_ticket_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Race Through New York Starring Jimmy Fallon™"
+            android:textColor="@color/text_white"
+            android:layout_above="@+id/ticket_appointment_ticket_name_layout"
+            android:layout_alignLeft="@+id/ticket_appointment_ticket_name_layout"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="6dp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/ticket_appointment_ticket_name_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ticket_appointment_button_container_dpvq"
+            android:paddingBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/ticket_appointment_time_entrance_message"
+                android:background="@drawable/shape_ticket_appointment_detail_top_background"
+                android:lines="2"
+                android:gravity="center"
+                android:textColor="@color/text_white"
+                android:text="@string/return_time_ticket_done_entrance_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp"/>
+
+            <include
+                android:id="@+id/ticket_appointment_time_container"
+                layout="@layout/include_fragment_ticket_appointment_details_time_dpvq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticket_appointment_time_entrance_message"/>
+
+            <include
+                android:id="@+id/ticket_assistance_details_barcode_dpvq_include"
+                layout="@layout/include_fragment_ticket_appointment_details_barcode_dpvq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ticket_appointment_time_container"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ticket_appointment_button_container_dpvq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/ticket_appointment_blue_color"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/ticket_appointment_dpvq_change_return_time"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:lines="2"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/return_time_ticket_done_change_return_time"
+                android:textColor="@color/text_white" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:alpha="0.5"
+                android:background="@android:color/black" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/ticket_appointment_dpvq_guide_me"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/return_time_ticket_done_guide_me"
+                android:textColor="@color/text_white" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

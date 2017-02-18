@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Detail hotel perk sizes -->
+    <dimen name="detail_hotel_perk_width">152dp</dimen>
+
+    <!-- Explore list horizontal POIs view, width must be set -->
+    <dimen name="explore_list_horizontal_card_width">320dp</dimen>
+
+</resources>

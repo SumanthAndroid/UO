@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioCreatePinItemViewModel"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.WalletFolioPaymentAdapter.WalletFolioPaymentActionCallback"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        style="@style/CardViewStyle.NoCornerRadius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/wallet_folio_pin_title"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{tridion.getCreatePINText()}"
+                        android:textColor="@color/text_black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        tools:text="Create a 4-digit PIN"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/wallet_folio_pin_subtitle"
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@{tridion.getCreatePINCopy()}"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="14sp"
+                        tools:text="Setup a shared group PIN"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/info_icon_size"
+                    android:layout_height="@dimen/info_icon_size"
+                    android:layout_marginLeft="16dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/state_list_default_list_selector_with_fade"
+                    android:onClick="@{() -> callback.onCreatePinInfoClicked(data)}"
+                    android:padding="2dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/info_grey"/>
+            </LinearLayout>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:addTextChangedListener="@{data.pinTextWatcher}"
+                android:inputType="numberPassword"
+                android:maxLength="4"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.Button
+                android:id="@+id/wallet_folio_create_pin_button"
+                style="@style/ButtonStyle.Colored.Blue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:enabled="@{data.enteredPinValidLength}"
+                android:onClick="@{() -> callback.onCreatePinClicked(data)}"
+                android:text="@{tridion.getCreatePINLabel()}"
+                tools:text="Create PIN"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

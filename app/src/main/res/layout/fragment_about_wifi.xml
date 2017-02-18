@@ -1,0 +1,138 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/about_wifi_background_white"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/fragment_about_wifi_hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="254dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/about_wifi_xfinity_logo_content_description"
+            android:src="@drawable/xfinity_wifi_hero_logo" />
+
+        <LinearLayout
+            android:id="@+id/fragment_about_wifi_description"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fragment_about_wifi_hero_image"
+            android:layout_marginBottom="29dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="29dp"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@string/about_wifi_subtitle"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="13sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamUltra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="@string/about_wifi_title"
+                android:textColor="@color/text_primary"
+                android:textSize="30sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:lineSpacingExtra="5dp"
+                android:text="@string/about_wifi_message"
+                android:contentDescription="@string/about_wifi_message_content_description"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_about_wifi_how_to_connect_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_about_wifi_description"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/detail_divider_gray" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.DividerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="9dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/about_wifi_header_how_to_connect"
+                android:textColor="@color/text_gray"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/detail_divider_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_about_wifi_steps_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fragment_about_wifi_how_to_connect_header"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="17dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/circle_badge_detail_size"
+            android:layout_height="@dimen/circle_badge_detail_size"
+            android:layout_alignBottom="@+id/fragment_about_wifi_hero_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="-27dp"
+            android:layout_marginRight="16dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/shape_circle_badge_detail_blue"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/poi_detail_circle_badge_closed_text"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/about_wifi_badge_free"
+                android:textColor="@color/text_white"
+                android:textSize="20sp"
+                android:visibility="visible" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

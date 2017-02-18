@@ -1,0 +1,13 @@
+<resources>
+
+    <!-- Explore list/map pois view, limit width on wider screens -->
+    <dimen name="explore_list_poi_card_width">400dp</dimen>
+    <dimen name="explore_map_poi_pin_window_width">366dp</dimen>
+
+    <!-- Explore list horizontal POIs view, width must be set -->
+    <dimen name="explore_list_horizontal_card_width">360dp</dimen>
+
+    <!-- Drawer width, limit width on wider screens -->
+    <dimen name="drawer_width">360dp</dimen>
+
+</resources>

@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_detail_hours_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fragment_detail_hours_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="42dp"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="12dp" >
+
+        <LinearLayout
+            android:id="@+id/fragment_detail_daily_hours_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_detail_hours_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:maxLines="2"
+            android:text="11:30AM - 6:00PM"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="15sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_detail_hours_not_available_text"
+            style="@style/TextViewStyle.GothamBookItalic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/detail_hours_unavailable"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_detail_hours_vary_text"
+            style="@style/TextViewStyle.GothamBookItalic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="@string/detail_hours_varies_message"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fragment_detail_hours_bottom_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/detail_divider_gray"
+        android:visibility="invisible" />
+
+</LinearLayout>

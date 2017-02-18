@@ -1,0 +1,51 @@
+<com.universalstudios.orlandoresort.view.map.MapWrapperLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/map_wrapper_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="13dp"
+        android:layout_gravity="top"
+        android:background="@drawable/top_down_drop_shadow"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <com.universalstudios.orlandoresort.controller.userinterface.wallet.UniversalFloatingActionButton
+            style="@style/FloatingActionButtonStyleWallet"
+            android:id="@+id/view_ufab_wallet_map"
+            custom:ufab_icon="@string/key_ufab_wallet"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            />
+
+        <ToggleButton
+            android:id="@+id/view_floating_action_toggle_restroom_map"
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:background="@drawable/layer_list_floating_action_button_restroom_toggle"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textOff=""
+            android:textOn=""
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="7dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+        <com.universalstudios.orlandoresort.controller.userinterface.wallet.UniversalFloatingActionButton
+            android:id="@+id/view_ufab_location_map"
+            custom:ufab_icon="@string/key_ufab_location"
+            android:layout_above="@id/view_ufab_wallet_map"
+            android:layout_alignParentRight="true"
+            style="@style/FloatingActionButtonStyleLocation"/>
+    </RelativeLayout>
+
+</com.universalstudios.orlandoresort.view.map.MapWrapperLayout>

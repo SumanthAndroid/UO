@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_preference_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/item_preference_title"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/dark_gray"
+        tools:text="Cabana Bay"/>
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/item_preference_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/shape_seek_bar_preference_background"
+        android:thumb="@drawable/seek_bar_preference_thumb"
+        app:tickMark="@drawable/shape_seek_bar_preference_tick"/>
+</LinearLayout>

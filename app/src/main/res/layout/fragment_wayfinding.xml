@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:animationCache="true"
+    android:background="@color/wayfinding_no_image_background_gray"
+    android:keepScreenOn="true"
+    android:orientation="vertical" >
+
+    <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+        android:id="@+id/fragment_wayfinding_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never" />
+
+    <LinearLayout
+        android:id="@+id/fragment_wayfinding_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ProgressBar
+            style="@android:style/Widget.Holo.Light.ProgressBar.Inverse"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:indeterminate="true" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wayfinding_progress_loading_route"
+            android:textColor="@color/text_gray"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/image_top_gradient"
+        android:orientation="horizontal"
+        android:paddingBottom="18dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="20dp"
+        android:paddingTop="16dp" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/fragment_wayfinding_step_number_text"
+            style="@style/TextViewStyle.GothamBlack"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="4"
+            android:shadowColor="@color/text_shadow_black"
+            android:shadowDx="2.0"
+            android:shadowDy="3.0"
+            android:shadowRadius="4.0"
+            android:text="28"
+            android:textColor="@color/text_white"
+            android:textSize="42sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:shadowColor="@color/text_shadow_black"
+                android:shadowDx="2.0"
+                android:shadowDy="3.0"
+                android:shadowRadius="4.0"
+                android:text="@string/wayfinding_guiding_to"
+                android:textColor="@color/text_white"
+                android:textSize="13sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_wayfinding_poi_name_text"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:paddingBottom="3dp"
+                android:paddingRight="2dp"
+                android:shadowColor="@color/text_shadow_black"
+                android:shadowDx="2.0"
+                android:shadowDy="3.0"
+                android:shadowRadius="4.0"
+                android:text="XHE SIMPSONS RIDE"
+                android:textColor="@color/text_white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="6dp" >
+
+            <View
+                android:id="@+id/fragment_wayfinding_close_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/state_list_wayfinding_close_button"
+                android:contentDescription="@string/wayfinding_close_button_content_description"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/fragment_wayfinding_current_step_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/state_list_wayfinding_current_step_button"
+                android:contentDescription="@string/wayfinding_current_step_button_content_description"
+                android:clickable="true"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.universalstudios.orlandoresort.view.wayfinding.WayfindProgressView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/wayfindProgressView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="160dp"
+        android:padding="5dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,65 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingFragment">
+
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextViewStyle.ShoppingHeader"
+            bind:font="@{`fonts/Gotham-Ultra.otf`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="@{tridion.pageHeaderAOTitle}"
+            tools:text="Select your Extras"
+            />
+
+        <TextView
+            style="@style/TextViewStyle.Normal.Black"
+            bind:font="@{`fonts/Gotham-Light.otf`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@{tridion.pageHeaderAOIntroText}"
+            tools:text="Check out some of these great ways to get more from your vacation."
+            />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/addons_shopping_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"
+                android:layout_gravity="top"
+                app:tabTextColor="@color/text_addons_tab_default"
+                app:tabSelectedTextColor="@color/text_addons_tab_selected"
+                app:tabIndicatorColor="@color/addons_tab_indicator"
+                bind:font="@{`fonts/Gotham-Medium.otf`}"
+                bind:selectedFont="@{`fonts/Gotham-Black.otf`}"
+                />
+
+        </android.support.v4.view.ViewPager>
+
+
+    </LinearLayout>
+
+</layout>

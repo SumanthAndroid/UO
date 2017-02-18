@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.views.CommerceGroupControl
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/text_white"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/group_panel_info"
+        android:orientation="vertical">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/commerceGroupTitle"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            tools:text="Park-to-Park"
+            android:textColor="@color/text_black"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toStartOf="@+id/linearLayout2"
+                android:layout_marginRight="8dp">
+                <RadioButton
+                    android:id="@+id/commerceGroupRadioButton"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    android:checked="false" />
+
+                <TextView
+                    android:id="@+id/commerceGroupDescription"
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:ellipsize="end"
+                    tools:text="Bounce between both parks\nanytime, any day. More"
+                    android:textColor="@color/text_black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentTop="false"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout2">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/commerceStartingFromLabel"
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="none"
+                    android:textColor="@color/text_black"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    tools:text="Starting from"
+                    tools:visibility="visible"/>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/commerceGroupAdultPrice"
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="none"
+                    tools:text="0.00"
+                    android:textColor="@color/text_black"
+                    android:textSize="21sp"
+                    android:singleLine="true" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/commercePrimaryPriceLabel"
+                    style="@style/TextViewStyle.GothamMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="none"
+                    tools:text="per adult"
+                    android:textColor="@color/text_black"
+                    android:textSize="13sp"
+                    android:singleLine="true" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/commerceGroupChildPrice"
+                    style="@style/TextViewStyle.GothamThin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="none"
+                    tools:text="($0 per child)"
+                    android:textColor="@color/text_shadow_black"
+                    android:textSize="10sp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/commerceUpsellContainer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="horizontal"
+        android:paddingTop="12dp"
+        android:paddingBottom="5dp"
+        android:layout_weight="20"
+        android:background="@drawable/grey_bubble"
+        android:gravity="center_vertical"
+        android:layout_below="@+id/group_panel_info"
+        android:weightSum="10">
+
+        <ImageView
+            android:id="@+id/commerceUpsellImage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="12dp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/commerceUpsellText"
+            style="@style/TextViewStyle.GothamThin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            tools:text="Includes the HogwartsTM Express to ride between both parks."
+            android:textColor="@color/text_shadow_black"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <View
+        android:orientation="vertical"
+        android:id="@+id/commerce_group_control_gray_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/text_primary_dark"
+        android:visibility="gone"
+        android:layout_margin="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:alpha="0.5"/>
+
+</com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.views.CommerceGroupControl>

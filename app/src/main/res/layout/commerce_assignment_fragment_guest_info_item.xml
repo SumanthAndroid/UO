@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.universalstudios.orlandoresort.view.textview.InputFilters"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignNamesAssignmentGuestInfoItem"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignNamesAssignmentAdapter.AssignNamesAssignmentActionCallback"/>
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/fragment_assign_name_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:paddingEnd="16dp"
+        android:paddingStart="16dp"
+        android:visibility="@{data.showEntryForm}">
+
+        <TextView
+            android:id="@+id/fragment_assign_name_select_name"
+            style="@style/TextViewStyle.Normal.Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@{tridion.selectGuestNameLabel}"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/fragment_assign_name_label_text_size"
+            android:visibility="@{data.showSpinner}"
+            bind:font="@{@string/font_gotham_medium}"
+            tools:text="Select guest name"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_assign_name_spinner_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{data.showSpinner}">
+
+            <com.universalstudios.orlandoresort.view.spinner.NDSpinner
+                android:id="@+id/fragment_assign_name_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center|start"
+                android:background="@drawable/shape_edit_text_background"
+                android:onItemSelected="@{(parent, view, position, id) -> callback.onSpinnerItemSelected(position)}"
+                bind:adapter="@{data.assignNamesAdapter}"/>
+
+            <ImageView
+                android:id="@+id/fragment_assign_name_spinner_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/ic_arrow_down_blue"
+                android:visibility="@{data.showSpinnerArrow}"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/fragment_assign_name_entry_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="@{data.showNameEntry}">
+
+            <TextView
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@{tridion.firstNameLabel}"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/fragment_assign_name_label_text_size"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="First Name"/>
+
+            <EditText
+                android:id="@+id/fragment_assign_name_first_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@{tridion.firstNameLabel}"
+                android:inputType="textCapWords|textPersonName"
+                android:afterTextChanged="@{() -> callback.onTextChanged()}"
+                android:padding="5dp"
+                android:text="@={data.firstName}"
+                android:textColorHint="@color/light_gray"
+                bind:font="@{@string/font_gotham_medium}"
+                bind:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+                tools:hint="First Name"/>
+
+            <TextView
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@{tridion.lastNameLabel}"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/fragment_assign_name_label_text_size"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Last Name"/>
+
+            <EditText
+                android:id="@+id/fragment_assign_name_last_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@{tridion.lastNameLabel}"
+                android:inputType="textCapWords|textPersonName"
+                android:afterTextChanged="@{() -> callback.onTextChanged()}"
+                android:padding="5dp"
+                android:text="@={data.lastName}"
+                android:textColorHint="@color/light_gray"
+                bind:font="@{@string/font_gotham_medium}"
+                bind:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+                tools:hint="Last Name"/>
+
+            <TextView
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@{tridion.suffixLabel}"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/fragment_assign_name_label_text_size"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Suffix"/>
+
+            <EditText
+                android:id="@+id/fragment_assign_name_suffix"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@{tridion.suffixLabel}"
+                android:inputType="textPersonName"
+                android:afterTextChanged="@{() -> callback.onTextChanged()}"
+                android:padding="5dp"
+                android:text="@={data.suffix}"
+                android:textColorHint="@color/light_gray"
+                bind:font="@{@string/font_gotham_medium}"
+                bind:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"/>
+
+            <CheckBox
+                android:id="@+id/fragment_assign_name_this_is_me"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checked="@{data.checked != null &amp;&amp; data.checked}"
+                android:onCheckedChanged="@{(view, checked) -> callback.onCheckedChanged(checked)}"
+                android:text="@{tridion.thisIsMeLabel}"
+                android:textColor="@color/dark_gray"
+                android:textSize="18sp"
+                android:visibility="@{data.checked != null}"
+                tools:text="This is me"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

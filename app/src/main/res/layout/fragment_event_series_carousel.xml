@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/explore_list_background_gray"
+    android:orientation="vertical" >
+
+    <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+        android:id="@+id/fragment_event_series_carousel_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/fragment_event_series_carousel_page_title_textview"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center"
+        android:padding="8dp"
+        android:text="0 / 0"
+        android:textColor="@color/text_gray"
+        android:textSize="12dp" />
+
+    <ScrollView
+        android:id="@+id/fragment_event_series_carousel_no_results_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="16dp" >
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="303dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/no_results_homer" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_explore_list_no_results_primary_text"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="284dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:text="@string/event_carousel_no_results_primary"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="18sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_explore_list_no_results_primary_sub_text"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="284dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/event_timeline_no_results_primary_sub"
+                android:textColor="@color/text_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

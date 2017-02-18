@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Detail hotel perk sizes -->
+    <dimen name="detail_hotel_perk_width">182dp</dimen>
+
+    <!-- You have arrived view, limit width on wider screens -->
+    <dimen name="welcome_view_text_width">420dp</dimen>
+
+</resources>

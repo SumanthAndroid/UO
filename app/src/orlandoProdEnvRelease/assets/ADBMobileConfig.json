@@ -1,0 +1,17 @@
+{
+    "version" : "1.0",
+    "audienceManager" : {
+        "server" : "nbcuni.demdex.net"
+    },
+    "analytics" : {
+        "rsids" : "nbcuoresortappdev,nbcuoresort",
+        "server" : "osimg.nbcuni.com",
+        "charset" : "UTF-8",
+        "ssl" : true,
+		"offlineEnabled" : true,
+        "lifecycleTimeout" : 300,
+        "batchLimit" : 10,
+        "privacyDefault" : "optedin",
+		"poi" : []
+    }
+}

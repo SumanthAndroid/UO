@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_settings_item_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/list_settings_item_top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/detail_divider_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:gravity="center"
+        android:minHeight="67dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_settings_item_primary_text"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="Xettings Option"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="16sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_settings_item_secondary_text"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:text="Xettings Option"
+            android:textColor="@color/text_gray"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <com.universalstudios.orlandoresort.view.fonts.Switch
+            android:id="@+id/list_settings_item_switch"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:adjustViewBounds="true"
+            android:saveEnabled="false"
+            android:thumb="@drawable/state_list_blue_switch_inner_holo_light"
+            android:track="@drawable/state_list_blue_switch_track_holo_light"
+            android:visibility="visible" />
+
+        <CheckBox
+            android:id="@+id/list_settings_item_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:adjustViewBounds="true"
+            android:clickable="false"
+            android:saveEnabled="false"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>

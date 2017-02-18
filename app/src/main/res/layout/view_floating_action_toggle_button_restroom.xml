@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ToggleButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_floating_action_toggle_restroom_map"
+    android:layout_width="61dp"
+    android:layout_height="61dp"
+    android:layout_centerInParent="true"
+    android:background="@drawable/layer_list_floating_action_button_restroom_toggle"
+    android:checked="false"
+    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:textOff=""
+    android:textOn=""/>
+

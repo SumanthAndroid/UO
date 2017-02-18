@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+    package="com.universalstudios.orlandoresort" >
+
+    <!--
+    The Google Maps Android API uses OpenGL ES version 2 to render the map. 
+    If OpenGL ES version 2 is not installed, your map will not appear.
+    -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!-- App permissions -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Google Play Services / Maps Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <!-- Google Maps Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Google Cloud Messaging Permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"
+        android:maxSdkVersion="18" />
+
+    <!-- Application specific permission for GCM -->
+    <permission
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+
+    <!-- Crittercism Permissions -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!--card.io permissions-->
+    <!-- Permission to vibrate - recommended, allows vibration feedback on scan -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Permission to use camera - required -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Camera features - recommended -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <application
+        android:name=".controller.application.UniversalOrlandoApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/UniversalOrlandoAppTheme">
+
+        <!-- Activities -->
+        <activity
+            android:name=".controller.userinterface.launcher.LauncherActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/UniversalOrlandoAppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <!-- Refer to build.gradle for definitions -->
+                <data
+                    android:scheme="${customUriScheme}"
+                    android:host="account"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.home.HomeActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.search.SearchActivity"
+            android:windowSoftInputMode="stateVisible|adjustNothing" />
+
+        <activity android:name=".controller.userinterface.explore.ExploreActivity" />
+
+        <activity android:name=".controller.userinterface.detail.DetailActivity"/>
+
+        <activity android:name=".controller.userinterface.detail.MapDetailActivity" />
+
+        <activity android:name=".controller.userinterface.general.BasicInfoDetailActivity"
+            android:parentActivityName=".controller.userinterface.home.HomeActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity android:name=".controller.userinterface.tickets.QueueTicketingAppointmentActivity" />
+        <activity android:name=".controller.userinterface.tickets.ReturnTimeTicketDoneActivity"
+                  android:configChanges="orientation|keyboardHidden"/>
+
+        <activity
+            android:name=".controller.userinterface.wayfinding.WayfindingActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.NoActionBar" />
+
+        <activity android:name=".controller.userinterface.web.WebViewActivity" />
+
+        <activity
+            android:name=".controller.userinterface.tutorial.TutorialActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.NoActionBar" />
+
+        <activity
+            android:name=".controller.userinterface.welcome.WelcomeActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.NoActionBar" />
+
+        <activity android:name=".controller.userinterface.debug.DebugOptionsActivity" />
+
+        <activity android:name=".controller.userinterface.alerts.AlertsListActivity" />
+
+        <activity android:name=".controller.userinterface.alerts.SetAlertActivity" />
+
+        <activity android:name=".controller.userinterface.news.NewsDetailActivity" />
+
+        <activity android:name=".controller.userinterface.detail.DiningPlanDetailActivity" />
+
+        <activity android:name=".controller.userinterface.help.GuestServicesActivity" />
+
+        <activity android:name=".controller.userinterface.help.AboutWifiActivity" />
+
+        <activity android:name=".controller.userinterface.faq.VacationPlannerFaqActivity" />
+
+        <activity android:name=".controller.userinterface.detail.ExpressPassDetailActivity" />
+
+        <activity android:name=".controller.userinterface.help.FoodAllergyActivity" />
+
+        <activity android:name=".controller.userinterface.detail.PackagePickupDetailActivity" />
+
+        <activity android:name=".controller.userinterface.hours.HoursCalendarActivity" />
+
+        <activity android:name=".controller.userinterface.filter.AdvancedFilterActivity" />
+
+        <activity android:name=".controller.userinterface.hours.HoursAndDirectionsActivity" />
+
+        <activity android:name=".controller.userinterface.parking.ParkingReminderActivity" />
+
+        <activity android:name=".controller.userinterface.parking.ParkingSectionSelectionActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventSeriesActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventSeriesDetailActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventScheduleActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventActivitiesActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventMapActivity" />
+
+        <activity android:name=".controller.userinterface.events.EventTimelineActivity" />
+
+        <activity android:name=".controller.userinterface.photoframe.PhotoFrameActivity"/>
+
+        <activity android:name=".controller.userinterface.help.TicketAssistanceActivity"/>
+
+        <activity android:name=".controller.userinterface.video.DetailPageVideoPlayActivity"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+
+        <activity android:name=".controller.userinterface.explore.ClusteredExploreActivity"/>
+        <activity android:name=".controller.userinterface.ice_tickets.assign_tickets.CommerceAssignTicketsActivity"/>
+
+        <activity
+            android:name=".controller.userinterface.detail.DiningMenuDetailActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:name=".controller.userinterface.offers.OfferDetailActivity"/>
+        <activity android:name=".controller.userinterface.offers.TermsAndConditionsActivity"/>
+        <activity android:name=".controller.userinterface.offers.OfferCouponCodeActivity"/>
+        <activity android:name=".controller.userinterface.account.address.AddressInformationActivity" />
+
+        <activity android:name=".controller.userinterface.account.ResetPasswordActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Refer to build.gradle for definitions -->
+                <data android:scheme="https"
+                    android:host="${commerceServicesHost}"
+                    android:pathPrefix="/cred/auth/changePasswordMobile" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".controller.userinterface.checkout.CheckoutSignInActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".controller.userinterface.ice_tickets.ShoppingCartActivity"/>
+
+        <activity android:name=".controller.userinterface.ice_tickets.ShoppingActivity"/>
+
+        <activity
+            android:name=".controller.userinterface.feedback.GuestFeedbackActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.newsletter.NewsletterActivity"
+            android:windowSoftInputMode="stateAlwaysHidden">
+        </activity>
+
+        <activity android:name=".controller.userinterface.wallet.WalletFolioActivity"
+                  android:parentActivityName=".controller.userinterface.home.HomeActivity"
+                  android:windowSoftInputMode="stateAlwaysHidden"
+                  android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.wallet.WalletActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletFolioActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.wallet.WalletProductActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.wallet.EntitlementDetailActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletProductActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.wallet.ManageCardsActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletFolioActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.wallet.ViewCardActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletFolioActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity
+            android:name=".controller.userinterface.linkentitlement.LinkEntitlementActivity"
+            android:parentActivityName=".controller.userinterface.wallet.WalletActivity"
+            android:theme="@style/UniversalAppCompatTheme">
+        </activity>
+
+        <activity android:name=".controller.userinterface.checkout.OrderConfirmationActivity" />
+
+        <activity android:name=".controller.userinterface.account.address.ProfileAddressListActivity" />
+
+        <activity android:name=".controller.userinterface.addons.AddOnDetailActivity"/>
+
+        <activity
+            android:name=".controller.userinterface.addons.AddOnsWizardActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.Cancel"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".controller.userinterface.misc.RoadblockActivity" />
+
+        <activity android:name=".controller.userinterface.addons.AddOnsDetailActivity" />
+
+        <activity
+            android:name=".controller.userinterface.account.AccountUpdateContactInfoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.AccountUpdatePersonalInfoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.AccountUpdatePasswordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.UpdatePreferencesActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.Cancel"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.UpdateInterestsActivity"
+            android:theme="@style/UniversalOrlandoAppTheme.Cancel"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.AccountLoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.AccountRegisterActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <activity
+            android:name=".controller.userinterface.account.ForgotPasswordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
+        <!-- Activities responsible for gathering payment info -->
+        <activity
+            android:name="io.card.payment.CardIOActivity"
+            android:configChanges="keyboardHidden|orientation"/>
+
+        <activity android:name="io.card.payment.DataEntryActivity"/>
+
+        <!-- This forces the barcode scanning activity into portrait -->
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <activity android:name=".controller.userinterface.account.ViewProfileActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"
+            android:theme="@style/UniversalAppCompatTheme"/>
+
+        <!-- Services -->
+        <service
+            android:name=".controller.userinterface.network.NetworkService"
+            android:exported="false" />
+
+        <service
+            android:name=".controller.userinterface.debug.MockLocationProviderService"
+            android:exported="false" />
+
+        <service
+            android:name=".controller.userinterface.wayfinding.WayfindingService"
+            android:exported="false" />
+
+        <service
+            android:name=".controller.userinterface.alerts.TriggerShowAlertService"
+            android:exported="false" />
+
+        <service
+            android:name=".controller.userinterface.alerts.SetAlertsOnBootCompletedService"
+            android:exported="false" />
+        <service
+            android:name=".controller.userinterface.network.HandlePushService"
+            android:exported="false" />
+
+        <service
+            android:name=".model.state.account.AccountLoginService"
+            android:exported="false">
+        </service>
+
+        <!-- Broadcast Receivers -->
+        <receiver
+            android:name=".controller.userinterface.network.PushBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.universalstudios.orlandoresort" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".controller.userinterface.geofence.GeofenceTransitionBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.universalstudios.orlandoresort.ACTION_GEOFENCE_TRANSITION_RECEIVED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".controller.userinterface.global.ShowToastBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.universalstudios.orlandoresort.ACTION_SHOW_TOAST" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".controller.userinterface.global.BootCompletedBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <!-- Content Providers -->
+        <!-- Refer to build.gradle for definitions -->
+        <provider
+            android:name=".model.persistence.UniversalOrlandoContentProvider"
+            android:authorities="${contentProviderAuthority}"
+            android:enabled="true"
+            android:exported="false"
+            android:label="Universal Orlando App Content Provider" >
+        </provider>
+
+        <!-- Meta Data for Google Play Services -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- Google Maps Key (set in build.gradle) -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_maps_key"/>
+    </application>
+
+</manifest>

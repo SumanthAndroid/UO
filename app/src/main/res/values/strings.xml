@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Custom Font Locations -->
+    <string name="font_gotham_black">fonts/Gotham-Black.otf</string>
+    <string name="font_gotham_black_italic">fonts/Gotham-Black Italic.otf</string>
+    <string name="font_gotham_bold">fonts/Gotham-Bold.otf</string>
+    <string name="font_gotham_bold_italic">fonts/Gotham-Bold Italic.otf</string>
+    <string name="font_gotham_book">fonts/Gotham-Book.otf</string>
+    <string name="font_gotham_book_italic">fonts/Gotham-Book Italic.otf</string>
+    <string name="font_gotham_extra_light">fonts/Gotham-Extra Light.otf</string>
+    <string name="font_gotham_extra_light_italic">fonts/Gotham-Extra Light Italic.otf</string>
+    <string name="font_gotham_light">fonts/Gotham-Light.otf</string>
+    <string name="font_gotham_light_italic">fonts/Gotham-Light Italic.otf</string>
+    <string name="font_gotham_medium">fonts/Gotham-Medium.otf</string>
+    <string name="font_gotham_medium_italic">fonts/Gotham-Medium Italic.otf</string>
+    <string name="font_gotham_thin">fonts/Gotham-Thin.otf</string>
+    <string name="font_gotham_thin_italic">fonts/Gotham-Thin Italic.otf</string>
+    <string name="font_gotham_ultra">fonts/Gotham-Ultra.otf</string>
+    <string name="font_gotham_ultra_italic">fonts/Gotham-Ultra Italic.otf</string>
+
+    <!-- Custom Font Items -->
+    <string name="font_actionbar_title">@string/font_gotham_bold</string>
+    <string name="font_drawer_item_title">@string/font_gotham_bold</string>
+    <string name="font_divider_title">@string/font_gotham_black</string>
+    <string name="font_tutorial_button">@string/font_gotham_book</string>
+
+
+    <!-- Action Bar -->
+    <string name="action_title_drawer">Universal Orlando</string>
+    <string name="action_title_home">Home</string>
+    <string name="action_title_search">Search</string>
+    <string name="action_title_alerts">My Alerts</string>
+    <string name="action_title_single_rider">Single Rider Line</string>
+    <string name="action_title_package_pickup">Package Pick-Up Available</string>
+    <string name="action_title_coke_freestyle">Coca-Cola freestyle&#174; Available</string>
+    <string name="action_title_child_swap">Child Swap</string>
+    <string name="action_title_express_pass_locations">Purchase Locations</string>
+    <string name="action_title_express_pass"><![CDATA[Universal Express<sup><small>SM</small></sup>]]></string>
+    <string name="action_title_food_allergy">Food Allergies</string>
+    <string name="action_title_park_notification">Park Notification</string>
+    <string name="action_title_dining_plans">Universal Dining Plans</string>
+    <string name="action_title_dining_menu">Dining Menu</string>
+    <string name="action_title_newsletter">Newsletter Sign Up</string>
+    <string name="action_search">Search</string>
+    <string name="action_share">Share</string>
+    <string name="action_guide_me">Guide Me</string>
+    <string name="action_map">Map</string>
+    <string name="action_list">List</string>
+    <string name="action_alerts">My Alerts</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_buytickets">View Cart</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_mark_all_as_read">Mark All As Read</string>
+    <string name="action_advanced_filter">Advanced Filter</string>
+    <string name="action_event_timeline">Today\'s Events</string>
+    <string name="action_event_series">Event Series</string>
+    <string name="action_title_ticket_detail">Ticket Detail</string>
+    <string name="action_return_time_ticket">Virtual Line&#8482; Pass</string>
+    <string name="action_return_time_ticket_get_title">Get</string>
+    <string name="action_return_time_ticket_detail_done">Done</string>
+    <string name="action_appointment_ticket_menu_item_edit">Edit</string>
+
+    <!-- Menu Drawer -->
+    <string name="drawer_item_home">Home</string>
+    <string name="drawer_item_login">Sign In</string>
+    <string name="drawer_item_view_profile">My Account</string>
+    <string name="drawer_item_favorites">My Favorites</string>
+    <string name="drawer_item_my_appointment_tickets">My Appointments</string>
+    <string name="drawer_item_recommended">Recommended</string>
+    <string name="drawer_item_park_news">Park Notifications</string>
+    <string name="drawer_item_buy_tickets">Buy Tickets</string>
+    <string name="drawer_header_buy">Buy</string>
+    <string name="drawer_item_tickets">Tickets</string>
+    <string name="drawer_item_express_pass">Express Pass</string>
+    <string name="drawer_item_extras">Extras</string>
+    <string name="drawer_item_ticket_bmg_bundle">Ticket + BMG</string>
+    <string name="drawer_item_ticket_uep_bundle">Ticket + UEP</string>
+    <string name="drawer_item_web_tickets">Web Tickets</string>
+    <string name="drawer_item_wallet">Wallet</string>
+    <string name="drawer_item_parking_reminder">Parking Reminder</string>
+    <string name="drawer_header_shop">SHOP</string>
+    <string name="drawer_header_explore_parks_and_hotels">EXPLORE PARKS &amp; HOTELS</string>
+    <string name="drawer_item_islands_of_adventure">Islands of Adventure</string>
+    <string name="drawer_item_volcano_bay">Universal\'s Volcano Bay</string>
+    <string name="drawer_item_universal_studios_florida">Universal Studios</string>
+    <string name="drawer_item_citywalk_orlando">Universal CityWalk</string>
+    <string name="drawer_item_wet_n_wild">Wet \'n Wild Orlando</string>
+    <string name="drawer_item_hotels">On-site Hotels</string>
+    <string name="drawer_header_explore_all_activities">EXPLORE ALL RESORT ACTIVITIES</string>
+    <string name="drawer_item_rides">Rides</string>
+    <string name="drawer_item_wait_times">Wait Times</string>
+    <string name="drawer_item_shows">Shows</string>
+    <string name="drawer_item_dining">Dining</string>
+    <string name="drawer_item_shopping">Shopping</string>
+    <string name="drawer_header_guest_amenities">GUEST AMENITIES</string>
+    <string name="drawer_item_restrooms">Restrooms</string>
+    <string name="drawer_item_lockers">Lockers</string>
+    <string name="drawer_item_guest_services">Guest Services</string>
+    <string name="drawer_item_guest_services_locations">Guest Services Locations</string>
+    <string name="drawer_item_atms">ATMs</string>
+    <string name="drawer_item_charging_stations">Charging Stations</string>
+    <string name="drawer_item_lost_and_found">Lost &amp; Found</string>
+    <string name="drawer_item_first_aid">First Aid</string>
+    <string name="drawer_item_service_animal_rest_areas">Service Animal Rest Areas</string>
+    <string name="drawer_item_smoking_areas">Smoking Permitted Areas</string>
+    <string name="drawer_item_help">Help</string>
+    <string name="drawer_item_hours_and_directions">Hours &amp; Directions</string>
+    <string name="drawer_item_settings_and_about">Settings</string>
+    <string name="drawer_item_privacy_and_legal">Privacy &amp; Legal</string>
+    <string name="drawer_item_settings">Settings</string>
+    <string name="drawer_item_about">About</string>
+    <string name="drawer_item_events">Events</string>
+    <string name="drawer_item_amenities"> </string>
+    <string name="drawer_item_gateways">Getting Around</string>
+    <string name="drawer_item_general_locations">General Locations</string>
+    <string name="drawer_item_wifi">Free In-Park WiFi</string>
+    <string name="drawer_item_amex_special_offers">AMEX Special Offers</string>
+    <string name="drawer_item_rental_services">Rental Services</string>
+    <string name="drawer_item_contact_guest_services">Contact Guest Services</string>
+    <string name="drawer_error_unable_to_open_wnw">Oops! Wet \'n Wild Orlando data is missing.</string>
+    <string name="drawer_open_drawer_content_description">Open the navigation menu drawer</string>
+    <string name="drawer_close_drawer_content_description">Close the navigation menu drawer</string>
+    <string name="drawer_item_log_out">Sign Out</string>
+
+
+    <!-- Menu Drawer - Hollywood specific items -->
+    <string name="drawer_header_explore_parks_and_events">PARKS &amp; EVENTS</string>
+    <string name="drawer_item_universal_studios_hollywood">Universal Studios</string>
+    <string name="drawer_item_citywalk_hollywood">Universal CityWalk</string>
+    <string name="drawer_header_help_and_support">HELP &amp; SUPPORT</string>
+    <string name="drawer_item_live_chat">Live Chat</string>
+    <string name="drawer_item_contact_us">Contact Us</string>
+    <string name="drawer_item_faqs">FAQs</string>
+
+    <!-- Splash Page -->
+    <string name="splash_failed_sync_title">Unable to sync park data</string>
+    <string name="splash_failed_sync_message">Check your internet connection and try again. If the problem persists, our servers may be experiencing issues.</string>
+    <string name="splash_failed_sync_confirm_button">OK</string>
+    <string name="splash_loading_content_description">Loading Universal Orlando Resort</string>
+    <string name="splash_tagline">The Entertainment Capital of LA\u2120</string>
+
+    <!-- List Page -->
+    <string name="list_no_results_title">No Results Found</string>
+    <string name="list_no_results_message">Try refining with \nless specific options.</string>
+    <string name="list_no_favorites_title">You don\'t have any favorites yet!</string>
+    <string name="list_no_favorites_message_part_1">Tap the</string>
+    <string name="list_no_favorites_message_part_2">to favorite an item</string>
+    <string name="list_upcoming_events_footer_message">Select event activities are on a first-come, first-served basis. Event occurs rain or shine. No rain checks, returns or refunds. Prices, times, dates and entertainment are subject to change without notice. Additional restrictions may apply.</string>
+
+    <!-- Favorite Toggle Button -->
+    <string name="favorite_toggle_button_on_formatted_content_description">%1$s is favorited</string>
+    <string name="favorite_toggle_button_off_formatted_content_description">%1$s is not favorited</string>
+
+    <!-- POI List Item -->
+    <string name="poi_list_item_venue_name_hotel">On-site Hotel</string>
+    <string name="poi_list_item_venue_name_waterpark">Water Park</string>
+    <string name="poi_list_item_guide_me">GUIDE ME</string>
+    <string name="poi_list_item_guide_me_formatted_content_description">Guide me to %1$s</string>
+    <string name="poi_list_item_dining_has_healthy_options_info">Vegetarian/Healthy Options</string>
+    <string name="poi_list_item_lockers_rental_info">See locker attendant for rates</string>
+    <string name="poi_list_item_lockers_ride_info">Free during ride</string>
+    <string name="poi_list_item_shop_sells_express_pass_info">Express Pass sold here</string>
+    <string name="poi_list_item_shop_has_package_pickup_info">Package Pick-Up Available</string>
+    <string name="poi_list_item_container_formatted_content_description">Click %1$s to view more details</string>
+
+    <!-- Venue Label -->
+    <string name="poi_venue_land_label_format">%1$s - %2$s</string>
+
+    <!-- POI Circle Badge -->
+    <string name="poi_circle_badge_starts">STARTS</string>
+    <string name="poi_circle_badge_opens">OPENS</string>
+    <string name="poi_circle_badge_min_wait">MIN WAIT</string>
+    <string name="poi_circle_badge_delayed">DELAYED</string>
+    <string name="poi_circle_badge_weather">WEATHER</string>
+    <string name="poi_circle_badge_closed">CLOSED</string>
+    <string name="poi_circle_badge_temp">TEMPORARY</string>
+    <string name="poi_circle_badge_at_capacity">At\nCapacity</string>
+    <string name="poi_circle_badge_min_wait_content_description">minute wait</string>
+    <string name="poi_circle_badge_min_wait_formatted_content_description">%1$d minute wait</string>
+
+    <!-- POI List Section Headers -->
+    <string name="poi_list_header_rides">RIDES</string>
+    <string name="poi_list_header_shows">SHOWS</string>
+    <string name="poi_list_header_attractions">ATTRACTIONS</string>
+    <string name="poi_list_header_dining">DINE</string>
+    <string name="poi_list_header_shopping">SHOP</string>
+    <string name="poi_list_header_hotels">ON-SITE HOTELS</string>
+    <string name="poi_list_header_waterparks">WATER PARKS</string>
+    <string name="poi_list_header_entertainment">ENTERTAINMENT</string>
+    <string name="poi_list_header_guest_amenities">GUEST AMENITIES</string>
+    <string name="poi_list_header_rides_thrill">THRILL</string>
+    <string name="poi_list_header_rides_water">WATER</string>
+    <string name="poi_list_header_rides_3d_and_4d">3D &amp; 4D</string>
+    <string name="poi_list_header_rides_kids">KIDS</string>
+    <string name="poi_list_header_shows_action">ACTION</string>
+    <string name="poi_list_header_shows_comedy">COMEDY</string>
+    <string name="poi_list_header_shows_music">MUSIC</string>
+    <string name="poi_list_header_shows_parade">PARADE</string>
+    <string name="poi_list_header_shows_character">CHARACTER ZONES</string>
+    <string name="poi_list_header_dining_fine">FINE</string>
+    <string name="poi_list_header_dining_casual">CASUAL</string>
+    <string name="poi_list_header_dining_quick_service">QUICK SERVE</string>
+    <string name="poi_list_header_events">EVENTS</string>
+    <string name="poi_list_header_gateways">GETTING AROUND</string>
+    <string name="poi_list_header_general_locations">AMENITIES</string>
+
+    <!-- POI List Section Headers Sorts -->
+    <!-- A to Z -->
+    <string name="poi_list_header_sort_alphabetical">A TO Z</string>
+    <!-- Wait Times -->
+    <string name="poi_list_header_sort_wait_times_5_or_less">5 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_15_or_less">15 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_30_or_less">30 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_45_or_less">45 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_60_or_less">60 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_75_or_less">75 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_90_or_less">90 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_wait_times_90_or_more">MORE THAN 90 MINUTES</string>
+    <string name="poi_list_header_sort_wait_times_closed">CLOSED</string>
+    <string name="poi_list_header_sort_wait_times_unknown">NOT AVAILABLE</string>
+    <string name="poi_list_header_sort_wait_times_capacity">AT CAPACITY</string>
+    <!-- Distance -->
+    <string name="poi_list_header_sort_distance_100_or_less">VERY CLOSE</string>
+    <string name="poi_list_header_sort_distance_300_or_less">NEAR</string>
+    <string name="poi_list_header_sort_distance_500_or_less">FAR</string>
+    <string name="poi_list_header_sort_distance_500_or_more">VERY FAR</string>
+    <!-- Show Times -->
+    <string name="poi_list_header_sort_show_times_15_or_less">15 MINUTES OR LESS</string>
+    <string name="poi_list_header_sort_show_times_30_or_less">WITHIN 30 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_45_or_less">WITHIN 45 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_60_or_less">WITHIN 60 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_90_or_less">WITHIN 90 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_120_or_less">WITHIN 120 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_120_or_more">MORE THAN 120 MINUTES</string>
+    <string name="poi_list_header_sort_show_times_no_more_showings">NO MORE SHOWING TODAY</string>
+    <string name="poi_list_header_sort_show_times_unavailable">SHOW TIME UNAVAILABLE</string>
+
+    <!-- Explore Filter Tabs -->
+    <string name="explore_filter_tab_rides">RIDES</string>
+    <string name="explore_filter_tab_shows">SHOWS</string>
+    <string name="explore_filter_tab_attractions">ATTRACTIONS</string>
+    <string name="explore_filter_tab_dine">DINE</string>
+    <string name="explore_filter_tab_shop">SHOP</string>
+    <string name="explore_filter_tab_rental_services">RENTAL SERVICES</string>
+    <string name="explore_filter_tab_entertainment">ENTERTAINMENT</string>
+    <string name="explore_filter_tab_rental_lockers">RENTAL LOCKERS</string>
+    <string name="explore_filter_tab_ride_lockers">RIDE LOCKERS</string>
+    <string name="explore_filter_tab_restrooms">RESTROOMS</string>
+    <string name="explore_filter_tab_family_restrooms">FAMILY RESTROOMS</string>
+    <string name="explore_filter_tab_fine">FINE</string>
+    <string name="explore_filter_tab_casual">CASUAL</string>
+    <string name="explore_filter_tab_quick_service">QUICK SERVE</string>
+    <string name="explore_filter_tab_snack">SNACK</string>
+    <string name="explore_filter_tab_action">ACTION</string>
+    <string name="explore_filter_tab_comedy">COMEDY</string>
+    <string name="explore_filter_tab_music">MUSIC</string>
+    <string name="explore_filter_tab_parade">PARADE</string>
+    <string name="explore_filter_tab_character">CHARACTER</string>
+    <string name="explore_filter_tab_thrill">THRILL</string>
+    <string name="explore_filter_tab_water">WATER</string>
+    <string name="explore_filter_tab_3d_and_4d">3D &amp; 4D</string>
+    <string name="explore_filter_tab_kids">KIDS</string>
+    <string name="explore_filter_tab_apparel_accessories">APPAREL &amp; ACCESSORIES</string>
+    <string name="explore_filter_tab_collectibles">COLLECTIBLES</string>
+    <string name="explore_filter_tab_games_novelties">GAMES &amp; NOVELTIES</string>
+    <string name="explore_filter_tab_food_specialties">FOOD SPECIALTIES</string>
+    <string name="explore_filter_tab_health_beauty">HEALTH &amp; BEAUTY</string>
+    <string name="explore_filter_tab_night_spots">NIGHT SPOTS</string>
+    <string name="explore_filter_tab_experiences">EXPERIENCES</string>
+    <string name="explore_filter_tab_edit_filter">EDIT FILTER</string>
+    <string name="explore_filter_tab_clear_filter">CLEAR FILTER</string>
+    <string name="filter_tab_selected_content_description_formatted">%1$s selected</string>
+    <string name="filter_tab_not_selected_content_description_formatted">%1$s not selected</string>
+    <string name="explore_search_results_header_search_count_none">No Results Found</string>
+    <string name="explore_search_results_desc_search_count_none">Try turning on more filter tabs or refining\nwith less specific options.</string>
+    <string name="explore_search_results_desc_search_count">Results</string>
+
+    <!-- Search Page -->
+    <string name="action_search_view_hint">Search</string>
+    <string name="action_search_clear_image_content_description">Clear search text</string>
+    <string name="search_no_results_title">No Search Results Found</string>
+    <string name="search_no_results_message">Check your keywords or explore the main menu for all parks and activities</string>
+
+    <!-- Detail Page -->
+    <string name="detail_header_ride_details">RIDE DETAILS</string>
+    <string name="detail_header_show_details">SHOW DETAILS</string>
+    <string name="detail_header_hours">HOURS</string>
+    <string name="detail_header_dining_detail">DINING DETAILS</string>
+    <string name="detail_header_entertainment_detail">ENTERTAINMENT DETAILS</string>
+    <string name="detail_header_locker_detail">LOCKER DETAILS</string>
+    <string name="detail_header_gateway_detail">GATEWAY DETAILS</string>
+    <string name="detail_header_locker_pricing">PRICING</string>
+    <string name="detail_header_shop_detail">SHOP DETAILS</string>
+    <string name="detail_header_rental_type_detail">RENTAL DETAILS</string>
+    <string name="detail_header_rental_price">RENTAL PRICING</string>
+    <string name="detail_header_included_with_stay">INCLUDED WITH STAY</string>
+    <string name="detail_header_reservations">RESERVATIONS</string>
+    <string name="detail_header_dining_options">DINING OPTIONS</string>
+    <string name="detail_header_details">DETAILS</string>
+    <string name="detail_header_offers">OFFERS</string>
+    <string name="detail_ticket_header_app">How many guests are in your party?</string>
+    <string name="detail_ticket_app_title">What time works best for you today?</string>
+    <string name="detail_ticket_appointment_detail_title">Show this ticket to the attendant when you arrive today.</string>
+
+    <string name="detail_feature_wait_time_alert">Wait Time Alert</string>
+    <string name="detail_feature_wait_time_alert_set_alert">Set Alert</string>
+    <string name="detail_feature_wait_time_alert_set_min">%1$d min</string>
+    <string name="detail_feature_ride_open_alert">Opening Alert</string>
+    <string name="detail_feature_ride_open_alert_set_alert">Set Alert</string>
+    <string name="detail_feature_ride_open_alert_set_on">On</string>
+    <string name="detail_feature_express_pass_line">Universal Express Pass Accepted</string>
+    <string name="detail_feature_express_pass_participating_attractions">Participating Attractions</string>
+    <string name="detail_feature_express_pass_sold_here">Express Pass Sold Here</string>
+    <string name="detail_feature_express_pass_line_get_pass">Get Pass</string>
+    <string name="detail_feature_single_rider_line">Single Rider Line</string>
+    <string name="detail_feature_child_swap">Child Swap</string>
+    <string name="detail_feature_package_pickup_participating_stores">Participating Stores</string>
+    <string name="detail_feature_package_pickup">Package Pick-Up Available</string>
+    <string name="detail_feature_coke_freestyle">Coca-Cola freestyle&#174; Available</string>
+    <string name="detail_feature_ride_thrill">Thrill Ride</string>
+    <string name="detail_feature_ride_3d">3D &amp; 4D Ride</string>
+    <string name="detail_feature_ride_water">Water Ride</string>
+    <string name="detail_feature_ride_kids">Kid Friendly Ride</string>
+    <string name="detail_feature_ride">Ride</string>
+    <string name="detail_feature_ride_nominal_fee">Nominal Fee</string>
+    <string name="detail_feature_ride_super_thrill">Super Thrill Ride</string>
+    <string name="detail_feature_ride_group_thrill">Group Thrill Ride</string>
+    <string name="detail_feature_ride_family_thrill">Family Fun Ride</string>
+    <string name="detail_feature_ride_extras">Exciting Extras</string>
+    <string name="detail_feature_dining">Dining</string>
+    <string name="detail_feature_dining_casual">Casual Dining</string>
+    <string name="detail_feature_dining_quick">Quick Service Dining</string>
+    <string name="detail_feature_dining_fine">Fine Dining</string>
+    <string name="detail_feature_dining_snack">Snacks &amp; Refreshments</string>
+    <string name="detail_feature_show">Show</string>
+    <string name="detail_feature_show_action">Action Show</string>
+    <string name="detail_feature_show_comedy">Comedy Show</string>
+    <string name="detail_feature_show_music">Musical Show</string>
+    <string name="detail_feature_show_parade">Parade</string>
+    <string name="detail_feature_show_character">Character Zone</string>
+    <string name="detail_feature_lockers_ride">Ride Lockers</string>
+    <string name="detail_feature_lockers_rental">Rental Lockers</string>
+    <string name="detail_feature_dining_plan_accepted">Universal Dining Plan is accepted</string>
+    <string name="detail_feature_dining_plan_quick_service_accepted">Universal Dining Plan - Quick Service is accepted</string>
+    <string name="detail_feature_dining_plan_and_quick_service_accepted">Both Universal Dining Plans are accepted</string>
+    <string name="detail_feature_dining_plans_not_accepted">Universal Dining Plans are not accepted</string>
+    <string name="detail_feature_dining_reservations_suggested">Reservations are suggested</string>
+    <string name="detail_feature_price_range_one">$%1$d</string>
+    <string name="detail_feature_price_range_two">$%1$d - $%2$d</string>
+    <string name="detail_feature_price_max_up_to">Up to $%1$d</string>
+    <string name="detail_feature_price_min_starting_at">Starting at $%1$d</string>
+    <string name="detail_feature_view_menu">View Menu</string>
+    <string name="detail_feature_party_pass_accepted">CityWalk Party Pass accepted</string>
+    <string name="detail_feature_party_pass_not_accepted">CityWalk Party Pass not accepted</string>
+    <string name="detail_feature_available_sizes">Available Sizes</string>
+    <string name="detail_feature_available_sizes_format">\u2022 %1$s\" W x %2$s\" H x %3$s\" D</string>
+    <string name="detail_feature_event_event_series_format">View all %1$s events</string>
+    <string name="detail_feature_shopping">Shopping</string>
+    <string name="detail_feature_apparel_accessories">Apparel &amp; Accessories</string>
+    <string name="detail_feature_collectibles">Collectibles</string>
+    <string name="detail_feature_games_novelties">Games &amp; Novelties</string>
+    <string name="detail_feature_food_specialties">Food Specialties</string>
+    <string name="detail_feature_health_beauty">Health &amp; Beauty</string>
+    <string name="detail_feature_entertainment">Entertainment</string>
+    <string name="detail_feature_ticket_return_time">Virtual Line&#8482; Pass</string>
+    <string name="detail_feature_ticket_header">TICKETS</string>
+
+    <string name="detail_access_option_assistive_listening_title">Assistive Listening</string>
+    <string name="detail_access_option_assistive_listening_sub_title">is Available</string>
+    <string name="detail_access_option_assistive_listening_description">Assistive listening headsets are available at Guest Services</string>
+    <string name="detail_access_option_standard_wheelchair_title">Guest may remain in standard wheelchair</string>
+    <string name="detail_access_option_standard_wheelchair_description">May remain in standard wheelchair throughout the attraction. Guest must be able to transfer to a standard wheelchair. Please see ride attendant for assistance.</string>
+    <string name="detail_access_option_wheelchair_must_transfer_title">Guest must transfer to ride\'s seat</string>
+    <string name="detail_access_option_wheelchair_must_transfer_description">Must transfer from wheelchair or ECV to ride vehicle seating</string>
+    <string name="detail_access_option_any_wheelchair_title">Guest may remain in ECV or Standard Wheelchair</string>
+    <string name="detail_access_option_any_wheelchair_description">May remain in ECV or standard wheelchair throughout the attraction</string>
+    <string name="detail_access_option_stationary_seating_title">Stationary Seating</string>
+    <string name="detail_access_option_stationary_seating_description">Guest can elect to experience the attraction in a non-moving seat</string>
+    <string name="detail_access_option_parental_discretion_title">Parental Discretion</string>
+    <string name="detail_access_option_parental_discretion_sub_title">is Advised</string>
+    <string name="detail_access_option_parental_discretion_description">Parental discretion advised due to mature themes/frightening images</string>
+    <string name="detail_access_option_sign_language_title">Sign Language</string>
+    <string name="detail_access_option_sign_language_sub_title">Interpreted Show</string>
+    <string name="detail_access_option_sign_language_description">This show offers sign language interpretation for our park guests. See park map for sign language show times.</string>
+    <string name="detail_access_option_closed_caption_title">Closed Captioning</string>
+    <string name="detail_access_option_closed_caption_sub_title">is Available</string>
+    <string name="detail_access_option_closed_caption_description">Closed Captioning transmitters are available at Guest Services</string>
+    <string name="detail_access_option_height_title_range_two">Between %1$d\" and %2$d\"</string>
+    <string name="detail_access_option_height_title_max">At most %1$d\"</string>
+    <string name="detail_access_option_height_title_min">At least %1$d\"</string>
+    <string name="detail_access_option_height_sub_title">Height Requirement</string>
+    <string name="detail_access_option_height_description">Guest must meet the height requirement to experience the attraction</string>
+    <string name="detail_access_option_supervision_required_title">If under %1$d\"</string>
+    <string name="detail_access_option_supervision_required_sub_title">Supervision Required</string>
+    <string name="detail_access_option_supervision_required_description">Guests between %1$d\" and %2$d\" must be accompanied by a supervising companion</string>
+    <string name="detail_access_option_extra_info_title">Additional Restrictions</string>
+    <string name="detail_access_option_extra_info_description">See attraction entrance for additional ridership restrictions</string>
+    <string name="detail_access_option_extra_info_riders_guide">Tap to view additional ridership requirements in our Rider’s Guide or review the Ride Warning Sign located at the entrance of each attraction</string>
+    <string name="detail_access_option_no_unattended_children_title">No Unattended Children</string>
+    <string name="detail_access_option_no_unattended_children_sub_title">Supervision Required</string>
+    <string name="detail_access_option_no_unattended_children_description">Children and non-swimmers should not be left unattended</string>
+    <string name="detail_access_option_life_vest_required_title">Life Vest Required</string>
+    <string name="detail_access_option_life_vest_required_sub_title">U.S. Coast Guard Approved</string>
+    <string name="detail_access_option_life_vest_required_description">All children 48\" and under are required to wear a US Coast Guard-approved flotation device</string>
+    <string name="detail_accessibility_riderguide">Rider\'s Guide</string>
+    <string name="detail_basic_info_package_pickup_title">Want to buy something now but don’t want to carry it around all day?</string>
+    <string name="detail_basic_info_package_pickup_description"><![CDATA[Try complimentary Package Pick-Up at select merchandise locations within Universal Studios Florida® or Universal\'s Islands of Adventure® and your purchases will be sent to the front of the park to be picked up at your convenience.<br /><br />All purchases are available to be picked up 3 hours after the time of purchase.<br /><br />Purchases made in <i>Universal Studios Florida</i> may be picked up at <i>It\'s A Wrap</i>.  Purchases made in <i>Islands of Adventure</i> may be picked up at <i>Ocean Trader Market®</i>.<br /><br />If you are staying at Loews Portofino Bay Hotel, Hard Rock Hotel®, or Loews Royal Pacific Resort, your packages are delivered directly to your room.  Packages are delivered to rooms the following day after 9 am.  Guests staying at Universal\'s Cabana Bay Beach Resort may pick up their packages at the front desk the following day after 9 am.]]></string>
+    <string name="detail_basic_info_coke_freestyle_title">Coca-Cola freestyle® Available</string>
+    <string name="detail_basic_info_coke_freestyle_description"><![CDATA[Satisfy your thirst with one day of unlimited Coca-Cola freestyle® soft drinks at all participating Coca-Cola freestyle® locations.  Valid at both Universal Studios Florida® and Universal\'s Islands of Adventure®.<br /><br />A 1-Day Coca-Cola freestyle® Souvenir Cup is <strong>$12.99</strong> per person + tax.<br /><br />Purchase two cups for $11.99 each (per person + tax) or purchase three or more cups for $9.99 each (per person + tax).<br /><br />Add a day for $6.99 at participating Coca-Cola freestyle® locations.]]></string>
+    <string name="detail_basic_info_single_rider_title">What\'s a Single Rider Line?</string>
+    <string name="detail_basic_info_single_rider_description">The Single Rider option is available for guests wishing to experience an attraction without friends or family in exchange for a shorter wait time. Single Rider is based on availability and subject to change without notice.</string>
+    <string name="detail_basic_info_child_swap_title">What is Child Swap?</string>
+    <string name="detail_basic_info_child_swap_description">Ride too intense for little ones? One of you can wait with them while the rest of your group rides. Afterwards, the person who waited can ride without standing in line.</string>
+    <string name="detail_basic_info_express_pass_line_description"><![CDATA[Skip the regular lines with the Universal Express<sup><small>SM</small></sup> pass! Maximize your fun and get through the line faster on your favorite participating rides and attractions.\n\nUniversal Express<sup><small>SM</small></sup> products are available for purchase pre-arrival at UniversalOrlando.com or in-park during your visit. (Valid theme park admission required. While supplies last.)]]></string>
+    <string name="detail_basic_info_food_allergy_line_description"><![CDATA[At Universal Orlando® Resort, we know it can be a challenge to dine out when you or someone you’re with has food allergies and/or intolerances. That’s why we offer a number of dining locations throughout Universal’s Islands of Adventure®, Universal Studios Florida®, Universal CityWalk® and our on-site hotels where our chefs and culinary staff can accommodate your dietary needs related to common food allergies, phenylketonuria (PKU), metabolic disorders, and guests with multiple allergies/intolerances. <br/><br/> Guests with questions about the dietary requests listed above and questions not answered here can contact us. Please call at least 14 days in advance. Our dining locations will do their best to accommodate guests with food allergies, but cannot guarantee that they will be able to meet all requests. <br/><br/>If you aren’t able to research dining options ahead of time, don’t worry. You can ask to speak to a chef or manager at any restaurant within Universal Orlando® Resort once you’re here. Let them know which guest in your party has a food allergy or intolerance, and what the allergy/intolerance is. Our culinary staff will make every effort to prevent that allergen from coming in contact with any part of that guest’s meal.]]></string>
+    <string name="detail_basic_info_food_allergy_email_description">http://www.visitorsatisfaction.com/contactus/</string>
+    <string name="detail_basic_info_express_pass_line_buy_in_park">Buy In Park</string>
+    <string name="detail_basic_info_express_pass_line_buy_online">Buy Online</string>
+    <string name="detail_basic_info_express_pass_restrictions_apply">Restrictions Apply.</string>
+    <string name="detail_basic_info_express_pass_restrictions_description">Paid theme park admission required. Limit one (1) express ride access entry per participating attractions using the Universal Express℠ queue. Not valid at Harry Potter and the Forbidden Journey™, Harry Potter and the Escape from Gringotts™, and other select attractions.  Universal Express℠ passes not valid at Hogwarts™ Express and available during normal theme park operating hours only. Not valid for separately ticketed special events or at Wet ‘n Wild. Additional restrictions may apply and benefits are subject to change without notice.\n\nFor full details, please visit UniversalOrlando.com or visit one of the in-park purchase locations.</string>
+    <string name="detail_show_time_hours_end_range">\u0020- %1$s</string>
+    <string name="detail_show_time_list_set_reminder">Tap to set reminder</string>
+    <string name="detail_show_time_list_set_reminder_content_description">Tap a show time to set a reminder</string>
+    <string name="detail_show_time_button_prompt_to_set_reminder_formatted_content_description">%1$s, tap to set a reminder</string>
+    <string name="detail_show_time_list_no_more_shows">No more show times today</string>
+    <string name="detail_show_time_list_shows_unavailable">Show times not available</string>
+    <string name="detail_show_time_list_tap_to_set_reminder">Tap to set a reminder</string>
+    <string name="detail_hours_unavailable">Hours not available</string>
+    <string name="detail_hours_varies">Varies</string>
+    <string name="detail_hours_varies_message">Times vary, visit location or see Guest Services for details</string>
+    <string name="detail_hours_closed">Closed</string>
+    <string name="detail_hours_seasonal">Open seasonally, visit location or see Guest Services for details</string>
+    <string name="detail_hours_with_park">Open during park hours</string>
+    <string name="detail_hours_open_time_close_with_park">%1$s - Park close</string>
+    <string name="detail_hours_open_with_park_to_close_time">Park open - %1$s</string>
+    <string name="detail_hours_range_two">%1$s - %2$s</string>
+    <string name="detail_days_range_two">%1$s - %2$s</string>
+    <string name="detail_perks_early_park_admission_title">Early Park Admission</string>
+    <string name="detail_perks_early_park_admission_description">As an on-site hotel guest, you can enjoy Early Park Admission to The Wizarding World of Harry Potter™ one hour before the theme park opens (valid theme park admission required). Restrictions apply.</string>
+    <string name="detail_perks_skip_the_regular_lines_title">Skip the Regular Lines</string>
+    <string name="detail_perks_skip_the_regular_lines_description">As a guest of the hotel, you\'ll skip the regular lines at select attractions in both theme parks all day - a free benefit worth up to $89 per person. Valid theme park admission is required.</string>
+    <string name="detail_address_directions">DIRECTIONS</string>
+    <string name="detail_phone_number_clipboard_label">Phone Number</string>
+    <string name="detail_phone_number_copied_to_clipboard_toast_message">Phone number copied to clipboard</string>
+    <string name="detail_email_clipboard_label">Email</string>
+    <string name="detail_email_copied_to_clipboard_toast_message">Email copied to clipboard</string>
+    <string name="detail_twitter_url_copied_to_clipboard_toast_message">Hashtag Url copied to clipboard</string>
+    <string name="detail_address_clipboard_label">Address</string>
+    <string name="detail_address_copied_to_clipboard_toast_message">Address copied to clipboard</string>
+    <string name="detail_address_lat_lon_clipboard_label">Address coordinates</string>
+    <string name="detail_address_lat_lon_copied_to_clipboard_toast_message">Address coordinates copied to clipboard</string>
+    <string name="detail_social_sharing_subject">%1$s at Universal Orlando</string>
+    <string name="detail_social_sharing_subject_check_this_out">Check this out</string>
+    <string name="detail_social_sharing_chooser_title">Share %1$s</string>
+    <string name="detail_lockers_visit_for_pricing">Visit locker location for pricing information</string>
+    <string name="detail_rental_visit_for_pricing">Visit Rental Services location for pricing information</string>
+    <string name="detail_rental_terms_condition">Terms And Conditions</string>
+    <string name="detail_image_x_of_x_formatted_content_description">Attraction image %1$d of %2$d</string>
+    <string name="detail_feature_rental_type_testing_rentals_all_selected">Testing Rentals All Selected</string>
+    <string name="detail_feature_rental_type_testing_rentals_evc_only">Testing Rentals ECV Only</string>
+    <string name="detail_feature_rental_type_stroller">Stroller Rental</string>
+    <string name="detail_feature_rental_type_wheel_chair">Wheelchair Rental</string>
+
+    <string name="detail_feature_rental_type_evc_available">Electric Convenience Vehicles (ECV)</string>
+    <string name="detail_feature_rental_type_stroller_available">Strollers Available</string>
+    <string name="detail_feature_rental_type_wheel_chair_available">Wheelchairs Available</string>
+
+    <!-- Home Page -->
+    <string name="home_button_rides">RIDES</string>
+    <string name="home_button_attractions">ATTRACTIONS</string>
+    <string name="home_button_wait_times">WAIT TIMES</string>
+    <string name="home_button_shows">SHOWS</string>
+    <string name="home_button_dining">DINING</string>
+    <string name="home_button_shopping">SHOPPING</string>
+    <string name="home_button_rides_text_content_description">View rides</string>
+    <string name="home_button_shows_text_content_description">View shows</string>
+    <string name="home_button_dining_text_content_description">View dining</string>
+    <string name="home_button_wait_times_text_content_description">View ride wait times</string>
+    <string name="home_map_explore_the">Explore the</string>
+    <string name="home_map_resort_map">Resort Map</string>
+    <string name="home_map_choose_a_park">CHOOSE A PARK</string>
+    <string name="home_map_close_choose_a_park_content_description">Close the "choose a park" menu</string>
+    <string name="home_map_logo_islands_of_adventure_content_description">Islands of Adventure park hours</string>
+    <string name="home_map_logo_universal_studios_florida_content_description">Universal Studios Florida park hours</string>
+    <string name="home_map_logo_citywalk_content_description">CityWalk park hours</string>
+    <string name="home_viewpager_content_description">Swipe left or right to view featured items</string>
+    <string name="home_todays_park_hours">"Today's Park Hours: "</string>
+    <string name="home_browse_map">BROWSE MAP</string>
+    <string name="home_newsletter_title">Stay in the Know</string>
+    <string name="home_newsletter_description">Get exclusive deals, new and more</string>
+    <string name="home_buy_tickets">Buy Tickets</string>
+    <string name="home_park_updates">Latest Park Updates</string>
+    <string name="home_park_updates_view_all">View All Park Updates</string>
+    <string name="home_short_wait_times">Short Wait Times</string>
+    <string name="home_short_wait_times_view_all">View All\nAttractions</string>
+    <string name="home_upcoming_events">"Upcoming Events"</string>
+    <string name="home_upcoming_events_view_all">View All\nEvents</string>
+
+    <!-- Wayfinding Page -->
+    <string name="wayfinding_guiding_to">GUIDING TO</string>
+    <string name="wayfinding_step_x_of_x">STEP %1$d OF %2$d</string>
+    <string name="wayfinding_step_1_content_description">Step %1$d, swipe right to left to go to the next step</string>
+    <string name="wayfinding_step_x_content_description">Step %1$d</string>
+    <string name="wayfinding_step_x_of_x_notification">Step %1$d of %2$d</string>
+    <string name="wayfinding_toast_error_trying_to_start_guiding">An error occurred while attempting to guide you. Please try again later.</string>
+    <string name="wayfinding_step_instructions_not_available">Step instructions not available.</string>
+    <string name="wayfinding_progress_loading_route">Routing...</string>
+    <string name="wayfinding_stat_action_stop_guiding">Stop guiding</string>
+    <string name="wayfinding_stat_starting_title">Universal Orlando</string>
+    <string name="wayfinding_stat_starting_content">Routing...</string>
+    <string name="wayfinding_stat_starting_ticker">Routing...</string>
+    <string name="wayfinding_stat_rerouting_content">Rerouting...</string>
+    <string name="wayfinding_stat_rerouting_ticker">Rerouting...</string>
+    <string name="wayfinding_stat_get_route_failed_content">Unable to load walking directions to this destination. Please check your internet connection and try again.</string>
+    <string name="wayfinding_stat_get_route_failed_ticker">Network error</string>
+    <string name="wayfinding_stat_no_gps_content">High accuracy / GPS location is required for walking directions. Please enable high accuracy / GPS location access and try again.</string>
+    <string name="wayfinding_stat_no_gps_ticker">GPS location disabled</string>
+    <string name="wayfinding_stat_no_location_services_content">Unable to find your current location. Make sure location services are enabled and you are in the open and try again..</string>
+    <string name="wayfinding_stat_no_location_services_ticker">Unable to find current location</string>
+    <string name="wayfinding_stat_no_route_content">Unable to load walking directions from your current location. Please try again from a different starting location.</string>
+    <string name="wayfinding_stat_no_route_ticker">Directions unavailable</string>
+    <string name="wayfinding_get_route_failed_title">Network Error</string>
+    <string name="wayfinding_get_route_failed_message">Unable to load walking directions to this destination. Please check your internet connection and try again.</string>
+    <string name="wayfinding_get_route_failed_positive_button">Retry</string>
+    <string name="wayfinding_get_route_failed_negative_button">Cancel</string>
+    <string name="wayfinding_no_route_title">Directions Unavailable</string>
+    <string name="wayfinding_no_route_message">Unable to load walking directions from your current location. Please try again from a different starting location.</string>
+    <string name="wayfinding_no_route_positive_button">OK</string>
+    <string name="wayfinding_toast_you">YOU</string>
+    <string name="wayfinding_toast_have_arrived">HAVE ARRIVED</string>
+    <string name="wayfinding_no_gps_title">GPS Location Disabled</string>
+    <string name="wayfinding_no_gps_message">High accuracy GPS location is required for walking directions. Please enable high accuracy / GPS location access and try again.</string>
+    <string name="wayfinding_no_gps_positive_button">Settings</string>
+    <string name="wayfinding_no_gps_negative_button">Cancel</string>
+    <string name="wayfinding_no_location_services_title">Unable to Find Current Location</string>
+    <string name="wayfinding_no_location_services_message">Unable to find your current location. Make sure location services are enabled and you are in the open and try again.</string>
+    <string name="wayfinding_no_location_services_positive_button">OK</string>
+    <string name="wayfinding_current_step_button_content_description">Go to the current step</string>
+    <string name="wayfinding_close_button_content_description">Exit route guidance</string>
+
+    <!-- Hours and Directions Page -->
+    <string name="hours_and_directions_resort_hours">Resort Hours</string>
+    <string name="hours_and_directions_resort_hours_message">Universal Studios® and Universal\'s Islands of Adventure® are open 365 days a year. Operating hours normally begin at 9:00 a.m. and closing times vary.\n\nAfter a day at the theme parks, head to Universal CityWalk® where you can relax, unwind and enjoy great food, cold drinks and live music! Universal CityWalk operating hours are from 11:00 a.m. to 2:00 a.m., 365 days a year.\n\nPlease note: Park Hours are subject to change.</string>
+    <string name="hours_and_directions_header_our_parks">OUR PARKS</string>
+    <string name="hours_and_directions_header_calendar">CALENDAR</string>
+    <string name="hours_and_directions_header_open_today">Open today %1$s</string>
+    <string name="hours_and_directions_directions">Directions</string>
+    <string name="hours_and_directions_uso_address_name">Universal Orlando Resort</string>
+    <string name="hours_and_directions_uso_address">6000 Universal Blvd\nOrlando, FL 32819</string>
+    <string name="hours_and_directions_ush_address_name">Universal Studios Hollywood</string>
+    <string name="hours_and_directions_ush_address">100 Universal City Plaza\nUniversal City, CA 91608</string>
+    <string name="hours_and_direction_uso_lat_lon">28.47399, -81.46228</string>
+    <string name="hours_and_direction_ush_lat_lon">34.135447, -118.354423</string>
+    <string name="hours_and_directions_calendar">Park Hours Calendar</string>
+    <string name="hours_and_directions_address_name_wnw">Wet \'n Wild</string>
+    <string name="hours_and_directions_address_wnw">6200 International Blvd\nOrlando, FL 32819</string>
+    <string name="hours_and_direction_lat_lon_wnw">28.46049, -81.46532</string>
+
+    <!-- Settings and About Page -->
+    <string name="settings_section_header_guide_me">Guide Me</string>
+    <string name="settings_section_header_notifications">Notifications</string>
+    <string name="settings_section_header_about">About</string>
+    <string name="settings_option_tutorial">App Tour</string>
+    <string name="settings_option_privacy_policy">Privacy Policy</string>
+    <string name="settings_option_terms_and_conditions">Terms &amp; Conditions</string>
+    <string name="settings_option_copyright_and_trademarks">Copyright &amp; Trademarks</string>
+    <string name="settings_option_notifications_park_news">Park Notifications</string>
+    <string name="settings_option_guide_me_sounds">Sound</string>
+    <string name="settings_option_guide_me_vibrate">Vibrate</string>
+    <string name="settings_option_version">Version %1$s</string>
+    <string name="settings_option_privacy_policy_faq">Privacy FAQ</string>
+
+    <!-- Privacy and Legal Page -->
+    <string name="privacy_and_legal_option_privacy_policy">Privacy Policy</string>
+    <string name="privacy_and_legal_option_terms_of_service">Terms of Service</string>
+    <string name="privacy_and_legal_option_privacy_faq">Privacy FAQ</string>
+    <string name="privacy_and_legal_option_copyright_and_trademarks">Copyright &amp; Trademarks</string>
+
+    <!-- Help Page -->
+    <string name="help_option_contact_guest_services">Contact Guest Services</string>
+    <string name="help_option_ticket_assistance">Ticket Assistance</string>
+    <string name="help_option_vacation_package_faq">Vacation Package</string>
+    <string name="help_option_tutorial">App Tutorial</string>
+    <string name="food_allergy_option_tutorial">Food Allergies</string>
+    <string name="help_option_wifi">Free In-Park WiFi</string>
+    <string name="help_option_child_swap">Child Swap</string>
+    <string name="help_option_uo_dining_plans">Universal Dining Plans</string>
+    <string name="help_option_uo_express_pass">Universal Express Pass</string>
+    <string name="help_option_single_rider_line">Single Rider Line</string>
+    <string name="help_option_faq_section_header">FAQ</string>
+    <string name="help_option_package_pickup">Package Pick-Up</string>
+    <string name="help_option_coke_freestyle">Coca-Cola Freestyle</string>
+
+    <!-- Contact Guest Services Page -->
+    <string name="contact_guest_services_header_contact_info">CONTACT INFORMATION</string>
+    <string name="contact_guest_services_title">Contact Guest Services</string>
+    <string name="contact_guest_services_message">Thank you for visiting Universal Orlando Resort®! Your experiences at our resort are extremely important to us. If you have any questions, comments, or concerns, please call us for immediate assistance. Guest Services Coordinators are available seven days a week, from 8:30 AM until our theme parks close, to assist you.\n\nOr, e-mail us below. We make every effort to respond to emails within 24 to 48 hours; however, due to the high volume of emails we receive each day, please allow several days for a response to your email.</string>
+    <string name="contact_guest_services_show_locations">Guest Services Locations</string>
+    <string name="contact_guest_services_email_subject">UO Mobile App Guest Feedback</string>
+    <string name="contact_guest_services_guest_feedback">Guest Feedback</string>
+    <string name="email_guest_services">Email Guest Services</string>
+    <string name="hashtag_ask_universal">#AskUniversal</string>
+    <string name="url_ask_universal">https://twitter.com/hashtag/AskUniversal?src=hash</string>
+
+    <!-- Child Swap Page -->
+    <string name="child_swap_page_title">What Is Child Swap?</string>
+    <string name="child_swap_page_message">Ride too intense for little ones? One of you can wait with them while the rest of your group rides. Afterwards, the person who waited can ride without standing in line.</string>
+
+    <!-- About WiFi Page -->
+    <string name="about_wifi_header_how_to_connect">HOW TO CONNECT</string>
+    <string name="about_wifi_subtitle">ALL PARKS</string>
+    <string name="about_wifi_title">Free In-Park WiFi</string>
+    <string name="about_wifi_message">Complimentary XFINITY WiFi is now available throughout Universal Studios Florida, Universal\'s Islands of Adventure and Universal CityWalk. It\'s easy to get connected and can help save cellular data.</string>
+    <string name="about_wifi_message_content_description">Complimentary xfinity WiFi is now available throughout Universal Studios Florida, Universal\'s Islands of Adventure and Universal CityWalk. It\'s easy to get connected and can help save cellular data.</string>
+    <string name="about_wifi_badge_free">FREE!</string>
+    <string name="about_wifi_item_1">Enable WiFi on your device</string>
+    <string name="about_wifi_item_2">Select \"%1$s\"</string>
+    <string name="about_wifi_item_3">Launch your browser</string>
+    <string name="about_wifi_item_4">Follow the prompts to sign in</string>
+    <string name="about_wifi_xfinity_logo_content_description">xfinity WiFi</string>
+
+    <!-- Web View Pages -->
+    <string name="webview_no_internet_connection_title">No Internet Connection</string>
+    <string name="webview_retry">Retry</string>
+    <string name="webview_loading_content">Loading Content</string>
+    <string name="webview_error_loading_page">Couldn\'t load page</string>
+    <string name="webview_error_detail">We couldn\'t load your page please try again</string>
+    <string name="webview_no_internet_connection_message">Unable to load content. Please check your internet connection and try again.</string>
+
+    <!-- Vacation Planner FAQ Page -->
+    <string name="vacation_planner_faq_item_1_title">Where do I pick up my theme park tickets?</string>
+    <string name="vacation_planner_faq_item_1_message">You may pick up tickets at the Will Call Kiosk, where you will swipe the credit card used during 
+purchase (for verification purposes only), enter the Reservation Number provided on this email 
+receipt, and your tickets will print automatically. Your reservation number contains only the 
+number 0 (zero) and never the letter O when entering it at the kiosk.\n\nFlorida Resident and/or Blue Man Group tickets must be picked up at a Pass Sales Booth at the 
+front of either park by presenting your reservation number and a valid photo ID. </string>
+    <string name="vacation_planner_faq_item_2_title">Where do I retrieve my reservation voucher?</string>
+    <string name="vacation_planner_faq_item_2_message">Reservations included in your vacation package are included in your E-Travel Document. You 
+must print a copy of the voucher within the E-Travel Document and present it for redemption, 
+along with a valid Photo ID.</string>
+    <string name="vacation_planner_faq_item_3_title">What time can I enter the park with Early Park Admission?</string>
+    <string name="vacation_planner_faq_item_3_message">Early Park Admission begins one hour before the scheduled park opening. Be sure to bring your 
+admission tickets and e-travel documents with you.</string>
+    <string name="vacation_planner_faq_item_4_title">Is there FREE transportation from my hotel to the theme parks?</string>
+    <string name="vacation_planner_faq_item_4_message">Scheduled theme park transportation provided is based on regular park operating hours* (does
+not run continuously) to UNIVERSAL ORLANDO® theme parks. Seating/standing space is limited and on a first come, first served basis.
+*Not valid for Special Events, Groups or Early Park Admission.</string>
+    <string name="vacation_planner_faq_item_5_title">How do I book the UPRV Early Park Admission shuttle?</string>
+    <string name="vacation_planner_faq_item_5_message">Guests wishing to take advantage of the Early Park Admission departures must call the UPRV 
+Early Park Admission shuttle reservation line at 800-711-0080, between the hours of 8:00am 
+and 8:00pm no later than one day prior to the day they wish to use Early Park Admission. This 
+special charter service books by reservation ONLY, boarding passes will NOT be issued. Limited 
+hotel participation available.</string>
+    <string name="vacation_planner_faq_item_6_title">What if the scheduled theme park transportation is late?</string>
+    <string name="vacation_planner_faq_item_6_message">Traffic delays of 15 to 20 minutes around the International Drive corridor and the Theme Parks 
+are to be expected. If the transportation is delayed later than 20 minutes, please visit the hotel 
+Front Desk or the Attraction Ticket Center located in the hotel lobby.</string>
+    <string name="vacation_planner_faq_item_7_title">I’m staying at an On-Site Deluxe hotel. How do I receive my Unlimited Express Pass?</string>
+    <string name="vacation_planner_faq_item_7_message">This theme park privilege is valid from park opening on the day of your check-in through park 
+closing on your check-out day. If you arrive at our resort prior to check-in time, your hotel will 
+check your bags and issue temporary room keys so that you can start enjoying your express access. On your check-out day, your room keys will be deactivated for hotel use, but you can 
+continue to use your unlimited Express Pass through park closing. Please be advised that express 
+access is only valid at participating attractions. Lastly, please note that these privileges do not 
+apply to separately-ticketed special events such as Rock the Universe® and Halloween Horror 
+Nights®.\n\nAt the express kiosks, you will be prompted to insert your room key card and follow the on 
+screen instructions to print your Unlimited Express Pass. The kiosk will take a photo of you to 
+print on the Express Pass. Show this pass at each express attraction entrance for free access 
+throughout both theme parks. If you ever lose this Express Pass, please visit any of our Guest 
+Services locations for assistance.</string>
+    <string name="vacation_planner_faq_item_8_title">What number can I call for assistance with my vacation package?</string>
+    <string name="vacation_planner_faq_item_8_message">You can reach one of our agents Monday – Saturday, 7:30am - 10:00pm and Sunday, 7:30am – 
+9:00pm by calling 800.407.4275 </string>
+
+    <!-- Parking Reminder Options -->
+    <string name="parking_reminder_header_section">SECTION</string>
+    <string name="parking_reminder_header_level">LEVEL</string>
+    <string name="parking_reminder_header_row">ROW</string>
+    <string name="parking_reminder_header_notes">NOTES</string>
+
+    <!-- Orlando parking sections -->
+    <string name="parking_reminder_section_item_jurassic_park">Jurassic Park</string>
+    <string name="parking_reminder_section_item_king_kong">King Kong</string>
+    <string name="parking_reminder_section_item_jaws">Jaws</string>
+    <string name="parking_reminder_section_item_spider_man">Spider-Man</string>
+    <string name="parking_reminder_section_item_cat_in_the_hat">Cat In The Hat</string>
+    <string name="parking_reminder_section_item_et">E.T.</string>
+    <string name="parking_reminder_section_north_garage">NORTH GARAGE</string>
+    <string name="parking_reminder_section_south_garage">SOUTH GARAGE</string>
+
+    <string-array name="parking_reminder_section_north_garage">
+        <item>@string/parking_reminder_section_item_jurassic_park</item>
+        <item>@string/parking_reminder_section_item_king_kong</item>
+        <item>@string/parking_reminder_section_item_jaws</item>
+    </string-array>
+
+    <string-array name="parking_reminder_section_south_garage">
+        <item>@string/parking_reminder_section_item_spider_man</item>
+        <item>@string/parking_reminder_section_item_cat_in_the_hat</item>
+        <item>@string/parking_reminder_section_item_et</item>
+    </string-array>
+
+    <!-- Hollywood parking sections -->
+    <string name="parking_reminder_basement_prefix">B</string>
+    <string name="parking_reminder_section_item_frankenstein">Frankenstein</string>
+    <string name="parking_reminder_section_item_curious_george">Curious George</string>
+    <string name="parking_reminder_section_item_woody_woodpecker">Woody Woodpecker</string>
+
+    <string name="parking_reminder_section_garages">Garages</string>
+    <string name="parking_reminder_section_lots">Lots</string>
+
+    <string-array name="parking_reminder_section_garages">
+        <item>@string/parking_reminder_section_item_frankenstein</item>
+        <item>@string/parking_reminder_section_item_jurassic_park</item>
+        <item>@string/parking_reminder_section_item_curious_george</item>
+        <item>@string/parking_reminder_section_item_et</item>
+    </string-array>
+
+    <string-array name="parking_reminder_section_lots">
+        <item>@string/parking_reminder_section_item_king_kong</item>
+        <item>@string/parking_reminder_section_item_woody_woodpecker</item>
+    </string-array>
+
+    <string name="parking_reminder_confirm_clear_title">Confirm Discard</string>
+    <string name="parking_reminder_confirm_clear_message">Are you sure you want to discard your parking reminder?</string>
+    <string name="parking_reminder_confirm_clear_positive_button">Discard</string>
+    <string name="parking_reminder_confirm_clear_negative_button">Cancel</string>
+
+    <!-- Tutorial Pages -->
+    <string name="tutorial_navigating_title">How to Navigate</string>
+    <string name="tutorial_navigating_message">As you explore Universal Orlando Resort, you can use the side drawer to explore the theme parks and properties.</string>
+    <string name="tutorial_map_title">Browse the Map</string>
+    <string name="tutorial_map_message">Whenever you need it, you can view a map of Universal Orlando Resort to find rides, shows, dining, and other points of interest throughout the parks.</string>
+    <string name="tutorial_detail_title">Learn the Details</string>
+    <string name="tutorial_detail_message">As you explore, each attraction has a section where you can find helpful information like a description, height and accessibility details, and its location.</string>
+    <string name="tutorial_wait_times_title">View Wait Times</string>
+    <string name="tutorial_wait_times_message">View ride wait times and show times for all your favorite attractions!</string>
+    <string name="tutorial_wayfinding_title">Guide Me!</string>
+    <string name="tutorial_wayfinding_message">While you explore the parks, navigate with walking directions to all attractions by tapping the Guide Me button.</string>
+    <string name="tutorial_alerts_title">Setting an Alert</string>
+    <string name="tutorial_alerts_message">You can use the wait time reminder to alert you when your favorite attractions have shorter wait times.</string>
+    <string name="tutorial_button_skip">Skip</string>
+    <string name="tutorial_button_get_started">Get Started</string>
+
+    <!-- Welcome Page -->
+    <string name="welcome_title">You\'re Here!</string>
+    <string name="welcome_message">Welcome to Universal Orlando&#174; Resort.  Now that you\'re here, you can utilize walking directions to find your way throughout the parks.  And don\'t forget you can always access today\'s wait times and show times to help plan your day.</string>
+    <string name="welcome_express_pass_message">Skip the regular lines with Universal Express Pass! See where to buy your pass.</string>
+    <string name="welcome_wait_times">WAIT TIMES</string>
+    <string name="welcome_show_times">SHOW TIMES</string>
+    <string name="welcome_directions">DIRECTIONS</string>
+    <string name="welcome_button_remind_later">Remind Me Later</string>
+
+    <!-- Alerts Pages -->
+    <string name="alerts_notify_me">Notify Me</string>
+    <string name="alerts_button_set_alert">Set Alert</string>
+    <string name="alerts_button_save">Save</string>
+    <string name="alerts_button_cancel">Cancel</string>
+    <string name="alerts_confirm_delete_title">Confirm Delete</string>
+    <string name="alerts_confirm_delete_positive_button">Delete</string>
+    <string name="alerts_confirm_delete_negative_button">Cancel</string>
+    <string name="alerts_no_results_title">No Alerts</string>
+    <string name="alerts_no_results_message">Set an alert from any ride or show\'s detail page</string>
+    <string name="alerts_list_wait_time_threshold">%1$d MIN OR LESS</string>
+    <string name="alerts_list_when_ride_opens">WHEN RIDE OPENS</string>
+    <string name="alerts_list_out_of_park_title">Outside of Resort</string>
+    <string name="alerts_list_out_of_park_message">Wait time and ride opening alerts can only be created, edited, and delivered while inside the Universal Orlando Resort. However, they can be deleted at any time.</string>
+    <string name="alerts_list_out_of_park_neutral_button">OK</string>
+    <string name="alerts_list_alert_reset_message">Alerts are removed each night after the parks close. Please set new alerts each day you visit the Universal Orlando Resort.</string>
+    <string name="alerts_list_edit_title">%1$d selected</string>
+    <string name="wait_time_alerts_when_wait_reaches">When The Wait Reaches</string>
+    <string name="wait_time_alerts_minutes">MINUTES</string>
+    <string name="show_alerts_for_todays_show_at">For Today\'s Show At</string>
+    <string name="show_alerts_notify_interval_item_show_start">At show start</string>
+    <string name="show_alerts_notify_interval_item_5_min">5 minutes before</string>
+    <string name="show_alerts_notify_interval_item_15_min">15 minutes before</string>
+    <string name="show_alerts_notify_interval_item_30_min">30 minutes before</string>
+    <string name="show_alerts_notify_interval_item_1_hr">1 hour before</string>
+    <string name="show_alerts_notify_interval_item_2_hr">2 hours before</string>
+    <string name="show_alerts_content">Starts at %1$s</string>
+    <string name="show_alerts_content_expanded">%1$s starts at %2$s</string>
+    <string name="ride_open_alerts_when_the_ride">When The Ride</string>
+    <string name="ride_open_alerts_opens">OPENS</string>
+
+    <string-array name="show_alerts_notify_interval_array">
+        <item>@string/show_alerts_notify_interval_item_show_start</item>
+        <item>@string/show_alerts_notify_interval_item_5_min</item>
+        <item>@string/show_alerts_notify_interval_item_15_min</item>
+        <item>@string/show_alerts_notify_interval_item_30_min</item>
+        <item>@string/show_alerts_notify_interval_item_1_hr</item>
+        <item>@string/show_alerts_notify_interval_item_2_hr</item>
+    </string-array>
+
+    <string name="wait_time_alerts_content">The wait time is now %1$d minutes</string>
+    <string name="wait_time_alerts_content_expanded">The wait time for %1$s is now %2$d minutes</string>
+    <string name="wait_time_alerts_toast_failed_to_save">Unable to set wait time alert. Please check your internet connection and try again.</string>
+    <string name="wait_time_alerts_toast_saving_alert">Saving wait time alert...</string>
+    <string name="wait_time_alerts_toast_failed_to_delete">Unable to delete wait time alert. Please check your internet connection and try again.</string>
+    <string name="closed_alert_content">Is now delayed</string>
+    <string name="closed_alert_content_expanded">%1$s is now delayed</string>
+    <string name="open_alert_content">Is now open</string>
+    <string name="open_alert_content_expanded">%1$s is now open</string>
+    <string name="ride_open_alerts_toast_failed_to_save">Unable to set opening alert. Please check your internet connection and try again.</string>
+    <string name="ride_open_alerts_toast_saving_alert">Saving opening alert...</string>
+    <string name="ride_open_alerts_toast_failed_to_delete">Unable to delete opening alert. Please check your internet connection and try again.</string>
+
+    <plurals name="alerts_confirm_delete_message_plural">
+        <item quantity="one">Are you sure you want to delete this alert?</item>
+        <item quantity="other">Are you sure you want to delete these %1$d alerts?</item>
+    </plurals>
+    <plurals name="alerts_toast_deleting_alert_plural">
+        <item quantity="one">Deleting alert...</item>
+        <item quantity="other">Deleting alerts...</item>
+    </plurals>
+
+    <!-- Alerts Sections Headers -->
+    <string name="alerts_list_header_wait_time">WAIT TIME</string>
+    <string name="alerts_list_header_ride_opening">RIDE OPENING</string>
+    <string name="alerts_list_header_shows">SHOWS</string>
+
+    <!-- Express Pass Notifications -->
+    <string name="ex_pass_stat_reminder_title">Universal Express Pass</string>
+    <string name="ex_pass_stat_reminder_content">Skip the regular lines – purchase a Universal Express Pass!</string>
+    <string name="ex_pass_stat_reminder_ticker">Skip the regular lines – purchase a Universal Express Pass!</string>
+
+    <!-- View Tag Ids -->
+    <item name="key_view_tag_detail_feature_phone_number" type="id" />
+    <item name="key_view_tag_detail_feature_email_address" type="id" />
+    <item name="key_view_tag_explore_list_poi_object_json" type="id" />
+    <item name="key_view_tag_explore_list_poi_type_id" type="id" />
+    <item name="key_view_tag_event_series_list_event_series_object_json" type="id" />
+    <item name="key_view_tag_event_series_list_venue_object_json" type="id" />
+    <item name="key_view_tag_detail_feature_event_event_series_json" type="id" />
+    <item name="key_view_tag_detail_feature_offer_id" type="id" />
+    <item name="key_view_tag_detail_feature_offer_has_details" type="id" />
+    <item name="key_view_tag_detail_feature_offer_view_holder" type="id" />
+    <item name="key_view_tag_detail_feature_twitter_hashtag" type="id" />
+
+    <!-- News Pages -->
+    <string name="news_confirm_mark_all_as_read_title">Confirm Mark All As Read</string>
+    <string name="news_confirm_mark_all_as_read_message">Are you sure you want to mark all park notifications as read?</string>
+    <string name="news_confirm_mark_all_as_read_positive_button">Mark As Read</string>
+    <string name="news_confirm_mark_all_as_read_negative_button">Cancel</string>
+    <string name="news_date_yesterday">Yesterday</string>
+    <string name="news_no_results_title">No Park Notifications</string>
+    <string name="news_no_results_message">Check back later for up-to-date park notifications</string>
+    <string name="news_view_ride">View Ride</string>
+    <string name="news_view_show">View Show</string>
+    <string name="news_view_shopping">View Shopping</string>
+    <string name="news_view_dining">View Dining</string>
+    <string name="news_view_entertainment">View Entertainment</string>
+    <string name="news_view_event">View Event</string>
+    <string name="news_view_event_series">View Event</string>
+    <string name="news_view_favorites">View Favorites</string>
+    <string name="news_view_parking_reminder">View Parking Reminder</string>
+    <string name="news_view_islands_of_adventure">View Islands of Adventure</string>
+    <string name="news_view_volcano_bay">View Volcano Bay</string>
+    <string name="news_view_universal_studios_florida">View Universal Studios Florida</string>
+    <string name="news_view_wet_n_wild_orlando">View Wet \'n Wild Orlando</string>
+    <string name="news_view_city_walk">View City Walk</string>
+    <string name="news_view_rides">View Rides</string>
+    <string name="news_view_shows">View Shows</string>
+    <string name="news_view_lockers">View Lockers</string>
+    <string name="news_view_guest_services_locations">View Guest Services Locations</string>
+    <string name="news_view_hours_and_directions">View Hours &amp; Directions</string>
+    <string name="news_view_contact_guest_services">View Contact Guest Services</string>
+    <string name="news_view_free_inpark_wifi">View Free In-Park WiFi</string>
+    <string name="news_view_vacation_package_faq">View Vacation Package FAQ</string>
+    <string name="news_view_tutorial">View Tutorial</string>
+    <string name="news_view_privacy_policy">View Privacy Policy</string>
+    <string name="news_view_privcy_faq">View Privacy FAQ</string>
+    <string name="news_view_terms_of_service">View Terms of Service</string>
+    <string name="news_view_copyright_and_trademarks">View Copyright &amp; Trademarks</string>
+    <string name="news_view_universal_express">View Universal Express&#8480;</string>
+    <string name="news_view_universal_dining_plans">View Universal Dining Plans</string>
+    <string name="news_view_my_alerts">View My Alerts</string>
+    <string name="news_view_search">View Search</string>
+    <string name="news_view_default">View</string>
+    <string name="news_view_details_app_link">Park News</string>
+    <string name="news_view_failed">Unable to load page</string>
+
+    <!-- Dining Plan Detail Page -->
+    <string name="dining_plan_intro">Eat at many of the most popular dining locations in both theme parks and Universal CityWalk&#174;, over one hundred locations in all!</string>
+    <string name="dining_plan_header_options">DINING PLAN OPTIONS</string>
+    <string name="dining_plan_title">Universal Dining Plan</string>
+    <string name="dining_plan_description">Meals at Universal Orlando&#174; are fun and easy with a Universal Dining Plan.\n\nOnly available with your Universal Orlando Resort Vacation Package.</string>
+    <string name="dining_plan_quick_service_title">Universal Dining Plan - Quick Service</string>
+    <string name="dining_plan_quick_service_description">Make food part of the fun. Save 30% on select entree, snack and beverage combinations with a Universal Dining Plan - Quick Service.\n\nDining Plan - Quick Service is available for purchase pre-arrival at UniversalOrlando.com or in-park during your visit.</string>
+    <string name="dining_plan_see_participating_locations">See Participating Locations</string>
+
+    <!-- Hours Calendar -->
+    <string name="hours_calendar_title">Park Hours Calendar</string>
+    <string name="hours_calendar_not_available">Hours Unavailable</string>
+    <string name="hours_calendar_islands_of_adventure_park_hours_content_description">Islands of Adventure park hours</string>
+    <string name="hours_calendar_universal_studios_hollywood_content_description">Universal Studios Hollywood park hours</string>
+    <string name="hours_calendar_universal_studios_florida_park_hours_content_description">Universal Studios Florida park hours</string>
+    <string name="hours_calendar_citywalk_hollywood_content_description">CityWalk park hours</string>
+    <string name="hours_calendar_citywalk_park_hours_content_description">CityWalk park hours</string>
+    <string name="hours_calendar_wet_n_wild_park_hours_content_description">Wet \'n Wild Orlando park hours</string>
+    <string name="hours_calendar_today_formatted_content_description">Today, %1$s</string>
+    <string name="hours_calendar_date_format_content_description">MMMM d, yyyy</string>
+
+    <!-- Custom Calendar -->
+    <string name="day_name_format">EEE</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="month_name_format">MMMM yyyy</string>
+
+    <!-- Advanced Filter Page -->
+    <string name="advanced_filter_menu_apply">Apply</string>
+    <string name="advanced_filter_menu_reset">Reset</string>
+    <string name="advanced_filter_title">Refine</string>
+   	<!-- Advanced Filter: Sort -->
+    <string name="advanced_filter_sort_by">Sort By</string>
+    <string name="advanced_filter_sort_type">Type</string>
+    <string name="advanced_filter_sort_alphabetical">A to Z</string>
+    <string name="advanced_filter_sort_distance">Distance</string>
+    <string name="advanced_filter_sort_wait_time">Wait Time</string>
+    <string name="advanced_filter_sort_description">Distance sort option enabled while inside the parks</string>
+    <string name="advanced_filter_sort_show_time">Show Time</string>
+   	<!-- Advanced Filter: Global - Accessibility / Express / Kid Friendly -->
+   	<string name="advanced_filter_other_filter">Filter</string>
+   	<string name="advanced_filter_other_upper_lot">Upper Lot</string>
+   	<string name="advanced_filter_other_lower_lot">Lower Lot</string>
+   	<string name="advanced_filter_other_accessibility">Accessibility</string>
+   	<string name="advanced_filter_other_express_pass_line">Express Pass Line</string>
+   	<string name="advanced_filter_other_kid_friendly">Kid Friendly (No Parental Advisory)</string>
+   	<!-- Order and contents matches FilterOptions.ACCESSIBILITY_FLAGS -->
+   	<string-array name="advanced_filter_accessibility_options_array">
+   	    <item>Closed caption available</item>
+   	    <item>EVC allowed on attraction</item>
+   	    <item>Standard wheelchair allowed on attraction</item>
+   	    <item>Stationary seating available</item>
+   	    <item>Assisted listening available</item>
+   	    <item>Sign language interpreted show</item>
+   	</string-array>
+   	<string name="advanced_filter_option_off">Off</string>
+   	<string name="advanced_filter_option_all">All</string>
+   	<string name="advanced_filter_selected_format">%1$d selected</string>
+   	<!-- Advanced Filter: Rides -->
+   	<string name="advanced_filter_filter_rides">Filter Rides</string>
+   	<string name="advanced_filter_venues">Venue</string>
+   	<string name="advanced_filter_ride_type">Ride Type</string>
+   	<string name="advanced_filter_ride_max_wait">Maximum Wait</string>
+   	<string name="advanced_filter_ride_max_wait_format">%1$d min or less</string>
+   	<string name="advanced_filter_ride_rider_height">Rider Height</string>
+   	<string name="advanced_filter_ride_single_rider_line">Single Rider Line</string>
+   	<string name="advanced_filter_ride_child_swap">Child Swap</string>
+   	<!-- Order and contents matches FilterOptions.RIDE_SUB_TYPE_FLAGS -->
+   	<string-array name="advanced_filter_ride_sub_types">
+   	    <item>@string/explore_filter_tab_thrill</item>
+   	    <item>@string/explore_filter_tab_3d_and_4d</item>
+   	    <item>@string/explore_filter_tab_water</item>
+   	    <item>@string/explore_filter_tab_kids</item>
+   	</string-array>
+    <string name="advanced_filter_ride_parental_supervision">Parental Supervision Required</string>
+    <string name="advanced_filter_ride_life_jacket_required">Life Jacket Required</string>
+    <!-- Advanced Filter: Shows -->
+    <string name="advanced_filter_filter_shows">Filter Shows</string>
+    <!-- Order and contents matches FilterOptions.SHOW_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_show_sub_types">
+        <item>@string/explore_filter_tab_action</item>
+        <item>@string/explore_filter_tab_comedy</item>
+        <item>@string/explore_filter_tab_music</item>
+        <item>@string/explore_filter_tab_parade</item>
+        <item>@string/explore_filter_tab_character</item>
+    </string-array>
+    <string name="advanced_filter_show_type">Show Type</string>
+    <string name="advanced_filter_show_next_show_time">Next Show Time</string>
+    <string name="advanced_filter_show_next_show_times_format">%1$d MIN</string>
+    <!-- Advanced Filter: Dining -->
+    <string name="advanced_filter_filter_dining">Filter Dining</string>
+    <!-- Order and contents matches FilterOptions.DINING_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_dining_sub_types">
+        <item>@string/explore_filter_tab_fine</item>
+        <item>@string/explore_filter_tab_casual</item>
+        <item>@string/explore_filter_tab_quick_service</item>
+    </string-array>
+    <string name="advanced_filter_dining_type">Dining Type</string>
+    <string name="advanced_filter_dining_starting_price">Starting Price</string>
+    <string name="advanced_filter_dining_starting_price_format">$%1$d or less</string>
+    <string name="advanced_filter_dining_universal_dining_plan">Universal Dining Plan</string>
+    <string-array name="advanced_filter_dining_plans">
+        <item>Universal Dining Plan</item>
+        <item>Universal Dining Plan - Quick Service</item>
+    </string-array>
+    <string name="advanced_filter_dining_character_dining">Character Dining</string>
+    <string name="advanced_filter_dining_vegetarian_healty_options">Vegetarian/Healthy Options</string>
+    <string name="advanced_filter_dining_amex_food_and_beverage_savings">Amex Food &amp; Beverage Savings</string>
+    <!-- Advanced Filter: Shopping -->
+    <string name="advanced_filter_filter_shopping">Filter Shopping</string>
+    <string name="advanced_filter_shopping_type">Shopping Type</string>
+    <!-- Order and contents matches FilterOptions.SHOPPING_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_shopping_sub_types">
+    </string-array>
+    <string name="advanced_filter_shopping_sells_express_pass">Sells Express Pass</string>
+    <string name="advanced_filter_shopping_amex_merchandise_savings">Amex Merchandise Savings</string>
+    <string name="advanced_filter_shopping_package_pickup_available">Package Pick-up Available</string>
+    <!-- Advanced Filter: Rental Services -->
+    <string name="advanced_filter_filter_rental_services">Filter Rental Services</string>
+    <string name="advanced_filter_rental_type_evc">ECVs</string>
+    <string name="advanced_filter_rental_type_stroller">Strollers</string>
+    <string name="advanced_filter_rental_type_wheel_chair">Wheelchairs</string>
+    <string name="advanced_filter_rental_type_extra_info"> Deposit and Photo ID  Required</string>
+    <!-- Advanced Filter: Entertainment -->
+    <string name="advanced_filter_filter_entertainment">Filter Entertainment</string>
+    <string name="advanced_filter_entertainment_type">Entertainment Type</string>
+    <string name="advanced_filter_entertainment_starting_price">Starting Price</string>
+    <string name="advanced_filter_entertainment_starting_price_format">$%1$d</string>
+    <!-- Order and contents matches FilterOptions.ENTERTAINMENT_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_entertainment_sub_types">
+    </string-array>
+
+    <!-- Events -->
+    <string name="event_series_carousel_page_number_format">%1$d / %2$d</string>
+    <string name="event_series_dates_tba">To be announced</string>
+    <string name="event_series_unable_to_load_event_series">Unable to load events</string>
+    <string name="event_venue_name_default">Universal Orlando Resort</string>
+    <string name="event_detail_ticket_free">Included with your Annual Pass or Universal Studios Florida ticket</string>
+    <string name="event_detail_view_full_schedule">View Full Schedule</string>
+    <string name="event_series_detail_tab_about">About</string>
+    <string name="event_series_detail_tab_activities">Events</string>
+    <string name="event_series_detail_tab_attractions">Attractions</string>
+    <string name="event_full_schedule">Full Schedule</string>
+    <string name="event_schedule_open_date_format">Open %1$s</string>
+    <string name="event_schedule_closed">Closed</string>
+    <string name="event_timeline_header_today_format">Today %1$s</string>
+    <string name="event_timeline_header_tomorrow_format">Tomorrow %1$s</string>
+    <string name="event_timeline_no_results_primary">Sorry, there are no upcoming events.</string>
+    <string name="event_timeline_no_results_primary_sub">Please check again later</string>
+    <string name="event_detail_view_activities">View All Activities</string>
+    <string name="event_unable_to_load_page">Unable to load page</string>
+    <string name="event_carousel_no_results_primary">Sorry, there are no upcoming event series.</string>
+
+    <!-- Event Ticketing -->
+    <string name="event_ticket_free_usf">Included with your Annual Pass or Universal Studios® Florida ticket</string>
+    <string name="event_ticket_free_ioa">Included with your Annual Pass or Islands of Adventure® ticket</string>
+    <string name="event_ticket_free_uso">Included with your Annual Pass or Universal Orlando® Resort Admission</string>
+    <string name="event_ticket_separate_ticket">Separately Ticketed Event</string>
+    <string name="event_ticket_separate_ticket_buy_now">Buy Now</string>
+    <string name="event_ticket_annual_pass">Only available with an Annual Pass</string>
+    <string name="event_ticket_buy_now_web_view_title">Universal Orlando</string>
+    <string name="event_ticket_no_ticket_required">No ticket required</string>
+
+    <!-- Dining Menu Detail -->
+    <string name="dining_menu_detail_dining_menu">Dining Menu</string>
+    <string name="dining_menu_detail_page_format">%1$s of %2$s items</string>
+    <string name="dining_menu_detail_unable_to_load_image">Unable to load image</string>
+    <string name="dining_menu_detail_retry">Retry</string>
+    <string name="dining_menu_detail_spread_to_zoom">SPREAD TO ZOOM</string>
+
+    <!-- Offers -->
+    <string name="offers_amex_food_and_beverage">American Express Food &amp; Beverage Savings</string>
+    <string name="offers_amex_merchandise">American Express Merchandise Savings</string>
+    <string name="offers_expires_format">Offer ends %1$s</string>
+    <string name="offers_full_terms_and_conditions">Full Terms &amp; Conditions</string>
+    <string name="offers_terms_and_conditions">Full Terms &amp; Conditions</string>
+    <string name="offers_get_coupon_code">Get Coupon Code</string>
+    <string name="offers_yay">Yay!</string>
+    <string name="offers_coupon_instructions">Show this code to your sales associate.</string>
+    <string name="offers_coupon_error_primary">Your coupon code could not be retrieved.</string>
+    <string name="offers_coupon_error_secondary">Please check your connection, go back, and try again</string>
+    <string name="offers_amex_apply_in_park">Apply For Card In-Park</string>
+    <string name="offers_no_offers">No Offers Available</string>
+
+    <!-- UO Dining Plan Page -->
+    <string name="dining_plan_participating_locations">Participating Locations</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO Pretty sure this is not being used, but can't tell so leaving it -->
+    <string name="name_information_privacy_information">Privacy Information Center</string>
+
+    <!-- Order Confirmation -->
+    <string name="cc_xxxx">XXXXXXXXXXXX</string>
+    <string name="pipe">|</string>
+
+    <!-- Sync now debug -->
+    <string name="quit">Quit</string>
+    <string name="record">Detect+Record</string>
+    <string name="detect">Detect</string>
+    <string name="stop">Stop</string>
+    <string name="stopping">Stopping</string>
+    <string name="stopped">Stopped</string>
+    <string name="preference">Settings</string>
+    <string name="error">error: please report logs</string>
+    <string name="presenceOff">Not watermarked</string>
+    <string name="presenceOn">Wmk presence detected</string>
+    <string name="presenceDefault">Not available</string>
+    <string name="getWatermarkPresence">Test presence</string>
+    <!--Sync now  preference summary values -->
+    <string name="summaryResetDefaultValues">Reset the settings to its default values.</string>
+    <string name="licenseSummaryDefaultValue">Value: default</string>
+    <string name="licenseSummaryChangedValue">Value: modified</string>
+
+    <!--Interactive Audio -->
+    <string name="title_interactive_audio_reasoning">“Universal Orlando” Would Like to Access the Microphone</string>
+    <string name="detail_interactive_audio_reasoning">The audio will be used to listen for attraction queue experiences. We will not record your voice or transmit any audio information from your device. This will only be used while you are using an attraction queue experience.</string>
+    <string name="positive_button_interactive_audio_reasoning">I understand</string>
+    <string name="content_description_interactive_audio_image">Showing Queue Image</string>
+    <string name="loading_audio_experience">Listening</string>
+    <string name="listening_for_audio">We are listening for watermarked audio around you</string>
+    <string name="cant_start_interactive_experience">Couldn\'t load interactive experience</string>
+    <string name="interactive_experience_found_message">You are in a location that has %1$s</string>
+    <string name="interactive_agree">Allow</string>
+    <string name="interactive_disagree">Don\'t Allow</string>
+    <string name="interactive_low_battery_title">Low Battery</string>
+    <string name="interactive_low_battery_message">Your device has a low battery. This may effect your experience load time due to system settings. We recommend charging your phone to take advantage of the full experience</string>
+
+    <!--Preference keys-->
+    <string name="pref_key_show_interactive_audio_reasoning">pref_key_interactive_audio_reasoning</string>
+    <string name="pref_key_show_restroom_filter">pref_show_restroom_filter</string>
+    <string name="pref_key_parking_reminder">pref_parking_image</string>
+    <string name="pref_key_show_debug_timeout">pref_debug_timeout_boolean</string>
+    <string name="pref_key_cluster_threshold">pref_cluster_threshold</string>
+
+    <string-array name="interactive_timeouts">
+        <item>10 Seconds</item>
+        <item>30 Seconds</item>
+        <item>1 Minutes</item>
+        <item>2 Minutes</item>
+        <item>3 Minutes</item>
+        <item>5 Minutes</item>
+        <item>10 Minutes</item>
+    </string-array>
+
+    <!--Permissions Strings-->
+    <string name="gps_permission_required_title">We use GPS</string>
+    <string name="gps_permission_message">We use your location to show you features in the app based on your location. Turning off GPS permissions will limit the experience we can provie you.</string>
+
+    <string name="delete_return">Delete Virtual Line&#8482; Pass</string>
+    <string name="please_wait_message">Please Wait&#8230;</string>
+
+    <!--FAQ-->
+    <string name="title_faq">FAQs</string>
+
+    <!--Guest Feedback Form-->
+    <string name="guest_feedback_title">Guest Feedback</string>
+    <string name="guest_feedback_submit">Submit</string>
+    <string name="guest_feedback_subject_label">Subject</string>
+    <string name="guest_feedback_rating_label">Rating (Optional)</string>
+    <string name="guest_feedback_message_label">Message</string>
+    <string name="guest_feedback_name_label">Name (Optional)</string>
+    <string name="guest_feedback_email_label">Email (Optional)</string>
+    <string name="guest_feedback_phone_label">Phone (Optional)</string>
+    <string name="guest_feedback_sending">Sending...</string>
+    <string name="guest_feedback_submit_dialog_success_message">Thank you for contacting Universal Studios Hollywood!</string>
+    <string name="guest_feedback_submit_dialog_error_message">Your feedback could not be submitted. Please try again later.</string>
+    <string name="guest_feedback_submit_dialog_positive_button">OK</string>
+
+    <array name="guest_feedback_form_rating_options">
+        <item>Excellent</item>
+        <item>Good</item>
+        <item>Satisfactory</item>
+        <item>Poor</item>
+    </array>
+
+    <!--Newsletter sign up-->
+    <string name="newsletter_submit">Submit</string>
+    <string name="newsletter_email_label">Email</string>
+    <string name="newsletter_birthdate_label">Birthdate</string>
+    <string name="newsletter_zip_label">ZIP Code</string>
+    <string name="newsletter_select_month">Month</string>
+    <string name="newsletter_select_year">Year</string>
+    <string name="newsletter_footer_html_format"><![CDATA[By submitting this form you are agreeing to our <a href=\"%1$s\">Privacy Policy</a> and <a href=\"%2$s\">Terms of Service</a>]]></string>
+    <string name="newsletter_submit_dialog_success_title">Thank You</string>
+    <string name="newsletter_submit_dialog_success_message">Your email address has been added!</string>
+    <string name="newsletter_submit_dialog_error_message">Your feedback could not be submitted. Please try again later.</string>
+    <string name="newsletter_submit_dialog_positive_button">OK</string>
+
+    <!--Appointment Tickets-->
+    <string name="appointment_tickets_frag_no_result">No Tickets Found!</string>
+    <string name="fargment_mytickets_footer">Tickets are removed each night after the parks close. Please get new tickets each day you visit the Universal Orlando Resort.</string>
+    <string name="fragment_appointment_times_footer_button">Reserve Virtual Line&#8482; Pass</string>
+    <string name="dialog_create_appointment_ticket_yes">Yes Create</string>
+    <string name="dialog_delete_appointment_ticket_yes">Delete</string>
+    <string name="appointment_alert_dialog_title">Delete Virtual Line&#8482; Pass</string>
+
+    <!-- Ticket Assistance -->
+
+    <string name="ticket_assistance_title">Ticket Assistance</string>
+    <string name="ticket_assistance_message">Thank you for visiting Universal Orlando Resort®! Your experiences at our resort are extremely important to us. If you have any questions, comments, or concerns, please call us for immediate assistance. Guest Services Coordinators are available seven days a week, from 8:30 AM until our theme parks close, to assist you.\n\nOr, e-mail us below. We make every effort to respond to emails within 24 to 48 hours; however, due to the high volume of emails we receive each day, please allow several days for a response to your email.</string>
+    <string name="ticket_assistance_subtitle_help">Let us help you!</string>
+    <string name="ticket_assistance_header_contact_info">CONTACT INFORMATION</string>
+
+
+    <!--Add ons-->
+    <string name="action_title_add_ons">Add Ons</string>
+    <string name="action_title_add_on_details">Details</string>
+    <string name="add_ons_select_date_and_time">Choose the date and time you\'d like to spend with us.</string>
+    <string name="starting_from">Starting from</string>
+    <string name="per_unit_formatted">"per %1$s"</string>
+
+    <!-- DPVQ Tickets -->
+    <string name="title_virtual_line_pass">VIRTUAL LINE&#8482; Pass</string>
+    <string name="return_time_ticket_done_change_return_time">CHANGE\nRETURN TIME</string>
+    <string name="return_time_ticket_done_guide_me">GUIDE ME</string>
+    <string name="return_time_ticket_done_entrance_message">Please present this pass at the Virtual Line Entrance during your return time window.</string>
+    <string name="return_time_ticket_done_admit_quantity_format">ADMIT - %1$s</string>
+    <string name="return_time_ticket_done_universal_studios_florida">Universal Studios Florida</string>
+    <string name="pm">PM</string>
+    <string name="am">AM</string>
+    <!-- Check location dpvq -->
+    <string name="dpvq_location_enable_location_title">Universal FL would like to use Location Services</string>
+    <string name="dpvq_location_enable_location_message">Please enable Location Services to get your Virtual Line&#8482;. Location Services will be used by Universal\'s Virtual Line&#8482; experience.</string>
+    <string name="dpvq_location_dont_allow">Don\'t Allow</string>
+    <string name="dpvq_location_ok">OK</string>
+    <string name="dpvq_location_out_of_range_title">Out of Range</string>
+    <string name="dpvq_location_permission_error_title">Permission Required</string>
+    <string name="dpvq_location_permission_error_message">Universal FL requires permission to access location services.</string>
+
+    <!-- Virtual line -->
+    <string name="virtual_line_delete_return_time_title">Delete Virtual Line&#8482; Pass</string>
+    <string name="virtual_line_delete_return_time_message">Are you sure you want to delete the Virtual Line&#8482; Pass?</string>
+    <string name="virtual_line_create_return_time_title">Create Virtual Line&#8482; Pass</string>
+    <string name="virtual_line_create_return_time_message">Are you sure you want to create the Virtual Line&#8482; Pass?</string>
+    <string name="virtual_line_reserve">Reserve</string>
+    <string name="virtual_line_update_time">Update Virtual Line&#8482; Pass</string>
+
+    <string name="dpvq_location_out_of_range_message">Sorry, but this feature is reserved for our guests currently in the Universal Orlando Resort theme park.</string>
+
+    <string name="update">Update</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="extras_shopping_subtitle">Check out some of these great ways to get more from your vacation.</string>
+    <string name="not_developed">Turn around, nothing to see here. This screen has not been developed yet</string>
+    <string name="your_seats">Your Seats</string>
+
+    <!-- FIXME CLEANUP AFTER THE MERGE OF MODULES (STB) -->
+    <string name="ok">OK</string>
+    <string name="error_message_32">Please enter a minimum of 5 but no more than 9 numbers in this field.</string>
+    <string name="error_message_41">Sorry, this field requires a 10 digit number.</string>
+
+    <string name="wallet_folio_purchases_tab">Purchases</string>
+    <string name="wallet_folio_media_tab">Media</string>
+    <string name="wallet_folio_payment_tab">Payment</string>
+    <string name="wallet_folio_payment_methods">Payment Methods</string>
+    <string name="wallet_folio_manage_all">MANAGE ALL</string>
+    <string name="wallet_folio_spending_limit">Daily Spending Limits</string>
+    <string name="wallet_folio_add_guest">Add Guest</string>
+    <string name="wallet_folio_alerts">Alerts</string>
+    <string name="wallet_folio_alerts_subtitle">Receive an alert when a party member\'s spending limit is low</string>
+    <string name="wallet_folio_your_pin">Your PIN</string>
+    <string name="wallet_folio_your_pin_subtitle">Update your shared group PIN</string>
+    <string name="wallet_folio_set_alerts">SET ALERTS</string>
+    <string name="wallet_folio_update">UPDATE</string>
+    <string name="wallet_folio_transaction_history">Transaction History</string>
+    <string name="wallet_folio_transaction_view_all">VIEW ALL</string>
+    <string name="wallet_folio_my_wallet">My Wallet</string>
+    <string name="wallet_folio_edit">EDIT</string>
+    <string name="wallet_folio_add">Add</string>
+    <string name="wallet_folio_manage_payment_method">Manage Payment Method</string>
+
+    <!-- Keys for FAB icons (potentially adding more) -->
+    <string name="key_ufab_wallet">KEY_UFAB_WALLET</string>
+    <string name="key_ufab_location">KEY_UFAB_LOCATION</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/state_list_map_overlay_toggle_button"
+        android:id = "@+id/layer_list_circle_toggle"
+        android:layout_height="61dp"
+        android:layout_width="61dp"/>
+
+    <item
+        android:drawable="@drawable/ic_map_locate_me"
+        android:id ="@+id/layer_list_toggle_icon"
+        android:top="18dp"
+        android:bottom="18dp"
+        android:right="18dp"
+        android:left="18dp" />
+</layer-list>

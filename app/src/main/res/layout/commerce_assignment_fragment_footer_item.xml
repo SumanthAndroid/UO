@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignNamesAssignmentFooterItem"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.assign_tickets.AssignNamesAssignmentAdapter.AssignNamesAssignmentActionCallback"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <Button
+            style="@style/ButtonStyle.Colored.Blue"
+            android:id="@+id/fragment_assign_name_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:enabled="@{data.doneEnabled}"
+            android:onClick="@{() -> callback.onDoneClicked()}"
+            android:text="@{tridion.doneLabel}"
+            android:textColor="@android:color/white"
+            tools:text="DONE"/>
+
+    </LinearLayout>
+</layout>

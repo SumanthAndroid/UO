@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Wait time alert -->
+    <dimen name="wait_time_alert_badge_shadow_padding">0dp</dimen>
+    <dimen name="set_alert_text_size">122sp</dimen>
+    <item name="set_alert_arrow_alpha" format="float" type="dimen">1</item>
+    <dimen name="set_show_time_text_size">78sp</dimen>
+    <dimen name="set_show_time_am_pm_text_size">28sp</dimen>
+    <dimen name="set_alert_open">68sp</dimen>
+
+    <!-- Show time button -->
+    <dimen name="show_time_button_corner_radius">0dp</dimen>
+
+    <!--Calendar-->
+    <dimen name="calendar_text_medium">20sp</dimen>
+    <dimen name="calendar_text_small">12sp</dimen>
+
+    <!-- Splash Page -->
+    <item name="splash_logo_height_weight" format="float" type="dimen">0.90</item>
+    <item name="splash_logo_bottom_spacing_weight" format="float" type="dimen">0.10</item>
+
+</resources>

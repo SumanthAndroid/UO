@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_image_detail_framelayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detail_no_image_background_gray" >
+
+
+        <FrameLayout
+            android:id="@+id/preview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:visibility="gone"
+            android:background="@drawable/universal_orlando_hero_logo">
+
+            <ImageView
+                android:id="@+id/VideoPreviewPlayButton"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/play_button"/>
+        </FrameLayout>
+
+    <ImageView
+        android:id="@+id/fragment_detail_image_no_image_logo"
+        android:layout_width="222dp"
+        android:layout_height="133dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_no_image_logo_detail"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/fragment_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+</FrameLayout>

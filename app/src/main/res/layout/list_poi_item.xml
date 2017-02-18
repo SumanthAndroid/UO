@@ -1,0 +1,192 @@
+<!-- KEEP THIS FRAME LAYOUT, LISTVIEW ROWS REMOVE MARGINS SET BY THE ROOT LAYOUT -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_poi_item_root_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/list_poi_item_card_container"
+        android:layout_width="@dimen/explore_list_poi_card_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="7dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="7dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_list_explore_list_poi_background_with_fade"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="@color/explore_list_no_image_background_gray" >
+
+                <ImageView
+                    android:id="@+id/list_poi_item_no_image_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:padding="16dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_no_image_logo_list"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/list_poi_item_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:minHeight="98dp"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical" >
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_poi_item_venue_name_text"
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="XNIVERSAL STUDIOS FLORIDA"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="13sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_poi_item_display_name_text"
+                        style="@style/TextViewStyle.GothamBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:ellipsize="end"
+                        android:maxLines="3"
+                        android:text="Xhe Amazing Adventures of Spider Man and a lot more stuff on the end of the name tha goes on and on and on for a really really long time, seriously long"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/list_poi_item_extra_info_text"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@string/poi_list_item_shop_sells_express_pass_info"
+                        android:textColor="@color/text_gray"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/list_poi_item_guide_me_button_divider"
+                    android:layout_width="1dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="7dp"
+                    android:background="@color/poi_item_divider_gray" >
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/list_poi_item_guide_me_button_layout"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/state_list_default_list_selector_with_fade"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp" >
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="26dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_guide_me" />
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="@string/poi_list_item_guide_me"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="88dp"
+            layout="@layout/poi_item_circle_badge" />
+
+        <com.universalstudios.orlandoresort.view.buttons.FavoriteToggleButton
+            android:id="@+id/list_poi_item_favorite_toggle_button"
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/state_list_favorite_toggle_button_with_fade"
+            android:checked="false"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:padding="10dp"
+            android:saveEnabled="false"
+            android:textOff=""
+            android:textOn="" />
+
+        <Button
+            android:id="@+id/list_poi_item_locate_button"
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/state_list_locate"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:padding="32dp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App Compat Colors -->
+    <color name="primary">@color/purple</color>
+    <color name="primary_dark">@color/purple_dark</color>
+    <color name="accent">@color/purple_darker</color>
+
+    <!-- Text -->
+    <color name="text_primary">@color/purple</color>
+    <color name="text_primary_dark">@color/purple_dark</color>
+    <color name="text_primary_light">@color/purple_lighter</color>
+    <color name="text_highlight">#9977006D</color>
+
+    <!-- Buttons -->
+    <color name="button_primary_default">@color/purple_light</color>
+    <color name="button_primary_pressed">@color/purple</color>
+
+    <!-- Actionbar Menu -->
+    <color name="menu_item_icon">@color/yellow</color>
+
+    <!-- Backgrounds -->
+    <color name="circle_badge_background">@color/purple</color>
+    <color name="splash_background">@color/purple_dark</color>
+    <color name="shopping_cart_text_background_color">@color/purple_darker</color>
+
+    <!-- Dividers / Section Headers -->
+    <color name="explore_filter_tab_bar_bottom_divider">@color/explore_filter_tab_bar_divider</color>
+
+    <!-- Calendar -->
+    <color name="calendar_active_month_background">#FFFFFFFF</color>
+    <color name="calendar_today_background">#FFFFFFFF</color>
+    <color name="calendar_inactive_month_background">#ffffff</color>
+    <color name="calendar_background">#FFFFFFFF</color>
+    <color name="calendar_divider">#FFC1C1C1</color>
+    <color name="calendar_selected_day_background">@color/purple_light</color>
+    <color name="calendar_text_inactive">#00ffffff</color>
+    <color name="calendar_text_active">@color/gray_darkest</color>
+    <color name="calendar_text_selected">@color/text_white</color>
+    <color name="calendar_text_unselectable">#b7b7b7</color>
+    <color name="calendar_text_month_title">@color/purple</color>
+    <color name="calendar_text_day_header">@color/text_gray_darker</color>
+    <color name="calendar_text_today">@color/text_primary</color>
+
+    <!-- Explore Filter Tabs -->
+    <color name="explore_filter_tab_button_on">@color/purple_light</color>
+    <color name="explore_filter_tab_button_off">@color/purple</color>
+    <color name="explore_filter_tab_button_text_on">@color/gray_lightest</color>
+    <color name="explore_filter_tab_button_text_off">@color/purple_lighter</color>
+    <color name="explore_filter_tab_button_icon">@color/gray_lightest</color>
+    <color name="explore_filter_tab_bar_divider">@color/purple_dark</color>
+
+    <!-- Segmented Control -->
+    <color name="radio_button_selected">@color/purple_light</color>
+    <color name="radio_button_unselected">@color/gray_lightest</color>
+    <color name="radio_button_stroke">@color/gray_lighter</color>
+
+    <!-- Navigation Drawer -->
+    <color name="nav_drawer_header_text">@color/gray_darkest</color>
+    <color name="nav_drawer_item_text">@color/purple</color>
+    <color name="nav_drawer_sub_item_text">@color/purple</color>
+    <color name="nav_drawer_badge">@color/purple</color>
+    <color name="nav_drawer_icon">@color/purple</color>
+    <color name="nav_drawer_expand_collapse">#e8414e</color>
+
+    <!-- POI Detail/List/Map/Card -->
+    <color name="pager_dot">@color/purple</color>
+    <color name="show_time_button">@color/purple</color>
+    <color name="show_time_button_pressed">@color/purple_light</color>
+    <color name="show_time_badge_start">@color/yellow</color>
+    <color name="show_time_badge_am_pm">@color/yellow</color>
+    <color name="show_time_icon">@color/yellow</color>
+    <color name="feature_icon">@color/gray_dark</color>
+    <color name="feature_icon_colored">@color/purple</color>
+    <color name="min_wait_text">@color/yellow</color>
+
+    <!--Set Alert-->
+    <color name="circle_background_stroke_transparent_gray">@android:color/transparent</color>
+    <color name="circle_badge_stroke_gray">#E1E1E1</color>
+    <color name="set_show_time_am_pm_text">@color/yellow</color>
+
+    <!--Feedback-->
+    <color name="feedback_spinner_pressed">@color/purple_lighter</color>
+
+
+    <!--Newsletter sign up-->
+    <color name="newsletter_form_link_text">@color/purple</color>
+
+</resources>

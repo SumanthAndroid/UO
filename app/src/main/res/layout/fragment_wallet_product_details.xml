@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletProductDetailsViewModel"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletProductDetailsViewModel.WalletProductDetailsCallback"
+            />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="32dp">
+
+            <TextView
+                style="@style/TextViewStyle.Large"
+                bind:font="@{@string/font_gotham_ultra}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="8dp"
+                android:text="@{data.model.productName}"
+                tools:text="2 Day - 2 Park Ticket"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{data.model.description}"
+                tools:text="Universal Studios Florida + Universal's Island of Adventure"
+                android:visibility="@{!TextUtils.isEmpty(data.model.description)}"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{data.model.tertiaryDescription}"
+                tools:text="Adult | Florida Resident"
+                android:visibility="@{!TextUtils.isEmpty(data.model.tertiaryDescription)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.ticketHolderNameLabel}"
+                    tools:text="For:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.name}"
+                    tools:text="Mary Worthington"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.model.invalidReason}"
+                tools:text="Ticket Not Valid Today"
+                android:visibility="@{!TextUtils.isEmpty(data.model.invalidReason)}"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.invalidReason)}"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.model.restrictions}"
+                tools:text="December 18, 2015 - January 2, 2016; March 19, 2016 - April 2 2016; June 11, 2016 - August 15, 2016; December 17, 2016 - December 31, 2016"
+                android:visibility="@{!TextUtils.isEmpty(data.model.restrictions)}"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.restrictions)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="@{!TextUtils.isEmpty(data.model.visualId)}"
+                >
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.ticketNumberLabel}"
+                    tools:text="Ticket Number:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.visualId}"
+                    tools:text="89702390872398071234"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.visualId)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="@{!TextUtils.isEmpty(data.model.orderedBy)}"
+                >
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.orderedByLabel}"
+                    tools:text="Ordered By:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.orderedBy}"
+                    tools:text="Mary Worthington"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.orderedBy)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="@{!TextUtils.isEmpty(data.model.confirmationNumber)}"
+                >
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.confirmationLabel}"
+                    tools:text="Confirmation #:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.confirmationNumber}"
+                    tools:text="8972353"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.confirmationNumber)}"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.model.wheelchairAccessible}"
+                tools:text="Wheelchair Accessible"
+                android:visibility="@{!TextUtils.isEmpty(data.model.wheelchairAccessible)}"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.wheelchairAccessible)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="@{!TextUtils.isEmpty(data.model.creditCardNumber)}"
+                >
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.creditCardLabel}"
+                    tools:text="Credit Card:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.creditCardNumber}"
+                    tools:text="xxxxxxxxxxxx8467"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/cart_list_divider"
+                android:visibility="@{!TextUtils.isEmpty(data.model.creditCardNumber)}"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="@{!TextUtils.isEmpty(data.model.purchasedDate)}"
+                >
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_medium}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/label_value_padding"
+                    android:text="@{tridion.purchasedLabel}"
+                    tools:text="Purchased:"
+                    />
+
+                <TextView
+                    style="@style/TextViewStyle.Normal"
+                    bind:font="@{@string/font_gotham_book}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.model.purchasedDate}"
+                    tools:text="06-30-16"
+                    />
+
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/TextViewStyle.Normal.Blue"
+                bind:font="@{@string/font_gotham_medium}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_list_default_list_selector_with_fade"
+                android:drawableEnd="@drawable/ic_arrow_right_blue"
+                android:paddingBottom="32dp"
+                android:paddingTop="32dp"
+                android:text="@{tridion.viewDetailsLabel}"
+                android:onClick="@{() -> callback.onDetailsClicked(data.model)}"
+                tools:text="VIEW DETAILS"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Small.Gray"
+                bind:font="@{@string/font_gotham_light}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:text="@{tridion.walletDisclosureText}"
+                tools:text="NONTRANSFERRABLE. MUST BE USED BY SAME PERSON ON ALL DAYS. NONREFUNDABLE. VOID IF ALTERED. NOT FOR RESALE OR EXCHANGE. Valid photo I.D. and ticket required. Entry subject to biometric scan. Parks, attractions, or entertainment may: close due to refurbishing, capacity, weather or special events; change operating hours; and otherwise change or be discontinued without notice and without liability to the owners of Universal Orlando ® Resort (“Universal”). Not valid for separately ticketed events. CityWalk venues may require 21 years of age or older. You are required to comply with all safety rules and are cautioned to heed all warnings. By accepting admission with this ticket you agree to release the owners of Universal from all responsibility for any loss, injury or damage, which you may incur as our guest. User agreed that Universal may refuse or expel any person whose conduct is objectionable and all claims against Universal shall be litigated only in Orange County, FL © 2016 Universal Orlando. All rights reserved."/>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

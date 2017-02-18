@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_accessibility_item_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="top|left"
+    android:orientation="horizontal"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp" >
+
+    <include
+        android:id="@+id/list_accessibility_item_icon_image"
+        layout="@layout/accessibility_icon" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dp"
+        android:gravity="center_vertical|left"
+        android:orientation="vertical" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_accessibility_item_title_text"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="XVC TRANSFER"
+            android:textColor="@color/text_gray_darker"
+            android:textSize="15sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_accessibility_item_subtitle_text"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="LOREM IPSUM"
+            android:textColor="@color/text_gray"
+            android:textSize="13sp" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/list_accessibility_item_description_text"
+            style="@style/TextViewStyle.GothamBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:lineSpacingExtra="1dp"
+            android:maxLines="7"
+            android:text="Lorem ipsum dolor sit amet, eiusmo tempor incididunt ut labore dolore. Lorem ipsum dolor sit amet, eiusmo tempor incididunt ut labore dolore. Lorem ipsum dolor sit amet, eiusmo tempor incididunt ut labore dolore."
+            android:textColor="@color/text_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/list_home_offer_item_root_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/explore_list_horizontal_card_width"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_item_poi_background"
+    >
+
+    <LinearLayout
+        android:id="@+id/list_home_offer_item_title_clickable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/list_home_offer_item_title"
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="2"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                tools:text="Front of Line"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/list_home_offer_item_description"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="2"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="13sp"
+                tools:text="Includes priority access for each ride, show and attraction"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/list_home_offer_item_image"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginLeft="12dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/search_no_results_image"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+
+</FrameLayout>

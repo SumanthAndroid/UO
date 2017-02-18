@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_show_time_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp" 
+    android:background="@drawable/state_list_show_time_button_gray_with_fade"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="13dp" >
+
+    <ImageView
+        android:id="@+id/button_show_time_icon_image"
+        android:layout_width="16dp"
+        android:layout_height="19dp"
+        android:layout_marginRight="6dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_detail_show_alarm" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/button_show_time_text"
+        style="@style/TextViewStyle.GothamUltra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X1:45"
+        android:textColor="@color/text_white"
+        android:textSize="20sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/button_show_time_am_pm_text"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:text="XM"
+        android:textColor="@color/text_white"
+        android:textSize="10sp" />
+    
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/button_show_time_end_text"
+        style="@style/TextViewStyle.GothamUltra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" - X1:45"
+        android:textColor="@color/text_white"
+        android:textSize="20sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/button_show_time_end_am_pm_text"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:text="XM"
+        android:textColor="@color/text_white"
+        android:textSize="10sp" />
+
+</LinearLayout>

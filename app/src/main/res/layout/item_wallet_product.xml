@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.view.View" />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletProductGroupViewModel"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletProductGroupViewModel.WalletProductGroupCallback"
+            />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:onClick="@{() -> callback.onGroupClicked(data.walletEntitlementModelList)}"
+        android:background="@drawable/state_list_default_list_selector_with_fade">
+
+        <ImageView
+            android:id="@+id/item_wallet_product_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@{data.icon}"
+            tools:src="@drawable/ic_menu_tickets"/>
+
+        <ImageView
+            android:id="@+id/item_wallet_product_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_arrow_right_blue"/>
+
+        <TextView
+            android:id="@+id/item_wallet_product_title"
+            style="@style/TextViewStyle.Large"
+            bind:font="@{@string/font_gotham_medium}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/item_wallet_product_image"
+            android:layout_toStartOf="@id/item_wallet_product_arrow"
+            android:text="@{data.groupTitle}"
+            tools:text="2 Day - 2 Park Ticket"/>
+
+        <TextView
+            android:id="@+id/item_wallet_product_detail"
+            style="@style/TextViewStyle.Small"
+            bind:font="@{@string/font_gotham_book}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_wallet_product_title"
+            android:layout_alignStart="@id/item_wallet_product_title"
+            android:layout_alignEnd="@id/item_wallet_product_title"
+            android:text="@{data.groupDescription}"
+            tools:text="Universal Studios Florida + Universal’s Islands of Adventure,  Florida Resident."/>
+
+        <TextView
+            android:id="@+id/item_wallet_product_quatity"
+            style="@style/TextViewStyle.Tiny"
+            bind:font="@{@string/font_gotham_book}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_wallet_product_detail"
+            android:layout_alignStart="@id/item_wallet_product_title"
+            android:layout_alignEnd="@id/item_wallet_product_title"
+            android:paddingTop="8dp"
+            android:text="@{data.quantity}"
+            tools:text="Quantity: 3"/>
+
+    </RelativeLayout>
+</layout>

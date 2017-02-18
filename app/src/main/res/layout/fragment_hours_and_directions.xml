@@ -1,0 +1,483 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hours_and_directions_background_white"
+        android:clipToPadding="false"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/fragment_hours_and_directions_hero_image"
+                android:layout_width="match_parent"
+                android:layout_height="253dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/universal_orlando_hero_logo"
+                android:contentDescription="@null"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="29dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="29dp"
+                android:orientation="vertical">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamUltra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:text="@string/hours_and_directions_resort_hours"
+                    android:textColor="@color/text_primary"
+                    android:textSize="30sp"/>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/fragment_hours_and_directions_poi_desc_text"
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/hours_and_directions_resort_hours_message"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_hours_and_directions_our_parks_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/detail_divider_gray"/>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.DividerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/hours_and_directions_header_our_parks"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/detail_divider_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_hours_and_directions_park_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/detail_divider_gray"/>
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.DividerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginRight="9dp"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@string/hours_and_directions_header_calendar"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/detail_divider_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_hours_and_directions_calendar_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_list_default_list_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:minHeight="67dp"
+                android:orientation="horizontal"
+                android:paddingLeft="28dp"
+                android:paddingRight="28dp">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="@string/hours_and_directions_calendar"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/list_park_hours_item_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/detail_divider_gray"/>
+
+            <LinearLayout
+                android:id="@+id/fragment_hours_and_directions_directions_hollywood_containter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="23dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="27dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:orientation="vertical">
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_address_ush_venue_name_text"
+                                style="@style/TextViewStyle.GothamBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_ush_address_name"
+                                android:textColor="@color/text_primary"
+                                android:textSize="20sp"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_ush_address_text"
+                                style="@style/TextViewStyle.GothamBook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:ellipsize="end"
+                                android:longClickable="true"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_ush_address"
+                                android:textColor="@color/text_gray_dark"
+                                android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="64dp"
+                            android:background="@color/detail_divider_gray"/>
+
+                        <LinearLayout
+                            android:id="@+id/fragment_hours_and_directions_ush_address_directions_button_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/state_list_default_list_selector_with_fade"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="15dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="15dp">
+
+                            <ImageView
+                                android:id="@+id/fragment_hours_and_directions_ush_address_directions_button_image"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_detail_address_directions"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                style="@style/TextViewStyle.GothamBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/detail_address_directions"
+                                android:textColor="@color/text_gray_darker"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/fragment_hours_and_directions_ush_address_bottom_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/detail_divider_gray"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- Universal Orlando Resort -->
+            <LinearLayout
+                android:id="@+id/fragment_hours_and_directions_directions_orlando_containter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="23dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="27dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:orientation="vertical">
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_address_uso_venue_name_text"
+                                style="@style/TextViewStyle.GothamBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_uso_address_name"
+                                android:textColor="@color/text_primary"
+                                android:textSize="20sp"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_uso_address_text"
+                                style="@style/TextViewStyle.GothamBook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:ellipsize="end"
+                                android:longClickable="true"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_uso_address"
+                                android:textColor="@color/text_gray_dark"
+                                android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="64dp"
+                            android:background="@color/detail_divider_gray"/>
+
+                        <LinearLayout
+                            android:id="@+id/fragment_hours_and_directions_uso_address_directions_button_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/state_list_default_list_selector_with_fade"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="15dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="15dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_detail_address_directions"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                style="@style/TextViewStyle.GothamBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/detail_address_directions"
+                                android:textColor="@color/text_gray_darker"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/fragment_hours_and_directions_uso_address_bottom_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/detail_divider_gray"/>
+                </LinearLayout>
+
+                <!-- Wet 'n Wild -->
+
+                <LinearLayout
+                    android:id="@+id/fragment_hours_and_directions_wnw_directions_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="23dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="27dp"
+                            android:layout_marginRight="27dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:orientation="vertical">
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_wnw_address_venue_name_text"
+                                style="@style/TextViewStyle.GothamBlack"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_address_name_wnw"
+                                android:textColor="@color/text_primary"
+                                android:textSize="20sp"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                android:id="@+id/fragment_hours_and_directions_wnw_address_text"
+                                style="@style/TextViewStyle.GothamBook"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:ellipsize="end"
+                                android:longClickable="true"
+                                android:maxLines="4"
+                                android:text="@string/hours_and_directions_address_wnw"
+                                android:textColor="@color/text_gray_dark"
+                                android:textSize="15sp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="64dp"
+                            android:background="@color/detail_divider_gray"/>
+
+                        <LinearLayout
+                            android:id="@+id/fragment_hours_and_directions_wnw_address_directions_button_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/state_list_default_list_selector_with_fade"
+                            android:clickable="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="15dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="15dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/ic_detail_address_directions"/>
+
+                            <com.universalstudios.orlandoresort.view.fonts.TextView
+                                style="@style/TextViewStyle.GothamBold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/detail_address_directions"
+                                android:textColor="@color/text_gray_darker"
+                                android:textSize="12sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/fragment_hours_and_directions_wnw_address_bottom_divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@color/detail_divider_gray"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.universalstudios.orlandoresort.controller.userinterface.wallet.UniversalFloatingActionButton
+        style="@style/FloatingActionButtonStyleWallet"
+        android:id="@+id/view_ufab_hours_directions"
+        custom:ufab_icon="@string/key_ufab_wallet"/>
+
+</FrameLayout>

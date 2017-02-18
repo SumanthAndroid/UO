@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/fragment_event_series_detail_images_and_title_viewpager_container"
+        android:layout_width="match_parent"
+        android:layout_height="253dp"
+        android:layout_alignParentTop="true" >
+
+        <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+            android:id="@+id/fragment_event_series_detail_images_and_title_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/fragment_event_series_detail_images_and_title_bottom_gradient"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/image_bottom_gradient" />
+
+        <LinearLayout
+            android:id="@+id/fragment_event_series_detail_images_and_title_dot_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="7dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
+            <TextView style="@style/TextViewStyle.Normal.Black"
+                android:id="@+id/alternativeHeaderLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                tools:text="Alternative Header Line 1"/>
+            <TextView style="@style/TextViewStyle.Normal.Black"
+                android:id="@+id/alternativeHeaderLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                tools:text="Alternative Header Line 2"/>
+            <TextView style="@style/TextViewStyle.Normal.Black"
+                android:id="@+id/alternativeHeaderLine3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="16sp"
+                tools:text="Alternative Header Line 3"/>
+            <TextView style="@style/TextViewStyle.Normal.Black"
+                android:id="@+id/detailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"/>
+            <TextView style="@style/TextViewStyle.Normal.Black"
+                android:id="@+id/restrictionsText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

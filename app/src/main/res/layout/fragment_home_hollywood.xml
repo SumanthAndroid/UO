@@ -1,0 +1,434 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fragment_home_buy_tickets_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/yellow">
+
+        <LinearLayout
+            android:id="@+id/fragment_home_buy_tickets_clickable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/state_list_home_image_selector_with_fade"
+            android:clickable="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="12dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="12dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/home_buy_tickets"
+                android:textAllCaps="true"
+                android:textColor="@color/text_black"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fragment_home_buy_tickets_layout"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@color/home_background_gray"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/fragment_home_park_hours_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/state_list_home_image_selector_with_fade"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_todays_park_hours"
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="14sp"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_home_park_hours_text"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="14sp"
+                        tools:text="9:00am - 9:00pm"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/detail_map_divider_gray"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/fragment_home_viewpager_container"
+                android:layout_width="match_parent"
+                android:layout_height="253dp">
+
+                <ImageView
+                    android:id="@+id/fragment_home_hero_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:focusable="false"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/universal_orlando_hero_logo"/>
+
+                <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+                    android:id="@+id/fragment_home_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/home_viewpager_content_description"
+                    android:overScrollMode="never"
+                    android:visibility="visible"/>
+
+                <LinearLayout
+                    android:id="@+id/fragment_home_dot_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="7dp"
+                    android:focusable="false"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingTop="22dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="16dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/fragment_home_explore_map_image"
+                        android:layout_width="28dp"
+                        android:layout_height="22dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_home_explore_map"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/home_browse_map"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray_darker"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/purple_light"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/fragment_home_explore_tab_attractions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/state_list_home_image_selector_with_fade"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/fragment_home_explore_tab_attractions_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_menu_rides"/>
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/home_button_attractions"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text_white"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/purple"/>
+
+                    <LinearLayout
+                        android:id="@+id/fragment_home_explore_tab_dining"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/state_list_home_image_selector_with_fade"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/fragment_home_explore_tab_dining_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_menu_dining"/>
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/fragment_home_tab_bar_dining_text"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/home_button_dining"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text_white"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/purple"/>
+
+                    <LinearLayout
+                        android:id="@+id/fragment_home_explore_tab_shopping"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/state_list_home_image_selector_with_fade"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingBottom="12dp"
+                        android:paddingTop="8dp">
+
+                        <ImageView
+                            android:id="@+id/fragment_home_explore_tab_shopping_image"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_menu_shopping"/>
+
+                        <com.universalstudios.orlandoresort.view.fonts.TextView
+                            android:id="@+id/fragment_home_tab_bar_shopping_text"
+                            style="@style/TextViewStyle.GothamMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="@string/home_button_shopping"
+                            android:textAllCaps="true"
+                            android:textColor="@color/text_white"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_home_upcoming_events_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingTop="12dp">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/home_upcoming_events"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragment_home_upcoming_events_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="7dp"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_home_short_wait_times_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingTop="12dp">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/home_short_wait_times"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragment_home_short_wait_times_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="7dp"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fragment_home_park_updates_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="@string/home_park_updates"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="16sp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragment_home_park_updates_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="#FFF"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fragment_home_offers_recycler_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                />
+
+            <FrameLayout
+                android:id="@+id/fragment_home_newsletter_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple">
+
+                <LinearLayout
+                    android:id="@+id/fragment_home_newsletter_clickable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/state_list_home_image_selector_with_fade"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingBottom="18dp"
+                    android:paddingLeft="24dp"
+                    android:paddingRight="24dp"
+                    android:paddingTop="24dp">
+
+                    <ImageView
+                        android:layout_width="78dp"
+                        android:layout_height="39dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_home_newsletter"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/home_newsletter_title"
+                        android:textColor="@color/text_white"
+                        android:textSize="20sp"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/home_newsletter_description"
+                        android:textColor="#8FFF"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>

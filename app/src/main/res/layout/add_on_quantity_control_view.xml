@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/extras_quantity_control_padding_bottom"
+        android:paddingEnd="0dp"
+        android:paddingStart="0dp"
+        android:paddingTop="@dimen/extras_quantity_control_padding_top">
+
+        <!--stepper container-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical">
+
+            <com.universalstudios.orlandoresort.view.TicketCounterView
+                android:id="@+id/add_on_control_view_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_weight="1"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/add_on_control_view_label"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/extras_quantity_control_label_padding_top"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="@dimen/extras_quantity_control_label_text"
+                tools:text="Adult"/>
+        </LinearLayout>
+
+        <!--price container-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/add_on_control_view_starting_from"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:paddingTop="@dimen/extras_quantity_control_label_padding_top"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="@dimen/extras_quantity_control_starting_text"
+                tools:text="Starting from"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/add_on_control_view_price"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:paddingTop="@dimen/extras_quantity_control_label_padding_top"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="@dimen/extras_quantity_control_price_text"
+                tools:text="Starting from"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/add_on_control_view_unit"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:paddingTop="@dimen/extras_quantity_control_label_padding_top"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="@dimen/extras_quantity_control_unit_text"
+                tools:text="per adult"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

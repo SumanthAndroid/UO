@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.items.CartPromoItem" />
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.ShoppingCartAdapter.ShoppingCartActionCallback" />
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/shopping_cart_promo_root_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <FrameLayout
+            android:id="@+id/shopping_cart_promo_frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false">
+
+            <ImageView
+                android:id="@+id/shopping_cart_promo_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:minHeight="200dp"
+                android:scaleType="fitCenter"
+                bind:imageUrl="@{data.labelSpecTcmId1.image}"
+                tools:src="@drawable/universal_express_hero_image" />
+
+            <TextView
+                android:id="@+id/shopping_cart_promo_special_offer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-5.5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/special_offer_ribbon"
+                android:text="@{tridion.shoppingCartSpecialOfferBannerText}"
+                android:textColor="@color/text_white"
+                android:textSize="10sp"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Special Offer" />
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/shopping_cart_promo_relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_cart_promo_item"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/shopping_cart_promo_title"
+                style="@style/TextViewStyle.Normal.Bold.Black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{data.labelSpecTcmId1.title}"
+                android:textSize="16sp"
+                bind:font="@{@string/font_gotham_ultra}"
+                tools:text="Upgrade to a 2 Day - 2 Park Ticket (Park-to-Park)" />
+
+            <TextView
+                android:id="@+id/shopping_cart_promo_starting_at"
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopping_cart_promo_title"
+                android:layout_marginTop="30dp"
+                android:text="@{data.labelSpecTcmId1.priceTextAbove}"
+                android:textSize="10sp"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Starting at" />
+
+            <TextView
+                android:id="@+id/shopping_cart_promo_price"
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopping_cart_promo_starting_at"
+                android:layout_marginTop="4dp"
+                android:text="@{data.price}"
+                android:textSize="14sp"
+                bind:font="@{@string/font_gotham_bold}"
+                tools:text="$155.99" />
+
+            <TextView
+                android:id="@+id/shopping_cart_promo_unit"
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/shopping_cart_promo_price"
+                android:layout_marginStart="4dp"
+                android:layout_toEndOf="@id/shopping_cart_promo_price"
+                android:text="@{data.labelSpecTcmId1.priceTextBelowPrimary}"
+                android:textSize="10sp"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="per adult" />
+
+            <Button
+                android:id="@+id/shopping_cart_promo_add_to_cart_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shopping_cart_promo_price"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/shape_button_green_background"
+                android:onClick="@{() -> callback.onAddPromoItemToCart(data.offer)}"
+                android:text="@{tridion.addToCartLabel}"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"
+                android:textSize="17sp"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Add to Cart" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

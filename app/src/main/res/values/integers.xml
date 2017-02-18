@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- Image DPI shifts for < 7" devices (phones) -->
+    <integer name="map_tile_dpi_shift">-1</integer>
+    <integer name="poi_detail_image_dpi_shift">-1</integer>
+    <integer name="poi_list_image_dpi_shift">-1</integer>
+    <integer name="poi_search_image_dpi_shift">-1</integer>
+    <integer name="poi_wayfinding_image_dpi_shift">-2</integer>
+
+    <!-- Advanced Filter -->
+    <integer name="advanced_filter_ride_max_wait">90</integer>
+    <integer name="advanced_filter_ride_wait_step">5</integer>
+    <!-- The max value is added to the min, resulting in a max of 80 inches 6'8" -->
+    <integer name="advanced_filter_ride_rider_height_max">57</integer>
+    <!-- The min value is exclusive, so it's set one lower, actual min is 2'0" or 24 inches -->
+    <integer name="advanced_filter_ride_rider_height_min">23</integer>
+    <integer name="advanced_filter_show_next_show_time_max">120</integer>
+    <integer name="advanced_filter_show_next_show_time_step">5</integer>
+    <!-- The min value is exclusive, so it's set one lower, actual min is $4 -->
+    <integer name="advanced_filter_dining_starting_price_min">3</integer>
+    <!-- The max value is added to the min, resulting in a max of $25 -->
+    <integer name="advanced_filter_dining_starting_price_max">22</integer>
+    <!-- The min value is exclusive, so it's set one lower, actual min is $4 -->
+    <integer name="advanced_filter_entertainment_starting_price_min">3</integer>
+    <!-- The max value is added to the min, resulting in a max of $25 -->
+    <integer name="advanced_filter_entertainment_starting_price_max">22</integer>
+
+    <integer-array name="interactive_timeout_values">
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>180</item>
+        <item>300</item>
+        <item>600</item>
+    </integer-array>
+
+
+    <integer name="default_value_of_no_of_adult_ticket">2</integer>
+    <integer name="default_value_of_no_of_child_ticket">0</integer>
+    <integer name="default_value_of_days_seleted">3</integer>
+    <integer name="card_flip_time_full">300</integer>
+    <integer name="card_flip_time_half">150</integer>
+
+    <integer name="number_days_to_cache_images">2</integer>
+
+    <!-- Step Progress View -->
+    <integer name="step_progress_incomplete">0</integer>
+    <integer name="step_progress_complete">1</integer>
+
+
+</resources>

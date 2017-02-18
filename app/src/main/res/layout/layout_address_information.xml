@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    tools:showIn="@layout/fragment_payment_information">
+
+    <!-- TODO create styles for all the views -->
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.universalstudios.orlandoresort.view.textview.InputFilters" />
+        <variable
+            name="addressInfo"
+            type="com.universalstudios.orlandoresort.controller.userinterface.account.address.AddressInfo"
+            />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+        <variable
+            name="countryStateArrays"
+            type="com.universalstudios.orlandoresort.controller.userinterface.checkout.CountryStateArrays"
+            />
+    </data>
+
+
+    <merge>
+
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{tridion.firstNameLabel}"
+            tools:text="First Name"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.firstName}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{tridion.lastNameLabel}"
+            tools:text="Last Name"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.lastName}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{tridion.countryLabel}"
+            tools:text="Country"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <Spinner
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/shape_edit_text_background"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:entries="@{countryStateArrays.countries}"
+                android:selectedItemPosition="@={addressInfo.countryPosition}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_arrow_down_blue" />
+
+        </RelativeLayout>
+
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{tridion.address1Label}"
+            tools:text="Address 1"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.addressLine1}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{tridion.address2Label}"
+                tools:text="Address 2"
+                android:textColor="@color/text_black"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_light}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+                android:text="@{tridion.optionalLabel}"
+                tools:text="Address 2 (optional)"
+                />
+        </LinearLayout>
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.addressLine2}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{tridion.zipCodeLabel}"
+                tools:text="Zip Code"
+                android:textColor="@color/text_black"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_light}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+                android:text="@{tridion.optionalLabel}"
+                tools:text="Optional"
+                android:visibility="@{addressInfo.domesticAddress? View.GONE : View.VISIBLE}"
+                />
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.textview.ZipCodeEditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.zip}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:domesticZip="@{addressInfo.domesticAddress}"
+            bind:onFocusChange="@{addressInfo.onZipFocusChangeListener}"
+            />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@{tridion.cityLabel}"
+            tools:text="City"
+            android:textColor="@color/text_black"
+            android:textSize="20sp" />
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.city}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{tridion.stateProvinceLabel}"
+                tools:text="State"
+                android:textColor="@color/text_black"
+                android:textSize="20sp" />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_light}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp"
+                android:text="@{tridion.optionalLabel}"
+                tools:text="Optional"
+                android:visibility="@{addressInfo.domesticAddress? View.GONE : View.VISIBLE}"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:visibility="@{addressInfo.domesticAddress? View.VISIBLE : View.GONE}">
+
+            <com.universalstudios.orlandoresort.view.spinner.NoDefaultSpinner
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/shape_edit_text_background"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:prompt="@{tridion.bILoggedOutShippingStateText}"
+                android:entries="@{countryStateArrays.states}"
+                android:selectedItemPosition="@={addressInfo.statePosition}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_arrow_down_blue" />
+
+        </RelativeLayout>
+
+        <EditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.stateProvince}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            app:inputFilters="@{InputFilters.arr(InputFilters.excludeChars(`!#$%&amp;*+/=?^_{|}~[];`))}"
+            android:visibility="@{addressInfo.domesticAddress? View.GONE : View.VISIBLE}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="@{addressInfo.getShowPhone ? View.VISIBLE : View.GONE}"
+            >
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{tridion.phoneNumberLabel}"
+                tools:text="Phone Number"
+                android:textColor="@color/text_black"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/phone_number_info_popup"
+                android:layout_width="@dimen/info_icon_size"
+                android:layout_height="@dimen/info_icon_size"
+                android:src="@drawable/info_grey"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+
+        <com.universalstudios.orlandoresort.view.textview.PhoneEditText
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/shape_edit_text_background"
+            android:imeOptions="actionNext"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:singleLine="true"
+            android:text="@={addressInfo.phone}"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="17sp"
+            android:visibility="@{addressInfo.getShowPhone ? View.VISIBLE : View.GONE}"
+            app:domesticPhone="@{addressInfo.domesticAddress}"
+            />
+
+    </merge>
+</layout>

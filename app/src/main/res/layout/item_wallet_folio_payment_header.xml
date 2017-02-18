@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioPaymentHeaderItem"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.WalletFolioPaymentAdapter.WalletFolioPaymentActionCallback"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/white"
+        android:onClick="@{() -> callback.onHeaderItemClicked(data.type)}">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray"/>
+
+        <RelativeLayout
+            android:id="@+id/item_wallet_folio_payment_header_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/item_wallet_folio_payment_header_title"
+                style="@style/TextViewStyle.Normal.Black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.title}"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Section Header"/>
+
+            <TextView
+                android:id="@+id/item_wallet_folio_payment_header_buttontext"
+                style="@style/TextViewStyle.Small.Blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:drawableEnd="@drawable/ic_arrow_right_blue"
+                android:drawablePadding="6dp"
+                android:text="@{data.buttonText}"
+                android:textAllCaps="true"
+                android:visibility="@{!TextUtils.isEmpty(data.buttonText)}"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="Manage all"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

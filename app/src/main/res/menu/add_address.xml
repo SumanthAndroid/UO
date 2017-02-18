@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/add_address"
+        android:icon="@drawable/add_icon"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:visible="true"
+        android:title=""/>
+
+</menu>

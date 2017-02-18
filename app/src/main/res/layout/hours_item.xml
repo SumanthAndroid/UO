@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/hours_item_days_text"
+        style="@style/TextViewStyle.GothamBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:ellipsize="end"
+        android:gravity="left"
+        android:lineSpacingExtra="6dp"
+        android:maxLines="2"
+        android:text="MON - THU"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="15sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/hours_item_times_text"
+        style="@style/TextViewStyle.GothamBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:lineSpacingExtra="6dp"
+        android:maxLines="2"
+        android:text="12:00PM - 11:00PM"
+        android:textColor="@color/text_gray_darker"
+        android:textSize="15sp" />
+
+</LinearLayout>

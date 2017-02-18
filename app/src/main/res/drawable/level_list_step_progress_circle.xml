@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="@integer/step_progress_incomplete">
+        <shape android:shape="oval">
+            <size
+                android:width="20dp"
+                android:height="20dp"/>
+            <solid android:color="@color/step_progress_incomplete"/>
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/step_progress_outline"/>
+        </shape>
+    </item>
+    <item android:maxLevel="@integer/step_progress_complete">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <size
+                        android:width="20dp"
+                        android:height="20dp"/>
+                    <solid android:color="@color/step_progress_complete"/>
+                    <stroke
+                        android:width="1.5dp"
+                        android:color="@color/step_progress_outline"/>
+                </shape>
+            </item>
+            <item
+                android:bottom="7.5dp"
+                android:drawable="@drawable/ic_check"
+                android:left="6dp"
+                android:right="6dp"
+                android:top="7.5dp"/>
+        </layer-list>
+    </item>
+</level-list>

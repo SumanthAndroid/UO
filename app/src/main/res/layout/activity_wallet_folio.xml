@@ -1,0 +1,54 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingFragment">
+
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="24dp"
+        android:orientation="vertical">
+
+        <!-- This only works for a TabLayout with fixed tabMode to add left/right padding
+            to the entire TabLayout without causing text position issue. If a scrollable
+            tabMode is needed, a new approach will be needed or remove the padding. -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"
+            >
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/wallet_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="top"
+                app:tabMode="fixed"
+                app:tabTextColor="@color/text_wallet_tab_default"
+                app:tabSelectedTextColor="@color/text_wallet_tab_selected"
+                app:tabIndicatorHeight="0dp"
+                app:tabBackground="@drawable/tab_wallet_background_selector"
+                android:textSize="20sp"
+                bind:font="@{@string/font_gotham_medium}"
+                bind:selectedFont="@{@string/font_gotham_black}"
+                />
+        </FrameLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/wallet_fragment_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v4.view.ViewPager>
+
+
+    </LinearLayout>
+
+</layout>

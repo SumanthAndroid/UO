@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/state_list_rounded_corner_textview_ticket"
+    android:orientation="horizontal" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        style="@style/TextViewStyle.GothamBold"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="3dp"
+        android:textColor="@color/text_ticket_app_time_white"
+        android:textSize="18sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/text_ticket_app_time_white"
+        android:gravity="bottom"
+        android:textSize="13sp" />
+
+    </LinearLayout>

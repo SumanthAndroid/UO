@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_offer_item_root_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/list_offer_item_top_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/detail_divider_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_default_list_selector_with_fade"
+        android:gravity="center"
+        android:minHeight="67dp"
+        android:orientation="horizontal"
+        android:paddingLeft="30dp"
+        android:paddingRight="34dp" >
+
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginRight="18dp"
+            android:background="@color/explore_list_no_image_background_gray" >
+
+            <ImageView
+                android:id="@+id/list_offer_item_item_no_image_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_no_image_logo_list"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/list_offer_item_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_item_poi_rounded_top_corners_image_mask" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/list_offer_item_primary_text"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="3dp"
+                android:text="Xait Time Alert"
+                android:textColor="@color/text_gray_darker"
+                android:textSize="14sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/list_offer_item_primary_sub_text"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:lineSpacingExtra="4dp"
+                android:text="Xeservations are suggested"
+                android:textColor="@color/text_gray_dim"
+                android:textSize="13.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

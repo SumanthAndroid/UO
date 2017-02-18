@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
+
+        <import type="com.universalstudios.orlandoresort.view.textview.InputFilters"/>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+
+        <variable
+            name="address"
+            type="com.universalstudios.orlandoresort.controller.userinterface.account.address.AddressViewModel"
+            />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:id="@+id/fragment_communication_prefs_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="8dp"
+                        android:text="@{tridion.RequiredFieldsLabel}"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="12sp"
+                        bind:font="@{@string/font_gotham_book}"
+                        tools:text="Fields are required, unless noted as optional."/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.CheckBox
+                        android:id="@+id/fragment_communication_prefs_texts"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{tridion.CPTextMessageOptionLabel}"
+                        tools:text="It's ok to send me text messages for offers and promotions."/>
+
+                    <com.universalstudios.orlandoresort.controller.userinterface.account.views.PhoneNumberFormattingEditText
+                        android:id="@+id/fragment_communication_prefs_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/shape_register_text_background"
+                        android:inputType="number"
+                        android:maxLength="15"
+                        android:padding="5dp"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_phone_error"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="3dp"
+                        android:text="@{tridion.er5}"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textColor="#ff0000"
+                        android:visibility="gone"
+                        bind:font="@{@string/font_gotham_book}"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.CheckBox
+                        android:id="@+id/fragment_communication_prefs_emails"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{tridion.CPEmailOptionLabel}"
+                        tools:text="It's ok to email me offers and promotions."/>
+
+                    <SeekBar
+                        android:id="@+id/fragment_communication_prefs_email_frequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/fragment_communication_prefs_email_frequency_label_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/gray"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.CheckBox
+                        android:id="@+id/fragment_communication_prefs_targeted"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{tridion.CPSocialAdvertisingOptionLabel}"
+                        tools:text="We will use your email to link to social platforms for the purpose of advertising."/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingTop="8dp"
+                        android:text="@{tridion.CPSocialAdvertisingDescription}"
+                        android:textColor="@color/text_gray_darkest"
+                        bind:font="@{@string/font_gotham_book}"
+                        tools:text="It's ok to show me targeted social advertising."/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.CheckBox
+                        android:id="@+id/fragment_communication_prefs_direct_mail"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="@{tridion.CPSendMailOptionLabel}"
+                        tools:text="It's ok to send me direct mail offers and promotions"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_communication_prefs_add_address_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_lightest"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_add_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@+id/fragment_communication_prefs_add_address_chevron"
+                        android:text="@{tridion.addAddressLabel}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blue_color"
+                        android:textSize="18sp"
+                        bind:font="@{@string/font_gotham_medium}"
+                        tools:text="ADD"/>
+
+                    <ImageView
+                        android:id="@+id/fragment_communication_prefs_add_address_chevron"
+                        android:layout_width="21dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_chevron_right_white_24dp"
+                        android:tint="@color/blue_color"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_communication_prefs_edit_address_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray_lightest"
+                    android:clickable="true"
+                    android:padding="16dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_edit_address_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@{tridion.primaryLabel}"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="18sp"
+                        bind:font="@{@string/font_gotham_ultra}"
+                        tools:text="Primary"/>
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_edit_address_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fragment_communication_prefs_edit_address_label"
+                        android:textColor="@color/dark_gray"
+                        bind:font="@{@string/font_gotham_book}"
+                        android:paddingTop="4dp"
+                        android:text="@{address.name}"
+                        tools:text="Steve McQueen"/>
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_edit_address_line_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fragment_communication_prefs_edit_address_name"
+                        android:textColor="@color/dark_gray"
+                        android:paddingTop="4dp"
+                        bind:font="@{@string/font_gotham_book}"
+                        android:text="@{address.addressLine1}"
+                        tools:text="123 Main St"/>
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_edit_address_line_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fragment_communication_prefs_edit_address_line_one"
+                        android:textColor="@color/dark_gray"
+                        android:paddingTop="4dp"
+                        android:visibility="@{!TextUtils.isEmpty(address.addressLine2)}"
+                        bind:font="@{@string/font_gotham_book}"
+                        android:text="@{address.addressLine2}"
+                        tools:text="APT 123"/>
+
+                    <TextView
+                        android:id="@+id/fragment_communication_prefs_edit_address_city_state_zip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fragment_communication_prefs_edit_address_line_two"
+                        android:textColor="@color/dark_gray"
+                        android:paddingTop="4dp"
+                        bind:font="@{@string/font_gotham_book}"
+                        android:text="@{address.cityStateZip}"
+                        tools:text="Orlando, FL 32819"/>
+
+                    <RelativeLayout
+                        android:id="@+id/fragment_communication_prefs_edit_button_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true">
+
+                        <TextView
+                            android:id="@+id/fragment_communication_prefs_edit_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/fragment_communication_prefs_edit_address_chevron"
+                            android:text="@{tridion.editLabel}"
+                            android:textAllCaps="true"
+                            android:textColor="@color/blue_color"
+                            android:textSize="18sp"
+                            bind:font="@{@string/font_gotham_medium}"
+                            tools:text="EDIT"/>
+
+                        <ImageView
+                            android:id="@+id/fragment_communication_prefs_edit_address_chevron"
+                            android:layout_width="21dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_chevron_right_white_24dp"
+                            android:tint="@color/blue_color"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/fragment_communication_prefs_tos"
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:padding="16dp"
+                    android:text="@{tridion.getTermsAndPolicyLinks}"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:text="Terms of Service &amp; Privacy Policy"/>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/fragment_communication_prefs_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</layout>

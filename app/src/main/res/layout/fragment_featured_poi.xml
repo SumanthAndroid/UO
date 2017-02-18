@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/detail_no_image_background_gray" >
+
+    <ImageView
+        android:id="@+id/fragment_featured_poi_image_no_image_logo"
+        android:layout_width="200dp"
+        android:layout_height="170dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:paddingBottom="50dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_no_image_logo_detail"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/fragment_featured_poi_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/fragment_featured_poi_bottom_gradient"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/image_bottom_gradient" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="18dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_featured_poi_venue_name_text"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:shadowColor="@color/text_shadow_black"
+                android:shadowDx="2.0"
+                android:shadowDy="3.0"
+                android:shadowRadius="4.0"
+                android:text="XNIVERSAL STUDIOS FLORIDA"
+                android:textColor="@color/text_white"
+                android:textSize="13sp" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_featured_poi_poi_name_text"
+                style="@style/TextViewStyle.GothamUltra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:shadowColor="@color/text_shadow_black"
+                android:shadowDx="2.0"
+                android:shadowDy="3.0"
+                android:shadowRadius="4.0"
+                android:text="Xespicable Me: Minion Mayhem that goes on and on for a really really long time"
+                android:textColor="@color/text_white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="@dimen/circle_badge_detail_size"
+            android:layout_height="@dimen/circle_badge_detail_size"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="12dp" >
+
+            <include
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                layout="@layout/poi_detail_circle_badge" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fragment_featured_poi_image_selector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/state_list_home_image_selector_with_fade"
+        android:clickable="true" />
+
+</RelativeLayout>

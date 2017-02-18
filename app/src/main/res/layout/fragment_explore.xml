@@ -1,0 +1,104 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fragment_explore_filter_tab_bar_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <HorizontalScrollView
+            android:id="@+id/fragment_explore_filter_tab_bar_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:animateLayoutChanges="true" >
+
+                <!-- Filter options -->
+
+                <LinearLayout
+                    android:id="@+id/fragment_explore_filter_root_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <com.universalstudios.orlandoresort.view.buttons.FilterTabButton
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/fragment_explore_filter_tab_button_edit_filter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:minWidth="64dp"
+                        custom:img_src="@drawable/ic_tab_filter_edit"
+                        custom:state_checked="true"
+                        custom:text="@string/explore_filter_tab_edit_filter" />
+
+                    <include layout="@layout/button_filter_tab_divider" />
+
+                    <com.universalstudios.orlandoresort.view.buttons.FilterTabButton
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/fragment_explore_filter_tab_button_clear_filter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:minWidth="64dp"
+                        custom:img_src="@drawable/ic_tab_filter_clear"
+                        custom:state_checked="true"
+                        custom:text="@string/explore_filter_tab_clear_filter" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_explore_filter_tab_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/explore_filter_tab_bar_bottom_divider" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_explore_search_results_count"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/explore_list_background_gray">
+
+        <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+            android:id="@+id/fragment_explore_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/explore_list_background_gray"
+            android:overScrollMode="never" />
+        
+        <fragment
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.universalstudios.orlandoresort.controller.userinterface.explore.results.ExploreSearchResultsFragment"
+            android:id="@+id/fragment_explore_search_results_count_fragment"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

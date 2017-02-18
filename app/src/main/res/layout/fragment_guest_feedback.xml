@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".controller.userinterface.feedback.GuestFeedbackFragment">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_subject_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_guest_feedback_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:minLines="1"
+                android:nextFocusForward="@+id/fragment_guest_feedback_rating"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_subject_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_rating_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <Spinner
+                android:id="@+id/fragment_guest_feedback_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nextFocusForward="@+id/fragment_guest_feedback_message"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_rating_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_message_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_guest_feedback_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="6"
+                android:minLines="3"
+                android:nextFocusForward="@+id/fragment_guest_feedback_name"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_message_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_name_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_guest_feedback_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:nextFocusForward="@+id/fragment_guest_feedback_email"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_name_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_email_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_guest_feedback_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:nextFocusForward="@+id/fragment_guest_feedback_phone"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_email_error"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:text="@string/guest_feedback_phone_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/feedback_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_guest_feedback_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:maxLines="1"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_guest_feedback_phone_error"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/feedback_error_text_margin_top"
+                android:paddingStart="@dimen/feedback_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/feedback_error_text_size"
+                android:visibility="gone"
+                tools:text="An error has occurred"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.Button
+                android:id="@+id/fragment_guest_feedback_submit"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/feedback_item_margin_top"
+                android:background="@drawable/state_list_button_primary_background_color"
+                android:text="@string/guest_feedback_submit"
+                android:textAllCaps="true"
+                android:textColor="@color/text_white"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/fragment_guest_feedback_sending_view"
+        layout="@layout/loading_modal"/>
+</RelativeLayout>

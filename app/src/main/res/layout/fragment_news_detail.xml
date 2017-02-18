@@ -1,0 +1,127 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/news_detail_background_white" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/fragment_news_detail_viewpager_container"
+                android:layout_width="match_parent"
+                android:layout_height="253dp"
+                android:visibility="gone" >
+
+                <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+                    android:id="@+id/fragment_news_detail_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:visibility="visible" />
+
+                <View
+                    android:id="@+id/fragment_news_detail_bottom_gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/image_bottom_gradient" />
+
+                <LinearLayout
+                    android:id="@+id/fragment_news_detail_dot_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="29dp"
+                android:orientation="vertical" >
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/fragment_news_detail_date_text"
+                    style="@style/TextViewStyle.GothamBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="XULY 4, 2014"
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="15sp" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/fragment_news_detail_message_heading_text"
+                    style="@style/TextViewStyle.GothamBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="2dp"
+                    android:maxLines="6"
+                    android:text="Xome Title Mentioning Some News Things Going On In The Park"
+                    android:textColor="@color/text_primary"
+                    android:textSize="24sp" />
+
+                <com.universalstudios.orlandoresort.view.fonts.TextView
+                    android:id="@+id/fragment_news_detail_message_body_text"
+                    style="@style/TextViewStyle.GothamBook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="29dp"
+                    android:layout_marginTop="16dp"
+                    android:autoLink="phone|web|email"
+                    android:lineSpacingExtra="6dp"
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Ut enim ad minim veniam, quis nostrud."
+                    android:textColor="@color/text_gray_darker"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/fragment_news_detail_bottom_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ab_bottom_solid_blue"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/fragment_news_detail_deep_link_button"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="@drawable/state_list_actionbar_selector_with_fade"
+            android:clickable="true" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_news_detail_deep_link_textview"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/news_view_ride"
+                android:textColor="@color/text_white"
+                android:textSize="18sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

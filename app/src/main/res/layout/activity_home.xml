@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/activity_home_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <!-- The main content view -->
+
+        <FrameLayout
+            android:id="@+id/activity_home_root_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <FrameLayout
+                android:id="@+id/activity_home_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <!-- The navigation drawer -->
+
+        <LinearLayout
+            android:id="@+id/activity_home_drawer_root"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:orientation="horizontal" >
+
+            <ExpandableListView
+                android:id="@+id/activity_home_drawer_list"
+                android:layout_width="@dimen/drawer_width"
+                android:layout_height="match_parent"
+                android:background="@color/drawer_item_background_white"
+                android:cacheColorHint="@android:color/transparent"
+                android:choiceMode="singleChoice"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:groupIndicator="@null"
+                android:listSelector="@drawable/state_list_default_list_selector"
+                android:overScrollFooter="@color/drawer_item_background_white"
+                android:overScrollHeader="@color/drawer_item_background_white"
+                android:overScrollMode="ifContentScrolls" />
+        </LinearLayout>
+
+    </android.support.v4.widget.DrawerLayout>
+    <FrameLayout android:id="@+id/activity_home_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_50_translucent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:showIn="@layout/fragment_account_update_password">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+</FrameLayout>

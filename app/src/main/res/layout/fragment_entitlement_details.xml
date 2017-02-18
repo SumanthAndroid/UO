@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <import type="android.text.TextUtils" />
+        <import type="android.text.Html" />
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletEntitlementModel"
+            />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="32dp">
+
+            <TextView
+                style="@style/TextViewStyle.Large"
+                bind:font="@{@string/font_gotham_medium}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="8dp"
+                android:text="@{data.productName}"
+                tools:text="2 Day - 2 Park Ticket"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{data.description}"
+                tools:text="Universal Studios Florida + Universal's Island of Adventure"
+                android:visibility="@{!TextUtils.isEmpty(data.description)}"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@{data.tertiaryDescription}"
+                tools:text="Adult | Florida Resident"
+                android:visibility="@{!TextUtils.isEmpty(data.tertiaryDescription)}"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                bind:htmlText="@{data.tcmId2Spec.details}"
+                android:autoLink="all"
+                tools:text="Details"
+                />
+
+            <TextView
+                style="@style/TextViewStyle.Normal"
+                bind:font="@{@string/font_gotham_book}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                bind:htmlText="@{data.tcmId2Spec.restrictions}"
+                android:autoLink="all"
+                tools:text="Restrictions"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</layout>

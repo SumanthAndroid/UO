@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/home_background_white"
+    android:paddingTop="20dp">
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/user_name_text_view"
+        style="@style/TextViewStyle.GothamBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/text_gray"
+        android:ellipsize="end"
+        android:text="Rakesh"
+        android:textSize="18sp" />
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.universalstudios.orlandoresort.view.fonts.TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_email_frequency_label"
+    style="@style/TextViewStyle.GothamBook"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal"
+    android:textSize="12sp"/>

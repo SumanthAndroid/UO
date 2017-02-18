@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".controller.userinterface.addons.AddOnSelectDateFragment">
+
+        <LinearLayout
+            android:id="@+id/fragment_add_on_select_date_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_date_title"
+                style="@style/TextViewStyle.GothamUltra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="21sp"
+                tools:text="Blue Man Group Show"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_date_description"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="16dp"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="12sp"
+                tools:text="Blue Man Group is comedy, theater, rock concert and dance party all rolled into one. This wildly popular phenomenon delivers an unforgettable, multi-sensory experience. It’s an outrageous evening of entertainment. See the show that has captivated 35 million people worldwide."/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_add_on_select_date_select_date"
+                style="@style/TextViewStyle.GothamMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                tools:text="Select Date"
+                android:textColor="@color/text_gray_darkest"
+                android:textSize="21sp"/>
+
+            <com.universalstudios.orlandoresort.view.custom_calendar.EventCalendarView
+                android:id="@+id/fragment_add_on_select_date_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/fragment_add_on_select_date_loading"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ticket_appointment_ticket_barcode_layout_dpvq"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_ticket_appointment_detail_bottom_background"
+    android:paddingTop="12dp">
+
+        <FrameLayout
+            android:id="@+id/framelayout_barcode_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="@color/text_white">
+
+            <ImageView
+                android:id="@+id/list_appointment_ticket_barcode_no_image_logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_no_image_logo_search"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/list_appointment_ticket_barcode_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_item_poi_search_circle_image_mask" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/state_list_search_circle_image_mask_selector_with_fade" />
+        </FrameLayout>
+
+    <com.universalstudios.orlandoresort.view.fonts.VerticalTextView
+        android:id="@+id/ticket_appointment_admission_quantity"
+        style="@style/TextViewStyle.GothamBold"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADMIT - 5"
+        android:lines="1"
+        android:textColor="@color/text_white"
+        android:rotation="-180"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:layout_toLeftOf="@+id/framelayout_barcode_image"
+        android:layout_alignBottom="@+id/framelayout_barcode_image"
+        android:layout_alignTop="@+id/framelayout_barcode_image"/>
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        style="@style/TextViewStyle.GothamMedium"
+        android:id="@+id/ticket_appointment_ticket_barcode_code"
+        android:textColor="@color/text_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_below="@+id/framelayout_barcode_image"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        tools:text="123451234512345-12345"/>
+</RelativeLayout>

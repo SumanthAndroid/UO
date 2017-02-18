@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Park hours calendar icons -->
+    <dimen name="hours_calendar_icon_size">112dp</dimen>
+    <dimen name="hours_calendar_text_size">16sp</dimen>
+
+    <!--Interactive audio -->
+    <dimen name="interactive_audio_image_padding">50dp</dimen>
+    
+</resources>

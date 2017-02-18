@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.universalstudios.orlandoresort.view.calendar.MonthView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/title"
+        style="@style/CalendarTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/calendar_month_title_margin_bottom"
+        android:layout_marginTop="@dimen/calendar_month_title_margin_top"
+        android:gravity="center_horizontal" />
+
+    <com.universalstudios.orlandoresort.view.calendar.CalendarGridView
+        android:id="@+id/calendar_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <com.universalstudios.orlandoresort.view.calendar.CalendarRowView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/calendar_day_headers_padding_bottom" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/CalendarCell.DayHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </com.universalstudios.orlandoresort.view.calendar.CalendarRowView>
+
+        <include layout="@layout/calendar_week" />
+
+        <include layout="@layout/calendar_week" />
+
+        <include layout="@layout/calendar_week" />
+
+        <include layout="@layout/calendar_week" />
+
+        <include layout="@layout/calendar_week" />
+
+        <include layout="@layout/calendar_week" />
+    </com.universalstudios.orlandoresort.view.calendar.CalendarGridView>
+
+</com.universalstudios.orlandoresort.view.calendar.MonthView>

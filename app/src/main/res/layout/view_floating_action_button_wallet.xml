@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.FloatingActionButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/circle_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/bitmap_ic_menu_wallet_white"
+    android:scaleType="center"
+    app:backgroundTint="@color/primary"
+    android:clickable="true"
+    android:focusable="false"
+    android:focusableInTouchMode="false"/>

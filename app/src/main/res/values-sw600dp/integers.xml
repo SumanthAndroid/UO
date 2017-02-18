@@ -1,0 +1,10 @@
+<resources>
+
+    <!-- Image DPI shifts for 7" and larger devices (tablets) -->
+    <integer name="map_tile_dpi_shift">0</integer>
+    <integer name="poi_detail_image_dpi_shift">0</integer>
+    <integer name="poi_list_image_dpi_shift">0</integer>
+    <integer name="poi_search_image_dpi_shift">0</integer>
+    <integer name="poi_wayfinding_image_dpi_shift">-1</integer>
+
+</resources>

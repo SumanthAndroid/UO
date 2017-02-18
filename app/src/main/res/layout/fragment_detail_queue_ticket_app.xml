@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/appointment_time_header_tv"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/detail_ticket_header_app"
+        android:textColor="@color/text_ticket_title_gray"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/appointment_time_slider_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appointment_time_header_tv"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/appointment_time_slider_tv"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center|end"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            tools:text="9"
+            android:textColor="@color/blue_color"
+            android:textSize="20sp" />
+
+        <SeekBar android:id="@+id/appointment_time_slider"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                android:layout_below="@+id/appointment_time_slider_tv"
+                />
+
+    </RelativeLayout>
+
+
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/appointment_times_app_tv"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ellipsize="end"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/appointment_time_slider_layout"
+        android:text="@string/detail_ticket_app_title"
+        android:textColor="@color/text_ticket_title_gray"
+        android:textSize="16sp" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/no_appointment_time_available_tv"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/appointment_times_app_tv"
+        android:text="No appointment time available. Please check back later again."
+        android:textColor="@color/text_ticket_title_gray"
+        android:textSize="16sp"
+        android:visibility="gone"/>
+
+    <GridView
+        android:id="@+id/queue_ticket_appointment_time_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:numColumns="2"
+        android:gravity="center"
+        android:columnWidth="50dp"
+        android:listSelector="#00000000"
+        android:verticalSpacing="7dp"
+        android:horizontalSpacing="7dp"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_gravity="center"
+        android:stretchMode="columnWidth"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@+id/appointment_times_app_tv"
+        android:layout_alignParentEnd="true">
+    </GridView>
+
+
+
+    <com.universalstudios.orlandoresort.view.fonts.Button
+        android:id="@+id/ticket_appointment_confirmation"
+        style="@style/TextViewStyle.GothamBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue_color"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="@string/fragment_appointment_times_footer_button"
+        android:textColor="@color/text_white"
+        android:textSize="20sp" />
+
+
+    </RelativeLayout>

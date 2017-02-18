@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_address_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.universalstudios.orlandoresort.controller.userinterface.account.address.ProfileAddressListActivity"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextViewStyle.Header.Black"
+            bind:font="@{`fonts/Gotham-Black.otf`}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            bind:text="@{tridion.selectAddressLabel}"
+            tools:text="Select Address"
+            />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/address_list"
+                android:name="com.universalstudios.orlandoresort.controller.userinterface.account.address.ProfileAddressListActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="LinearLayoutManager"
+                tools:context=".controller.userinterface.account.address.ProfileAddressListActivity"
+                tools:listitem="@layout/address_list_content" />
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="18dp"
+            style="@style/TextViewStyle.GothamBold"
+            android:text="@{tridion.pageHeaderAETitle}"
+            tools:text="Let's Assign Your Purchases"
+            android:textColor="@android:color/black"
+            android:textSize="21sp"
+            android:textStyle="normal|bold" />
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="6dp"
+            style="@style/TextViewStyle.GothamBook"
+            android:text="@{tridion.pageHeaderAEIntroText}"
+            tools:text="To finish processing your order, please assign tickets for each guest."
+            android:textColor="@color/assign_tickets_subtitle_text_color"
+            android:textSize="15sp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:id="@+id/commerceAssignTicketsContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextViewStyle.GothamBold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                tools:text="1"
+                android:id="@+id/tvUnassignedCount"
+                android:textColor="@color/blue_color"
+                android:layout_marginLeft="16dp"
+                android:textSize="28dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chevron"
+                android:src="@drawable/ic_chevron_down_white_24dp"
+                android:tint="@color/blue_color"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5dp" />
+        </LinearLayout>
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:layout_width="wrap_content"
+            style="@style/TextViewStyle.GothamMedium"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@{tridion.purchasesLeftToAssignLabel}"
+            tools:text="PURCHASES LEFT TO ASSIGN"
+            android:id="@+id/textView2"
+            android:textSize="15sp"
+            android:maxEms="8"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/text_gray_light"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/tvUnassigned"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="#e4e4e4"
+            android:text="@{tridion.unassignedPurchasesLabel}"
+            tools:text="Unassigned Purchases"
+            style="@style/TextViewStyle.GothamBold"
+            android:textColor="@android:color/black"
+            android:textSize="21dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:id="@+id/ticketsLeftContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="#e4e4e4"
+            android:paddingBottom="25dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{tridion.continueLabel}"
+            tools:text="Continue"
+            android:id="@+id/btnContinue"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/shape_button_blue_disabled_background"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="25dp" />
+
+    </LinearLayout>
+</ScrollView>
+</layout>

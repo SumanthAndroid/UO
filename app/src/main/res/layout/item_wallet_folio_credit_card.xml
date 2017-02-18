@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="org.apache.commons.lang3.StringUtils"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioPaymentMethodItemViewModel"/>
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.WalletFolioPaymentAdapter.WalletFolioPaymentActionCallback"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/state_list_white_list_selector"
+        android:onClick="@{() -> callback.onItemClicked(data)}"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/wallet_folio_item_cc_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@{data.imageRes}"
+            tools:src="@drawable/cc_amex"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/wallet_folio_item_cc_image"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/wallet_folio_item_cc_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:text="@{data.name}"
+                android:textColor="@color/text_black"
+                bind:font="@{@string/font_gotham_bold}"
+                tools:text="American Express Delta Skymiles"/>
+
+            <TextView
+                android:id="@+id/wallet_folio_item_cc_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{StringUtils.leftPad(data.lastFour, 16, &quot;•&quot;)}"
+                android:textColor="@color/text_black"
+                bind:font="@{@string/font_gotham_book}"
+                tools:text="••••••••••••1234"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

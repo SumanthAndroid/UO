@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:animationCache="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/button_filter_tab_content_image"
+        android:layout_width="42dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="6dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_tab_filter_rides" />
+
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/button_filter_tab_content_text"
+        style="@style/TextViewStyle.GothamMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="XUICK SERVICE"
+        android:textColor="@color/explore_filter_tab_button_text_on"
+        android:textSize="10sp" />
+
+</LinearLayout>

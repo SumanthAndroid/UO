@@ -1,0 +1,27 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="FlipViewStyle" >
+        <item name="shape">rectangle</item>
+    </style>
+
+
+    <!-- Calendar Styles -->
+    <style name="CalendarTitle">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:textColor">@color/calendar_text_month_title</item>
+        <item name="font">@string/font_gotham_ultra</item>
+    </style>
+
+    <style name="CalendarCell.DayHeader">
+        <item name="android:textColor">@color/calendar_text_day_header</item>
+        <item name="android:textSize">@dimen/calendar_text_small</item>
+        <item name="font">@string/font_oswald_bold</item>
+    </style>
+
+    <style name="CalendarCell.CalendarDate">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:clickable">true</item>
+        <item name="font">@string/font_oswald_demibold</item>
+    </style>
+
+</resources>

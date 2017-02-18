@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.items.CartSectionHeaderItem"
+            />
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.shoppingcart.ShoppingCartAdapter.ShoppingCartActionCallback"
+            />
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"
+            />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/cart_item_header"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:tint="@color/blue_color"
+            android:src="@{data.resIcon}"
+            tools:src="@drawable/ic_detail_feature_ticket_gray"
+            />
+
+        <TextView
+            style="@style/TextViewStyle.CartHeader"
+            bind:font="@{`fonts/Gotham-Medium.otf`}"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.headerText}"
+            />
+
+    </LinearLayout>
+
+</layout>

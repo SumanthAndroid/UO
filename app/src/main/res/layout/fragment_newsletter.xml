@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.universalstudios.orlandoresort.controller.userinterface.newsletter.NewsletterFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_newsletter_email_label"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/newsletter_item_padding_start"
+                android:text="@string/newsletter_email_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/newsletter_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_newsletter_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_newsletter_email_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/newsletter_error_text_margin_top"
+                android:paddingStart="@dimen/newsletter_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/newsletter_error_text_size"
+                android:visibility="gone"
+                tools:text="An error about this field"
+                tools:visibility="visible"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamBold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/newsletter_birthdate_label"
+                        android:textAllCaps="true"
+                        android:textColor="@color/text_gray_dark"
+                        android:textSize="@dimen/newsletter_label_text_size"/>
+
+                    <Spinner
+                        android:id="@+id/fragment_newsletter_month"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:saveEnabled="false"
+                        android:spinnerMode="dropdown"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_newsletter_month_error"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/newsletter_error_text_margin_top"
+                        android:textColor="@color/text_red"
+                        android:textSize="@dimen/newsletter_error_text_size"
+                        android:visibility="gone"
+                        tools:text="An error about this field"
+                        tools:visibility="visible"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <!--keep this for alignment with other row-->
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        style="@style/TextViewStyle.GothamMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp"/>
+
+                    <Spinner
+                        android:id="@+id/fragment_newsletter_year"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:saveEnabled="false"
+                        android:spinnerMode="dropdown"/>
+
+                    <com.universalstudios.orlandoresort.view.fonts.TextView
+                        android:id="@+id/fragment_newsletter_year_error"
+                        style="@style/TextViewStyle.GothamBook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/newsletter_error_text_margin_top"
+                        android:textColor="@color/text_red"
+                        android:textSize="@dimen/newsletter_error_text_size"
+                        android:visibility="gone"
+                        tools:text="An error about this field"
+                        tools:visibility="visible"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_newsletter_zip_label"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingStart="@dimen/newsletter_item_padding_start"
+                android:text="@string/newsletter_zip_label"
+                android:textAllCaps="true"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="@dimen/newsletter_label_text_size"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.EditText
+                android:id="@+id/fragment_newsletter_zip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_newsletter_zip_error"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/newsletter_error_text_margin_top"
+                android:paddingStart="@dimen/newsletter_item_padding_start"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/newsletter_error_text_size"
+                android:visibility="gone"
+                tools:text="An error about this field"
+                tools:visibility="visible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_newsletter_policy_and_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColorLink="@color/newsletter_form_link_text"
+                tools:text="@string/newsletter_footer_html_format"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.Button
+                android:id="@+id/fragment_newsletter_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/state_list_button_primary_background_color"
+                android:text="@string/guest_feedback_submit"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/fragment_newsletter_submitting_view"
+        layout="@layout/loading_modal"/>
+</FrameLayout>
+
+

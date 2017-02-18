@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- android:actionLayout="@layout/action_search_view" -->
+
+    <item
+        android:id="@+id/action_alerts"
+        android:icon="@drawable/ic_action_alarm"
+        android:orderInCategory="99"
+        android:showAsAction="always|withText"
+        android:title="@string/action_alerts"/>
+
+</menu>

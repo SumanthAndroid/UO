@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.universalstudios.orlandoresort.view.viewpager.JazzyViewPager
+        android:id="@+id/fragment_tutorial_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fragment_tutorial_skip_button"
+        android:overScrollMode="never" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@+id/fragment_tutorial_viewpager"
+        android:background="@drawable/shape_bottom_gradient_white" />
+
+    <LinearLayout
+        android:id="@+id/fragment_tutorial_dot_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fragment_tutorial_viewpager"
+        android:layout_marginBottom="11dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_tutorial_skip_button"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ab_bottom_solid_blue" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/state_list_actionbar_selector_with_fade" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/fragment_tutorial_skip_button_text"
+                app:font="@string/font_tutorial_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/tutorial_button_skip"
+                android:textColor="@color/text_white"
+                android:textSize="18sp" />
+        </FrameLayout>
+    </FrameLayout>
+
+</RelativeLayout>

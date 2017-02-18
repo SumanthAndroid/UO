@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/advanced_filter_background_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_advanced_filter_item_background_static"
+        android:orientation="vertical"
+        android:padding="12dp" >
+
+        <com.universalstudios.orlandoresort.view.fonts.TextView
+            android:id="@+id/advanced_filter_multi_choice_title_textview"
+            style="@style/TextViewStyle.GothamBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/text_gray_dark"
+            android:textSize="@dimen/advanced_filter_multi_choice_title_font_size"
+            tools:text="Title Here" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/advanced_filter_multi_choice_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@android:layout/simple_list_item_multiple_choice" >
+    </ListView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/detail_divider_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/advanced_filter_multi_choice_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/state_list_default_list_selector_with_fade"
+            android:clickable="true" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@android:string/cancel"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/detail_divider_gray" />
+
+        <FrameLayout
+            android:id="@+id/advanced_filter_multi_choice_ok_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/state_list_default_list_selector_with_fade"
+            android:clickable="true" >
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@android:string/ok"
+                android:textColor="@color/text_gray_dark"
+                android:textSize="12sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

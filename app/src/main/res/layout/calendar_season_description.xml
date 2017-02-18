@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/calendar_season_description_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/calendar_season_description_background">
+    <com.universalstudios.orlandoresort.view.fonts.TextView
+        android:id="@+id/calendar_season_description_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_white"
+        android:layout_gravity="center_vertical"
+        android:layout_centerHorizontal ="true"
+        android:layout_centerVertical="true"
+        android:lineSpacingExtra="3dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        />
+</RelativeLayout>

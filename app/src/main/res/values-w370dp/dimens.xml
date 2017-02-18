@@ -1,0 +1,6 @@
+<resources>
+
+    <!-- Drawer width, limit width on wider screens -->
+    <dimen name="drawer_width">310dp</dimen>
+
+</resources>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioPaymentViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_wallet_folio_payment_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/wallet_folio_background_color"
+            android:visibility="@{!data.showLoading}">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/wallet_folio_payment_progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="@{data.showLoading}"/>
+
+        <RelativeLayout
+            android:id="@+id/wallet_folio_no_payment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/wallet_folio_background_color"
+            android:visibility="@{data.showEmpty}"
+            tools:visibility="gone">
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/wallet_folio_no_payment_title"
+                style="@style/TextViewStyle.GothamBold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="@{tridion.getPaymentEmptyHeading()}"
+                android:textColor="@color/text_black"
+                android:textSize="22sp"
+                tools:text="No Payment Methods Yet"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/wallet_folio_no_payment_subtitle"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wallet_folio_no_payment_title"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@{tridion.getPaymentEmptyCopy()}"
+                android:textColor="@color/text_black"
+                android:textSize="18sp"
+                tools:text="Add a payment method to get started."/>
+
+            <ImageView
+                android:id="@+id/wallet_folio_no_payment_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wallet_folio_no_payment_subtitle"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"/>
+
+            <com.universalstudios.orlandoresort.view.fonts.TextView
+                android:id="@+id/wallet_folio_no_payment_caption"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wallet_folio_no_payment_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@{tridion.getPaymentPartyMembersCopy()}"
+                android:textColor="@color/text_black"
+                tools:text="Create spending limits for your party members."/>
+
+            <com.universalstudios.orlandoresort.view.fonts.Button
+                android:id="@+id/wallet_folio_add_card"
+                style="@style/TextViewStyle.GothamBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/state_list_green_button"
+                android:text="@{tridion.getAddCardLabel()}"
+                android:textColor="@color/text_white"
+                tools:text="ADD CARD"/>
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

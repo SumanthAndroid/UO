@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tridion"
+            type="com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/fragment_update_preferences_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@{tridion.LearnMoreLabel}"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="24sp"
+                    bind:font="@{@string/font_gotham_ultra}"
+                    tools:text="Learn More About Us"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@{tridion.HearMoreLabel}"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="18sp"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="Which would you like to hear more about?"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@{tridion.AllFieldsOptionalLabel}"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="12sp"
+                    bind:font="@{@string/font_gotham_book}"
+                    tools:text="All Fields Are Optional"/>
+
+                <View
+                    android:id="@+id/fragment_update_preferences_scale_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/gray"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="@{tridion.DontTellMeLabel}"
+                        android:textColor="@color/dark_gray"
+                        bind:font="@{@string/font_gotham_ultra}"
+                        tools:text="Don't Tell Me"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@{tridion.TellMeSomeLabel}"
+                        android:textColor="@color/dark_gray"
+                        bind:font="@{@string/font_gotham_ultra}"
+                        tools:text="Tell Me Some"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{tridion.TellMeMoreLabel}"
+                        android:textColor="@color/dark_gray"
+                        bind:font="@{@string/font_gotham_ultra}"
+                        tools:text="Tell Me More"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/fragment_update_preferences_scale_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragment_update_interests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    tools:listitem="@layout/item_preference_seekbar"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{tridion.TravelSeasonPrefLabel}"
+                    android:textColor="@color/dark_gray"
+                    bind:font="@{@string/font_gotham_medium}"
+                    tools:text="When do you typically travel"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/fragment_update_seasons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    android:paddingTop="12dp"
+                    tools:listitem="@layout/item_preference_checkbox"/>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <ProgressBar
+            android:id="@+id/fragment_update_preferences_loading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</layout>

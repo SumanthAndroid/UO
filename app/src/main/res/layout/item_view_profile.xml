@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <import type="android.text.TextUtils"/>
+
+        <variable
+            name="data"
+            type="com.universalstudios.orlandoresort.controller.userinterface.account.ViewProfileItem"
+            />
+
+        <variable
+            name="callback"
+            type="com.universalstudios.orlandoresort.controller.userinterface.account.ViewProfileItem.OnProfileActionItemClickedListener"
+            />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_view_profile_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/view_profile_section_background"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:id="@+id/item_view_profile_icon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:src="@{data.drawableResId}"
+                android:tint="@color/view_profile_icon_tint"/>
+
+            <TextView
+                android:id="@+id/item_view_profile_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/item_view_profile_icon"
+                android:layout_toStartOf="@+id/item_view_profile_edit_text"
+                android:padding="5dp"
+                android:text="@{data.title}"
+                android:textColor="@color/view_profile_header_text_color"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="Addresses"/>
+
+            <TextView
+                android:id="@+id/item_view_profile_edit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/item_view_profile_edit_chevron"
+                android:onClick="@{() -> callback.onProfileActionItemClicked(data.itemType)}"
+                android:text="@{data.actionText}"
+                android:textAllCaps="true"
+                android:textColor="@color/blue_color"
+                android:textSize="18sp"
+                bind:font="@{@string/font_gotham_medium}"
+                tools:text="EDIT"/>
+
+            <ImageView
+                android:id="@+id/item_view_profile_edit_chevron"
+                android:layout_width="21dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_chevron_right_white_24dp"
+                android:tint="@color/blue_color"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_header_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.header1}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.header1) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_bold}"
+            tools:text="Detail Header One"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_line_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.detail1}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.detail1) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_book}"
+            tools:text="Detail One"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_line_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.detail2}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.detail2) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_book}"
+            tools:text="Detail Two"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_header_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.header2}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.header2) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_bold}"
+            tools:text="Detail Header Two"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_line_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.detail3}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.detail3) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_book}"
+            tools:text="Detail Three"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/item_view_profile_detail_line_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:padding="5dp"
+            android:text="@{data.detail4}"
+            android:textColor="@color/view_profile_text_color"
+            android:visibility="@{TextUtils.isEmpty(data.detail4) ? View.GONE : View.VISIBLE}"
+            bind:font="@{@string/font_gotham_book}"
+            tools:text="Detail Four"
+            tools:visibility="visible"/>
+    </LinearLayout>
+</layout>

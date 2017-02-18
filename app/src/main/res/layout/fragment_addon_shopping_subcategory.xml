@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingSubcategoryViewModel"
+            />
+    </data>
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/lighter_gray">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list"
+            android:name="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingSubcategoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:context="com.universalstudios.orlandoresort.controller.userinterface.addons.AddOnsShoppingSubcategoryFragment"
+            tools:listitem="@layout/item_addon_shopping"
+            android:visibility="@{!(viewModel.empty || viewModel.loading)}"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.loading}">
+            <include layout="@layout/fullscreen_loading_fragment" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{viewModel.empty}">
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</layout>
