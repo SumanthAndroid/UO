@@ -1160,6 +1160,7 @@ public class HomeActivity extends DatabaseQueryActivity implements ActionBarTitl
             mDrawerItemExpandableListAdapter.addDrawerObject(new DrawerSectionHeader(R.string.drawer_header_shop));
             DrawerItem buyDrawerItem = new DrawerItem(R.string.drawer_header_buy, R.drawable.ic_menu_buytickets);
             buyDrawerItem.addChildDrawerItem(new DrawerItem(R.string.drawer_item_tickets, R.drawable.ic_menu_tickets));
+            buyDrawerItem.addChildDrawerItem(new DrawerItem(R.string.drawer_item_hh, R.drawable.ic_menu_tickets));
 			buyDrawerItem.addChildDrawerItem(new DrawerItem(R.string.drawer_item_extras, R.drawable.ic_wallet_extras));
 
 			buyDrawerItem.addChildDrawerItem(new DrawerItem(R.string.drawer_item_ticket_bmg_bundle, R.drawable.ic_menu_express_pass));

@@ -74,6 +74,7 @@
     <string name="drawer_item_buy_tickets">Buy Tickets</string>
     <string name="drawer_header_buy">Buy</string>
     <string name="drawer_item_tickets">Tickets</string>
+    <string name="drawer_item_hh">Hollywood Horror Nights</string>
     <string name="drawer_item_express_pass">Express Pass</string>
     <string name="drawer_item_extras">Extras</string>
     <string name="drawer_item_ticket_bmg_bundle">Ticket + BMG</string>
@@ -911,7 +912,7 @@ Services locations for assistance.</string>
     <string name="advanced_filter_menu_apply">Apply</string>
     <string name="advanced_filter_menu_reset">Reset</string>
     <string name="advanced_filter_title">Refine</string>
-   	<!-- Advanced Filter: Sort -->
+    <!-- Advanced Filter: Sort -->
     <string name="advanced_filter_sort_by">Sort By</string>
     <string name="advanced_filter_sort_type">Type</string>
     <string name="advanced_filter_sort_alphabetical">A to Z</string>
@@ -919,41 +920,41 @@ Services locations for assistance.</string>
     <string name="advanced_filter_sort_wait_time">Wait Time</string>
     <string name="advanced_filter_sort_description">Distance sort option enabled while inside the parks</string>
     <string name="advanced_filter_sort_show_time">Show Time</string>
-   	<!-- Advanced Filter: Global - Accessibility / Express / Kid Friendly -->
-   	<string name="advanced_filter_other_filter">Filter</string>
-   	<string name="advanced_filter_other_upper_lot">Upper Lot</string>
-   	<string name="advanced_filter_other_lower_lot">Lower Lot</string>
-   	<string name="advanced_filter_other_accessibility">Accessibility</string>
-   	<string name="advanced_filter_other_express_pass_line">Express Pass Line</string>
-   	<string name="advanced_filter_other_kid_friendly">Kid Friendly (No Parental Advisory)</string>
-   	<!-- Order and contents matches FilterOptions.ACCESSIBILITY_FLAGS -->
-   	<string-array name="advanced_filter_accessibility_options_array">
-   	    <item>Closed caption available</item>
-   	    <item>EVC allowed on attraction</item>
-   	    <item>Standard wheelchair allowed on attraction</item>
-   	    <item>Stationary seating available</item>
-   	    <item>Assisted listening available</item>
-   	    <item>Sign language interpreted show</item>
-   	</string-array>
-   	<string name="advanced_filter_option_off">Off</string>
-   	<string name="advanced_filter_option_all">All</string>
-   	<string name="advanced_filter_selected_format">%1$d selected</string>
-   	<!-- Advanced Filter: Rides -->
-   	<string name="advanced_filter_filter_rides">Filter Rides</string>
-   	<string name="advanced_filter_venues">Venue</string>
-   	<string name="advanced_filter_ride_type">Ride Type</string>
-   	<string name="advanced_filter_ride_max_wait">Maximum Wait</string>
-   	<string name="advanced_filter_ride_max_wait_format">%1$d min or less</string>
-   	<string name="advanced_filter_ride_rider_height">Rider Height</string>
-   	<string name="advanced_filter_ride_single_rider_line">Single Rider Line</string>
-   	<string name="advanced_filter_ride_child_swap">Child Swap</string>
-   	<!-- Order and contents matches FilterOptions.RIDE_SUB_TYPE_FLAGS -->
-   	<string-array name="advanced_filter_ride_sub_types">
-   	    <item>@string/explore_filter_tab_thrill</item>
-   	    <item>@string/explore_filter_tab_3d_and_4d</item>
-   	    <item>@string/explore_filter_tab_water</item>
-   	    <item>@string/explore_filter_tab_kids</item>
-   	</string-array>
+    <!-- Advanced Filter: Global - Accessibility / Express / Kid Friendly -->
+    <string name="advanced_filter_other_filter">Filter</string>
+    <string name="advanced_filter_other_upper_lot">Upper Lot</string>
+    <string name="advanced_filter_other_lower_lot">Lower Lot</string>
+    <string name="advanced_filter_other_accessibility">Accessibility</string>
+    <string name="advanced_filter_other_express_pass_line">Express Pass Line</string>
+    <string name="advanced_filter_other_kid_friendly">Kid Friendly (No Parental Advisory)</string>
+    <!-- Order and contents matches FilterOptions.ACCESSIBILITY_FLAGS -->
+    <string-array name="advanced_filter_accessibility_options_array">
+        <item>Closed caption available</item>
+        <item>EVC allowed on attraction</item>
+        <item>Standard wheelchair allowed on attraction</item>
+        <item>Stationary seating available</item>
+        <item>Assisted listening available</item>
+        <item>Sign language interpreted show</item>
+    </string-array>
+    <string name="advanced_filter_option_off">Off</string>
+    <string name="advanced_filter_option_all">All</string>
+    <string name="advanced_filter_selected_format">%1$d selected</string>
+    <!-- Advanced Filter: Rides -->
+    <string name="advanced_filter_filter_rides">Filter Rides</string>
+    <string name="advanced_filter_venues">Venue</string>
+    <string name="advanced_filter_ride_type">Ride Type</string>
+    <string name="advanced_filter_ride_max_wait">Maximum Wait</string>
+    <string name="advanced_filter_ride_max_wait_format">%1$d min or less</string>
+    <string name="advanced_filter_ride_rider_height">Rider Height</string>
+    <string name="advanced_filter_ride_single_rider_line">Single Rider Line</string>
+    <string name="advanced_filter_ride_child_swap">Child Swap</string>
+    <!-- Order and contents matches FilterOptions.RIDE_SUB_TYPE_FLAGS -->
+    <string-array name="advanced_filter_ride_sub_types">
+        <item>@string/explore_filter_tab_thrill</item>
+        <item>@string/explore_filter_tab_3d_and_4d</item>
+        <item>@string/explore_filter_tab_water</item>
+        <item>@string/explore_filter_tab_kids</item>
+    </string-array>
     <string name="advanced_filter_ride_parental_supervision">Parental Supervision Required</string>
     <string name="advanced_filter_ride_life_jacket_required">Life Jacket Required</string>
     <!-- Advanced Filter: Shows -->
@@ -992,8 +993,7 @@ Services locations for assistance.</string>
     <string name="advanced_filter_filter_shopping">Filter Shopping</string>
     <string name="advanced_filter_shopping_type">Shopping Type</string>
     <!-- Order and contents matches FilterOptions.SHOPPING_SUB_TYPE_FLAGS -->
-    <string-array name="advanced_filter_shopping_sub_types">
-    </string-array>
+    <string-array name="advanced_filter_shopping_sub_types"></string-array>
     <string name="advanced_filter_shopping_sells_express_pass">Sells Express Pass</string>
     <string name="advanced_filter_shopping_amex_merchandise_savings">Amex Merchandise Savings</string>
     <string name="advanced_filter_shopping_package_pickup_available">Package Pick-up Available</string>
@@ -1009,8 +1009,7 @@ Services locations for assistance.</string>
     <string name="advanced_filter_entertainment_starting_price">Starting Price</string>
     <string name="advanced_filter_entertainment_starting_price_format">$%1$d</string>
     <!-- Order and contents matches FilterOptions.ENTERTAINMENT_SUB_TYPE_FLAGS -->
-    <string-array name="advanced_filter_entertainment_sub_types">
-    </string-array>
+    <string-array name="advanced_filter_entertainment_sub_types"></string-array>
 
     <!-- Events -->
     <string name="event_series_carousel_page_number_format">%1$d / %2$d</string>
