@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.universalstudios.orlandoresort.controller.userinterface.events;
 
@@ -22,6 +22,8 @@ import com.universalstudios.orlandoresort.controller.userinterface.data.Database
 import com.universalstudios.orlandoresort.controller.userinterface.data.DatabaseQueryUtils;
 import com.universalstudios.orlandoresort.controller.userinterface.data.LoaderUtils;
 import com.universalstudios.orlandoresort.controller.userinterface.detail.FeatureListUtils;
+import com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.CommerceUiBuilder;
+import com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.ShoppingActivity;
 import com.universalstudios.orlandoresort.controller.userinterface.photoframe.PhotoFrameActivity;
 import com.universalstudios.orlandoresort.controller.userinterface.web.WebViewActivity;
 import com.universalstudios.orlandoresort.model.network.domain.events.EventSeries;
@@ -35,7 +37,6 @@ import java.util.List;
 
 /**
  * @author acampbell
- *
  */
 public class EventSeriesFeatureListDetailFragment extends DatabaseQueryFragment implements OnClickListener {
 
@@ -154,7 +155,8 @@ public class EventSeriesFeatureListDetailFragment extends DatabaseQueryFragment 
          * .support.v4.content.Loader)
          */
     @Override
-    public void onLoaderReset(Loader<Cursor> loader) {}
+    public void onLoaderReset(Loader<Cursor> loader) {
+    }
 
     @Override
     public void onClick(View v) {
@@ -165,7 +167,12 @@ public class EventSeriesFeatureListDetailFragment extends DatabaseQueryFragment 
         } else if (VIEW_TAG_EVENT_SERIES_TICKET.equals(v.getTag()) && mEventSeries != null) {
             Bundle args = WebViewActivity.newInstanceBundle(R.string.event_ticket_buy_now_web_view_title,
                     mEventSeries.getBuyNowUrl());
-            startActivity(new Intent(getActivity(), WebViewActivity.class).putExtras(args));
+            if (TextUtils.equals(mEventSeries.getDisplayName(), "Halloween Horror Nights")) {
+                CommerceUiBuilder.getCurrentFilter().resetAllFilters();
+                startActivity(ShoppingActivity.newInstanceIntent(getActivity(), ShoppingActivity.SELECT_TICKETS));
+            } else {
+                startActivity(new Intent(getActivity(), WebViewActivity.class).putExtras(args));
+            }
         } else if (v.getTag() instanceof PhotoFrameExperience) {
             PhotoFrameExperience experience = (PhotoFrameExperience) v.getTag();
             startActivity(PhotoFrameActivity.createIntent(getActivity(), experience));
@@ -243,11 +250,16 @@ public class EventSeriesFeatureListDetailFragment extends DatabaseQueryFragment 
             featureView = FeatureListUtils.createFeatureItemView(mFeatureListLayout,
                     R.drawable.ic_detail_feature_ticket_gray, false, ticketPrimary, ticketSecondary, null,
                     (mFeatureListLayout.getChildCount() > 0), VIEW_TAG_EVENT_SERIES_TICKET, this);
-            featureView.setClickable(!TextUtils.isEmpty(ticketSecondary));
+            if (TextUtils.equals(eventSeries.getDisplayName(), "Halloween Horror Nights")) {
+                featureView.setClickable(true);
+            } else {
+                featureView.setClickable(!TextUtils.isEmpty(ticketSecondary));
+            }
             mFeatureListLayout.addView(featureView);
+
         }
 
-        if(mEventSeries.getDisclaimer() != null && !TextUtils.isEmpty(mEventSeries.getDisclaimer())) {
+        if (mEventSeries.getDisclaimer() != null && !TextUtils.isEmpty(mEventSeries.getDisclaimer())) {
             featureView = FeatureListUtils.createFeatureItemView(mFeatureListLayout,
                     null, false, null, mEventSeries.getDisclaimer(), null,
                     (mFeatureListLayout.getChildCount() > 0), VIEW_TAG_EVENT_SERIES_TICKET_DISCLAIMER, this);
