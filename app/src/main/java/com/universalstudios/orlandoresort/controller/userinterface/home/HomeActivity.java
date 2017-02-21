@@ -825,6 +825,40 @@ public class HomeActivity extends DatabaseQueryActivity implements ActionBarTitl
                     }
                     break;
                 case R.string.drawer_item_hh:
+                    // Hollywood uses a generic web view for tickets
+                    if (BuildConfigUtils.isLocationFlavorHollywood()) {
+                        String ticketsUrl = uoState.getTicketWebStoreUrl();
+
+                        if (!TextUtils.isEmpty(ticketsUrl)) {
+                            // Track the page view
+                            AnalyticsUtils.trackPageView(
+                                    AnalyticsUtils.CONTENT_GROUP_TICKETS,
+                                    null, null,
+                                    AnalyticsUtils.CONTENT_SUB_2_HOME,
+                                    AnalyticsUtils.PROPERTY_NAME_RESORT_WIDE,
+                                    null, null);
+
+                            Intent intent = new Intent(this, WebViewActivity.class);
+                            Bundle bundle = WebViewActivity.newInstanceBundle(
+                                    R.string.drawer_item_buy_tickets, ticketsUrl, true);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                            if (closeDrawer) {
+                                closeDrawer();
+                            }
+                        }
+                    }
+                    // Orlando has native commerce
+                    else {
+                        if (CommerceStateManager.isAppValidForCommerce(true, false)) {
+                            CommerceUiBuilder.getCurrentFilter().resetAllFilters();
+                            startActivity(ShoppingActivity.newInstanceIntent(this, ShoppingActivity.SELECT_TICKETS, true));
+                            if (closeDrawer) {
+                                closeDrawer();
+                            }
+                        }
+                    }
+                    break;
                 case R.string.drawer_item_buy_tickets:
                     //Intentional dropthrough
                 case R.string.drawer_item_tickets:

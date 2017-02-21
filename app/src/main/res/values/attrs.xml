@@ -106,7 +106,7 @@
         <attr name="state_range_last" format="boolean" />
         <attr name="state_highlighted" format="boolean" />
     </declare-styleable>
-    
+
     <!-- SegmentedControl -->
     <declare-styleable name="SegmentedGroup">
         <attr name="tint_color" format="color" />
@@ -126,7 +126,14 @@
     </declare-styleable>
 
     <declare-styleable name="UniversalFloatingActionButton">
-        <attr name="ufab_icon" format="string"/>
+        <attr name="ufab_icon" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="HollywoodHorrorNights">
+        <attr name="action_bar_color" format="reference" />
+        <attr name="addToCardButton" format="reference" />
+    </declare-styleable>
+
+
 
 </resources>

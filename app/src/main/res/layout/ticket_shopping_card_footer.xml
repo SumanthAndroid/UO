@@ -18,7 +18,7 @@
         android:paddingBottom="12dp"
         android:orientation="vertical">
         <Button
-            style="@style/ButtonStyle.Colored.Green"
+            style="?addToCardButton"
             bind:font="@{@string/font_gotham_medium}"
             android:id="@+id/ticket_shopping_add_to_cart_button"
             android:layout_width="match_parent"
@@ -27,7 +27,6 @@
             android:text="@{tridion.addToCartLabel}"
             tools:text="Add to Cart"
             android:textAllCaps="true"
-            android:textColor="@color/text_white"
             android:textSize="17sp" />
 
         <Button

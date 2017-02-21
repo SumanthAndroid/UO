@@ -23,8 +23,11 @@
         <item name="android:actionModeSplitBackground">@color/text_primary_dark</item>
         <item name="android:actionModeCloseButtonStyle">@style/ActionButtonCloseModeStyle</item>
         <item name="android:popupMenuStyle">@style/PopupMenuStyle</item>
-        <item name="android:listChoiceIndicatorMultiple">@drawable/state_list_blue_btn_check_holo_light</item>
-        <item name="android:editTextBackground">@drawable/state_list_blue_edit_text_holo_light</item>
+        <item name="android:listChoiceIndicatorMultiple">
+            @drawable/state_list_blue_btn_check_holo_light
+        </item>
+        <item name="android:editTextBackground">@drawable/state_list_blue_edit_text_holo_light
+        </item>
         <item name="android:dropDownSpinnerStyle">@style/SpinnerStyle</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListViewStyle</item>
         <item name="android:seekBarStyle">@style/SeekBarStyle</item>
@@ -71,7 +74,9 @@
         <item name="android:windowActionModeOverlay">true</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:actionBarStyle">@style/ActionBarStyle</item>
-        <item name="android:actionBarItemBackground">@drawable/state_list_actionbar_selector_with_fade</item>
+        <item name="android:actionBarItemBackground">
+            @drawable/state_list_actionbar_selector_with_fade
+        </item>
         <item name="android:actionModeBackground">@color/text_primary</item>
         <item name="android:actionModeSplitBackground">@color/text_primary</item>
         <item name="android:homeAsUpIndicator">@android:drawable/ic_menu_close_clear_cancel</item>
@@ -123,7 +128,8 @@
     </style>
 
     <style name="SpinnerStyle" parent="android:Widget.Holo.Light.Spinner">
-        <item name="android:background">@drawable/state_list_blue_spinner_background_holo_light</item>
+        <item name="android:background">@drawable/state_list_blue_spinner_background_holo_light
+        </item>
         <item name="android:dropDownSelector">@drawable/state_list_default_list_selector</item>
     </style>
 
@@ -258,7 +264,7 @@
         <item name="android:clickable">true</item>
         <item name="font">@string/font_gotham_bold</item>
     </style>
-    
+
     <!-- Segmented Control -->
     <style name="RadioButton">
         <item name="android:textColor">@color/state_list_button_text</item>
@@ -271,7 +277,7 @@
         <item name="font">@string/font_gotham_medium</item>
         <item name="android:textSize">14sp</item>
     </style>
-    
+
     <style name="TabRadioButton">
         <item name="android:textColor">@color/state_list_tab_button_text</item>
         <item name="android:minHeight">48dp</item>
@@ -291,22 +297,25 @@
 
     <!-- Seek Bar Styles -->
     <style name="SeekBarStyle" parent="android:Widget.Holo.Light.SeekBar">
-        <item name="android:progressDrawable">@drawable/state_list_blue_scrubber_progress_horizontal_holo_light</item>
-        <item name="android:indeterminateDrawable">@drawable/state_list_blue_scrubber_progress_horizontal_holo_light</item>
-        <item name="android:thumb">@drawable/state_list_blue_scrubber_control_selector_holo_light</item>
+        <item name="android:progressDrawable">
+            @drawable/state_list_blue_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/state_list_blue_scrubber_progress_horizontal_holo_light
+        </item>
+        <item name="android:thumb">@drawable/state_list_blue_scrubber_control_selector_holo_light
+        </item>
     </style>
 
     <!-- Flip View Styles -->
-    <style name="FlipViewStyle" >
+    <style name="FlipViewStyle">
         <item name="shape">circle</item>
     </style>
 
     <!-- Button Styles -->
-    <style name="HoloButtonStyle" parent="android:Widget.Holo.Button">
-    </style>
+    <style name="HoloButtonStyle" parent="android:Widget.Holo.Button"></style>
 
-    <style name="HoloButtonStyle.Toggle" parent="android:Widget.Holo.Button.Toggle">
-    </style>
+    <style name="HoloButtonStyle.Toggle" parent="android:Widget.Holo.Button.Toggle"></style>
 
     <!-- New and improved styles -->
     <style name="TextViewStyle.Header">
@@ -482,12 +491,14 @@
         <item name="android:layout_marginBottom">7dp</item>
         <item name="android:layout_marginRight">7dp</item>
     </style>
+
     <style name="FloatingActionButtonStyleLocation">
         <item name="android:layout_height">61dp</item>
         <item name="android:layout_width">61dp</item>
         <item name="android:layout_marginBottom">7dp</item>
         <item name="android:layout_marginRight">7dp</item>
     </style>
+
     <style name="RestroomToggleButtonStyle">
         <item name="android:layout_height">61dp</item>
         <item name="android:layout_width">61dp</item>
@@ -507,6 +518,7 @@
         <item name="android:left">18dp</item>
         <item name="android:bottom">18dp</item>
     </style>
+
     <style name="RadioButtonStyle.White">
         <item name="android:textColor">@android:color/white</item>
         <item name="colorControlNormal">@android:color/white</item>
@@ -534,5 +546,36 @@
 
     <style name="CardViewStyle.NoCornerRadius">
         <item name="cardCornerRadius">0dp</item>
+    </style>
+
+    <style name="ThemeDefault" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="addToCardStyleDefault" parent="ButtonStyle.Colored.Green">
+        <item name="android:background">@drawable/state_list_button_green_no_pressed_state</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="addToCardStyleHHN" parent="ButtonStyle.Colored.Green">
+        <item name="android:background">@drawable/state_list_button_black_no_pressed_state</item>
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="HollywoodHorrorNights" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="HollywoodHorrorNightsTheme">
+        <item name="action_bar_color">@style/HollywoodHorrorNights</item>
+        <item name="addToCardButton">@style/addToCardStyleHHN</item>
+    </style>
+
+    <style name="Default" parent="UniversalOrlandoAppTheme">
+        <item name="addToCardButton">@style/addToCardStyleDefault</item>
     </style>
 </resources>
