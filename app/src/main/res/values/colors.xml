@@ -294,4 +294,9 @@
     <!-- Floating Action Buttons -->
     <color name="floating_action_button_white">#FFFFFFFF</color>
 
+    <!--Hollywood Horror Nights Colors-->
+    <color name="hollywood_horror_nights_red">#bf2026</color>
+    <color name="hollywood_horror_nights_red_dark">#3e000b</color>
+    <color name="hollywood_horror_nights_red_disable">#aabf2026</color>
+    <color name="hollywood_horror_nights_grey">#3f3f3f</color>
 </resources>

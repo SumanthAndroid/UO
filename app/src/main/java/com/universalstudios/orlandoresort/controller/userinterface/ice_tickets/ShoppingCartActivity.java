@@ -2,6 +2,8 @@ package com.universalstudios.orlandoresort.controller.userinterface.ice_tickets;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
@@ -13,10 +15,18 @@ import com.universalstudios.orlandoresort.controller.userinterface.network.Netwo
 
 public class ShoppingCartActivity extends NetworkRefreshActivity implements ContinueShoppingListener {
 	private static final String TAG = ShoppingCartActivity.class.getSimpleName();
+    private static final String KEY_ARG_SHOP_HHN_THEME = "KEY_ARG_SHOP_ITEM_HHN";
 
 	public static Intent newInstanceIntent(Context context) {
 		Bundle bundle = new Bundle();
 
+		Intent intent = new Intent(context, ShoppingCartActivity.class);
+		intent.putExtras(bundle);
+		return intent;
+	}
+    public static Intent newInstanceIntent(Context context,boolean isHollyHorrorNights) {
+		Bundle bundle = new Bundle();
+        bundle.putBoolean(KEY_ARG_SHOP_HHN_THEME,isHollyHorrorNights);
 		Intent intent = new Intent(context, ShoppingCartActivity.class);
 		intent.putExtras(bundle);
 		return intent;
@@ -28,11 +38,15 @@ public class ShoppingCartActivity extends NetworkRefreshActivity implements Cont
 		if (BuildConfig.DEBUG) {
 			Log.v(TAG, "onCreate: savedInstanceState " + (savedInstanceState == null ? "==" : "!=") + " null");
 		}
-
+        Bundle args = getIntent().getExtras();
+        if (args != null && args.getBoolean(KEY_ARG_SHOP_HHN_THEME, false)) {
+            setTheme(R.style.HollywoodHorrorNightsTheme);
+        } else {
+            setTheme(R.style.Default);
+        }
 		setContentView(R.layout.activity_shopping_cart);
 
 		// Default parameters
-		Bundle args = getIntent().getExtras();
 		if (args == null) {
 		}
 		// Otherwise, set incoming parameters
@@ -54,6 +68,7 @@ public class ShoppingCartActivity extends NetworkRefreshActivity implements Cont
 		setTitle(IceTicketUtils.getTridionConfig().getPageHeaderSCTitle());
 		if (null != getActionBar()) {
 			getActionBar().setDisplayShowHomeEnabled(false);
+            getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
 		}
 	}
 

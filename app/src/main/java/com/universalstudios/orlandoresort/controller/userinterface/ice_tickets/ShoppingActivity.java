@@ -97,8 +97,10 @@ public class ShoppingActivity extends NetworkRefreshActivity implements OnCartCo
         Bundle args = getIntent().getExtras();
         if (args != null && args.getBoolean(KEY_ARG_SHOP_HHN_THEME, false)) {
             setTheme(R.style.HollywoodHorrorNightsTheme);
-        }else{
+            android.widget.Toast.makeText(getApplicationContext(), "setting HHN theme", android.widget.Toast.LENGTH_SHORT).show();
+        } else {
             setTheme(R.style.Default);
+            android.widget.Toast.makeText(getApplicationContext(), "setting default theme", android.widget.Toast.LENGTH_SHORT).show();
         }
         if (BuildConfig.DEBUG) {
             Log.v(TAG, "onCreate: savedInstanceState " + (savedInstanceState == null ? "==" : "!=") + " null");
@@ -293,19 +295,24 @@ public class ShoppingActivity extends NetworkRefreshActivity implements OnCartCo
     public void onContinueClicked() {
         switch (mShopItemType) {
             case SELECT_TICKETS:
-                startActivity(ShoppingActivity.newInstanceIntent(this, SELECT_EXPRESS_PASS));
+                boolean isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
+                startActivity(ShoppingActivity.newInstanceIntent(this, SELECT_EXPRESS_PASS, isHollyHorrorNights));
                 break;
             case SELECT_EXPRESS_PASS:
-                startActivity(ShoppingActivity.newInstanceIntent(this, SELECT_ADDONS));
+                isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
+                startActivity(ShoppingActivity.newInstanceIntent(this, SELECT_ADDONS, isHollyHorrorNights));
                 break;
             case SELECT_ADDONS:
-                startActivity(ShoppingCartActivity.newInstanceIntent(this));
+                isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
+                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
                 break;
             case SELECT_TICKET_BMG_BUNDLE:
-                startActivity(ShoppingCartActivity.newInstanceIntent(this));
+                isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
+                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
                 break;
             case SELECT_TICKET_UEP_BUNDLE:
-                startActivity(ShoppingCartActivity.newInstanceIntent(this));
+                isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
+                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
                 break;
         }
     }

@@ -561,7 +561,7 @@
 
     <style name="addToCardStyleHHN" parent="ButtonStyle.Colored.Green">
         <item name="android:background">@drawable/state_list_button_black_no_pressed_state</item>
-        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="HollywoodHorrorNights" parent="Base.Theme.AppCompat.Light.DarkActionBar">
@@ -573,9 +573,15 @@
     <style name="HollywoodHorrorNightsTheme">
         <item name="action_bar_color">@style/HollywoodHorrorNights</item>
         <item name="addToCardButton">@style/addToCardStyleHHN</item>
+        <item name="shoppingContinue">@style/addToCardStyleHHN</item>
+        <item name="progressCircleColor">@color/hollywood_horror_nights_red_dark</item>
+        <item name="progressActiveColor">@color/hollywood_horror_nights_red</item>
     </style>
 
     <style name="Default" parent="UniversalOrlandoAppTheme">
         <item name="addToCardButton">@style/addToCardStyleDefault</item>
+        <item name="shoppingContinue">@style/addToCardStyleDefault</item>
+        <item name="progressCircleColor">@color/step_progress_complete</item>
+        <item name="progressActiveColor">@color/step_progress_path_complete</item>
     </style>
 </resources>

@@ -4,11 +4,11 @@
         <shape android:shape="oval">
             <size
                 android:width="20dp"
-                android:height="20dp"/>
-            <solid android:color="@color/step_progress_incomplete"/>
+                android:height="20dp" />
+            <solid android:color="@color/step_progress_incomplete" />
             <stroke
                 android:width="1.5dp"
-                android:color="@color/step_progress_outline"/>
+                android:color="@color/step_progress_outline" />
         </shape>
     </item>
     <item android:maxLevel="@integer/step_progress_complete">
@@ -17,11 +17,11 @@
                 <shape android:shape="oval">
                     <size
                         android:width="20dp"
-                        android:height="20dp"/>
-                    <solid android:color="@color/step_progress_complete"/>
+                        android:height="20dp" />
+                    <solid android:color="?progressCircleColor" />
                     <stroke
                         android:width="1.5dp"
-                        android:color="@color/step_progress_outline"/>
+                        android:color="@color/step_progress_outline" />
                 </shape>
             </item>
             <item
@@ -29,7 +29,7 @@
                 android:drawable="@drawable/ic_check"
                 android:left="6dp"
                 android:right="6dp"
-                android:top="7.5dp"/>
+                android:top="7.5dp" />
         </layer-list>
     </item>
 </level-list>

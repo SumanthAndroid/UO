@@ -132,6 +132,10 @@
     <declare-styleable name="HollywoodHorrorNights">
         <attr name="action_bar_color" format="reference" />
         <attr name="addToCardButton" format="reference" />
+        <attr name="shoppingContinue" format="reference" />
+        <attr name="progressActiveColor" format="color" />
+        <attr name="progressInActiveColor" format="color" />
+        <attr name="progressCircleColor" format="color" />
     </declare-styleable>
 
 
