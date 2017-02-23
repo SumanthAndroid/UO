@@ -570,12 +570,21 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="shoppingDialogTitleStyleHHN">
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="shoppingDialogTitleStyleDefault">
+        <item name="android:background">@drawable/cab_background_top_blue</item>
+    </style>
+
     <style name="HollywoodHorrorNightsTheme">
         <item name="action_bar_color">@style/HollywoodHorrorNights</item>
         <item name="addToCardButton">@style/addToCardStyleHHN</item>
         <item name="shoppingContinue">@style/addToCardStyleHHN</item>
         <item name="progressCircleColor">@color/hollywood_horror_nights_red_dark</item>
         <item name="progressActiveColor">@color/hollywood_horror_nights_red</item>
+        <item name="shoppingDialogBackground">@style/shoppingDialogTitleStyleHHN</item>
     </style>
 
     <style name="Default" parent="UniversalOrlandoAppTheme">
@@ -583,5 +592,6 @@
         <item name="shoppingContinue">@style/addToCardStyleDefault</item>
         <item name="progressCircleColor">@color/step_progress_complete</item>
         <item name="progressActiveColor">@color/step_progress_path_complete</item>
+        <item name="shoppingDialogBackground">@style/shoppingDialogTitleStyleDefault</item>
     </style>
 </resources>

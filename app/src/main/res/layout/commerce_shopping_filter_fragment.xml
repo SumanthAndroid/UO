@@ -17,7 +17,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/cab_background_top_blue"
+        style="?shoppingDialogBackground"
         android:orientation="horizontal"
         android:paddingBottom="2dp"
         android:paddingTop="2dp">

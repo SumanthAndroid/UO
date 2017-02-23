@@ -136,6 +136,7 @@
         <attr name="progressActiveColor" format="color" />
         <attr name="progressInActiveColor" format="color" />
         <attr name="progressCircleColor" format="color" />
+        <attr name="shoppingDialogBackground" format="reference" />
     </declare-styleable>
 
 

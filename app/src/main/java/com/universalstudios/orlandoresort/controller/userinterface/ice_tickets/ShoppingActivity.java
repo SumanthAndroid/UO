@@ -97,10 +97,8 @@ public class ShoppingActivity extends NetworkRefreshActivity implements OnCartCo
         Bundle args = getIntent().getExtras();
         if (args != null && args.getBoolean(KEY_ARG_SHOP_HHN_THEME, false)) {
             setTheme(R.style.HollywoodHorrorNightsTheme);
-            android.widget.Toast.makeText(getApplicationContext(), "setting HHN theme", android.widget.Toast.LENGTH_SHORT).show();
         } else {
             setTheme(R.style.Default);
-            android.widget.Toast.makeText(getApplicationContext(), "setting default theme", android.widget.Toast.LENGTH_SHORT).show();
         }
         if (BuildConfig.DEBUG) {
             Log.v(TAG, "onCreate: savedInstanceState " + (savedInstanceState == null ? "==" : "!=") + " null");
@@ -304,15 +302,15 @@ public class ShoppingActivity extends NetworkRefreshActivity implements OnCartCo
                 break;
             case SELECT_ADDONS:
                 isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
-                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
+                startActivity(ShoppingCartActivity.newInstanceIntent(this, isHollyHorrorNights));
                 break;
             case SELECT_TICKET_BMG_BUNDLE:
                 isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
-                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
+                startActivity(ShoppingCartActivity.newInstanceIntent(this, isHollyHorrorNights));
                 break;
             case SELECT_TICKET_UEP_BUNDLE:
                 isHollyHorrorNights = getIntent().getExtras() != null && getIntent().getExtras().getBoolean(KEY_ARG_SHOP_HHN_THEME, false);
-                startActivity(ShoppingCartActivity.newInstanceIntent(this,isHollyHorrorNights));
+                startActivity(ShoppingCartActivity.newInstanceIntent(this, isHollyHorrorNights));
                 break;
         }
     }
