@@ -564,6 +564,26 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="checkoutSignInHHNStyle" parent="TextViewStyle.GothamMedium">
+        <item name="android:background">@drawable/state_list_button_black_no_pressed_state</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="checkoutSignInDefaultStyle" parent="TextViewStyle.GothamMedium">
+        <item name="android:background">@drawable/state_list_button_green_no_pressed_state</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="checkoutContinueHHNStyle" parent="TextViewStyle.GothamMedium">
+        <item name="android:background">@drawable/state_list_button_black_no_pressed_state</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="checkoutContinueDefaultStyle" parent="TextViewStyle.GothamMedium">
+        <item name="android:background">@drawable/state_list_button_green_no_pressed_state</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
     <style name="HollywoodHorrorNights" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryDark">#000000</item>
@@ -585,6 +605,9 @@
         <item name="progressCircleColor">@color/hollywood_horror_nights_red_dark</item>
         <item name="progressActiveColor">@color/hollywood_horror_nights_red</item>
         <item name="shoppingDialogBackground">@style/shoppingDialogTitleStyleHHN</item>
+        <item name="checkoutContinue">@style/checkoutContinueHHNStyle</item>
+        <item name="checkoutSignIn">@style/checkoutSignInHHNStyle</item>
+
     </style>
 
     <style name="Default" parent="UniversalOrlandoAppTheme">
@@ -593,5 +616,7 @@
         <item name="progressCircleColor">@color/step_progress_complete</item>
         <item name="progressActiveColor">@color/step_progress_path_complete</item>
         <item name="shoppingDialogBackground">@style/shoppingDialogTitleStyleDefault</item>
+        <item name="checkoutContinue">@style/checkoutContinueDefaultStyle</item>
+        <item name="checkoutSignIn">@style/checkoutSignInDefaultStyle</item>
     </style>
 </resources>

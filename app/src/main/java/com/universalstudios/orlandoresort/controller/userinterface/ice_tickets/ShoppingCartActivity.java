@@ -15,7 +15,7 @@ import com.universalstudios.orlandoresort.controller.userinterface.network.Netwo
 
 public class ShoppingCartActivity extends NetworkRefreshActivity implements ContinueShoppingListener {
 	private static final String TAG = ShoppingCartActivity.class.getSimpleName();
-    private static final String KEY_ARG_SHOP_HHN_THEME = "KEY_ARG_SHOP_ITEM_HHN";
+    public static final String KEY_ARG_SHOP_HHN_THEME = "KEY_ARG_SHOP_ITEM_HHN";
 
 	public static Intent newInstanceIntent(Context context) {
 		Bundle bundle = new Bundle();

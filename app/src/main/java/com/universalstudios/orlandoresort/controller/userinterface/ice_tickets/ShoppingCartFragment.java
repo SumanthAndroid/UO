@@ -73,6 +73,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.universalstudios.orlandoresort.controller.userinterface.ice_tickets.ShoppingCartActivity.KEY_ARG_SHOP_HHN_THEME;
+
 /**
  * Project Name: Universal Orlando
  * Created by kevinhaines on 9/1/16.
@@ -228,11 +230,11 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
         public void onRemoveClicked(Ticket adultTicket, Ticket childTicket, String orderId) {
             List<OrderItem> orderItems = new ArrayList<>();
 
-            if(adultTicket != null && adultTicket.getOrderItems() != null) {
+            if (adultTicket != null && adultTicket.getOrderItems() != null) {
                 orderItems.addAll(adultTicket.getOrderItems());
             }
 
-            if(childTicket != null && childTicket.getOrderItems() != null) {
+            if (childTicket != null && childTicket.getOrderItems() != null) {
                 orderItems.addAll(childTicket.getOrderItems());
             }
 
@@ -307,7 +309,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
         @Override
         public void onRemoveClicked(ExpressPassTicketGroups expressTicket, String orderId) {
-            if(expressTicket != null && expressTicket.getOrderItems() != null) {
+            if (expressTicket != null && expressTicket.getOrderItems() != null) {
                 List<OrderItem> orderItems = expressTicket.getOrderItems();
                 removeItemsFromCart(orderItems);
             }
@@ -315,14 +317,14 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
         @Override
         public void onRemoveSameItem(ExpressPassTicketGroups expressTicket, String orderId) {
-            if(expressTicket != null && expressTicket.getOrderItems() != null ) {
+            if (expressTicket != null && expressTicket.getOrderItems() != null) {
                 OrderItem itemToRemove = TicketAssignmentUtils.getFirstUnassignedOrderItem(expressTicket.getOrderItems());
 
-                if(itemToRemove == null && expressTicket.getOrderItems().size() > 0){
+                if (itemToRemove == null && expressTicket.getOrderItems().size() > 0) {
                     itemToRemove = expressTicket.getOrderItems().get(0);
                 }
 
-                if(itemToRemove != null) {
+                if (itemToRemove != null) {
                     removeItemFromCart(itemToRemove);
                 }
             }
@@ -338,7 +340,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
         @Override
         public void onRemoveClicked(AddOnTicketGroups addOnTicket, String orderId) {
-            if(addOnTicket != null) {
+            if (addOnTicket != null) {
                 List<OrderItem> orderItems = new ArrayList<>();
                 if (addOnTicket.getAllAddOns() != null) {
                     orderItems.addAll(addOnTicket.getAllAddOns().getOrderItems());
@@ -391,8 +393,14 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
             if (AccountStateManager.isUserLoggedIn()) {
                 startActivity(CommerceAssignTicketsActivity.createIntent(getActivity()));
             } else {
-                Intent intent = CheckoutSignInActivity.newInstanceIntent(getContext());
-                startActivityForResult(intent, REQUEST_CODE_LOGIN);
+                Bundle args = getActivity().getIntent().getExtras();
+                if (args != null && args.getBoolean(KEY_ARG_SHOP_HHN_THEME, false)) {
+                    Intent intent = CheckoutSignInActivity.newInstanceIntent(getContext());
+                    startActivityForResult(intent, REQUEST_CODE_LOGIN);
+                } else {
+                    Intent intent = CheckoutSignInActivity.newInstanceIntent(getContext());
+                    startActivityForResult(intent, REQUEST_CODE_LOGIN);
+                }
             }
         }
 
@@ -484,25 +492,19 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
         if (networkResponse instanceof AddPromoCodeResponse) {
             handleAddPromoCodeResponse((AddPromoCodeResponse) networkResponse);
-        }
-        else if (networkResponse instanceof UpdateItemResponse) {
+        } else if (networkResponse instanceof UpdateItemResponse) {
             handleUpdateItemResponse((UpdateItemResponse) networkResponse);
-        }
-        else if (networkResponse instanceof TicketGroupingResponse) {
+        } else if (networkResponse instanceof TicketGroupingResponse) {
             handleTicketGroupingResponse((TicketGroupingResponse) networkResponse);
-        }
-        else if (networkResponse instanceof AddItemResponse) {
+        } else if (networkResponse instanceof AddItemResponse) {
             handleAddItemResponse((AddItemResponse) networkResponse);
-        }
-        else if (networkResponse instanceof GetTridionSpecsResponse) {
+        } else if (networkResponse instanceof GetTridionSpecsResponse) {
             handleGetTridionSpecsResponse((GetTridionSpecsResponse) networkResponse);
-        }
-        else if (networkResponse instanceof GetEligibleShipModesResponse) {
+        } else if (networkResponse instanceof GetEligibleShipModesResponse) {
             handleGetEligibleShipModesResponse((GetEligibleShipModesResponse) networkResponse);
         } else if (networkResponse instanceof OfferAcceptedResponse) {
             // Nothing to do
-        }
-        else if (networkResponse instanceof RemovePromoCodeResponse) {
+        } else if (networkResponse instanceof RemovePromoCodeResponse) {
             handleRemovePromoCodeResponse((RemovePromoCodeResponse) networkResponse);
         }
     }
@@ -510,8 +512,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
     private void handleGetEligibleShipModesResponse(@NonNull GetEligibleShipModesResponse response) {
         if (response.isHttpStatusCodeSuccess()) {
             addDeliveryOptions(response.getDeliveryOptions());
-        }
-        else if (BuildConfig.DEBUG) {
+        } else if (BuildConfig.DEBUG) {
             Log.w(TAG, "GetEligibleShipModesResponse returned with an error code");
         }
     }
@@ -519,8 +520,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
     private void handleGetTridionSpecsResponse(@NonNull GetTridionSpecsResponse response) {
         if (response.isHttpStatusCodeSuccess()) {
             CommerceUiBuilder.setCartData(ShoppingCartFragment.this.mTicketGroupingResponse);
-        }
-        else {
+        } else {
             if (BuildConfig.DEBUG) {
                 Log.w(TAG, "GetTridionSpecsResponse returned with an error code");
             }
@@ -532,7 +532,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
         if (response.isHttpStatusCodeSuccess()) {
             CommerceUiBuilder.setCartData(response);
             mTicketGroupingResponse = response;
-            if(mIsPrimaryPageLoad) {
+            if (mIsPrimaryPageLoad) {
                 sendOnPageLoadAnalytics(response.getOrder());
                 mIsPrimaryPageLoad = false;
             }
@@ -540,16 +540,13 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
             if (mPerformFullCartRefresh) {
                 if (response.getOrder() != null && response.getOrder().getOrderItemGroups() != null) {
                     getTridionItemsForCart(response);
-                }
-                else {
+                } else {
                     updateCart(response);
                 }
-            }
-            else {
+            } else {
                 refreshDeliveryAndPricing(response);
             }
-        }
-        else if (BuildConfig.DEBUG) {
+        } else if (BuildConfig.DEBUG) {
             Log.w(TAG, "TicketGroupingResponse returned with an error code");
         }
     }
@@ -564,12 +561,10 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
                         .build();
                 NetworkUtils.queueNetworkRequest(request);
                 NetworkUtils.startNetworkService();
-            }
-            else if (mSendAnalyticsType == SendAnalytics.NONE) {
+            } else if (mSendAnalyticsType == SendAnalytics.NONE) {
                 requestCart(false);
             }
-        }
-        else {
+        } else {
             if (BuildConfig.DEBUG) {
                 Log.w(TAG, "UpdateItemResponse returned with an error code");
             }
@@ -616,6 +611,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
     /**
      * Request the guest's shopping cart
+     *
      * @param performFullCartRefresh
      */
     private void requestCart(boolean performFullCartRefresh) {
@@ -670,6 +666,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
 
     /**
      * Update the cart without clearing so the adapter doesn't cause the screen to scroll to the top
+     *
      * @param resp
      */
     private void refreshDeliveryAndPricing(TicketGroupingResponse resp) {
@@ -822,8 +819,8 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
                 parkTicketGroups.addAll(order.getOrderItemGroups().getAnnualPassParkTicketGroups());
             }
             getTicketAdapter().addParkTickets(parkTicketGroups, orderId);
-            getTicketAdapter().addExpressPassTickets(order.getOrderItemGroups() .getExpressPassGroups(), orderId);
-            getTicketAdapter().addAddOnTickets(order.getOrderItemGroups() .getAddOnsMap(), orderId);
+            getTicketAdapter().addExpressPassTickets(order.getOrderItemGroups().getExpressPassGroups(), orderId);
+            getTicketAdapter().addAddOnTickets(order.getOrderItemGroups().getAddOnsMap(), orderId);
             getTicketAdapter().addPromoItem(order.getOffer());
         }
     }
@@ -921,14 +918,14 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
         });
     }
 
-    private void dismissLoadingView(){
+    private void dismissLoadingView() {
         if (null != mLoadingView) {
             mLoadingView.dismiss();
         }
     }
 
-//    //TODO Analytics will be refactored at a later date
-    private void sendRemoveCartAnalytics(){
+    //    //TODO Analytics will be refactored at a later date
+    private void sendRemoveCartAnalytics() {
         AnalyticsUtils.trackTicketsPageView(
                 AnalyticsUtils.CONTENT_SUB_2_TICKET_SHOPPING_CART,
                 AnalyticsUtils.PROPERTY_NAME_CHECKOUT,
@@ -950,7 +947,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
     }
 
     //TODO Analytics will be refactored at a later date
-    private void sendAddToCartAnalytics(){
+    private void sendAddToCartAnalytics() {
         AnalyticsUtils.trackTicketsPageView(
                 AnalyticsUtils.CONTENT_SUB_2_TICKET_SHOPPING_CART,
                 AnalyticsUtils.PROPERTY_NAME_CHECKOUT,
@@ -1008,7 +1005,7 @@ public class ShoppingCartFragment extends NetworkFragment implements View.OnClic
         String userTotalAmount = "";
         String userDeliveryMethod = "";
 
-        if(ticketGroupOrder != null) {
+        if (ticketGroupOrder != null) {
             if (ticketGroupOrder.getPricing() != null) {
 
                 if (ticketGroupOrder.getPricing().getTotalProductPrice() != null) {

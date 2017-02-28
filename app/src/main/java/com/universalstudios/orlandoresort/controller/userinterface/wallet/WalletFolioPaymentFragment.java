@@ -2,6 +2,7 @@ package com.universalstudios.orlandoresort.controller.userinterface.wallet;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -29,6 +30,8 @@ import com.universalstudios.orlandoresort.controller.userinterface.wallet.bindin
 import com.universalstudios.orlandoresort.controller.userinterface.wallet.binding.WalletFolioUpdatePinItemViewModel;
 import com.universalstudios.orlandoresort.databinding.FragmentWalletFolioPaymentBinding;
 import com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfig;
+import com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.IBMData.Tridion.ice_tridion.TridionConfigWrapper;
+import com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.state.network_config.TridionConfigStateManager;
 import com.universalstudios.orlandoresort.frommergeneedsrefactor.upr_android_406.util.NumberUtils;
 import com.universalstudios.orlandoresort.model.network.cache.CacheUtils;
 import com.universalstudios.orlandoresort.model.network.domain.wallet.GetWalletFolioRequest;
@@ -60,6 +63,8 @@ public class WalletFolioPaymentFragment extends NetworkFragment implements Walle
     private FragmentWalletFolioPaymentBinding mBinding;
     private WalletFolioPaymentViewModel mViewModel;
     private boolean mIsCreatingPin, mIsUpdatingPin;
+    private int retryCount = 0;
+    private static final int MAX_RETRY_COUNT = 3;
 
     public static WalletFolioPaymentFragment newInstance() {
         return new WalletFolioPaymentFragment();
@@ -139,28 +144,48 @@ public class WalletFolioPaymentFragment extends NetworkFragment implements Walle
         showLoading();
     }
 
-    private void showEmpty() {
+    private void showEmpty(boolean canChowDialog) {
         mViewModel.setShowLoading(false);
         mViewModel.setShowEmpty(true);
 
         UniversalOrlandoImageDownloader mUniversalOrlandoImageDownloader = new UniversalOrlandoImageDownloader(CacheUtils.COMMERCE_DISK_CACHE_NAME,
                 CacheUtils.COMMERCE_DISK_CACHE_MIN_SIZE_BYTES,
                 CacheUtils.COMMERCE_DISK_CACHE_MAX_SIZE_BYTES);
-        Picasso mPicasso = new Picasso.Builder(getActivity())
-                .downloader(mUniversalOrlandoImageDownloader)
-                .build();
-        mPicasso.load(mTridionConfig.getPaymentPartMembersImage()).into(mBinding.walletFolioNoPaymentImage, new Callback() {
-            @Override
-            public void onSuccess() {
-                mBinding.walletFolioNoPaymentImage.setVisibility(View.VISIBLE);
-            }
+        if (canChowDialog) {
+            Picasso mPicasso = new Picasso.Builder(getActivity())
+                    .downloader(mUniversalOrlandoImageDownloader)
+                    .build();
+            mPicasso.load(mTridionConfig.getPaymentPartMembersImage()).into(mBinding.walletFolioNoPaymentImage, new Callback() {
+                @Override
+                public void onSuccess() {
+                    mBinding.walletFolioNoPaymentImage.setVisibility(View.VISIBLE);
+                }
 
-            @Override
-            public void onError() {
-                mBinding.walletFolioNoPaymentImage.setVisibility(View.VISIBLE);
-            }
-        });
+                @Override
+                public void onError() {
+                    mBinding.walletFolioNoPaymentImage.setVisibility(View.VISIBLE);
+                }
+            });
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setCancelable(false).setMessage(getTridionConfig().getEr92()).setPositiveButton(android.R.string.ok, null).create().show();
+        }
         mBinding.walletFolioAddCard.setOnClickListener(this);
+    }
+
+    /**
+     * Retrieves the {@link TridionConfig} object using config string from SharedPreferences.
+     * Will return a new {@link TridionConfig} if said string comes back empty, or the generated
+     * {@link TridionConfig} from JSON is null.
+     *
+     * @return The {@link TridionConfig} object
+     */
+    public static TridionConfig getTridionConfig() {
+        TridionConfigWrapper tridionConfigWrapper = TridionConfigStateManager.getInstance();
+        if (tridionConfigWrapper == null || tridionConfigWrapper.getTridionConfig() == null) {
+            return new TridionConfig();
+        }
+        return tridionConfigWrapper.getTridionConfig();
     }
 
     private void showLoading() {
@@ -175,15 +200,24 @@ public class WalletFolioPaymentFragment extends NetworkFragment implements Walle
 
     @Override
     public void handleNetworkResponse(NetworkResponse networkResponse) {
+
         if (networkResponse instanceof GetWalletFolioResponse) {
             if (networkResponse.isHttpStatusCodeSuccess()) {
+                retryCount = 0;
                 GetWalletFolioResponse folioResponse = (GetWalletFolioResponse) networkResponse;
                 updateFolioData(folioResponse.getWalletFolioResult());
             } else {
-                showEmpty();
-                Toast.makeText(getContext(), IceTicketUtils.getTridionConfig().getEr71(), Toast.LENGTH_LONG)
-                        .setIconColor(Color.RED)
-                        .show();
+                retryCount++;
+                if (retryCount < MAX_RETRY_COUNT) {
+                    getFolio();
+                } else {
+                    retryCount = 0;
+                    showEmpty(false);
+
+                    /*Toast.makeText(getContext(), IceTicketUtils.getTridionConfig().getEr71(), Toast.LENGTH_LONG)
+                            .setIconColor(Color.RED)
+                            .show();*/
+                }
             }
         } else if (networkResponse instanceof SetSpendingLimitAlertResponse) {
             if (networkResponse.isHttpStatusCodeSuccess()) {
@@ -231,7 +265,7 @@ public class WalletFolioPaymentFragment extends NetworkFragment implements Walle
             populateTransactionHistory(mAdapter, walletFolioResult);
             hideLoading();
         } else {
-            showEmpty();
+            showEmpty(true);
         }
     }
 
@@ -394,7 +428,7 @@ public class WalletFolioPaymentFragment extends NetworkFragment implements Walle
             mIsUpdatingPin = updatePin;
         }
         // Otherwise, inform the user it doesn't pass the rules
-        else  {
+        else {
             if (createPin) {
                 Toast.makeText(getContext(), IceTicketUtils.getTridionConfig().getEr69(), Toast.LENGTH_LONG)
                         .setIconColor(Color.RED)

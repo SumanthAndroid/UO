@@ -137,6 +137,8 @@
         <attr name="progressInActiveColor" format="color" />
         <attr name="progressCircleColor" format="color" />
         <attr name="shoppingDialogBackground" format="reference" />
+        <attr name="checkoutContinue" format="reference" />
+        <attr name="checkoutSignIn" format="reference" />
     </declare-styleable>
 
 

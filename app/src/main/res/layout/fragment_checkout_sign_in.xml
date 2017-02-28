@@ -147,15 +147,12 @@
 
             <com.universalstudios.orlandoresort.view.fonts.Button
                 android:id="@+id/fragment_checkout_sign_in_continue_button"
-                style="@style/TextViewStyle.GothamMedium"
+                style="?checkoutContinue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/state_list_button_blue"
                 android:text="@{tridion.continueLabel}"
-                tools:text="Continue"
-                android:textColor="@color/text_white"
-                />
+                tools:text="Continue"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -278,16 +275,14 @@
 
             <com.universalstudios.orlandoresort.view.fonts.Button
                 android:id="@+id/fragment_checkout_sign_in_login"
-                style="@style/TextViewStyle.GothamMedium"
+                style="?checkoutSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/state_list_button_blue"
                 android:text="@{tridion.loginLabel}"
                 tools:text="LOGIN"
-                android:textAllCaps="true"
-                android:textColor="@color/text_white"/>
+                android:textAllCaps="true"/>
 
         </LinearLayout>
     </ScrollView>
